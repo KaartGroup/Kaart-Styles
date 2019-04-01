@@ -1,0 +1,4253 @@
+meta {
+    title: "Mexico Import Style";
+    version: "1.0";
+    description: "Adds custom styling to elements/features within JOSM";
+    author: "SomethingSimple, RoadMapsYou, NodiusWayus, Zack LaVergne";
+    /* Contributors: Hector Vector */
+    /* Credit: Parts of this map paint style were influenced by "Coloured Streets" by geozeisig, Klumbumbus and "snake roads" by SeattleFYI & Potlatch */
+}
+
+/* Notes 
+
+** Setting 1 & 2 are based on unique names, and route direction. Slight variations in the name will cause colors to change.
+
+1.
+Name setting highlights all ways with a name within a given area. 
+Roads with the same names have the same color.
+
+2.
+Ref setting highlights all ways with a  Ref within a given area. 
+Roads with the same ref have the same color.
+
+3.
+Node setting increases node size for easier visiblity.
+This helps when identifying disconnected road networks. 
+Also aids in splitting certain sections of roads.
+
+4.
+Highway Labels setting will make road names easier to read within JOSM.
+
+5.
+Single Color Roads - These settings reduce (and make clear) the visbility of roads which contain
+Name/Ref Tags. This may be beneficial, but feed back would be appreciated. 
+
+6.
+Snake Roads helps to highlight roads which "snake" through a given area. This can make adding street names difficult.
+Each road is given a color based on its unique way ID. There are only 33 colors chosen (just as in our Name settings),
+so there might be some overlap in colors. This can be altered if need be.
+
+7.
+Relations Setting allo way[highway]ws you to highlight roads/ways which contain a relation in a given ar way[highway]ea. This is done with line-casing. 
+Some countries have adopted relations as the go-to way[highway] for adding names and ref tags. If you know where relations exist,
+it co way[highway]uld possibly help in finding and editing names - whilst making sure you do not break relations.
+
+~~~~~~~~~~ way[highway]~~  1.3
+
+1. Added Surface type styles to make surface types visible. 
+These can be enabled by clicking on the setting titled "Check Surface Type" within JOSM.
+
+2. Replaced name/ref reduction stylers with inline-checks for roads without names and Major Roads without Ref tags.
+
+3. Added one-way style. This allows you to see where one-ways exist within a downloaded area.
+
+~~~~~~~~~~~~  1.4
+
+1. Changed colors of certain styles
+
+~~~~~~~~~~~~  1.5
+
+1. Removed "relation viewer" style - this should already be covered by name and ref viewer style
+
+2. Optimized "surface type checker" in order to view the value of the key as text on each way
+
+3. Optimized name & ref continuity viewer to show the specific (name/ref)tag for each specific
+setting turned on. Eg. Looking for ways with the same "ref" will also display each ref
+along those ways. Same goes for names which hold the "name" value - not name:en etc.
+
+~~~~~~~~~~~~  1.6
+
+1. Added definition for ferry routes (not a setting)  (currently muted as code)
+
+2. Added setting for following bus routes, this will only highlight a way based upon the first bus route on its reltaion list
+  - This should actually highlight based on all bus routes contained within a relation. This is only used on bus routes which are stored 
+  in relations along ways
+  - Currently displays the reference numbers of all bus routes on each road
+
+3. Adding Visual Turn Restrictions in order to help display turn restrictions on highways.
+
+~~~~~~~~~~~~  2.0 
+
+1. Merge Potlach and streets base styles
+  - Make K_Streets a standalone paint style
+  - Create a unique style for K_Streets
+2. Update road name and reference checks
+  - Deal more with relations and checking for duplicate/non duplicate values
+3. Added back bus styles and fixed node zoom
+- Further refined node zoom
+- Changed node settings for some icons and address issues
+4. Added "hide_icons" in order to remove clutter from the map
+5. Refined some path styling, changed some area rendering.
+6. Added inline validation checks
+  - Incorrect Junction check
+  - Motorway & motorway link without oneway set
+  - Z-index check, this finds conflicting & missing values: [bridge=yes][!layer] or [tunnel=yes][layer=5]
+7. Added overlap paint style which changes the default selection color and rendering of a given way
+  - This pushes any overlapping ways ABOVE the current way you have selected
+
+
+~~~~~~~~~~~~  2.1 (Under Development)
+
+1. Refined Paint Styling
+
+2. Added increased Icon Support with JOSM base Icons
+
+3. Added more inline validation checks
+  - Building inside of building check (does not count multi-polygons)
+  - Highway connected to buiolding check
+  - Huge building check
+  - Waterway connected to bridge check
+
+4. Further refined text rendering
+
+5. Hide icons no longer appears by default
+
+6. Tertiary nodes now render well with yellow & black instead of black & yellow
+
+
+
+
+
+ */
+
+/* Settings for styles */
+
+setting::highway_labels {
+  type: boolean;
+  label: tr("Display large street labels");
+  default: true;
+}
+
+/* setting::knode_setting {
+  type: boolean;
+  label: tr("Increase connecting node size");
+  default: false;
+} */
+
+
+setting::node_setting {
+  type: boolean;
+  label: tr("Increase Child Node Sizes");
+  default: false;
+} 
+
+
+
+/* setting::hide_icons {
+  type: boolean;
+  label: tr("Hide icons & icon text (at low zoom)");
+  default: false;
+} */
+
+
+setting::snakeroads {
+  type: boolean;
+  label: tr("Highlights Snake-Roads");
+  default: false;
+}
+
+
+/* setting::surface_t {
+  type: boolean;
+  label: tr("Check Surface Type");
+  default: false;
+} */
+
+setting::name_setting {
+  type: boolean;
+  label: tr("Highlights ways with Name:tags");
+  default: false;
+}
+
+
+/* setting::ref_setting {
+  type: boolean;
+  label: tr("Highlights ways with Ref:tags");
+  default: false;
+} */
+
+
+
+setting::check_name {
+  type: boolean;
+  label: tr("Flag roads without names");
+  default: false;
+}
+
+/* setting::remove_name {
+  type: boolean;
+  label: tr("Remove Street Name Labels");
+  default: false;
+} */
+
+/* setting::one_2 {
+  type: boolean;
+  label: tr("Highlight one_way roads");
+  default: false;
+} */
+
+
+/* setting::role_members {
+  type: boolean;
+  label: tr("Display Turn Restriction Members based on Role");
+  default: false;
+} */
+
+
+/* setting::check_ref {
+  type: boolean;
+  label: tr("Highlight Routes based on Ref tag on Ways & in Relations");
+  default: false;
+} */
+
+/* setting::check_ref2 {
+  type: boolean;
+  label: tr("Highlight Routes based on int_ref tags on Ways & in Relations");
+  default: false;
+} */
+
+/* setting::check_dup {
+  type: boolean;
+  label: tr("Check for Roads missing Ref Tag values");
+  default: false;
+} */
+
+
+/* setting::bus_setting {
+  type: boolean;
+  label: tr("Highlight Bus Routes");
+  default: false;
+} */
+
+/* setting::show_boundary {
+  type: boolean;
+  label: tr("Display Administrative Boundaries");
+  default: true;
+} */
+
+/*
+setting::overlap1 {
+  type: boolean;
+  label: tr("Selected Ways appear in Gray");
+  default: true;
+}
+
+*/
+
+
+
+/* Boundary Styles */
+
+
+way[boundary=protected_area][setting("show_boundary")]::core_boundary,
+way[boundary=administrative][setting("show_boundary")]::core_boundary,
+way[boundary=postal_code][setting("show_boundary")]::core_boundary,
+way[boundary=political][setting("show_boundary")]::core_boundary,
+way[boundary=maritime][setting("show_boundary")]::core_boundary,
+way[boundary=national_park][setting("show_boundary")]::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 1;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=9][setting("show_boundary")]::core_boundary,
+relation[admin_level=9][setting("show_boundary")] > way::core_boundary,
+way[admin_level=10][setting("show_boundary")]::core_boundary,
+relation[admin_level=10][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 1.5;
+    color: boundary#801515;
+    dashes: 9,9;
+}
+way[admin_level=7][setting("show_boundary")]::core_boundary,
+relation[admin_level=7][setting("show_boundary")] > way::core_boundary,
+way[admin_level=8][setting("show_boundary")]::core_boundary,
+relation[admin_level=8][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 2;
+    color: boundary#FFB4AA;
+    dashes: 9,9;
+}
+way[admin_level=5][setting("show_boundary")]::core_boundary,
+relation[admin_level=5][setting("show_boundary")] > way::core_boundary,
+way[admin_level=6][setting("show_boundary")]::core_boundary,
+relation[admin_level=6][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 3;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=3][setting("show_boundary")]::core_boundary,
+relation[admin_level=3][setting("show_boundary")] > way::core_boundary,
+way[admin_level=4][setting("show_boundary")]::core_boundary,
+relation[admin_level=4][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 4;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=1][setting("show_boundary")]::core_boundary,
+relation[admin_level=1][setting("show_boundary")] > way::core_boundary,
+way[admin_level=2][setting("show_boundary")]::core_boundary,
+relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 5;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+
+
+
+
+/* New Road Styling inspired by Potlatch  */
+
+way[highway] {
+text: auto; 
+text-color: white; 
+font-size: 12; 
+text-position: line; 
+text-halo-color: black; 
+text-halo-radius: 0.9;
+}
+
+
+way[predictedDirection=ONE_WAY_SAME_DIRECTION],way[predictedDirection=ONE_WAY_REVERSE_DIRECTION],
+way[highway=motorway],way[highway=motorway_link],
+way[highway=trunk],way[highway=trunk_link],
+way[highway=primary],way[highway=primary_link],
+way[highway=secondary],way[highway=secondary_link],
+way[highway=tertiary],way[highway=tertiary_link],
+way[highway=residential],way[highway=unclassified]  { z-index: 5; linecap: round; casing-linecap: round }
+
+way[predictedDirection=ONE_WAY_SAME_DIRECTION]         { z-index: 9; color: #D4F033; width: 8; casing-color: #000000; casing-width: 1; }
+way[predictedDirection=ONE_WAY_REVERSE_DIRECTION]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
+
+way[highway=motorway]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
+way[highway=motorway_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #CF2081; }
+
+way[highway=trunk]               { z-index: 9; color: #DD2F22; width: 8; casing-color: #000000; casing-width: 1; }
+way[highway=trunk_link]          { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #DD2F22; }
+
+way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: #000000; casing-width: 1; }
+way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFA500; }
+
+way[highway=secondary]       { z-index: 7; color: #FFFF00; width: 7; casing-color: #000000; casing-width: 1; }
+way[highway=secondary_link]  { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFFF00; }
+
+way[highway=tertiary]         { z-index: 6; color: #408ccc; width: 5; casing-color: #000000; casing-width: 1; }
+way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #408ccc; }
+
+way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
+
+way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
+
+way[highway=service]                                { z-index: 5; color: #D4FF33; width: 3; casing-color: #000000; casing-width: 1; }
+
+way[highway=service][service=parking_aisle]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: #FF087F; }
+
+way[highway=service][service=drive-through]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: blue; }
+
+way[highway=service][service=driveway]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: purple; }
+
+way[highway=service][service=alley]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: lightyellow; casing-color: #000000; casing-width: 1; }
+
+way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
+
+way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
+
+way[highway=living_street]                          { z-index: 5; dashes: 9,9; dashes-background-color: gray; width: 5; color: #E8E8E8; casing-color: #000000; casing-width: 1; }
+
+
+
+/* Road areas */
+
+way[highway=pedestrian]!:closed { z-index: 5; color: #7FFF00; width: 3.5; dashes: 5, 5; casing-color: #555555; casing-width: 1; casing-dashes: 2,4; linecap: round; casing-linecap: round;}
+
+area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee; dashes: 3,3; fill-opacity: 0.2; }
+
+
+/* Paths */
+
+way[highway=steps]     { z-index: 5; color: #aa3311; width: 3; dashes: 3, 3; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
+
+way[highway=footway]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
+
+way[highway=footway][bicycle=yes]::bike   { z-index: 4; color: #aa3311 ; width: 1; dashes: 6, 3;  casing-color: purple; casing-width: .3; casing-dashes: 6, 3; linecap: round; casing-linecap: round; }
+
+way[highway=bridleway] { z-index:9; color: #996644; width: 2; dashes: 4, 2, 2, 2; prop_path : 1;}
+
+way[highway=track]     { z-index: 5; color: #996644; width: 3; dashes: 4, 2; prop_path : 1;}
+
+way[highway=path]      { z-index: 5; color: brown; width: 2; dashes: 2, 2; prop_path : 1;}
+
+way[highway=cycleway]  { z-index: 5; color: #b100ff; width: 2; dashes: 4, 2; prop_path : 1;}
+
+way[is_prop_set("prop_path")]  { z-index: 5; text: auto; text-color: black; text-position: line; text-offset: 7; font-size: 12; }
+
+
+/******************/
+/* tracktype tags */
+/******************/
+
+way[highway=track][tracktype=grade1] {
+    dashes: 8,2;
+}
+way[highway=track][tracktype=grade2] {
+    dashes: 6,2;
+}
+way[highway=track][tracktype=grade3] {
+    dashes: 4,3;
+}
+way[highway=track][tracktype=grade4] {
+    dashes: 4,5;
+}
+way[highway=track][tracktype=grade5] {
+    dashes: 4,7;
+}
+
+
+
+/*
+way[oneway=yes]::arrows, way[junction=roundabout]::arrows { z-index: 15; color: lime; width: 2; dashes: 10,45; line-style: arrows; }
+way[oneway=-1]::arrows { z-index: 15; color: #555555; width: 2; dashes: 10,50; line-style: arrows-reversed; }
+*/
+
+
+
+
+/* Under construction */
+
+way[highway=proposed] { z-index: 5; color: #ffff01; width: 6; dashes: 8, 2; }
+way[highway=construction] {  z-index: 5; width: 6; linecap: square; color: #ff6700; casing-color: #0000FF; casing-width: 0; dashes: 20,5; dashes-background-color: #e1ff00;  dashes-casing-color: black;} 
+
+
+
+/* Railways */
+
+way[railway=rail] { z-index: 6; color: black; width: 5; linecap: round; dashes: 0; }
+way[railway=rail]::dashes { z-index: 7; color: white; width: 3; dashes: 12,12; linecap: round; }
+
+way[construction=rail] { z-index: 6; color: black; width: 5; dashes: 6, 6, 4, 8;}
+way[construction=rail]::inner { z-index: 7; color: white; width: 3; dashes: 6,18; }
+
+way[railway=platform] { z-index: 5; color:black; width: 2; }
+
+way[railway=subway] { z-index: 6; color: #444444; width: 5; }
+way[railway=subway]::dashes  { z-index: 7; color: white; width: 3; dashes: 8,8; }
+
+way[construction=subway] { z-index: 6; color: #444444; width: 5; dashes: 4, 4; }
+way[construction=subway]::dashes  { z-index: 7; color: white; width: 3; dashes: 4,12;}
+
+way[railway=disused][!highway],way[railway=abandoned][!highway] { z-index: 6; color: #444400; width: 3; dashes: 17, 2, 5, 0; }
+way[railway=disused][!highway]::dashes,way[railway=abandoned][!highway]::dashes { z-index: 7; color: #999999; width: 2; dashes: 12,12; }
+
+way[railway=tram]      { z-index: 11; color: #999999; width: 2; casing-color: black; casing-width: 2; }
+way[construction=tram] { z-index: 11; color: #999999; width: 2; casing-color: black; casing-width: 2; dashes: 6, 6; casing-dashes: 6, 6; }
+
+way[railway=light_rail] { z-index: 6; color: black; width: 4; }
+way[railway=light_rail]::dashes { z-index: 7; color: #999999; width: 2; dashes: 8,4; }
+
+way[construction=light_rail] { z-index: 6; color: black; width: 4; dashes: 8, 4, 4, 4; }
+way[construction=light_rail]::dashes { z-index: 7; color: #999999; width: 2; dashes: 8,12; }
+
+
+/* Waterways */ 
+
+way[waterway=river], 
+way[waterway=canal], 
+way[waterway=stream]   { z-index: 5; color: #3434ff; width: 2; text:auto; text-color: #3434ff; font-size:9; text-position: line; text-offset: 7;}
+
+node[ford=stepping_stone],
+node[ford?] {
+    icon-image: "presets/vehicle/ford.svg";
+    set icon_z17;
+    text: auto;
+}
+way[ford=stepping_stone]::core_ford,
+way[ford?]::core_ford {
+    z-index: 1;
+    width: 2;
+    color: water#0000ff;
+    dashes: 9,9;
+    dashes-offset: 9;
+}
+
+way[waterway=drain]              {z-index: 5; color: #3434ff; width: 1; text:auto; text-color: #3434ff; text-position: line; text-offset: 3;}
+
+way[waterway][tunnel]                {z-index: 5; dashes: 8,4;}
+
+
+/* Aeroways */
+
+way[aeroway=aerodrome]:closed
+    { z-index: 3; color: #bb44bb; width: 3; casing-color: #66066;  casing-width: 1;  }
+way[aeroway=taxiway]!:closed { z-index: 8; color: #999999; width: 3; casing-color: #aa66aa; casing-width: 2; }
+area[aeroway=taxiway]:closed { z-index: 8; color: #bb99bb; width: 3; fill-color: #ccaacc; } 
+
+way[aeroway=runway]!:closed { z-index: 9; color: black; width: 5;  }
+way[aeroway=runway]!:closed::aa { z-index: 12; color: white; width: 5;  dashes: 0, 20, 4, 76; }
+way[aeroway=runway]!:closed::bb { z-index: 13; color: black; width: 3; }
+way[aeroway=runway]!:closed::cc { z-index: 14; color: white; width: 1;  dashes: 4, 16; }
+
+area[aeroway=runway]:closed { z-index: 9; color: black; width: 3; fill-color: #775577; } 
+area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #ddaadd; fill-opacity: 0.5;}
+
+
+/* Barriers */
+
+way[barrier] {z-index: 5; color: #000000; width: 1}
+way[barrier=fence] {z-index: 5; color: #000000; width: 1; dashes: 8,4,2,4; }
+
+
+/* Power */
+
+way[power=line] {z-index: 5; color: darkgray; width: 3; dashes: 12,2; casing-color: black; casing-width: 2; casing-dashes: 4, 38;}
+way[power=minor_line] {z-index: 5; color: gray; width: 2; dashes: 2,4; casing-width: 3; casing-color: white; casing-dashes: 2,22;}
+area[power=station]:closed { color: black; width: 2; fill-color: #666666; fill-opacity: 0.6; prop_area_small_name : 1;}
+area[power=generator]:closed { color: black; width: 2; fill-color: #444444; fill-opacity: 0.6; prop_area_small_name : 1;}
+
+/* Leisure */
+
+way[golf=hole] {z-index: 5; color: darkgreen; width: 5; casing-color: green; casing-width: 2; }
+area[leisure=sports_centre]:closed { color: #66ddcc; fill-color: #66ddcc; prop_area_small_name : 1; }
+
+/* Bridges and Tunnels */
+
+way[bridge=yes]::bridge1, way[bridge=viaduct]::bridge1, way[bridge=suspension]::bridge1 { z-index: 4; color: #00abff; width: +7; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
+
+way[bridge=yes]::bridge2, way[bridge=viaduct]::bridge2, way[bridge=suspension]::bridge2 { z-index: 3; color: #444444; width: +6; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
+
+way[tunnel=yes][!waterway]::bridge1 { 
+    major-z-index: 2;
+    object-z-index: -1;
+    width: +7;
+    dashes: 5,5;
+    casing-width: 2;
+    casing-color: sandybrown;
+    casing-dashes: 15,5;
+    color: #919191;
+    opacity: 0.7;
+
+ }
+
+way[tunnel=yes][!waterway]::bridge2 {
+
+    major-z-index: 2;
+    object-z-index: -1;
+    width: +6;
+    dashes: 5,5;
+    casing-width: 2;
+    casing-color: sandybrown;
+    casing-dashes: 15,5;
+    color: #919191;
+    opacity: 0.7;
+ }
+
+
+
+
+/* Node Icons */
+
+/************************/
+/* traffic_calming tags */
+/************************/
+
+node[traffic_calming] {
+    icon-image: "presets/vehicle/traffic_calming.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=chicane] {
+    icon-image: "presets/vehicle/chicane.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=choker] {
+    icon-image: "presets/vehicle/choker.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=island] {
+    icon-image: "presets/vehicle/island.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=bump] {
+    icon-image: "presets/vehicle/bump.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=hump] {
+    icon-image: "presets/vehicle/hump.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=table] {
+    icon-image: "presets/vehicle/table.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=cushion] {
+    icon-image: "presets/vehicle/cushion.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_calming=rumble_strip] {
+    icon-image: "presets/vehicle/rumble_strip.svg";
+    set icon_z17;
+    text: auto;
+}
+
+node[traffic_sign][access?!] {
+    icon-image: "presets/vehicle/restriction/access.svg";
+    set icon_z17;
+}
+
+node[highway=traffic_signals] {
+    icon-image: "presets/vehicle/traffic_signals.svg";
+    set icon_z17;
+    text: auto;
+}
+node[highway=traffic_signals][crossing][crossing!=no] {
+    icon-image: "presets/vehicle/traffic_signals_crossing.svg";
+    set icon_z17;
+    text: auto;
+}
+node[highway=traffic_signals][crossing_ref=zebra] {
+    icon-image: "presets/vehicle/traffic_signals_crossing_ref_zebra.svg";
+    set icon_z17;
+    text: auto;
+}
+node[highway=traffic_signals][crossing=island] {
+    icon-image: "presets/vehicle/traffic_signals_crossing_island.svg";
+    set icon_z17;
+    text: auto;
+}
+node[highway=traffic_signals][crossing=traffic_signals] {
+    icon-image: "presets/vehicle/traffic_signals_crossing_traffic_signals.svg";
+    set icon_z17;
+    text: auto;
+}
+
+node[highway=stop] {
+    icon-image: "presets/vehicle/restriction/stop.svg";
+    set icon_z17;
+    text: auto;
+}
+node[highway=give_way] {
+    icon-image: "presets/vehicle/restriction/give_way.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_sign][access=permissive][!is_prop_set(icon-image)],
+node[traffic_sign][access=private][!is_prop_set(icon-image)],
+node[traffic_sign][access=destination][!is_prop_set(icon-image)] {
+    icon-image: "presets/misc/no_icon.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_sign][bicycle?!] {
+    icon-image: "presets/vehicle/restriction/bicycle.svg";
+    set icon_z17;
+}
+node[traffic_sign][bicycle=designated] {
+    icon-image: "presets/vehicle/restriction/bicycle-designated.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_sign][foot?!] {
+    icon-image: "presets/vehicle/restriction/foot.svg";
+    set icon_z17;
+}
+node[traffic_sign][foot=designated] {
+    icon-image: "presets/vehicle/restriction/foot-designated.svg";
+    set icon_z17;
+    text: auto;
+}
+node[traffic_sign][goods?!],
+node[traffic_sign][hgv?!] {
+    icon-image: "presets/vehicle/restriction/goods.svg";
+    set icon_z17;
+}
+node[traffic_sign][horse?!] {
+    icon-image: "presets/vehicle/restriction/horse.svg";
+    set icon_z17;
+}
+node[traffic_sign][horse=designated] {
+    icon-image: "presets/vehicle/restriction/horse-designated.svg";
+    set icon_z17;
+}
+node[traffic_sign][motorcycle?!] {
+    icon-image: "presets/vehicle/restriction/motorbike.svg";
+    set icon_z17;
+}
+node[traffic_sign][motorcar?!] {
+    icon-image: "presets/vehicle/restriction/motorcar.svg";
+    set icon_z17;
+}
+node[traffic_sign][psv?!] {
+    icon-image: "presets/vehicle/restriction/psv.svg";
+    set icon_z17;
+}
+node[traffic_sign][motorboat?!][!is_prop_set(icon-image)],
+node[traffic_sign][boat?!][!is_prop_set(icon-image)] {
+    icon-image: "presets/misc/no_icon.svg";
+    set icon_z17;
+}
+node[noexit=yes] {
+    icon-image: "presets/vehicle/restriction/dead_end.svg";
+    set icon_z17;
+}
+node[traffic_sign][maxweight] {
+    icon-image: "presets/vehicle/restriction/maxweight.svg";
+    set icon_z17;
+}
+node[traffic_sign][maxheight] {
+    icon-image: "presets/vehicle/restriction/maxheight.svg";
+    set icon_z17;
+}
+node[traffic_sign][maxwidth] {
+    icon-image: "presets/vehicle/restriction/maxwidth.svg";
+    set icon_z17;
+}
+node[traffic_sign][maxlength] {
+    icon-image: "presets/vehicle/restriction/maxlength.svg";
+    set icon_z17;
+}
+node[traffic_sign][minspeed] {
+    icon-image: "presets/vehicle/restriction/minspeed.svg";
+    set icon_z17;
+}
+node[traffic_sign][maxstay][!is_prop_set(icon-image)],
+node[traffic_sign][toll][!is_prop_set(icon-image)] {
+    icon-image: "presets/misc/no_icon.svg";
+    set icon_z17;
+}
+
+
+
+
+ /****************
+ * core_pois.css
+
+  - > REQUIRES Potlatch paint style existing locally
+
+ ****************/
+
+node { text-anchor-horizontal: center; text-anchor-vertical: below; }
+
+node[place] { icon-image: icons/place.png; font-family: DejaVu; text: auto; font-size: 10; font-weight: bold; z-index: 20; }
+node[amenity=telephone] { icon-image: icons/telephone.png; z-index: 20; }
+node[barrier=cattle_grid] { icon-image: icons/cattle_grid.png; z-index: 20; }
+node[tourism=guesthouse] { icon-image: icons/accommodation_bed_and_breakfast.n.16.png; z-index: 20; }
+node[tourism=alpine_hut] { icon-image: icons/accommodation_alpinehut.n.16.png; z-index: 20; }
+node[tourism=camp_site] { icon-image: icons/accommodation_camping.n.16.png; z-index: 20; }
+node[tourism=caravan_site] { icon-image: icons/accommodation_caravan_park.n.16.png; z-index: 20; }
+node[tourism=chalet] { icon-image: icons/accommodation_chalet.n.16.png; z-index: 20; }
+node[tourism=guest_house],node[tourism=bed_and_breakfast] { icon-image: icons/accommodation_bed_and_breakfast.n.16.png; z-index: 20; }
+node[tourism=hotel] { icon-image: icons/accommodation_hotel.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[tourism=hostel] { icon-image: icons/accommodation_youth_hostel.n.16.png; z-index: 20; }
+node[tourism=motel] { icon-image: icons/accommodation_motel.n.16.png; z-index: 20; }
+node[amenity=fire_station] { icon-image: icons/amenity_firestation2.n.16.png; z-index: 20; }
+node[amenity=police] { icon-image: icons/amenity_police2.n.16.png; z-index: 20; }
+node[amenity=post_box] { icon-image: icons/amenity_post_box.n.16.png; z-index: 20; }
+node[amenity=recycling] { icon-image: icons/amenity_recycling.n.16.png; z-index: 20; }
+node[barrier=bollard] { icon-image: icons/barrier_bollard.n.16.png; z-index: 20; }
+node[barrier=gate], node[highway=gate] { icon-image: icons/barrier_gate.n.16.png; z-index: 20; }
+node[barrier=stile], node[highway=stile] { icon-image: icons/barrier_stile.n.16.png; z-index: 20; }
+node[barrier=toll_booth] { icon-image: icons/barrier_toll_booth.n.16.png; z-index: 20; }
+node[barrier=lift_gate] { icon-image: icons/barrier_lift_gate.n.16.png; z-index: 20; }
+node[barrier=kissing_gate] { icon-image: icons/barrier_kissing_gate.16.png; z-index: 20; }
+node[barrier=cycle_barrier] { icon-image: icons/barrier_cycle_barrier.16.png; z-index: 20; }
+node[barrier=block] { icon-image: icons/barrier_blocks.16.png; z-index: 20; }
+node[barrier=cattle_grid] { icon-image: icons/barrier_cattle_grid.16.png; z-index: 20; }
+node[amenity=school] { icon-image: icons/education_school.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+area[amenity=school]:closed { color: yellow; fill-color: yellow; fill-opacity: 0.1; prop_area_small_name : 1; }
+node[amenity=bar] { icon-image: icons/food_bar.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=cafe] { icon-image: icons/food_cafe.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=fast_food] { icon-image: icons/food_fastfood.n.16.png; z-index: 20; }
+node[amenity=nightclub] { icon-image: icons/food_nightclub.n.16.png; text-offset: 0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=pub] { icon-image: icons/food_pub.n.16.png; text-offset: 0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=restaurant] { icon-image: icons/food_restaurant.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=hospital] { icon-image: icons/health_hospital.n.16.png; z-index: 20; }
+node[amenity=pharmacy] { icon-image: icons/health_pharmacy.n.16.png; z-index: 20; }
+node[amenity=atm] { icon-image: icons/money_atm.n.16.png; z-index: 20; }
+node[amenity=bank] { icon-image: icons/money_bank2.n.16.png; z-index: 20; }
+/* More Amenities */
+node[amenity=bench] { icon-image: icons/amenity_bench.n.16.png; z-index: 20; }
+node[amenity=drinking_water] { icon-image: icons/food_drinkingtap.n.16.png; z-index: 20; }
+node[amenity=emergency_phone] { icon-image: icons/emergency-telephone-16.png; z-index: 20; }
+node[amenity=fountain] { icon-image: icons/amenity_fountain2.n.16.png; z-index: 20; }
+node[amenity=hunting_stand] { icon-image: icons/sport_shooting.n.16.png; z-index: 20; }
+node[amenity=kindergarten] { icon-image: icons/education_nursery3.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=library] { icon-image: icons/amenity_library.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=place_of_worship]  { icon-image: icons/place_of_worship_unknown.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=post_office] { icon-image: icons/amenity_post_office.n.16.png; z-index: 20; }
+node[amenity=shelter] { icon-image: icons/accommodation_shelter2.n.16.png; z-index: 20; }
+node[amenity=swimming_pool] { icon-image: icons/sport_swimming_outdoor.n.16.png; z-index: 20; }
+node[amenity=townhall] { icon-image: icons/amenity_town_hall.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=toilets] { icon-image: icons/amenity_toilets.n.16.png; z-index: 20; }
+node[amenity=vending_machine] { icon-image: icons/shopping_vending_machine.n.16.png; z-index: 20; }
+node[amenity=veterinary] { icon-image: icons/health_veterinary.n.8E7409.16.png; z-index: 20; }
+node[amenity=waste_basket] { icon-image: icons/amenity_waste_bin.n.16.png; z-index: 20; }
+node[amenity=fire_hydrant] { icon-image: icons/emergency_hydrant.n.16.png; z-index: 20; }
+node[emergency=fire_hydrant] { icon-image: icons/emergency_hydrant.n.16.png; z-index: 20; }
+/* Shops */
+node[shop=alcohol] { icon-image: icons/shopping_alcohol.n.16.png; z-index: 20; }
+node[shop=bakery] { icon-image: icons/shopping_bakery.n.16.png; z-index: 20; }
+node[shop=bicycle] { icon-image: icons/shopping_bicycle.n.16.png; z-index: 20; }
+node[shop=book], node[shop=books] { icon-image: icons/shopping_book.n.16.png; z-index: 20; }
+node[shop=butcher] { icon-image: icons/shopping_butcher.n.16.png; z-index: 20; }
+node[shop=car_repair] { icon-image: icons/shopping_car_repair.n.16.png; z-index: 20; }
+node[shop=car] { icon-image: icons/shopping_car.n.16.png; z-index: 20; }
+node[shop=clothes] { icon-image: icons/shopping_clothes.n.16.png; z-index: 20; }
+node[shop=confectionery] { icon-image: icons/shopping_confectionery.n.16.png; z-index: 20; }
+node[shop=convenience] { icon-image: icons/shopping_convenience.n.16.png; z-index: 20; }
+node[shop=department_store] { icon-image: icons/shopping_department_store.n.16.png; z-index: 20; }
+node[shop=doityourself] { icon-image: icons/shopping_diy.n.16.png; z-index: 20; }
+node[shop=fishmonger] { icon-image: icons/shopping_fish.n.16.png; z-index: 20; }
+node[shop=florist] { icon-image: icons/shopping_florist.n.16.png; z-index: 20; }
+node[shop=garden_centre] { icon-image: icons/shopping_garden_centre.n.16.png; z-index: 20; }
+node[shop=gift] { icon-image: icons/shopping_gift.n.16.png; z-index: 20; }
+node[shop=greengrocer] { icon-image: icons/shopping_greengrocer.n.16.png; z-index: 20; }
+node[shop=hairdresser] { icon-image: icons/shopping_hairdresser.n.16.png; z-index: 20; }
+node[shop=hifi] { icon-image: icons/shopping_hifi.n.16.png; z-index: 20; }
+node[shop=jewelry] { icon-image: icons/shopping_jewelry.n.16.png; z-index: 20; }
+node[shop=kiosk] { icon-image: icons/shopping_kiosk.n.16.png; z-index: 20; }
+node[shop=laundry] { icon-image: icons/shopping_laundrette.n.16.png; z-index: 20; }
+node[amenity=marketplace] { icon-image: icons/shopping_marketplace.n.16.png; z-index: 20; }
+node[shop=motorcycle] { icon-image: icons/shopping_motorcycle.n.16.png; z-index: 20; }
+node[shop=music] { icon-image: icons/shopping_music.n.16.png; z-index: 20; }
+node[shop=supermarket] { icon-image: icons/shopping_supermarket.n.16.png; z-index: 20; }
+node[shop=toys] { icon-image: icons/shopping_toys.n.16.png; z-index: 20; }
+/* More Touristy Items */
+node[tourism=artwork] { icon-image: icons/tourist_art_gallery2.n.16.png; z-index: 20; }
+node[historic=archaeological_site] { icon-image: icons/tourist_archaeological.n.16.png; z-index: 20; }
+node[historic=battlefield] { icon-image: icons/tourist_battlefield.n.16.png; z-index: 20; }
+node[historic=castle] { icon-image: icons/tourist_castle.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[amenity=cinema] { icon-image: icons/tourist_cinema.n.16.png; z-index: 20; }
+node[historic=memorial] { icon-image: icons/tourist_memorial.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[historic=monument] { icon-image: icons/tourist_monument.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[tourism=museum] { icon-image: icons/tourist_museum.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[tourism=information] { icon-image: icons/tourist_information.png; z-index: 20; }
+node[tourism=picnic_site] { icon-image: icons/tourist_picnic.n.16.png; z-index: 20; }
+node[historic=ruins] { icon-image: icons/tourist_ruin.n.16.png; z-index: 20; }
+node[amenity=theatre] { icon-image: icons/tourist_theatre.n.16.png; z-index: 20; }
+node[tourism=theme_park] { icon-image: icons/tourist_theme_park.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[tourism=viewpoint] { icon-image: icons/tourist_view_point.n.16.png; z-index: 20; }
+node[tourism=zoo] { icon-image: icons/tourist_zoo.n.16.png; z-index: 20; }
+/* Transport */
+node[aeroway=aerodrome] { icon-image: icons/transport_aerodrome.n.16.png; z-index: 20; }
+node[aeroway=gate] { icon-image: icons/transport_airport_gate.n.16.png; z-index: 20; }
+node[aeroway=terminal] { icon-image: icons/transport_airport_terminal.n.16.png; z-index: 20; }
+node[aeroway=helipad] { icon-image: icons/transport_helicopter_pad.n.16.png; z-index: 20; }
+node[amenity=bus_station] { icon-image: icons/transport_bus_station.n.16.png; z-index: 20; }
+node[highway=bus_stop] { icon-image: icons/transport_bus_stop2.n.16.png; z-index: 20; }
+node[amenity=fuel] { icon-image: icons/transport_fuel.n.16.png; z-index: 20; }
+node[amenity=car_wash] { icon-image: icons/transport_car_wash.n.16.png; z-index: 20; }
+node[amenity=bicycle_parking] { icon-image: icons/transport_parking_bicycle.n.16.png; text-offset:0; text: capacity; font-size: 10; z-index: 20; }
+node[amenity=parking] { icon-image: icons/transport_parking_car.n.16.png; z-index: 20; }
+node[amenity=ferry_terminal] { icon-image: icons/transport_port.n.16.png; z-index: 20; }
+node[amenity=bicycle_rental] { icon-image: icons/transport_rental_bicycle.n.16.png; z-index: 20; }
+node[amenity=car_rental] { icon-image: icons/transport_rental_car.n.16.png; z-index: 20; }
+node[amenity=taxi] { icon-image: icons/transport_taxi_rank.n.16.png; z-index: 20; }
+node[railway=station] { icon-image: icons/transport_train_station.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[railway=tram_stop] { icon-image: icons/transport_tram_stop.n.16.png; z-index: 20; }
+node[leisure=marina] { icon-image: icons/transport_marina.n.16.png; z-index: 20; }
+node[highway=mini_roundabout] { icon-image: icons/transport_miniroundabout_anticlockwise.n.16.png; z-index: 20; }
+node[highway=crossing] { icon-image: icons/transport_zebracrossing.n.16.png; z-index: 20; }
+/* Misc */
+node[leisure=playground] { icon-image: icons/amenity_playground.n.16.png; z-index: 20; }
+node[leisure=sports_centre] { icon-image: icons/sport_leisure_centre.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+/* node[landuse=cemetery], node[landuse=grave_yard] { i|||con-image: icons/?.png; z-index: 20; } */
+node[man_made=survey_point] { icon-image: icons/manmade_lighthouse.png; z-index: 20; }
+node[man_made=tower] { icon-image: icons/manmade_tower.png; z-index: 20; }
+/* Yes these power stations seem a little backward - but that's seemingly what the side menu uses ATM */
+node[power=station] { icon-image: icons/power_substation.n.16.png; z-index: 20; }
+node[power=generator] { icon-image: icons/power_station.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+/* P2 previously had these icons instead of "icon-image: cross" which is not standard MapCSS but a P2 keyword we won't implement, so keep the old icons */
+node[power=tower] { icon-image: icons/power_tower_high2.n.16.png; z-index: 20; }
+node[power=pole] { icon-image: icons/power_tower_low.n.16.png; z-index: 20; }
+node[waterway=weir] { icon-image: icons/transport_weir.n.16.png; z-index: 20; }
+
+/* Natural */
+node[natural=peak] { icon-image: icons/natural_peak.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+node[natural=tree] { icon-image: icons/natural_tree.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
+
+/**************/
+/* piste tags */
+/**************/
+
+way[route=ski]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: ski#809bc0;
+    dashes: 5,5;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=easy][!highway][area=yes]::core_piste {
+    fill-color: piste_easy#54A73D;
+}
+way[piste:difficulty=easy]::core_piste {
+    z-index: -1; /* below line style from highway=* tag */
+    modifier: false; /* suppress default line if there is no style on default layer */
+    width: 6;
+    color: piste_easy#54A73D;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=intermediate][!highway][area=yes]::core_piste {
+    fill-color: piste_intermediate#015597;
+}
+way[piste:difficulty=intermediate]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: piste_intermediate#015597;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=advanced][!highway][area=yes]::core_piste {
+    fill-color: piste_advanced#606060;
+}
+way[piste:difficulty=advanced]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: piste_advanced#606060;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=expert][!highway][area=yes]::core_piste {
+    fill-color: piste_expert#000000;
+}
+way[piste:difficulty=expert]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: piste_expert#000000;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=freeride][!highway][area=yes]::core_piste {
+    fill-color: piste_freeride#ffff00;
+}
+way[piste:difficulty=freeride]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: piste_freeride#ffff00;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+area[piste:difficulty=novice][!highway][area=yes]::core_piste {
+    fill-color: piste_novice#00ff00;
+}
+way[piste:difficulty=novice]::core_piste {
+    z-index: -1;
+    modifier: false;
+    width: 6;
+    color: piste_novice#00ff00;
+    casing-dashes: 5,5;
+    casing-color: white;
+    casing-width: 1;
+}
+node[piste:type=downhill],
+node[piste:type=nordic],
+node[piste:type=skitour],
+node[piste:type=sled],
+node[piste:type=sleigh],
+node[piste:type=snow_park] {
+    icon-image: "presets/sport/skiing.svg";
+    set icon_z17;
+}
+
+
+way[barrier=retaining_wall],
+way[barrier=kerb] {
+    repeat-image: "presets/misc/cliff_pattern.svg";
+    repeat-image-align: top;
+}
+node[barrier=hedge],
+node[barrier=wall],
+node[barrier=guard_rail],
+node[barrier=city_wall],
+node[barrier=retaining_wall],
+node[barrier=ditch] {
+    icon-image: "presets/misc/deprecated.svg";
+    set icon_z17;
+}
+node[barrier=kerb] {
+    icon-image: "presets/barrier/kerb.svg";
+    set icon_z17;
+}
+node[barrier=block] {
+    icon-image: "presets/barrier/block.svg";
+    set icon_z17;
+}
+node[barrier=chain] {
+    icon-image: "presets/barrier/chain.svg";
+    set icon_z17;
+}
+node[barrier=stile] {
+    icon-image: "presets/barrier/stile.svg";
+    set icon_z17;
+}
+node[barrier=turnstile] {
+    icon-image: "presets/barrier/turnstile.svg";
+    set icon_z17;
+}
+node[barrier=cycle_barrier] {
+    icon-image: "presets/barrier/cycle_barrier.svg";
+    set icon_z17;
+}
+node[barrier=lift_gate] {
+    icon-image: "presets/barrier/lift_gate.svg";
+    set icon_z17;
+}
+node[barrier=swing_gate] {
+    icon-image: "presets/barrier/swing_gate.svg";
+    set icon_z17;
+}
+area[barrier=toll_booth]:closed {
+    fill-color: barrier#F0F050;
+}
+node[barrier=toll_booth] {
+    icon-image: "presets/barrier/toll_station.svg";
+    set icon_z17;
+}
+node[barrier=entrance] {
+    icon-image: "presets/barrier/entrance.svg";
+    set icon_z17;
+}
+node[barrier=cattle_grid] {
+    icon-image: "presets/barrier/cattle_grid.svg";
+    set icon_z17;
+}
+node[barrier=border_control] {
+    icon-image: "presets/barrier/douane.svg";
+    set icon_z17;
+}
+node[barrier=sally_port] {
+    icon-image: "presets/barrier/sally_port.svg";
+    set icon_z17;
+}
+node[barrier=spikes] {
+    icon-image: "presets/barrier/spikes.svg";
+    set icon_z17;
+}
+node[barrier=jersey_barrier] {
+    icon-image: "presets/barrier/jersey_barrier.svg";
+    set icon_z17;
+}
+node[barrier=kissing_gate][!is_prop_set(icon-image)],
+node[barrier=bump_gate][!is_prop_set(icon-image)],
+node[barrier=bus_trap][!is_prop_set(icon-image)],
+node[barrier=hampshire_gate][!is_prop_set(icon-image)] {
+    icon-image: "presets/misc/no_icon.svg";
+    set icon_z17;
+    text: auto;
+}
+
+node[entrance=yes],
+node[entrance=staircase] {
+    icon-image: "presets/misc/entrance_yes.svg";
+    set icon_z17;
+}
+node[entrance=main] {
+    icon-image: "presets/misc/entrance_main.svg";
+    set icon_z17;
+}
+node[entrance=service] {
+    icon-image: "presets/misc/entrance_service.svg";
+    set icon_z17;
+}
+node[entrance=exit] {
+    icon-image: "presets/misc/entrance_exit.svg";
+    set icon_z17;
+}
+node[entrance=emergency] {
+    icon-image: "presets/misc/entrance_emergency.svg";
+    set icon_z17;
+}
+
+/* Addressing */
+
+node[addr:housenumber],
+node[addr:housename] { symbol-shape: circle; symbol-size: 5; symbol-fill-color: #B0E0E6; text: concat(tag("addr:housenumber")); }
+node[addr:housenumber]::hn_casing,
+node[addr:housename]::hn_casing { z-index: -100; symbol-shape: circle; symbol-size: 5; symbol-fill-color: blue; }
+
+way[addr:interpolation] { color: #B0E0E6; width: 3; dashes: 3,3;}
+
+/* Landuse */
+
+area[natural]:closed                          { color: #ADD6A5; width: 1; fill-color: #ADD6A5; fill-opacity: 0.2; }
+area[natural=beach]:closed                    { color: #ffdd44; width: 1; fill-color: yellow; fill-opacity: 0.2; prop_area_small_name : 1;}
+way[natural=coastline]            { z-index: 5; color: black; width: 3; }
+area[landuse]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; }
+area[landuse=construction]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; dashes: 3,6;}
+area[landuse=residential]:closed              { color: #D594FF; width: 2; fill-color: #D594FF; fill-opacity: 0.15; }
+area[landuse=retail]:closed                   { color: #cc2222; width: 2; fill-color: #aa4422; fill-opacity: 0.15; }
+area[landuse=commercial]:closed               { color: purple; width: 2; fill-color: #444488; fill-opacity: 0.15; }
+area[landuse=industrial]:closed               { color: #4d0000; width: 2; fill-color: #444488; fill-opacity: 0.15; }
+area[landuse=military]:closed                 { color: #ff4444; width: 2; fill-color: #ff4444; fill-opacity: 0.2; prop_area_small_name : 1; }
+area[amenity]:closed, area[shop]:closed                { color: #ADCEB5; width: 1; fill-color: #ADCEB5; fill-opacity: 0.2; }
+/* way[sport] should not be rendered by itself, according to wiki. Can we make it an "if all else fails"? */
+area[leisure]:closed                         { color: #8CD6B5; width: 1; fill-color: #8CD6B5; fill-opacity: 0.2; }
+area[tourism]:closed                          { color: #F7CECE; width: 1; fill-color: #F7CECE; fill-opacity: 0.2; prop_area_small_name : 1;}
+area[historic]:closed, area[ruins]:closed        { color: #F7F7DE; width: 1; fill-color: #F7F7DE; fill-opacity: 0.2; prop_area_small_name : 1;}
+area[military]:closed                         { color: #D6D6D6; width: 1; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1;}
+area[building]:closed                         { color: #87CEFA; width: 2; fill-color: #00BFFF; fill-opacity: 0.2; }
+area[natural=water]:closed,
+area[waterway][waterway!=dam]:closed          { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1;}
+way[waterway=dam]!:closed                   { z-index: 5; color: black; width: 3; }
+area[waterway=dam]:closed                   { z-index: 5; color: black; width: 1; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1;}
+area[man_made]:closed             { color: black; width: 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; }
+area[man_made=reservoir_covered]:closed       { color: #3434ff; width: 2; dashes: 4, 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; }
+area[landuse=reservoir]:closed                { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1;}
+area[landuse=forest]:closed, area[natural=wood]:closed { color: green;   width: 2; fill-color: green;   fill-opacity: 0.2; prop_area_small_name : 1;}
+area[leisure=park]:closed                    { color: #22aa22; width: 2; fill-color: #44ff44; fill-opacity: 0.15; prop_area_small_name : 1;}
+area[leisure=garden]:closed                  { color: #66ff44; width: 1; fill-color: #66ff44; fill-opacity: 0.2; prop_area_small_name : 1;}
+area[leisure=pitch]:closed          { z-index: 6; color: #88bb44; width: 2; fill-color: #88ff44; fill-opacity: 0.2; prop_area_small_name : 1;}
+area[landuse=recreation_ground]:closed        { color: green; fill-color: green; prop_area_small_name : 1;}
+area[amenity=parking]:closed                  { color: #bbaa66;    width: 1; fill-color: #bbaa66;    fill-opacity: 0.2; }
+area[public_transport=pay_scale_area]:closed  { color: gray;    width: 1; fill-color: gray;    fill-opacity: 0.1; }
+way[man_made=pier]              { z-index: 4; color: #777; width: 3; casing-color: black; casing-width: 1;}
+way[man_made=pier][floating=yes]      { z-index: 5; dashes: 4,2; casing-color: #444;}
+area[leisure=marina]:closed         { color: pink; fill-color: pink; fill-opacity: 0.4; prop_area_small_name : 1;}
+way[leisure=slipway]            { z-index: 5; color: grey; width: 3; casing-color: #3434ff; casing-width: 2; }
+area[leisure=golf_course]:closed { color: #44ee22; width: 2; fill-color: #44ee22; fill-opacity: 0.2; prop_area_small_name : 1;}
+way[boundary][setting("show_boundary")]                               { z-index: 5; color: #000066; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+
+/* Perhaps should be filled, on lower zooms. */
+way[boundary=national_park][setting("show_boundary")]                 { z-index: 5; color: #225500; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+way[boundary=protected_area][setting("show_boundary")]                { z-index: 5; color: #447744; width: 2; opacity: 0.6; dashes: 12,4, 4, 4; z-index: 4;}
+way[boundary=administrative][setting("show_boundary")]                { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
+way[boundary=administrative][waterway][setting("show_boundary")]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; }
+way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
+area[landuse=cemetery]:closed           { color: #664466; width: 2; fill-color: #664466; opacity: 0.2; prop_area_small_name : 1;}
+
+/* Route relations 
+
+relation[type=route] > way::route { z-index: -1; width: 13; color: blue; opacity: 0.3; linecap: none; }
+relation[type=route][route=bicycle][network=ncn] > way::route { z-index: -1; width: 12; color: red; opacity: 0.3; linecap: none; }
+relation[type=route][route=bicycle][network=rcn] > way::route { z-index: -1; width: 12; color: cyan; opacity: 0.3; linecap: none; }
+relation[type=route][route=bicycle][network=lcn] > way::route { z-index: -1; width: 12; color: blue; opacity: 0.3; linecap: none; }
+relation[type=route][route=mtb] > way::route { z-index: -1; width: 12; color: brown; opacity: 0.3; linecap: none; }
+relation[type=route][route=foot] > way::route { z-index: -1; width: 10; color: #80ff80; opacity: 0.6; linecap: none; }
+
+*/
+
+/* Junctions */
+
+way[highway=motorway][junction=roundabout] {
+    width: 4;
+    casing-width: 2;
+    casing-color: #FB2B11;
+    color: #CF2081;
+    dashes: 15, 15;
+}
+way[highway=trunk][junction=roundabout] {
+    width: 3.7;
+    casing-width: 2;
+    casing-color: #FB2B11; 
+    color: #DD2F22;
+    dashes: 15, 15;
+}
+way[highway=primary][junction=roundabout] {
+    z-index: 6;
+    width: 3.1;
+    casing-width: 2;
+    casing-color: #FB2B11;
+    color: #FFA500;
+    dashes: 15, 15;
+}
+way[highway=secondary][junction=roundabout] {
+    z-index: 5;
+    width: 3;
+    casing-width: 2;
+    casing-color: #FB2B11;
+    color: #FFFF00;
+    dashes: 15, 15;
+}
+way[highway=tertiary][junction=roundabout] {                    
+    z-index: 4;
+    width: 3;
+    casing-width: 2;
+    casing-color: ##FB2B11;
+    color: #408ccc;
+    dashes: 15, 15;
+}
+way[highway=residential][junction=roundabout] {
+    z-index: 3;
+    width: 2.8;
+    casing-width: 1;
+    casing-color: #FB2B11;
+    color: #ffffff;
+    dashes: 15, 15;
+}
+way[highway=service][junction=roundabout] {
+    z-index: 3;
+    width: 2.8;
+    casing-width: 1.3;
+    casing-color: #FB2B11;
+    color: #D4FF33;
+    dashes: 15, 15;
+}
+way[highway=unclassified][junction=roundabout] {
+    z-index: 3;
+    width: 4;
+    casing-width: 2;
+    casing-color: #FB2B11;
+    color: #96795d;
+    dashes: 15, 15;
+}
+way[highway=living_street][junction=roundabout] {
+    z-index: 3; 
+    width: 4;
+    casing-color: #FB2B11;
+    dashes-background-color: #00ff00; 
+    color: #00ff00;
+    dashes: 15,15;
+}
+
+
+
+
+
+
+
+
+/********************Crossing levels********************/
+/*
+
+way[highway]["layer"="1"] ⧉ way[highway]["layer"="1"],
+way[highway]["layer"="2"] ⧉ way[highway]["layer"="2"],
+way[highway]["layer"="3"] ⧉ way[highway]["layer"="3"], 
+way[highway]["layer"="4"] ⧉ way[highway]["layer"="4"],
+way[highway]["layer"="5"] ⧉ way[highway]["layer"="5"],
+way[highway]["layer"="6"] ⧉ way[highway]["layer"="6"],
+way[highway]["layer"="7"] ⧉ way[highway]["layer"="7"],
+way[highway]["layer"="8"] ⧉ way[highway]["layer"="8"],
+way[highway]["layer"="9"] ⧉ way[highway]["layer"="9"],
+way[highway]["layer"="-1"] ⧉ way[highway]["layer"="-1"],
+way[highway]["layer"="-2"] ⧉ way[highway]["layer"="-2"],
+way[highway]["layer"="-3"] ⧉ way[highway]["layer"="-3"],
+way[highway]["layer"="-4"] ⧉ way[highway]["layer"="-4"],
+way[highway]["layer"="-5"] ⧉ way[highway]["layer"="-5"],
+way[highway]["layer"="-6"] ⧉ way[highway]["layer"="-6"],
+way[highway]["layer"="-7"] ⧉ way[highway]["layer"="-7"],
+way[highway]["layer"="-8"] ⧉ way[highway]["layer"="-8"],
+way[highway]["layer"="-9"] ⧉ way[highway]["layer"="-9"] 
+{
+        set .conflict;
+}
+
+
+way.conflict {
+        z-index: 5;
+        color: #8B864E;
+        text-halo-color: white;
+        casing-color: red;
+        text: tr("CONFLICTING LAYERS");
+        font-size: 30;
+        width: 10;
+        casing-width: 15;
+        dashes: 25,25;
+}
+
+*/
+
+
+/*********************/
+/* Partial Area Fill */
+/*********************/
+
+/* small extent for unclosed area (see below for closed)*/
+
+area {
+    fill-extent: 15;
+}
+
+/*swtiches from partial fill to full fill when partial fill covers 100% */
+
+area|z-13 {
+    fill-extent-threshold: 1.0;
+}
+
+/* larger extent for closed areas
+ *Turn partial fill off when it covers more than about 50% of the area. This
+ *avoids areas with small, unfilled patches in center */
+
+area:closed2 {
+    fill-extent: 25;
+    fill-extent-threshold: JOSM_pref("draw.area.extent_threshold", 0.5);
+}
+
+/* Surface Type Styles */
+
+way[highway][surface=paved][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #40ff00;
+    width: 15;
+
+
+}
+
+way[highway][surface=asphalt][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #2908C1;
+    width: 15;
+    
+}
+
+way[highway][surface=concrete][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #708090;
+    width: 15;
+
+}
+
+way[highway][surface=cobblestone][setting("surface_t")]::core_motoroad {
+   major-z-index: 2;
+   object-z-index: -1;
+   color: #00FFD8;
+   width: 15;
+   dashes: 5,25;
+   linecap: round;
+   casing-linecap: round;
+
+}
+
+way[highway][surface=sett][setting("surface_t")]::core_motoroad,
+way[highway][surface=paving_stones][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #D3D3D3;
+    width: 15;
+    dashes: 10.5,1.5;
+}
+
+
+way[highway][surface=metal][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #2F4F4F;
+    width: 15;
+    dashes: 20,20;
+}
+
+
+/* Track Surface Type Styles */
+
+
+way[highway][surface=wood][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #EDE1C9;
+    width: 15;
+    dashes: 3,3;
+}
+
+way[highway][surface=unpaved][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #D2691E;
+    width: 20;
+    dashes: 20,20;
+}
+
+way[highway][surface=compacted][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #bfbfbf;
+    width: 15;
+    dashes: 10,15;
+}
+
+way[highway][surface=dirt][setting("surface_t")]::core_motoroad,
+way[highway][surface=earth][setting("surface_t")]::core_motoroad,
+way[highway][surface=mud][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #ac7339;
+    width: 15;
+    dashes: 3,3;
+}
+
+way[highway][surface=grass][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #00b33c;
+    width: 15;
+    dashes: 5,5;
+}
+
+way[highway][surface=gravel][setting("surface_t")]::core_motoroad,
+way[highway][surface=pebblestone][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #f2f2f2;
+    width: 15;
+    dashes: 1,1;
+}
+
+way[highway][surface=sand][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #ffeecc;
+    width: 15;
+    dashes: 1,1;
+}
+
+way[highway][surface=snow][setting("surface_t")]::core_motoroad {
+    major-z-index: 2;
+    object-z-index: -1;
+    color: #ffffff;
+    width: 15;
+    dashes: 1,1;
+
+}
+
+
+/*******************/
+/* way text labels */
+/*******************/
+way[highway]
+{ 
+  z-index: 5; 
+  text: auto; 
+  text-color: white; 
+  font-size: 12; 
+  text-position: line; 
+  text-halo-color: black; 
+  text-halo-radius: 0.9; 
+  linecap: round; 
+  casing-linecap: round }
+
+
+
+/* Limit highway labels without display labels setting */
+
+way|z17-[highway] {
+    font-size: 8;
+    
+}
+
+way|z18[highway] {
+    font-size: 9;
+}
+way|z19[highway] {
+    font-size: 10;
+}
+way|z20[highway] {
+    font-size: 11;
+}
+way|z21-[highway] {
+    font-size: 12;
+}
+
+
+/* Increase size of highway labels */
+
+way|z17-[highway^=motorway][setting("highway_labels")],
+way|z17-[highway^=trunk][setting("highway_labels")],
+way|z17-[highway^=primary][setting("highway_labels")],
+way|z17-[highway^=secondary][setting("highway_labels")],
+way|z17-[highway^=tertiary][setting("highway_labels")],
+way|z17-[highway=unclassified][setting("highway_labels")],
+way|z17-[highway=residential][setting("highway_labels")],
+way|z17-[highway=living_street][setting("highway_labels")],
+way|z17-[highway=pedestrian][!area?][setting("highway_labels")],
+way|z17-[highway=service][setting("highway_labels")],
+way|z17-[highway=track][setting("highway_labels")] {
+    text: auto;
+    text-color: white;
+    font-size: 12;
+    text-position: line;
+    linecap: round;
+    font-weight: bold;
+    casing-linecap: round;
+    text-halo-opacity: 1;
+    text-halo-radius: 2.5;
+    text-halo-color: black;
+    
+}
+
+way|z18[highway][setting("highway_labels")] {
+    font-size: 16;
+}
+way|z19[highway][setting("highway_labels")] {
+    font-size: 16;
+}
+way|z20[highway][setting("highway_labels")] {
+    font-size: 18;
+}
+way|z21-[highway][setting("highway_labels")] {
+    font-size: 18;
+}
+
+
+/* Create new check sums for names found on ways and inside of Relations */
+
+
+*["name"][setting("name_setting")] {
+    crc: CRC32_checksum(tag("name"))/429496.7296;
+    text: eval(tag("name"));
+    set .checkname1;
+   
+}
+
+
+/* -- UPDATE Road has name in Relation, will not style like a noraml "named" road */
+
+relation[type=route][route=road]["name"][setting("name_setting")] > way[highway][!name]  {
+    text: concat("Way is Missing Name! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(name)));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+}
+
+
+
+
+*["ref"][setting("ref_setting")] {
+    crc: CRC32_checksum(tag("ref"))/429496.7296;
+    text: eval(tag("ref"));
+    set .checkname1;
+   
+}
+
+
+/* -- UPDATE Road has name in Relation, will not style like a noraml "named" road */
+
+relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!ref]  {
+    text: concat("Way is Missing Ref! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(ref)));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+}
+
+
+
+
+
+/* Color Stylings based on Check Sums */
+
+way.checkname1[prop(crc)<303], 
+way.checkname2[prop(crc)<303]
+{
+        color: #8B864E;
+
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=303][prop(crc)<606], 
+way.checkname2[prop(crc)>=303][prop(crc)<606]
+{
+        color: #b88142;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=606][prop(crc)<909], 
+way.checkname2[prop(crc)>=606][prop(crc)<909]
+{
+        color: #a3fe8f;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=909][prop(crc)<1212], 
+way.checkname2[prop(crc)>=909][prop(crc)<1212]
+{
+        color: #b8674c;
+       
+}
+                /* --------- */
+way.checkname1[prop(crc)>=1212][prop(crc)<1515], 
+way.checkname2[prop(crc)>=1212][prop(crc)<1515]
+{
+        color: #f4ff6b;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=1515][prop(crc)<1818], 
+way.checkname2[prop(crc)>=1515][prop(crc)<1818]
+{
+        color: #81c0ff;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=1818][prop(crc)<2121], 
+way.checkname2[prop(crc)>=1818][prop(crc)<2121]
+{
+        color: #6b8e23;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=2121][prop(crc)<2424], 
+way.checkname2[prop(crc)>=2121][prop(crc)<2424]
+{
+        color: #e1bd6a;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=2424][prop(crc)<2727], 
+way.checkname2[prop(crc)>=2424][prop(crc)<2727]
+{
+        color: #7fffd4;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=2727][prop(crc)<3030], 
+way.checkname2[prop(crc)>=2727][prop(crc)<3030]
+{
+        color: #8a2be2;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=3030][prop(crc)<3333], 
+way.checkname2[prop(crc)>=3030][prop(crc)<3333]
+{
+        color: #a52a2a;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=3333][prop(crc)<3636], 
+way.checkname2[prop(crc)>=3333][prop(crc)<3636]
+{
+        color: #f0b9a6;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=3636][prop(crc)<3939], 
+way.checkname2[prop(crc)>=3636][prop(crc)<3939]
+{
+        color: #8fbc8f;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=3939][prop(crc)<4242], 
+way.checkname2[prop(crc)>=3939][prop(crc)<4242]
+{
+        color: #1b7777;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=4242][prop(crc)<4545], 
+way.checkname2[prop(crc)>=4242][prop(crc)<4545]
+{
+        color: #ff1493;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=4545][prop(crc)<4848], 
+way.checkname2[prop(crc)>=4545][prop(crc)<4848]
+{
+        color: #0072e2;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=4848][prop(crc)<5151], 
+way.checkname2[prop(crc)>=4848][prop(crc)<5151]
+{
+        color: #008f00;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=5151][prop(crc)<5454], 
+way.checkname2[prop(crc)>=5151][prop(crc)<5454]
+{
+        color: #ffcc00;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=5454][prop(crc)<5757], 
+way.checkname2[prop(crc)>=5454][prop(crc)<5757]
+{
+        color: #BF9017;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=5757][prop(crc)<6060], 
+way.checkname2[prop(crc)>=5757][prop(crc)<6060]
+{
+        color: #adff2f;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=6060][prop(crc)<6363], 
+way.checkname2[prop(crc)>=6060][prop(crc)<6363]
+{
+        color: #ff69b4;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=6363][prop(crc)<6666], 
+way.checkname2[prop(crc)>=6363][prop(crc)<6666]
+{
+        color: #cd5c5c;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=6666][prop(crc)<6969], 
+way.checkname2[prop(crc)>=6666][prop(crc)<6969]
+{
+        color: #7d5a07;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=6969][prop(crc)<7272], 
+way.checkname2[prop(crc)>=6969][prop(crc)<7272]
+{
+        color: #824600;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=7272][prop(crc)<7575], 
+way.checkname2[prop(crc)>=7272][prop(crc)<7575]
+{
+        color: #f08080;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=7575][prop(crc)<7878], 
+way.checkname2[prop(crc)>=7575][prop(crc)<7878]
+{
+        color: #F75617;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=7878][prop(crc)<8181], 
+way.checkname2[prop(crc)>=7878][prop(crc)<8181]
+{
+        color: #54d954;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=8181][prop(crc)<8484], 
+way.checkname2[prop(crc)>=8181][prop(crc)<8484]
+{
+        color: #ba55d3;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=8484][prop(crc)<8787],
+ way.checkname2[prop(crc)>=8484][prop(crc)<8787]
+{
+        color: #9370db;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=8787][prop(crc)<9090],
+ way.checkname2[prop(crc)>=8787][prop(crc)<9090]
+{
+        color: #ff7c00;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=9090][prop(crc)<9393], 
+way.checkname2[prop(crc)>=9090][prop(crc)<9393]
+{
+        color: #3cb371;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=9393][prop(crc)<9696], 
+way.checkname2[prop(crc)>=9393][prop(crc)<9696]
+{
+        color: #707000;
+        
+}
+                /* --------- */
+way.checkname1[prop(crc)>=9696], 
+way.checkname2[prop(crc)>=9696]
+{
+        color: #ff4444;
+        
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* Bus route styling eval(concat(parent_tags("ref"), " | ", parent_tags("name"))); */
+
+relation[route=bus][setting("bus_setting")] > way[highway]::parent_ref  {
+    set .bus2;
+}
+
+way|z15-.bus2::parent_ref,
+way|z16-.bus2::parent_ref,
+way|z17-.bus2::parent_ref,
+way|z18-.bus2::parent_ref,
+way|z19-.bus2::parent_ref,
+way|z20-.bus2::parent_ref,
+way|z21.bus2::parent_ref {
+    text: concat("Bus Route Ref's = ", join_list(" | ", parent_tags(ref)), " |_| ", " Direction = ", parent_tags(direction));
+    text-halo-radius: 2;
+    text-offset-y: -50;
+    font-size: 15;
+    text-color: pink;
+    font-weight: bold;
+    z-index: 5;
+}
+
+
+
+relation[route=bus][setting("bus_setting")] > way[highway]  {
+    crc: CRC32_checksum(parent_tags(ref))/429496.7296;
+    set .checkme7;
+}
+
+
+
+
+/* Create Reference Styles for ways */
+
+
+way["highway"=~/^(motorway|trunk|primary|secondary|motorway_link|trunk_link|primary_link|secondary_link)$/]["ref"][setting("check_ref")] {
+    crc: CRC32_checksum(tag("ref"))/429496.7296;
+    text: eval(concat("Ref = ", tag("ref"), " | ", "Int_Ref = ", tag("int_ref")));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+    set .checkme3;
+}
+
+
+relation[type=route][route=road]["ref"][setting("check_ref")] > way["highway"=~/^(motorway|trunk|primary|secondary|motorway_link|trunk_link|primary_link|secondary_link)$/]  {
+    crc: CRC32_checksum(parent_tags("ref"))/429496.7296;
+    text: eval(concat("Way Ref = ", tag("ref"), " | ", "Int_Ref = ", tag("int_ref"), " || ", "Relation = ", parent_tag("ref"), " | ", parent_tag("int_ref")));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+    set .checkme5;
+}
+
+
+/* Highlighting Int_Ref tags */
+
+way["highway"=~/^(motorway|trunk|primary|secondary|motorway_link|trunk_link|primary_link|secondary_link)$/]["int_ref"][setting("check_ref2")] {
+    crc: CRC32_checksum(tag("int_ref"))/429496.7296;
+    text: eval(concat("Way Int_Ref = ", tag("int_ref")));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+    set .checkme6;
+}
+
+
+relation[type=route][route=road]["int_ref"][setting("check_ref2")] > way["highway"=~/^(motorway|trunk|primary|secondary|motorway_link|trunk_link|primary_link|secondary_link)$/]  {
+    crc: CRC32_checksum(parent_tags("int_ref"))/429496.7296;
+    text: eval(concat("Way  Int_Ref = ", tag("int_ref"), " || ", "Relation Int_Ref = ", parent_tags("int_ref")));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+    set .checkme7;
+}
+
+
+
+
+/* Color Stylings based on Check Sums */
+
+way.checkme5[prop(crc)<303], 
+way.checkme3[prop(crc)<303],
+way.checkme6[prop(crc)<303],
+way.checkme7[prop(crc)<303]
+{
+        
+        color: #8B864E;
+
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=303][prop(crc)<606], 
+way.checkme3[prop(crc)>=303][prop(crc)<606],
+way.checkme6[prop(crc)>=303][prop(crc)<606],
+way.checkme7[prop(crc)>=303][prop(crc)<606]
+{
+        
+        color: #b88142;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=606][prop(crc)<909], 
+way.checkme3[prop(crc)>=606][prop(crc)<909],
+way.checkme6[prop(crc)>=606][prop(crc)<909],
+way.checkme7[prop(crc)>=606][prop(crc)<909] 
+{
+        
+        color: #a3fe8f;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=909][prop(crc)<1212], 
+way.checkme3[prop(crc)>=909][prop(crc)<1212],
+way.checkme6[prop(crc)>=909][prop(crc)<1212], 
+way.checkme7[prop(crc)>=909][prop(crc)<1212] 
+{
+        
+        color: #b8674c;
+       
+}
+                /* --------- */
+way.checkme5[prop(crc)>=1212][prop(crc)<1515], 
+way.checkme3[prop(crc)>=1212][prop(crc)<1515],
+way.checkme6[prop(crc)>=1212][prop(crc)<1515], 
+way.checkme7[prop(crc)>=1212][prop(crc)<1515] 
+{
+        
+        color: #f4ff6b;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=1515][prop(crc)<1818], 
+way.checkme3[prop(crc)>=1515][prop(crc)<1818],
+way.checkme6[prop(crc)>=1515][prop(crc)<1818],
+way.checkme7[prop(crc)>=1515][prop(crc)<1818]
+{
+        
+        color: #81c0ff;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=1818][prop(crc)<2121], 
+way.checkme3[prop(crc)>=1818][prop(crc)<2121],
+way.checkme6[prop(crc)>=1818][prop(crc)<2121],
+way.checkme7[prop(crc)>=1818][prop(crc)<2121]
+{
+        
+        color: #6b8e23;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=2121][prop(crc)<2424], 
+way.checkme3[prop(crc)>=2121][prop(crc)<2424],
+way.checkme6[prop(crc)>=2121][prop(crc)<2424],
+way.checkme7[prop(crc)>=2121][prop(crc)<2424]
+{
+        
+        color: #e1bd6a;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=2424][prop(crc)<2727], 
+way.checkme3[prop(crc)>=2424][prop(crc)<2727],
+way.checkme6[prop(crc)>=2424][prop(crc)<2727],
+way.checkme7[prop(crc)>=2424][prop(crc)<2727]
+{
+        
+        color: #7fffd4;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=2727][prop(crc)<3030], 
+way.checkme3[prop(crc)>=2727][prop(crc)<3030],
+way.checkme6[prop(crc)>=2727][prop(crc)<3030],
+way.checkme7[prop(crc)>=2727][prop(crc)<3030]
+{
+        
+        color: #8a2be2;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=3030][prop(crc)<3333], 
+way.checkme3[prop(crc)>=3030][prop(crc)<3333],
+way.checkme6[prop(crc)>=3030][prop(crc)<3333],
+way.checkme7[prop(crc)>=3030][prop(crc)<3333]
+{
+        
+        color: #a52a2a;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=3333][prop(crc)<3636], 
+way.checkme3[prop(crc)>=3333][prop(crc)<3636],
+way.checkme6[prop(crc)>=3333][prop(crc)<3636],
+way.checkme7[prop(crc)>=3333][prop(crc)<3636]
+{
+        
+        color: #f0b9a6;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=3636][prop(crc)<3939], 
+way.checkme3[prop(crc)>=3636][prop(crc)<3939],
+way.checkme6[prop(crc)>=3636][prop(crc)<3939],
+way.checkme7[prop(crc)>=3636][prop(crc)<3939]
+{
+        
+        color: #8fbc8f;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=3939][prop(crc)<4242], 
+way.checkme3[prop(crc)>=3939][prop(crc)<4242],
+way.checkme6[prop(crc)>=3939][prop(crc)<4242],
+way.checkme7[prop(crc)>=3939][prop(crc)<4242]
+{
+        
+        color: #1b7777;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=4242][prop(crc)<4545], 
+way.checkme3[prop(crc)>=4242][prop(crc)<4545],
+way.checkme6[prop(crc)>=4242][prop(crc)<4545],
+way.checkme7[prop(crc)>=4242][prop(crc)<4545]
+{
+        
+        color: #ff1493;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=4545][prop(crc)<4848], 
+way.checkme3[prop(crc)>=4545][prop(crc)<4848],
+way.checkme6[prop(crc)>=4545][prop(crc)<4848],
+way.checkme7[prop(crc)>=4545][prop(crc)<4848]
+{
+        
+        color: #0072e2;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=4848][prop(crc)<5151], 
+way.checkme3[prop(crc)>=4848][prop(crc)<5151],
+way.checkme6[prop(crc)>=4848][prop(crc)<5151],
+way.checkme7[prop(crc)>=4848][prop(crc)<5151]
+{
+        
+        color: #008f00;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=5151][prop(crc)<5454], 
+way.checkme3[prop(crc)>=5151][prop(crc)<5454],
+way.checkme6[prop(crc)>=5151][prop(crc)<5454],
+way.checkme7[prop(crc)>=5151][prop(crc)<5454]
+{
+        
+        color: #ffcc00;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=5454][prop(crc)<5757], 
+way.checkme3[prop(crc)>=5454][prop(crc)<5757],
+way.checkme6[prop(crc)>=5454][prop(crc)<5757],
+way.checkme7[prop(crc)>=5454][prop(crc)<5757]
+{
+        
+        color: #BF9017;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=5757][prop(crc)<6060], 
+way.checkme3[prop(crc)>=5757][prop(crc)<6060],
+way.checkme6[prop(crc)>=5757][prop(crc)<6060],
+way.checkme7[prop(crc)>=5757][prop(crc)<6060]
+{
+        
+        color: #adff2f;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=6060][prop(crc)<6363], 
+way.checkme3[prop(crc)>=6060][prop(crc)<6363],
+way.checkme6[prop(crc)>=6060][prop(crc)<6363],
+way.checkme7[prop(crc)>=6060][prop(crc)<6363]
+{
+        
+        color: #ff69b4;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=6363][prop(crc)<6666], 
+way.checkme3[prop(crc)>=6363][prop(crc)<6666],
+way.checkme6[prop(crc)>=6363][prop(crc)<6666],
+way.checkme7[prop(crc)>=6363][prop(crc)<6666]
+{
+        
+        color: #cd5c5c;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=6666][prop(crc)<6969], 
+way.checkme3[prop(crc)>=6666][prop(crc)<6969],
+way.checkme6[prop(crc)>=6666][prop(crc)<6969],
+way.checkme7[prop(crc)>=6666][prop(crc)<6969]
+{
+        
+        color: #7d5a07;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=6969][prop(crc)<7272], 
+way.checkme3[prop(crc)>=6969][prop(crc)<7272],
+way.checkme6[prop(crc)>=6969][prop(crc)<7272],
+way.checkme7[prop(crc)>=6969][prop(crc)<7272]
+{
+        
+        color: #824600;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=7272][prop(crc)<7575], 
+way.checkme3[prop(crc)>=7272][prop(crc)<7575],
+way.checkme6[prop(crc)>=7272][prop(crc)<7575],
+way.checkme7[prop(crc)>=7272][prop(crc)<7575]
+{
+        
+        color: #f08080;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=7575][prop(crc)<7878], 
+way.checkme3[prop(crc)>=7575][prop(crc)<7878],
+way.checkme6[prop(crc)>=7575][prop(crc)<7878],
+way.checkme7[prop(crc)>=7575][prop(crc)<7878]
+{
+        
+        color: #F75617;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=7878][prop(crc)<8181], 
+way.checkme3[prop(crc)>=7878][prop(crc)<8181],
+way.checkme6[prop(crc)>=7878][prop(crc)<8181],
+way.checkme7[prop(crc)>=7878][prop(crc)<8181]
+{
+        
+        color: #54d954;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=8181][prop(crc)<8484], 
+way.checkme3[prop(crc)>=8181][prop(crc)<8484],
+way.checkme6[prop(crc)>=8181][prop(crc)<8484],
+way.checkme7[prop(crc)>=8181][prop(crc)<8484]
+{
+        
+        color: #ba55d3;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=8484][prop(crc)<8787],
+way.checkme3[prop(crc)>=8484][prop(crc)<8787],
+way.checkme6[prop(crc)>=8484][prop(crc)<8787],
+way.checkme7[prop(crc)>=8484][prop(crc)<8787]
+{
+        
+        color: #9370db;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=8787][prop(crc)<9090],
+way.checkme3[prop(crc)>=8787][prop(crc)<9090],
+way.checkme6[prop(crc)>=8787][prop(crc)<9090],
+way.checkme7[prop(crc)>=8787][prop(crc)<9090]
+{
+        
+        color: #ff7c00;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=9090][prop(crc)<9393], 
+way.checkme3[prop(crc)>=9090][prop(crc)<9393],
+way.checkme6[prop(crc)>=9090][prop(crc)<9393],
+way.checkme7[prop(crc)>=9090][prop(crc)<9393]
+{
+        
+        color: #3cb371;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=9393][prop(crc)<9696], 
+way.checkme3[prop(crc)>=9393][prop(crc)<9696],
+way.checkme6[prop(crc)>=9393][prop(crc)<9696],
+way.checkme7[prop(crc)>=9393][prop(crc)<9696]
+{
+        
+        color: #707000;
+        
+}
+                /* --------- */
+way.checkme5[prop(crc)>=9696], 
+way.checkme3[prop(crc)>=9696],
+way.checkme6[prop(crc)>=9696],
+way.checkme7[prop(crc)>=9696]
+{
+        
+        color: #ff4444;
+        
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+/* One-Way Styles */
+
+
+
+way[highway][oneway=yes][setting("one_2")], way[oneway=-1][setting("one_2")] {
+  color: #00A67C;
+  width: 5;
+  casing-color: black;
+  casing-width: 1;
+}
+
+
+
+/* Snake Roads Style */
+
+/* streets text: eval(concat("Length of Way = ", waylength())); */
+way[highway][setting("snakeroads")] {
+    crc:  CRC32_checksum(eval(osm_id()))/429496.7296;
+    
+    /*text: eval(osm_id());*/
+}
+
+
+/* 33 different special selected colors */
+way[highway][prop(crc)<303]
+{
+        color: #8B864E;
+       
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=303][prop(crc)<606]
+{
+        color: #b88142;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=606][prop(crc)<909]
+{
+        color: #a3fe8f;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=909][prop(crc)<1212]
+{
+        color: #b8674c;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=1212][prop(crc)<1515]
+{
+        color: #f4ff6b;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=1515][prop(crc)<1818]
+{
+        color: #81c0ff;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=1818][prop(crc)<2121]
+{
+        color: #6b8e23;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=2121][prop(crc)<2424]
+{
+        color: #e1bd6a;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=2424][prop(crc)<2727]
+{
+        color: #7fffd4;
+       
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=2727][prop(crc)<3030]
+{
+        color: #8a2be2;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=3030][prop(crc)<3333]
+{
+        color: #a52a2a;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=3333][prop(crc)<3636]
+{
+        color: #f0b9a6;
+       
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=3636][prop(crc)<3939]
+{
+        color: #8fbc8f;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=3939][prop(crc)<4242]
+{
+        color: #1b7777;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=4242][prop(crc)<4545]
+{
+        color: #ff1493;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=4545][prop(crc)<4848]
+{
+        color: #0072e2;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=4848][prop(crc)<5151]
+{
+        color: #008f00;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=5151][prop(crc)<5454]
+{
+        color: #ffcc00;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=5454][prop(crc)<5757]
+{
+        color: #BF9017;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=5757][prop(crc)<6060]
+{
+        color: #adff2f;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=6060][prop(crc)<6363]
+{
+        color: #ff69b4;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=6363][prop(crc)<6666]
+{
+        color: #cd5c5c;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=6666][prop(crc)<6969]
+{
+        color: #7d5a07;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=6969][prop(crc)<7272]
+{
+        color: #824600;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=7272][prop(crc)<7575]
+{
+        color: #f08080;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=7575][prop(crc)<7878]
+{
+        color: #F75617;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=7878][prop(crc)<8181]
+{
+        color: #54d954;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=8181][prop(crc)<8484]
+{
+        color: #ba55d3;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=8484][prop(crc)<8787]
+{
+        color: #9370db;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=8787][prop(crc)<9090]
+{
+        color: #ff7c00;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=9090][prop(crc)<9393]
+{
+        color: #3cb371;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=9393][prop(crc)<9696]
+{
+        color: #707000;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+                /* --------- */
+way[highway][prop(crc)>=9696]
+{
+        color: #ff4444;
+        
+        casing-width: 2;
+        casing-color: black;
+}
+
+
+
+
+/* Surface Type Text Eval
+
+eval(tag("surface"));
+
+eval(cond(has_tag_key(name), concat(tag("addr:housenumber"), " | ", tag("name")), tag("addr:housenumber")));
+
+eval(cond(has_tag_key(name), concat("? | ", tag("name")), "?"));
+
+eval(cond(has_tag_key(surface), concat(tag("surface"), " | ", tag("name")), tag("ref")));
+
+ */
+
+way|z15-[highway][setting("surface_t")],
+way|z16-[highway][setting("surface_t")],
+way|z17-[highway][setting("surface_t")],
+way|z18-[highway][setting("surface_t")],
+way|z19-[highway][setting("surface_t")],
+way|z20-[highway][setting("surface_t")],
+way|z21-[highway][setting("surface_t")] {
+
+
+
+/* Removed the following from this section on surface types 
+
+eval(tag("surface")) To add surface labels again, delete this comment and leave the code eval(tag("surface")) here. - Gary
+
+*/
+  
+
+  text-color: white;
+  text-halo-color: black;
+  font-size: 20;
+}
+
+
+
+
+
+/* Styling for "Role" restriction elements */
+/* Core style */
+
+
+relation[type=restriction][setting("role_members")] >[role=from] way[highway]::relation_underlay {
+    color: blue;
+    width: 20;
+    opacity: 0.3;
+    text: tr("From");
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: -20;
+    major-z-index: -5;
+    set .more1;
+}
+
+relation[type=restriction][setting("role_members")] >[role=via] node|z17- {
+    symbol-fill-color: green;
+    symbol-size: 15;
+    symbol-shape: circle;
+    text: tr("Via");
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-position: center;
+    set .more2;
+}
+
+relation[type=restriction][setting("role_members")] >[role=to] way[highway]::relation_underlay  {
+    color: red;
+    width: 20;
+    opacity: 0.3;
+    text: tr("To (Restricted)");
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+    set .more3;
+}
+
+
+/* Combine Restriction types with Role Types in Text */
+/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn / 
+no_straight_on / only_right_turn / only_left_turn / only_straight_on / no_entry / no_exit  */
+
+relation.more3[restriction=no_left_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_Left_Turn!)");
+    set .re1;
+  
+}
+
+relation.more3[restriction=no_right_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_Right_Turn!)");
+    set .re2;
+  
+}
+
+relation.more3[restriction=no_u_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_U_Turn!)");
+    set .re3;
+  
+}
+
+relation.more3[restriction=no_straight_on][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_Straight_On!)");
+    set .re4;
+  
+}
+
+relation.more3[restriction=only_right_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (Only_Right_Turn!)");
+    set .re5;
+  
+}
+
+relation.more3[restriction=only_left_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (Only_Left_Turn!)");
+    set .re6;
+  
+}
+
+relation.more3[restriction=only_straight_on][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (Only_Straight_On!)");
+    set .re7;
+  
+}
+
+relation.more3[restriction=no_entry][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_Entry!)");
+    set .re8;
+  
+}
+
+relation.more3[restriction=no_exit][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+  text: tr("To (No_Exit!)");
+    set .re9;
+  
+}
+
+
+/* multi classes */
+
+relation.more1.more3[setting("role_members")] > way[highway]::relation_underlay {
+    color: purple;
+    width: 25;
+    opacity: 0.3;
+    text: tr("Both To & From Roles Exist");
+    font-size: 17;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: -20;
+    major-z-index: -5;
+    set .master1;
+}
+
+
+/* Allow the user to view ways which have "U-Turn on Self" set */
+/* note ["restriction"=~/^(no_left_turn|no_u_turn)$/] */
+
+relation.more1.more3[restriction=no_u_turn][setting("role_members")] > way[highway]::relation_underlay {
+    color: purple;
+    width: 25;
+    opacity: 0.3;
+    text: tr("(No U-Turn On Self) & More");
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: -20;
+    major-z-index: -5;
+    set .master1;
+}
+
+
+
+/* Additional */
+/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn / 
+no_straight_on / only_right_turn / only_left_turn / only_straight_on / no_entry / no_exit  */
+
+relation.re1.re2[setting("role_members")] >[role=to] way[highway]::relation_underlay {
+    text: tr("(No_Left_Turn) & (No_Right_Turn)");
+    color: purple;
+    width: 20;
+    opacity: 0.3;
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+}
+
+
+
+
+relation.re1.re3["restriction"="no_left_turn"]["restriction"="no_u_turn"][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+    text: tr("(No_Left_Turn) & (No_U_Turn)");
+    color: purple;
+    width: 20;
+    opacity: 0.3;
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+}
+
+
+
+relation.re2.re3[restriction=no_right_turn][restriction=no_u_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+    text: tr("(No_Right_Turn) & (No_U_Turn)");
+    color: purple;
+    width: 20;
+    opacity: 0.3;
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+}
+
+relation.re1.re4[restriction=no_right_turn][restriction=no_u_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+    text: tr("(No_Left_Turn) & (No_Straight_On)");
+    color: purple;
+    width: 20;
+    opacity: 0.3;
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+}
+
+relation.re1.re5[restriction=no_right_turn][restriction=no_u_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
+    text: tr("(No_Left_Turn) & (Only_Right_Turn)");
+    color: purple;
+    width: 20;
+    opacity: 0.3;
+    font-size: 15;
+    text-color: white;
+    text-halo-color: black;
+    text-halo-radius: 2;
+    text-offset: 20;
+    major-z-index: -5;
+}
+
+
+
+
+/* Set style for ferry routes in order to render larger */
+
+
+way[route=ferry] {
+    width: 2;
+    color: ferry#809bc0;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+
+
+
+
+
+area[man_made=pier]:closed {
+    fill-color: pier#660000;
+    text: eval(tag("name"));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[man_made=pier] {
+    width: 8;
+    dashes:2,2;
+    color: #660000;
+    text: eval(tag("name"));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+node[man_made=pier] {
+    set icon_z17;
+    icon-width: 15;
+    text: eval(tag("name"));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+
+node[amenity=ferry_terminal] {
+    icon-width: 20;
+    set icon_z17;
+   }
+
+/*
+node[public_transport=platform][ferry=yes] {
+    set icon_z17;
+    text: auto;
+}
+
+*/
+
+/* Name & Ref Checker */
+
+way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][setting("check_name")] {
+  casing-color: red;
+  casing-width: 3;
+  text: tr("");
+  text-offset: -40;
+  font-size: 15;
+  
+}
+
+/* Name & Ref Checker */
+
+way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][!noname][setting("check_no_name")] {
+  casing-color: red;
+  casing-width: 3;
+  text: tr("");
+  text-offset: -40;
+  font-size: 15;
+  
+}
+
+
+way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink|service|footway|pedestrian)$/][setting("remove_name")] {
+  display: none;
+  text-offset: -40;
+  font-size: 0;
+  
+}
+
+/*Create register checks for roads without reference values */
+
+relation[type=route][route=road][ref][setting("check_dup")] > way["highway"=~/^(motorway|trunk|primary|secondary)$/]::core_motorroad {
+  set .double;
+}
+
+
+way["highway"=~/^(motorway|trunk|primary|secondary)$/][!ref]!.double[setting("check_dup")]::core_motorroad
+ {
+  color: red;
+  width: 10;
+  text: tr("Major Road Missing a Ref Tag!");
+  font-size: 20;
+  text-offset: -40;
+  casing-color: yellow;
+  casing-width: 1;
+  opacity: 0.7;
+  z-index: 5;
+}
+
+way["highway"=~/^(motorway|trunk|primary|secondary)$/][!ref].double[setting("check_dup")]::core_motorroad {
+  color: auto;
+  width: auto;
+  text: auto;
+  font-size: auto;
+  text-offset: auto;
+  casing-color: auto;
+  casing-width: auto;
+  opacity: auto;
+  z-index: auto;
+}
+
+
+
+/* Node Styles */
+
+
+
+way > node|z-15!:tagged {
+    symbol-shape: square;
+    symbol-size: .1;
+}
+
+way > node|z16!:tagged { symbol-size: .5; }
+
+node|z17               { symbol-size: 2; }
+way > node|z17        { symbol-size: 2.5; }
+node|z17:connection     { symbol-size: 2; }
+
+node|z18              { symbol-size: 1; }
+way > node|z18         { symbol-size: 2.5; }
+node|z18:connection    { symbol-size: 2.5; }
+
+node|z19-             { symbol-size: 2; }
+way > node|z19-        { symbol-size: 2; }
+node|z19-:connection   { symbol-size: 3.5; }
+
+node|z21-              { symbol-size: 2; }
+way > node|z21-        { symbol-size: 2; }
+node|z21-:connection   { symbol-size: 4; }
+
+node|z22             { symbol-size: 3; }
+way > node|z22        { symbol-size: 3; }
+node|z22:connection   { symbol-size: 5; }
+
+
+/* Tertiary Node Styles */
+
+way["highway"=~/^(tertiary|tertiary_link)$/] > node
+ {
+  set .tertiaryN;
+  symbol-shape: square;
+  symbol-fill-color: black;
+  symbol-fill-opacity: 0.7;
+  symbol-stroke-color: yellow;
+  symbol-stroke-opacity: 1;
+}
+
+way["highway"=~/^(tertiary|tertiary_link)$/] > node:connection
+{
+  set .tertiary2;
+  symbol-shape: square;
+  symbol-fill-color: black;
+  symbol-fill-opacity: 0.7;
+  symbol-stroke-color: yellow;
+  symbol-stroke-opacity: 1;
+}
+
+way > node|z-15!:tagged.tertiaryN {
+    symbol-shape: square;
+    symbol-size: .1;
+}
+
+way > node|z16!:tagged.tertiaryN { symbol-size: .5; }
+
+node|z17.tertiaryN               { symbol-size: 2; }
+way > node|z17.tertiaryN         { symbol-size: 2.5; }
+node|z17:connection.tertiary2     { symbol-size: 4; }
+
+node|z18.tertiaryN               { symbol-size: 3; }
+way > node|z18.tertiaryN         { symbol-size: 3.5; }
+node|z18:connection.tertiary2    { symbol-size: 4.5; }
+
+node|z19-.tertiaryN              { symbol-size: 5; }
+way > node|z19-.tertiaryN { symbol-size: 5; }
+node|z19-:connection.tertiary2   { symbol-size: 7.5; }
+
+node|z21-.tertiaryN              { symbol-size: 7; }
+way > node|z21-.tertiaryN        { symbol-size: 7; }
+node|z21-:connection.tertiary2   { symbol-size: 8.5; }
+
+node|z22.tertiaryN              { symbol-size: 8; }
+way > node|z22.tertiaryN        { symbol-size: 8; }
+node|z22:connection.tertiary2   { symbol-size: 10; }
+
+
+
+
+/* Node Connection Styles */
+
+node!:connection[setting("knode_setting")] {
+	symbol-shape: circle;
+	symbol-size: 9;
+	set .child_knodes;
+    symbol-stroke-color: yellow;
+    symbol-fill-color: black;
+
+
+}
+
+node.child_knodes:selected {
+    symbol-size: 9;
+    symbol-stroke-color: yellow;
+	symbol-fill-color: red;
+}
+
+
+
+
+way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|service|track)$/] > node[setting("node_setting")] {
+	symbol-shape: circle;
+	symbol-size: 9;
+	set .child_knodes;
+    symbol-stroke-color: #00FFFF;
+    symbol-fill-color: black;
+  
+  
+}
+
+node.child_knodes:selected {
+    symbol-size: 9;
+    symbol-stroke-color: #00FFFF;
+	symbol-fill-color: red;
+}
+
+node!:connection[setting("node_setting")] {
+	symbol-shape: circle;
+	symbol-size: 9;
+	set .child_nodes;
+    symbol-stroke-color: yellow;
+    symbol-fill-color: black;
+
+
+}
+
+node.child_nodes:selected {
+    symbol-size: 9;
+    symbol-stroke-color: yellow;
+	symbol-fill-color: red;
+}
+
+
+
+
+
+/* Hide Icons at certain zoom levels */
+
+node|z-16[setting("hide_icons")],
+node|z17-[is_prop_set("icon-image")][setting("hide_icons")],
+node[is_prop_set("icon-image")][setting("hide_icons")] {
+    symbol-size: .5;
+    symbol-shape: square;
+    symbol-stroke-color: node_standard#ffff00;
+    major-z-index: 4.95;
+    icon-image: none;
+    text: none; /* put node squares above line text */
+}
+
+node|z-16[setting("hide_icons")].icon_z17,
+relation|z-16[type=restriction][setting("hide_icons")] {
+    icon-image: none;
+    text: none;
+    symbol-size: .5;
+}
+node|z-17[setting("hide_icons")] {
+    text: none;
+    symbol-size: .5;
+    icon-image: none;
+}
+
+
+
+/* Special tertiary node 
+
+node > way[highway=tertiary] {
+  symbol-size: 1.5;
+}
+
+*/
+
+
+/* Tertiary Nodes  
+
+
+way["highway"=~/^(tertiary|tertiary_link)$/] > node:connection,
+way["highway"=~/^(tertiary|tertiary_link)$/] > node  {
+  symbol-fill-color: black;
+  symbol-shape: square;
+  symbol-fill-opacity: 0.7;
+  symbol-stroke-color: yellow;
+  symbol-stroke-opacity: 1;
+  symbol-size: 7;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+/* Inline Validation Checks */
+
+
+/**************************/
+      /* Junctions */
+/**************************/
+
+
+area[junction=roundabout][highway=motorway_link],
+area[junction=roundabout][highway=trunk_link],
+area[junction=roundabout][highway=primary_link],
+area[junction=roundabout][highway=secondary_link],
+area[junction=roundabout][highway=tertiary_link] {
+    color: red;
+    opacity: 1;
+    width: 12;
+    text: tr("Incorrect Value");
+    text-color: black;
+    text-halo-color: white;
+    text-halor-radius: 2;
+    casing-width: 5;
+    casing-color: red;
+
+}
+
+
+/**************************/
+/* Motorway oneway Checks */
+/**************************/
+
+
+way[highway=motorway][!oneway], 
+way[highway=motorway_link][!oneway] {
+    
+    dashes-background-color: red;
+    dashes: 4,9;
+    opacity: 1;
+    width: 16;
+    text: tr("Missing Oneway on Motorway");
+    text-color: #460096;
+    font-size: 25;
+    text-halo-color: white;
+    text-halo-radius: 2;
+    casing-width: 1;
+    casing-color: yellow;
+}
+
+
+/**************************/
+    /* Z-Index Check */
+/**************************/
+
+way[bridge=yes][!layer],
+way[bridge=yes]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=aqueduct]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=cantilever]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=covered]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=low_water_crossing]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=trestle]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=viaduct]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
+way[bridge=movable]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/], 
+way[bridge=aqueduct][!layer],
+way[bridge=cantilever][!layer],
+way[bridge=covered][!layer],
+way[bridge=low_water_crossing][!layer],
+way[bridge=trestle][!layer],
+way[bridge=viaduct][!layer],
+way[bridge=movable][!layer],
+way[tunnel=yes][!layer],
+way[tunnel=yes]["layer"=~/^(9|8|7|6|5|4|3|2|1)$/], 
+way[tunnel=culvert][!layer],
+way[tunnel=avalanche_protector][!layer]
+
+/*removed way[tunnel=building_passage][!layer]
+removed embankment
+*/
+ {
+    
+    set .missl;
+}
+
+/**************************/
+/* Check for layer tag on bridges */
+/**************************/
+
+way.missl
+
+ {
+    
+    color: yellow;
+    dashes-background-color: red;
+    dashes: 4,24;
+    opacity: 1;
+    width: 10;
+    text: tr("Missing Layer - or - Wrong Value");
+    text-offset: -50;
+    text-color: black;
+    text-halo-color: white;
+    text-halor-radius: 2;
+    
+}
+
+
+/**************************/
+/* Building Intersecting Road Checks */
+/**************************/
+
+/* Create highway class for highways that have a connection node */
+way[highway] > node:connection {
+    set .wayintersect;
+}
+
+
+
+/* Create class in order to exclude these scenarios */
+
+way["highway"=~/^(pedestrian|footway|steps|path)$/] > node:connection,
+way[highway][covered=yes] > node:connection,
+way[highway][tunnel=building_passage] > node:connection,
+way["highway"=~/^(service|track)$/] > node:connection[entrance] {
+  set .wayexclude;
+}
+
+/* Buildings that are connected to buildings are okay per this 
+
+way[building]:closed > node:connection!.wayintersect {
+  color: green;
+  fill-color: green;
+  fill-opacity: 0.7;
+  symbol-shape: triangle;
+  symbol-size: 10;
+  symbol-fill-color: green;
+  symbol-fill-opacity: 0.6;
+  symbol-stroke-color: black;
+  symbol-stroke-opacity: 0.7;
+}
+
+*/
+
+/* Buildings that are connected to highways (except for the excludes) are flagged */
+
+way[building]:closed > node:connection.wayintersect!.wayexclude {
+  color: red;
+  fill-color: red;
+  fill-opacity: 0.7;
+  symbol-shape: triangle;
+  symbol-size: 25;
+  symbol-fill-color: red;
+  symbol-fill-opacity: 0.6;
+  symbol-stroke-color: black;
+  symbol-stroke-opacity: 0.7;
+  text: tr("Road intersecting Building!");
+  text-offset: 40;
+}
+
+
+/* Node Styles once Selected */
+
+way[building]:closed > node:connection {
+  set .selectme;
+}
+
+node:selected.selectme {
+  fill-opacity: 0.9;
+  symbol-shape: triangle;
+  symbol-fill-color: yellow;
+  symbol-fill-opacity: 1;
+  symbol-stroke-color: black;
+  symbol-stroke-opacity: 1;
+}
+
+
+
+/* Building inside of building Check */
+
+*[building][building!~/no|entrance/][any(tag("layer"),"0") = any(parent_tag("layer"),"0")] ∈ *[building][building!~/no|entrance/]
+/* *[building][building!~/no|entrance/][any(tag("building:levels"),"") = any(parent_tag("building:levels"),"")] ∈ *[building][building!~/no|entrance/] */ {
+   text: tr("Building inside building");
+   font-size: 15;
+   width: 10;
+   casing-width: 10;
+   casing-color: red;
+}
+
+
+/* HUGE Building Check */
+
+area:closed[building][building!=no][eval(areasize()) > 520000] {
+  text: tr("Too large building");
+  color: orange;
+}
+
+
+
+
+
+/* Suspicious roundabout check */
+
+way[junction=roundabout]:righthandtraffic:clockwise,
+way[junction=roundabout]!:righthandtraffic:anticlockwise {
+ text: tr("suspicious roundabout direction");
+ casing-color: red;
+}
+
+
+
+/* Waterway connected to Bridge Check */
+
+way[highway][bridge] > node:connection {
+  set .watercross;
+}
+
+
+way[waterway] > node:connection.watercross  {
+ text: tr("node connects waterway and bridge");
+ font-size: 15;
+ symbol-shape: triangle;
+ symbol-size: 25;
+ symbol-fill-color: red;
+ symbol-fill-opacity: 1;
+ symbol-stroke-color: black;
+ symbol-stroke-opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************/
+/************OSMIC***************/
+/********************************/
+
+setting::osmic {
+    type: boolean;
+    label: tr("Alternative Icon Set (Osmic)");
+    default: false;
+}
+
+/*****************************/
+/* building/entrance/address */
+/*****************************/
+
+node[entrance=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+
+node[highway=turning_circle][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/turning_circle-3.png";
+    set icon_z17;
+    icon-width: 30;
+}
+
+node[entrance=main][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-main-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[entrance=service][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-service-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[entrance=emergency][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-emergency-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[entrance=exit][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/exit-14.svg";
+    set icon_z17;
+    icon-width: 12
+}
+
+/****************/
+/* barrier tags */
+/****************/
+
+node[barrier=bollard][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/bollard-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[barrier=gate][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/gate-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[barrier=lift_gate][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/lift-gate-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[barrier=cattle_grid][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/cattle-grid-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+
+/*************************/
+/* highway tags */
+/*************************/
+
+node[highway=ford][setting("osmic")], 
+node[ford?][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ford-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[highway=steps][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/steps-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[highway=elevator][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/elevator-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*************************/
+/* generator:source tags */
+/*************************/
+
+node[generator:source=wind][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/energy/power-wind-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*****************/
+/* man_made tags */
+/*****************/
+
+node[man_made=lighthouse][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/lighthouse-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[man_made=water_tower][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/water-tower-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[man_made=windmill][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/windmill-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[man_made=mast][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/mast-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[man_made=mast][tower:type=communication][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/mast-communications-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/***************/
+/* office tags */
+/***************/
+
+node[office=government][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/government-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/****************/
+/* leisure tags */
+/****************/
+
+node[leisure=water_park][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/sports/swimming-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[leisure=playground][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/playground-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[leisure=picnic_table][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/table-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*************/
+/* shop tags */
+/*************/
+
+node[shop=supermarket][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/supermarket-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=convenience][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/convenience-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=bakery][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/bakery-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=butcher][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/butcher-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=bicycle][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/bicycle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=doityourself][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/doityourself-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=dry_cleaning][setting("osmic")],
+node[shop=laundry][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/laundry-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=kiosk][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/kiosk-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=beverages][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/beverages-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=alcohol][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/alcohol-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=books][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/books-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=car][setting("osmic")],
+node[shop=car_dealer][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=car_repair][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/repair-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=clothes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/clothes-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=computer][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/computer-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=confectionery][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/confectionery-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=copyshop][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/copyshop-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=cycle_repair][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/repair-bicycle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=electronics][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/electronics-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=furniture][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/furniture-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=florist][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/florist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=gift][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/gift-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=greengrocer][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/greengrocer-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=garden_centre][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/garden-centre-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=hairdresser][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/hairdresser-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=hardware][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/doityourself-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=hifi][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/hifi-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=ice_cream][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/ice-cream-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=jewelry][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/jewellery-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=mobile_phone][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/mobile-phone-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=newsagent][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/news-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=optician][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/optician-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=shoes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/shoes-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=stationery][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/stationery-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=toys][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/toys-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=pet][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/pet-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=photo][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/photo-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=car_parts][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/car-parts-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=beauty][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/beauty-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=wine][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/alcohol-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[shop=chemist][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/chemist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/****************/
+/* amenity tags */
+/****************/
+
+node[amenity=pub][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/pub-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=biergarten][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/biergarten-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=nightclub][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/nightclub-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=cafe][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/cafe-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=clock][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/clock-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=restaurant][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/restaurant-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=food_court][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/restaurant-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=fast_food][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/fast-food-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bar][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/bar-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=ice_cream][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/ice-cream-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=parking][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=parking_entrance][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=parking_entrance][parking=multi-storey][setting("osmic")],
+node[amenity=parking][parking=multi-storey][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-garage-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bicycle_parking][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-bicycle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bicycle_rental][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/rental-bicycle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bicycle_repair_station][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/repair-bicycle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=car_rental][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/rental-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=car_sharing][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/shared-car-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=taxi][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/taxi-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=fuel][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/fuel-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=charging_station][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/charging-station-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=telephone][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/telephone-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[emergency=phone][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/emergency-phone-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=toilets][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/toilets-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=recycling][recycling_type=container][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/recycling-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=waste_basket][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/waste-basket-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=townhall][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/town-hall-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=embassy][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/embassy-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=drinking_water][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/drinking-water-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=fountain][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/fountain-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/place-of-worship-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=buddhist][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/buddhist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=christian][denomination!=jehovahs_witness][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/christian-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=hindu][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/hinduist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=jewish][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/jewish-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=muslim][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/muslim-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=sikh][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/sikhist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=shinto][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/shintoist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=place_of_worship][religion=taoist][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/taoist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=grave_yard][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/cemetery-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=post_office][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/post-office-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=post_box][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/post-office-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[amenity=pharmacy][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/pharmacy-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=hospital][setting("osmic")],
+node[amenity=clinic][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/hospital-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=doctors][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/doctor-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=dentist][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/dentist-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=library][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/library-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=police][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/police-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=fire_station][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/fire-station-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bus_station][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-station-18.svg";
+    set icon_z17;
+}
+node[amenity=ferry_terminal][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=theatre][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/theatre-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=cinema][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/cinema-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=courthouse][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/courthouse-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=prison][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/prison-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bank][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/money/bank-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=atm][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/money/atm-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=bench][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/bench-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=hunting_stand][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/hunting-stand-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[amenity=veterinary][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/veterinary-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/****************/
+/* tourism tags */
+/****************/
+
+node[tourism=hotel][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/hotel-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=motel][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/motel-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=hostel][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/hostel-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=camp_site][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/camping-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=caravan_site][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/caravan-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=picnic_site][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/table-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=viewpoint][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/viewpoint-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=museum][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/museum-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/********************/
+/* information tags */
+/********************/
+
+node[tourism=information][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/information-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=information][information=guidepost][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/guidepost-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[tourism=information][information=office][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/information-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*****************/
+/* historic tags */
+/*****************/
+
+node[historic=castle][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/castle-fortress-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[historic=monument][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/monument-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[historic=memorial][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/memorial-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[historic=archaeological_site][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/archaeological-site-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*************************/
+/* public_transport tags */
+/*************************/
+
+node[highway=bus_stop][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[public_transport=stop_position][bus=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[public_transport=stop_position][ferry=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[public_transport=stop_position][tram=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/tram-stop-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[public_transport=stop_position][train=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-halt-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[public_transport=platform][bus=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+node[public_transport=platform][ferry=yes][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/****************/
+/* railway tags */
+/****************/
+
+node[railway=station][setting("osmic")], 
+node[railway=tram_station][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-station-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[railway=halt][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-halt-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[railway=tram_stop][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/tram-stop-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[railway=station][transport=subway][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/metro-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[railway=subway_entrance][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-transport-14.svg";
+    set icon_z17;
+    icon-width: 14;
+}
+
+/****************/
+/* aeroway tags */
+/****************/
+
+node[aeroway=aerodrome][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/airport-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[aeroway=helipad][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/heliport-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/**************/
+/* sport tags */
+/**************/
+
+node[sport=swimming][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/sports/swimming-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/****************/
+/* natural tags */
+/****************/
+
+node[natural=spring][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/spring-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[natural=saddle][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/saddle-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[natural=peak][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/peak-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[natural=tree][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-unspecified-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[natural=tree][type=conifer][setting("osmic")],
+node[natural=tree][leaf_type=needleleaved][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-coniferous-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+node[natural=tree][type=broad_leaved][setting("osmic")],
+node[natural=tree][leaf_type=broadleaved][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-deciduous-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
+
+/*****************/
+/* waterway tags */
+/*****************/
+
+node[waterway=waterfall][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/waterfall-18.svg";
+    set icon_z17;
+    icon-width: 18;
+}
