@@ -59,6 +59,13 @@ setting::overlap4 {
 }
 
 
+setting::overlap5 {
+  type: boolean;
+  label: tr("Click to check for overlapping ways (turqoise)");
+  default: false;
+}
+
+
 
 /* Select ways to see overlapping ways */
 
@@ -82,7 +89,6 @@ background-dashes: none;
 
 
 }
-
 
 
 /* Purple */
@@ -165,4 +171,23 @@ way.selectW3[setting("overlap4")] {
 }
 
 
+/* Turqoise */
 
+way:selected[setting("overlap5")]
+ {
+	set .selectWO;
+}
+
+way.selectWO[setting("overlap")] {
+	casing-width: 2;
+	casing-color: #00ffef;
+	width: 5;
+	color: none;
+	opacity: 0.3;
+	casing-opacity: 0.7;
+	dashes: none;
+	casing-dashes: none;
+	background-dashes: none;
+	
+
+}

@@ -358,10 +358,10 @@ way[highway=construction] {
                                             z-index: 5; 
                                             width: 6; 
                                             linecap: square; 
-                                            color: none;
+                                            color: #ff6700;
                                             casing-color:  #ff6700; 
                                             casing-width: 2; 
-                                            dashes: 20; 
+                                            dashes: 15; 
                                             dashes-background-color: white;  
                                             dashes-casing-color: black; 
                                             linejoin: round;
