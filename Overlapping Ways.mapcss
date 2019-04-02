@@ -175,10 +175,10 @@ way.selectW3[setting("overlap4")] {
 
 way:selected[setting("overlap5")]
  {
-	set .selectWO;
+	set .selectW4;
 }
 
-way.selectWO[setting("overlap")] {
+way.selectW4[setting("overlap5")] {
 	casing-width: 2;
 	casing-color: #00ffef;
 	width: 5;
