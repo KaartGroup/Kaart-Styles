@@ -428,7 +428,7 @@ way[waterway][tunnel]                {z-index: 5; dashes: 8,4;}
 /* Aeroways */
 
 way[aeroway=aerodrome]:closed
-    { z-index: 3; color: #bb44bb; width: 3; casing-color: #66066;  casing-width: 1;  }
+    { z-index: 3; color: #bb44bb; width: 3; casing-color: #660666;  casing-width: 1;  }
 way[aeroway=taxiway]!:closed { z-index: 8; color: #999999; width: 3; casing-color: #aa66aa; casing-width: 2; }
 area[aeroway=taxiway]:closed { z-index: 8; color: #bb99bb; width: 3; fill-color: #ccaacc; } 
 
