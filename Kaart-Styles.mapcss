@@ -290,7 +290,7 @@ way[highway=unclassified]                           { z-index: 6; color: #96795d
 
 way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
 
-way[highway=service]                                { z-index: 5; color: #D4FF33; width: 3; casing-color: #000000; casing-width: 1; }
+way[highway=service]                                { z-index: 5; color: #39ff14; width: 3; casing-color: #000000; casing-width: 1; }
 
 way[highway=service][service=parking_aisle]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: #FF087F; }
 
@@ -316,18 +316,6 @@ way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-col
 way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
 
 way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
-
-way[highway=service]                                { z-index: 5; color: #D4FF33; width: 3; casing-color: #000000; casing-width: 1; }
-
-way[highway=service][service=parking_aisle]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: #FF087F; }
-
-way[highway=service][service=drive-through]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: blue; }
-
-way[highway=service][service=driveway]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: purple; }
-
-way[highway=service][service=alley]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: lightyellow; casing-color: #000000; casing-width: 1; }
-
-way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
 
 way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
 
