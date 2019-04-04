@@ -1,10 +1,12 @@
 meta {
-    title: "Kaart Street ID version 3.0";
-    version: "3.0";
-    description: "Adds custom styling to elements/features within JOSM";
-    author: "SomethingSimple, RoadMapsYou, NodiusWayus";
-    /* Contributors: Hector Vector */
+    title: "Kaart Street Style";
+    version: "3.1.0";
+    description: "JOSM paint style modified by Kaart to focus on street data";
+    author: "Kaart";
+    /* Contributors: Gary Clark */
     /* Credit: Parts of this map paint style were influenced by "Coloured Streets" by geozeisig, Klumbumbus and "snake roads" by SeattleFYI & Potlatch */
+    link: "https://github.com/kaartgroup/";
+    license: "https://github.com/KaartGroup/Kaart-Styles/blob/master/LICENSE";
 }
 
 /* Notes 
@@ -37,84 +39,9 @@ Each road is given a color based on its unique way ID. There are only 33 colors 
 so there might be some overlap in colors. This can be altered if need be.
 
 7.
-Relations Setting allo way[highway]ws you to highlight roads/ways which contain a relation in a given ar way[highway]ea. This is done with line-casing. 
+Relations Setting allow way[highway]ws you to highlight roads/ways which contain a relation in a given ar way[highway]ea. This is done with line-casing. 
 Some countries have adopted relations as the go-to way[highway] for adding names and ref tags. If you know where relations exist,
 it co way[highway]uld possibly help in finding and editing names - whilst making sure you do not break relations.
-
-~~~~~~~~~~ way[highway]~~  1.3
-
-1. Added Surface type styles to make surface types visible. 
-These can be enabled by clicking on the setting titled "Check Surface Type" within JOSM.
-
-2. Replaced name/ref reduction stylers with inline-checks for roads without names and Major Roads without Ref tags.
-
-3. Added one-way style. This allows you to see where one-ways exist within a downloaded area.
-
-~~~~~~~~~~~~  1.4
-
-1. Changed colors of certain styles
-
-~~~~~~~~~~~~  1.5
-
-1. Removed "relation viewer" style - this should already be covered by name and ref viewer style
-
-2. Optimized "surface type checker" in order to view the value of the key as text on each way
-
-3. Optimized name & ref continuity viewer to show the specific (name/ref)tag for each specific
-setting turned on. Eg. Looking for ways with the same "ref" will also display each ref
-along those ways. Same goes for names which hold the "name" value - not name:en etc.
-
-~~~~~~~~~~~~  1.6
-
-1. Added definition for ferry routes (not a setting)  (currently muted as code)
-
-2. Added setting for following bus routes, this will only highlight a way based upon the first bus route on its reltaion list
-  - This should actually highlight based on all bus routes contained within a relation. This is only used on bus routes which are stored 
-  in relations along ways
-  - Currently displays the reference numbers of all bus routes on each road
-
-3. Adding Visual Turn Restrictions in order to help display turn restrictions on highways.
-
-~~~~~~~~~~~~  2.0 
-
-1. Merge Potlach and streets base styles
-  - Make K_Streets a standalone paint style
-  - Create a unique style for K_Streets
-2. Update road name and reference checks
-  - Deal more with relations and checking for duplicate/non duplicate values
-3. Added back bus styles and fixed node zoom
-- Further refined node zoom
-- Changed node settings for some icons and address issues
-4. Added "hide_icons" in order to remove clutter from the map
-5. Refined some path styling, changed some area rendering.
-6. Added inline validation checks
-  - Incorrect Junction check
-  - Motorway & motorway link without oneway set
-  - Z-index check, this finds conflicting & missing values: [bridge=yes][!layer] or [tunnel=yes][layer=5]
-7. Added overlap paint style which changes the default selection color and rendering of a given way
-  - This pushes any overlapping ways ABOVE the current way you have selected
-
-
-~~~~~~~~~~~~  2.1 (Under Development)
-
-1. Refined Paint Styling
-
-2. Added increased Icon Support with JOSM base Icons
-
-3. Added more inline validation checks
-  - Building inside of building check (does not count multi-polygons)
-  - Highway connected to buiolding check
-  - Huge building check
-  - Waterway connected to bridge check
-
-4. Further refined text rendering
-
-5. Hide icons no longer appears by default
-
-6. Tertiary nodes now render well with yellow & black instead of black & yellow
-
-
-
 
 
  */
@@ -169,9 +96,23 @@ setting::name_setting {
 }
 
 
+setting::ref_setting {
+  type: boolean;
+  label: tr("Highlights ways with Ref:tags");
+  default: false;
+}
+
+
+
 setting::check_name {
   type: boolean;
   label: tr("Flag roads without names");
+  default: false;
+}
+
+setting::check_no_name {
+  type: boolean;
+  label: tr("Flag roads without a name OR noname tag");
   default: false;
 }
 
@@ -220,6 +161,12 @@ setting::bus_setting {
   default: false;
 }
 
+setting::show_boundary {
+  type: boolean;
+  label: tr("Display Administrative Boundaries");
+  default: true;
+}
+
 /*
 setting::overlap1 {
   type: boolean;
@@ -228,6 +175,77 @@ setting::overlap1 {
 }
 
 */
+
+
+
+/* Boundary Styles */
+
+
+way[boundary=protected_area][setting("show_boundary")]::core_boundary,
+way[boundary=administrative][setting("show_boundary")]::core_boundary,
+way[boundary=postal_code][setting("show_boundary")]::core_boundary,
+way[boundary=political][setting("show_boundary")]::core_boundary,
+way[boundary=maritime][setting("show_boundary")]::core_boundary,
+way[boundary=national_park][setting("show_boundary")]::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 1;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=9][setting("show_boundary")]::core_boundary,
+relation[admin_level=9][setting("show_boundary")] > way::core_boundary,
+way[admin_level=10][setting("show_boundary")]::core_boundary,
+relation[admin_level=10][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 1.5;
+    color: boundary#801515;
+    dashes: 9,9;
+}
+way[admin_level=7][setting("show_boundary")]::core_boundary,
+relation[admin_level=7][setting("show_boundary")] > way::core_boundary,
+way[admin_level=8][setting("show_boundary")]::core_boundary,
+relation[admin_level=8][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 2;
+    color: boundary#FFB4AA;
+    dashes: 9,9;
+}
+way[admin_level=5][setting("show_boundary")]::core_boundary,
+relation[admin_level=5][setting("show_boundary")] > way::core_boundary,
+way[admin_level=6][setting("show_boundary")]::core_boundary,
+relation[admin_level=6][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 3;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=3][setting("show_boundary")]::core_boundary,
+relation[admin_level=3][setting("show_boundary")] > way::core_boundary,
+way[admin_level=4][setting("show_boundary")]::core_boundary,
+relation[admin_level=4][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 4;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+way[admin_level=1][setting("show_boundary")]::core_boundary,
+relation[admin_level=1][setting("show_boundary")] > way::core_boundary,
+way[admin_level=2][setting("show_boundary")]::core_boundary,
+relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
+    z-index: 2;
+    modifier: false;
+    width: 5;
+    color: boundary#FF6600;
+    dashes: 9,9;
+}
+
+
+
 
 /* New Road Styling inspired by Potlatch  */
 
@@ -241,6 +259,7 @@ text-halo-radius: 0.9;
 }
 
 
+way[predictedDirection=ONE_WAY_SAME_DIRECTION],way[predictedDirection=ONE_WAY_REVERSE_DIRECTION],
 way[highway=motorway],way[highway=motorway_link],
 way[highway=trunk],way[highway=trunk_link],
 way[highway=primary],way[highway=primary_link],
@@ -248,42 +267,49 @@ way[highway=secondary],way[highway=secondary_link],
 way[highway=tertiary],way[highway=tertiary_link],
 way[highway=residential],way[highway=unclassified]  { z-index: 5; linecap: round; casing-linecap: round }
 
-way[highway=motorway]         { z-index: 9; color: #CF2081; width: 8; casing-color: gray; casing-width: 1; }
-way[highway=motorway_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #0000FF; casing-width: 0; dashes: 9,9; dashes-background-color: #CF2081; }
+way[predictedDirection=ONE_WAY_SAME_DIRECTION]         { z-index: 9; color: #D4F033; width: 8; casing-color: #000000; casing-width: 1; }
+way[predictedDirection=ONE_WAY_REVERSE_DIRECTION]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
 
-way[highway=trunk]               { z-index: 9; color: #DD2F22; width: 8; casing-color: gray; casing-width: 1; }
-way[highway=trunk_link]          { z-index: 7; width: 6; color: #FFFFFF; casing-color: #0000FF; casing-width: 0; dashes: 9,9; dashes-background-color: #DD2F22; }
+way[highway=motorway]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
+way[highway=motorway_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #CF2081; }
 
-way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: gray; casing-width: 1; }
-way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #0000FF; casing-width: 0; dashes: 9,9; dashes-background-color: #FFA500; }
+way[highway=trunk]               { z-index: 9; color: #DD2F22; width: 8; casing-color: #000000; casing-width: 1; }
+way[highway=trunk_link]          { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #DD2F22; }
 
-way[highway=secondary]       { z-index: 7; color: #FFFF00; width: 7; casing-color: gray; casing-width: 1; }
-way[highway=secondary_link]  { z-index: 7; width: 6; color: #FFFFFF; casing-color: #0000FF; casing-width: 0; dashes: 9,9; dashes-background-color: #FFFF00; }
+way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: #000000; casing-width: 1; }
+way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFA500; }
 
-way[highway=tertiary]         { z-index: 6; color: #408ccc; width: 5; casing-color: gray; casing-width: 1.2; }
-way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #0000FF; casing-width: 0; dashes: 9,9; dashes-background-color: #408ccc; }
+way[highway=secondary]       { z-index: 7; color: #FFFF00; width: 7; casing-color: #000000; casing-width: 1; }
+way[highway=secondary_link]  { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFFF00; }
 
-way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 4; casing-width: 1.2; casing-color: gray; }
+way[highway=tertiary]         { z-index: 6; color: #408ccc; width: 5; casing-color: #000000; casing-width: 1; }
+way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #408ccc; }
 
-way[highway=residential]                            { z-index: 5; color: #ffffff; width: 4; casing-color: gray; casing-width: 1; }
+way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
 
-way[highway=service]                                { z-index: 5; color: #D4FF33; width: 2; casing-color: gray; casing-width: 1; }
+way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
 
-way[highway=service][service=parking_aisle]         { z-index: 5; color: #D4FF33; width: 1; casing-color: gray; casing-width: 1; dashes: 12,12; dashes-background-color: yellow; }
+way[highway=service]                                { z-index: 5; color: #D4FF33; width: 3; casing-color: #000000; casing-width: 1; }
 
-way[highway=service][service=alley]                 { z-index: 5; color: #D4FF33; width: 2; dashes: 12,12; dashes-background-color: lightyellow; casing-color: gray; casing-width: 1; }
+way[highway=service][service=parking_aisle]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: #FF087F; }
 
-way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 2; dashes: 12,12; dashes-background-color: red; casing-color: gray; casing-width: 1; }
+way[highway=service][service=drive-through]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: blue; }
 
-way[highway=road]                                   { z-index: 5; color: gray; width: 2.5; casing-color: gray; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
+way[highway=service][service=driveway]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: purple; }
 
-way[highway=living_street]                          { z-index: 5; dashes: 9,9; dashes-background-color: gray; width: 4; color: #E8E8E8; }
+way[highway=service][service=alley]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: lightyellow; casing-color: #000000; casing-width: 1; }
+
+way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
+
+way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
+
+way[highway=living_street]                          { z-index: 5; dashes: 9,9; dashes-background-color: gray; width: 5; color: #E8E8E8; casing-color: #000000; casing-width: 1; }
 
 
 
 /* Road areas */
 
-way[highway=pedestrian]!:closed { z-index: 5; color: #aa3311; width: 3.5; dashes: 5, 5; casing-color: #555555; casing-width: 1; casing-dashes: 2,4; linecap: round; casing-linecap: round;}
+way[highway=pedestrian]!:closed { z-index: 5; color: #7FFF00; width: 3.5; dashes: 5, 5; casing-color: #555555; casing-width: 1; casing-dashes: 2,4; linecap: round; casing-linecap: round;}
 
 area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee; dashes: 3,3; fill-opacity: 0.2; }
 
@@ -292,7 +318,7 @@ area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee
 
 way[highway=steps]     { z-index: 5; color: #aa3311; width: 3; dashes: 3, 3; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
 
-way[highway=footway]   { z-index: 5; color: #aa3311 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
+way[highway=footway]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
 
 way[highway=footway][bicycle=yes]::bike   { z-index: 4; color: #aa3311 ; width: 1; dashes: 6, 3;  casing-color: purple; casing-width: .3; casing-dashes: 6, 3; linecap: round; casing-linecap: round; }
 
@@ -817,6 +843,7 @@ node[power=generator] { icon-image: icons/power_station.png; z-index: 20; text-o
 node[power=tower] { icon-image: icons/power_tower_high2.n.16.png; z-index: 20; }
 node[power=pole] { icon-image: icons/power_tower_low.n.16.png; z-index: 20; }
 node[waterway=weir] { icon-image: icons/transport_weir.n.16.png; z-index: 20; }
+
 /* Natural */
 node[natural=peak] { icon-image: icons/natural_peak.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 node[natural=tree] { icon-image: icons/natural_tree.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
@@ -1053,7 +1080,7 @@ area[leisure]:closed                         { color: #8CD6B5; width: 1; fill-co
 area[tourism]:closed                          { color: #F7CECE; width: 1; fill-color: #F7CECE; fill-opacity: 0.2; prop_area_small_name : 1;}
 area[historic]:closed, area[ruins]:closed        { color: #F7F7DE; width: 1; fill-color: #F7F7DE; fill-opacity: 0.2; prop_area_small_name : 1;}
 area[military]:closed                         { color: #D6D6D6; width: 1; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[building]:closed                         { color: #bca9a9; width: 1; fill-color: #ff6ec7; fill-opacity: 0.2; }
+area[building]:closed                         { color: #87CEFA; width: 2; fill-color: #00BFFF; fill-opacity: 0.2; }
 area[natural=water]:closed,
 area[waterway][waterway!=dam]:closed          { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1;}
 way[waterway=dam]!:closed                   { z-index: 5; color: black; width: 3; }
@@ -1073,12 +1100,14 @@ way[man_made=pier][floating=yes]      { z-index: 5; dashes: 4,2; casing-color: #
 area[leisure=marina]:closed         { color: pink; fill-color: pink; fill-opacity: 0.4; prop_area_small_name : 1;}
 way[leisure=slipway]            { z-index: 5; color: grey; width: 3; casing-color: #3434ff; casing-width: 2; }
 area[leisure=golf_course]:closed { color: #44ee22; width: 2; fill-color: #44ee22; fill-opacity: 0.2; prop_area_small_name : 1;}
-way[boundary]                               { z-index: 5; color: #000066; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+way[boundary][setting("show_boundary")]                               { z-index: 5; color: #000066; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+
 /* Perhaps should be filled, on lower zooms. */
-way[boundary=national_park]                 { z-index: 5; color: #225500; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
-way[boundary=protected_area]                { z-index: 5; color: #447744; width: 2; opacity: 0.6; dashes: 12,4, 4, 4; z-index: 4;}
-way[boundary=administrative]                { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
-way[boundary=administrative][waterway]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; }
+way[boundary=national_park][setting("show_boundary")]                 { z-index: 5; color: #225500; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+way[boundary=protected_area][setting("show_boundary")]                { z-index: 5; color: #447744; width: 2; opacity: 0.6; dashes: 12,4, 4, 4; z-index: 4;}
+way[boundary=administrative][setting("show_boundary")]                { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
+way[boundary=administrative][waterway][setting("show_boundary")]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; }
+way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
 area[landuse=cemetery]:closed           { color: #664466; width: 2; fill-color: #664466; opacity: 0.2; prop_area_small_name : 1;}
 
 /* Route relations 
@@ -1097,71 +1126,71 @@ relation[type=route][route=foot] > way::route { z-index: -1; width: 10; color: #
 way[highway=motorway][junction=roundabout] {
     width: 4;
     casing-width: 2;
-    casing-color: #E46D31;
-    color: #000000;
+    casing-color: #FB2B11;
+    color: #CF2081;
     dashes: 15, 15;
 }
 way[highway=trunk][junction=roundabout] {
     width: 3.7;
     casing-width: 2;
-    casing-color: #809BC0; 
-    color: #000000;
+    casing-color: #FB2B11; 
+    color: #DD2F22;
     dashes: 15, 15;
 }
 way[highway=primary][junction=roundabout] {
     z-index: 6;
     width: 3.1;
     casing-width: 2;
-    casing-color: #FFA500;
-    color: #000000;
+    casing-color: #FB2B11;
+    color: #FFA500;
     dashes: 15, 15;
 }
 way[highway=secondary][junction=roundabout] {
     z-index: 5;
     width: 3;
     casing-width: 2;
-    casing-color: #FFFF00;
-    color: #000000;
+    casing-color: #FB2B11;
+    color: #FFFF00;
     dashes: 15, 15;
 }
-way[highway=tertiary][junction=roundabout] {
+way[highway=tertiary][junction=roundabout] {                    
     z-index: 4;
     width: 3;
     casing-width: 2;
-    casing-color: ##fcfc83;
-    color: #fcfc83;
+    casing-color: ##FB2B11;
+    color: #408ccc;
     dashes: 15, 15;
 }
 way[highway=residential][junction=roundabout] {
     z-index: 3;
     width: 2.8;
     casing-width: 1;
-    casing-color: #E8E8E8;
-    color: #000000;
+    casing-color: #FB2B11;
+    color: #ffffff;
     dashes: 15, 15;
 }
 way[highway=service][junction=roundabout] {
     z-index: 3;
     width: 2.8;
     casing-width: 1.3;
-    casing-color: #45588c;
-    color: #000000;
+    casing-color: #FB2B11;
+    color: #D4FF33;
     dashes: 15, 15;
 }
 way[highway=unclassified][junction=roundabout] {
     z-index: 3;
     width: 4;
     casing-width: 2;
-    casing-color: #443d3e;
-    color: #b9b9b9;
+    casing-color: #FB2B11;
+    color: #96795d;
     dashes: 15, 15;
 }
 way[highway=living_street][junction=roundabout] {
     z-index: 3; 
     width: 4;
-    casing-color: #E8E8E8;
-    dashes-background-color: #00ff00;
-    color: #000000;
+    casing-color: #FB2B11;
+    dashes-background-color: #00ff00; 
+    color: #00ff00;
     dashes: 15,15;
 }
 
@@ -1244,7 +1273,7 @@ way[highway][surface=paved][setting("surface_t")]::core_motoroad {
     major-z-index: 2;
     object-z-index: -1;
     color: #40ff00;
-    width: 20;
+    width: 15;
 
 
 }
@@ -1253,7 +1282,7 @@ way[highway][surface=asphalt][setting("surface_t")]::core_motoroad {
     major-z-index: 2;
     object-z-index: -1;
     color: #2908C1;
-    width: 20;
+    width: 15;
     
 }
 
@@ -1261,7 +1290,7 @@ way[highway][surface=concrete][setting("surface_t")]::core_motoroad {
     major-z-index: 2;
     object-z-index: -1;
     color: #708090;
-    width: 20;
+    width: 15;
 
 }
 
@@ -1269,7 +1298,7 @@ way[highway][surface=cobblestone][setting("surface_t")]::core_motoroad {
    major-z-index: 2;
    object-z-index: -1;
    color: #00FFD8;
-   width: 20;
+   width: 15;
    dashes: 5,25;
    linecap: round;
    casing-linecap: round;
@@ -1460,6 +1489,25 @@ way|z21-[highway][setting("highway_labels")] {
 
 relation[type=route][route=road]["name"][setting("name_setting")] > way[highway][!name]  {
     text: concat("Way is Missing Name! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(name)));
+    text-offset: -20;
+    text-halo-radius: 0.9;
+}
+
+
+
+
+*["ref"][setting("ref_setting")] {
+    crc: CRC32_checksum(tag("ref"))/429496.7296;
+    text: eval(tag("ref"));
+    set .checkname1;
+   
+}
+
+
+/* -- UPDATE Road has name in Relation, will not style like a noraml "named" road */
+
+relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!ref]  {
+    text: concat("Way is Missing Ref! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(ref)));
     text-offset: -20;
     text-halo-radius: 0.9;
 }
@@ -2746,14 +2794,25 @@ node[public_transport=platform][ferry=yes] {
 way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][setting("check_name")] {
   casing-color: red;
   casing-width: 3;
-  text: tr("Road Missing Name?!");
+  text: tr("");
+  text-offset: -40;
+  font-size: 15;
+  
+}
+
+/* Name & Ref Checker */
+
+way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][!noname][setting("check_no_name")] {
+  casing-color: red;
+  casing-width: 3;
+  text: tr("");
   text-offset: -40;
   font-size: 15;
   
 }
 
 
-way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink)$/][setting("remove_name")] {
+way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink|service|footway|pedestrian)$/][setting("remove_name")] {
   display: none;
   text-offset: -40;
   font-size: 0;
@@ -2992,70 +3051,7 @@ way["highway"=~/^(tertiary|tertiary_link)$/] > node  {
 */
 
 
-/* Boundary Styles */
 
-way[boundary=protected_area]::core_boundary,
-way[boundary=administrative]::core_boundary,
-way[boundary=postal_code]::core_boundary,
-way[boundary=political]::core_boundary,
-way[boundary=maritime]::core_boundary,
-way[boundary=national_park]::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 1;
-    color: boundary#FF6600;
-    dashes: 9,9;
-}
-way[admin_level=9]::core_boundary,
-relation[admin_level=9] > way::core_boundary,
-way[admin_level=10]::core_boundary,
-relation[admin_level=10] > way::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 1.5;
-    color: boundary#801515;
-    dashes: 9,9;
-}
-way[admin_level=7]::core_boundary,
-relation[admin_level=7] > way::core_boundary,
-way[admin_level=8]::core_boundary,
-relation[admin_level=8] > way::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 2;
-    color: boundary#FFB4AA;
-    dashes: 9,9;
-}
-way[admin_level=5]::core_boundary,
-relation[admin_level=5] > way::core_boundary,
-way[admin_level=6]::core_boundary,
-relation[admin_level=6] > way::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 3;
-    color: boundary#FF6600;
-    dashes: 9,9;
-}
-way[admin_level=3]::core_boundary,
-relation[admin_level=3] > way::core_boundary,
-way[admin_level=4]::core_boundary,
-relation[admin_level=4] > way::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 4;
-    color: boundary#FF6600;
-    dashes: 9,9;
-}
-way[admin_level=1]::core_boundary,
-relation[admin_level=1] > way::core_boundary,
-way[admin_level=2]::core_boundary,
-relation[admin_level=2] > way::core_boundary {
-    z-index: 2;
-    modifier: false;
-    width: 5;
-    color: boundary#FF6600;
-    dashes: 9,9;
-}
 
 
 
@@ -3325,6 +3321,13 @@ node[entrance=yes][setting("osmic")] {
     set icon_z17;
     icon-width: 14;
 }
+
+node[highway=turning_circle][setting("osmic")] {
+    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/turning_circle-3.png";
+    set icon_z17;
+    icon-width: 30;
+}
+
 node[entrance=main][setting("osmic")] {
     icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-main-14.svg";
     set icon_z17;
