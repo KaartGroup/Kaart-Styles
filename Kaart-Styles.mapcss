@@ -298,7 +298,7 @@ way[highway=service][service=drive-through]         { z-index: 5; color: #39ff14
 
 way[highway=service][service=driveway]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: purple; }
 
-way[highway=service][service=alley]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: lightyellow; casing-color: #000000; casing-width: 1; }
+way[highway=service][service=alley]                 { z-index: 5; color: #80D2DE; width: 3; dashes: 20,12; dashes-background-color: #D40E0D; casing-color: #000000; casing-width: 1; }
 
 way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
 
@@ -1079,50 +1079,50 @@ way[addr:interpolation] { color: #B0E0E6; width: 3; dashes: 3,3;}
 
 /* Landuse */
 
-area[natural]:closed                          { color: #ADD6A5; width: 1; fill-color: #ADD6A5; fill-opacity: 0.2; }
-area[natural=beach]:closed                    { color: #ffdd44; width: 1; fill-color: yellow; fill-opacity: 0.2; prop_area_small_name : 1;}
-way[natural=coastline]            { z-index: 5; color: black; width: 3; }
-area[landuse]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; }
-area[landuse=construction]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; dashes: 3,6;}
-area[landuse=residential]:closed              { color: #D594FF; width: 2; fill-color: #D594FF; fill-opacity: 0.15; }
-area[landuse=retail]:closed                   { color: #cc2222; width: 2; fill-color: #aa4422; fill-opacity: 0.15; }
-area[landuse=commercial]:closed               { color: purple; width: 2; fill-color: #444488; fill-opacity: 0.15; }
-area[landuse=industrial]:closed               { color: #4d0000; width: 2; fill-color: #444488; fill-opacity: 0.15; }
-area[landuse=military]:closed                 { color: #ff4444; width: 2; fill-color: #ff4444; fill-opacity: 0.2; prop_area_small_name : 1; }
-area[amenity]:closed, area[shop]:closed                { color: #ADCEB5; width: 1; fill-color: #ADCEB5; fill-opacity: 0.2; }
+area[natural]:closed                          { color: #ADD6A5; width: 1; fill-color: #ADD6A5; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
+area[natural=beach]:closed                    { color: #ffdd44; width: 1; fill-color: yellow; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+way[natural=coastline]            { z-index: 5; color: black; width: 3; casing-color: #000000; casing-width: 0.2;}
+area[landuse]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; casing-color: #000000; casing-width: 0.2;}
+area[landuse=construction]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; dashes: 3,6; casing-color: #000000; casing-width: 0.2;}
+area[landuse=residential]:closed              { color: #D594FF; width: 2; fill-color: #D594FF; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
+area[landuse=retail]:closed                   { color: #cc2222; width: 2; fill-color: #aa4422; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
+area[landuse=commercial]:closed               { color: purple; width: 2; fill-color: #444488; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
+area[landuse=industrial]:closed               { color: #4d0000; width: 2; fill-color: #444488; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
+area[landuse=military]:closed                 { color: #ff4444; width: 2; fill-color: #ff4444; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[amenity]:closed, area[shop]:closed                { color: #ADCEB5; width: 1; fill-color: #ADCEB5; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
 /* way[sport] should not be rendered by itself, according to wiki. Can we make it an "if all else fails"? */
-area[leisure]:closed                         { color: #8CD6B5; width: 1; fill-color: #8CD6B5; fill-opacity: 0.2; }
-area[tourism]:closed                          { color: #F7CECE; width: 1; fill-color: #F7CECE; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[historic]:closed, area[ruins]:closed        { color: #F7F7DE; width: 1; fill-color: #F7F7DE; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[military]:closed                         { color: #D6D6D6; width: 1; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[building]:closed                         { color: #87CEFA; width: 2; fill-color: #00BFFF; fill-opacity: 0.2; }
+area[leisure]:closed                         { color: #8CD6B5; width: 1; fill-color: #8CD6B5; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
+area[tourism]:closed                          { color: #F7CECE; width: 1; fill-color: #F7CECE; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[historic]:closed, area[ruins]:closed        { color: #F7F7DE; width: 1; fill-color: #F7F7DE; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[military]:closed                         { color: #D6D6D6; width: 1; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[building]:closed                         { color: #87CEFA; width: 2; fill-color: #00BFFF; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
 area[natural=water]:closed,
-area[waterway][waterway!=dam]:closed          { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1;}
-way[waterway=dam]!:closed                   { z-index: 5; color: black; width: 3; }
-area[waterway=dam]:closed                   { z-index: 5; color: black; width: 1; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1;}
-area[man_made]:closed             { color: black; width: 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; }
-area[man_made=reservoir_covered]:closed       { color: #3434ff; width: 2; dashes: 4, 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; }
-area[landuse=reservoir]:closed                { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1;}
-area[landuse=forest]:closed, area[natural=wood]:closed { color: green;   width: 2; fill-color: green;   fill-opacity: 0.2; prop_area_small_name : 1;}
-area[leisure=park]:closed                    { color: #22aa22; width: 2; fill-color: #44ff44; fill-opacity: 0.15; prop_area_small_name : 1;}
-area[leisure=garden]:closed                  { color: #66ff44; width: 1; fill-color: #66ff44; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[leisure=pitch]:closed          { z-index: 6; color: #88bb44; width: 2; fill-color: #88ff44; fill-opacity: 0.2; prop_area_small_name : 1;}
-area[landuse=recreation_ground]:closed        { color: green; fill-color: green; prop_area_small_name : 1;}
-area[amenity=parking]:closed                  { color: #bbaa66;    width: 1; fill-color: #bbaa66;    fill-opacity: 0.2; }
-area[public_transport=pay_scale_area]:closed  { color: gray;    width: 1; fill-color: gray;    fill-opacity: 0.1; }
-way[man_made=pier]              { z-index: 4; color: #777; width: 3; casing-color: black; casing-width: 1;}
-way[man_made=pier][floating=yes]      { z-index: 5; dashes: 4,2; casing-color: #444;}
-area[leisure=marina]:closed         { color: pink; fill-color: pink; fill-opacity: 0.4; prop_area_small_name : 1;}
-way[leisure=slipway]            { z-index: 5; color: grey; width: 3; casing-color: #3434ff; casing-width: 2; }
-area[leisure=golf_course]:closed { color: #44ee22; width: 2; fill-color: #44ee22; fill-opacity: 0.2; prop_area_small_name : 1;}
-way[boundary][setting("show_boundary")]                               { z-index: 5; color: #000066; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
+area[waterway][waterway!=dam]:closed          { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+way[waterway=dam]!:closed                   { z-index: 5; color: black; width: 3; casing-color: #000000; casing-width: 0.2;}
+area[waterway=dam]:closed                   { z-index: 5; color: black; width: 1; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[man_made]:closed             { color: black; width: 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[man_made=reservoir_covered]:closed       { color: #3434ff; width: 2; dashes: 4, 2; fill-color: #222222; fill-opacity: 0.1; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[landuse=reservoir]:closed                { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[landuse=forest]:closed, area[natural=wood]:closed { color: green;   width: 2; fill-color: green;   fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[leisure=park]:closed                    { color: #22aa22; width: 2; fill-color: #44ff44; fill-opacity: 0.15; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[leisure=garden]:closed                  { color: #66ff44; width: 1; fill-color: #66ff44; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[leisure=pitch]:closed          { z-index: 6; color: #88bb44; width: 2; fill-color: #88ff44; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[landuse=recreation_ground]:closed        { color: green; fill-color: green; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[amenity=parking]:closed                  { color: #bbaa66;    width: 1; fill-color: #bbaa66;    fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
+area[public_transport=pay_scale_area]:closed  { color: gray;    width: 1; fill-color: gray;    fill-opacity: 0.1; casing-color: #000000; casing-width: 0.2;}
+way[man_made=pier]              { z-index: 4; color: #777; width: 3; casing-color: black; casing-width: 1; casing-color: #000000; casing-width: 0.2;}
+way[man_made=pier][floating=yes]      { z-index: 5; dashes: 4,2; casing-color: #444; casing-color: #000000; casing-width: 0.2;}
+area[leisure=marina]:closed         { color: pink; fill-color: pink; fill-opacity: 0.4; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+way[leisure=slipway]            { z-index: 5; color: grey; width: 3; casing-color: #3434ff; casing-width: 2; casing-color: #000000; casing-width: 0.2;}
+area[leisure=golf_course]:closed { color: #44ee22; width: 2; fill-color: #44ee22; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+way[boundary][setting("show_boundary")]                               { z-index: 5; color: #000066; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
 
 /* Perhaps should be filled, on lower zooms. */
-way[boundary=national_park][setting("show_boundary")]                 { z-index: 5; color: #225500; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4;}
-way[boundary=protected_area][setting("show_boundary")]                { z-index: 5; color: #447744; width: 2; opacity: 0.6; dashes: 12,4, 4, 4; z-index: 4;}
-way[boundary=administrative][setting("show_boundary")]                { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
-way[boundary=administrative][waterway][setting("show_boundary")]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; }
-way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4;}
+way[boundary=national_park][setting("show_boundary")]                 { z-index: 5; color: #225500; width: 2; opacity: 0.6; dashes: 24,4, 4, 4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
+way[boundary=protected_area][setting("show_boundary")]                { z-index: 5; color: #447744; width: 2; opacity: 0.6; dashes: 12,4, 4, 4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
+way[boundary=administrative][setting("show_boundary")]                { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
+way[boundary=administrative][waterway][setting("show_boundary")]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; casing-color: #000000; casing-width: 0.2;}
+way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
 area[landuse=cemetery]:closed           { color: #664466; width: 2; fill-color: #664466; opacity: 0.2; prop_area_small_name : 1;}
 
 /* Route relations 
