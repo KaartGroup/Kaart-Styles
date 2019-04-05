@@ -1,0 +1,356 @@
+meta {
+  title: "QC Styles For Clingstone Team";
+  description: "Highlights features that were created/modified by users";
+  watch-modified: true;
+  version: "1.4";
+  icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
+
+}
+/* Notes
+
+1.0 Added styles -- provided by Jenn -- and users -- Ian -- 3/11/2019
+
+1.1 Configured styles -- Louis -- 3/13/2019
+
+1.2 Configured style colors and highlighting -- Ian -- 3/15/2019
+
+1.3 Simplified user lines -- Louis -- 3/18/2019
+
+1.4 Adjusted user, style lines and appearances -- 3/20/2019
+
+
+/* User Settings */
+
+setting::user_RyanK {
+  type:boolean;
+  label:tr("Turn User Whimsical Otter On/Off");
+  default:true;
+}
+
+setting::user_Joe {
+  type:boolean;
+  label:tr("Turn User _Poliwrath_ On/Off");
+  default:true;
+}
+
+setting::user_Dan {
+  type:boolean;
+  label:tr("Turn User Te-Ika On/Off");
+  default:true;
+}
+
+setting::user_Corban {
+  type:boolean;
+  label:tr("Turn User Corban8 On/Off");
+  default:true;
+}
+
+setting::user_Jorge {
+  type:boolean;
+  label:tr("Turn User JAAS On/Off");
+  default:true;
+}
+
+setting::user_Michelle {
+  type:boolean;
+  label:tr("Turn User MichNicole On/Off");
+  default:true;
+}
+
+setting::user_Christy {
+  type:boolean;
+  label:tr("Turn User mama_bear On/Off");
+  default:true;
+}
+
+setting::user_Casey {
+  type:boolean;
+  label:tr("Turn User peacewaya On/Off");
+  default:true;
+}
+
+setting::user_Jonathon {
+  type:boolean;
+  label:tr("Turn User spuddy93 On/Off");
+  default:true;
+}
+
+setting::user_Taylor {
+  type:boolean;
+  label:tr("Turn User vorpalblade77-kaart On/Off");
+  default:true;
+}
+
+setting::user_JasonH {
+  type:boolean;
+  label:tr("Turn User AnonJason On/Off");
+  default:true;
+}
+
+setting::user_Garrett {
+  type:boolean;
+  label:tr("Turn User Copernicus529 On/Off");
+  default:true;
+}
+
+setting::user_JakeL {
+  type:boolean;
+  label:tr("Turn User Hulk_Maps On/Off");
+  default:true;
+}
+
+setting::user_Kira {
+  type:boolean;
+  label:tr("Turn User birdeatscake On/Off");
+  default:true;
+}
+
+setting::user_NickF {
+  type:boolean;
+  label:tr("Turn User daFisch On/Off");
+  default:true;
+}
+
+setting::user_Jordyn {
+  type:boolean;
+  label:tr("Turn User Gr8fulDead On/Off");
+  default:true;
+}
+
+setting::user_RyanR {
+  type:boolean;
+  label:tr("Turn User Kaarti_B On/Off");
+  default:true;
+}
+
+setting::user_Chance {
+  type:boolean;
+  label:tr("Turn User chancethewrapper On/Off");
+  default:true;
+}
+
+setting::user_Gary {
+  type:boolean;
+  label:tr("Turn User Velocimaptor On/Off");
+  default:true;
+}
+
+setting::user_LeanneS {
+  type:boolean;
+  label:tr("Turn User LSkalayo On/Off");
+  default:true;
+}
+
+setting::user_JacobK {
+  type:boolean;
+  label:tr("Turn User CoolGuyJake On/Off");
+  default:true;
+}
+
+setting::user_IanM {
+  type:boolean;
+  label:tr("Turn User Baconcrisp On/Off");
+  default:true;
+}
+
+setting::user_BrianL {
+  type:boolean;
+  label:tr("Turn User Unicorn Ostrich On/Off");
+  default:true;
+}
+
+/* Tracking Selectors -- Way and node style BEFORE they are uploaded */
+
+node:modified::modified_layer {
+    symbol-shape: circle;
+    symbol-size: 18;
+    symbol-stroke-color: blue;
+    symbol-fill-color: orange;
+    symbol-fill-opacity: 1;
+    z-index: -5;
+}
+
+way:modified::modified_layer,
+node:modified < way::modified_layer {
+    width: 6;
+    color: transparent;
+    opacity: 0;
+    casing-width: 4;
+    casing-color: #47D608;
+    casing-opacity: 0.7;
+    z-index: -5;
+}
+
+/* QC Styles */
+
+
+/* User specific styles */
+
+*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_RyanK")] {
+  set .RyanK;
+}
+
+*[eval(JOSM_search("user:_Poliwrath_"))][setting("user_Joe")] {
+  set .Joe;
+}
+
+*[eval(JOSM_search("user:Te-Ika"))][setting("user_Dan")] {
+  set .Dan;
+}
+
+*[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
+  set .Corban;
+}
+
+*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
+  set .Jorge;
+}
+
+*[eval(JOSM_search("user:MichNicole"))][setting("user_Michelle")] {
+  set .Michelle;
+}
+
+*[eval(JOSM_search("user:mama_bear"))][setting("user_Christy")] {
+  set .Christy;
+}
+
+*[eval(JOSM_search("user:peacewaya"))][setting("user_Casey")] {
+  set .Casey;
+}
+
+*[eval(JOSM_search("user:spuddy93"))][setting("user_Jonathon")] {
+  set .Jonathon;
+}
+
+*[eval(JOSM_search("user:vorpalblade77-kaart"))][setting("user_Taylor")] {
+  set .Taylor;
+}
+
+*[eval(JOSM_search("user:AnonJason"))][setting("user_JasonH")] {
+  set .JasonH;
+}
+
+*[eval(JOSM_search("user:Copernicus529"))][setting("user_Garrett")] {
+  set .Garrett;
+}
+
+*[eval(JOSM_search("user:Hulk_Maps"))][setting("user_JakeL")] {
+  set .JakeL;
+}
+
+*[eval(JOSM_search("user:birdeatscake"))][setting("user_Kira")] {
+  set .Kira;
+}
+
+*[eval(JOSM_search("user:daFisch"))][setting("user_NickF")] {
+  set .NickF;
+}
+
+*[eval(JOSM_search("user:Gr8fulDead"))][setting("user_Jordyn")] {
+  set .Jordyn;
+}
+
+*[eval(JOSM_search("user:Kaarti_B"))][setting("user_RyanR")] {
+  set .RyanR;
+}
+
+*[eval(JOSM_search("user:chancethewrapper"))][setting("user_Chance")] {
+  set .Chance;
+}
+
+*[eval(JOSM_search("user:Velocimaptor"))][setting("user_Gary")] {
+  set .Gary;
+}
+
+*[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
+  set .LeanneS;
+}
+
+*[eval(JOSM_search("user:CoolGuyJake"))][setting("user_JacobK")] {
+  set .JacobK;
+}
+
+*[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
+  set .IanM;
+}
+
+*[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
+  set .BrianL;
+}
+
+/*
+
+/* Styling of ways and nodes once they belong to "history" for each individual user */
+
+way.RyanK,
+way.Joe,
+way.Dan,
+way.Corban,
+way.Jorge,
+way.Michelle,
+way.Christy,
+way.Casey,
+way.Jonathon,
+way.Taylor,
+way.JasonH,
+way.Garrett,
+way.JakeL,
+way.Kira,
+way.NickF,
+way.Jordyn,
+way.RyanR,
+way.Chance,
+way.Gary,
+way.LeanneS,
+way.JacobK,
+way.IanM,
+way.BrianL {
+  z-index: -10;
+  casing-color: #B108D6;
+  casing-width: 7;
+  casing-opacity: 0.6;
+  /*
+  text: eval(concat("Highway type =", " ", tag("highway")));
+  text-offset: -20;
+  */
+
+
+}
+
+node.RyanK,
+node.Joe,
+node.Dan,
+node.Corban,
+node.Jorge,
+node.Michelle,
+node.Christy,
+node.Casey,
+node.Jonathon,
+node.Taylor,
+node.JasonH,
+node.Garrett,
+node.JakeL,
+node.Kira,
+node.NickF,
+node.Jordyn,
+node.RyanR,
+node.Chance,
+node.Gary,
+node.LeanneS,
+node.JacobK,
+node.IanM,
+node.BrianL {
+
+  symbol-size: 18;
+  symbol-shape: triangle;
+  symbol-stroke-color: blue;
+  symbol-fill-color: blue;
+  symbol-fill-opacity: 0.5;
+}
+
+node:selected {
+    symbol-size: 17;
+    symbol-stroke-color: #DF2E08;
+    symbol-stroke-width: 3px;
+	symbol-fill-color: #DF2E08;
+}
