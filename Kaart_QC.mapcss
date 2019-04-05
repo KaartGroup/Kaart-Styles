@@ -24,139 +24,145 @@ meta {
 setting::user_RyanK {
   type:boolean;
   label:tr("Turn User Whimsical Otter On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Joe {
   type:boolean;
   label:tr("Turn User _Poliwrath_ On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Dan {
   type:boolean;
   label:tr("Turn User Te-Ika On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Corban {
   type:boolean;
   label:tr("Turn User Corban8 On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Jorge {
   type:boolean;
   label:tr("Turn User JAAS On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Michelle {
   type:boolean;
   label:tr("Turn User MichNicole On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Christy {
   type:boolean;
   label:tr("Turn User mama_bear On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Casey {
   type:boolean;
   label:tr("Turn User peacewaya On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Jonathon {
   type:boolean;
   label:tr("Turn User spuddy93 On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Taylor {
   type:boolean;
   label:tr("Turn User vorpalblade77-kaart On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_JasonH {
   type:boolean;
   label:tr("Turn User AnonJason On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Garrett {
   type:boolean;
   label:tr("Turn User Copernicus529 On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_JakeL {
   type:boolean;
   label:tr("Turn User Hulk_Maps On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Kira {
   type:boolean;
   label:tr("Turn User birdeatscake On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_NickF {
   type:boolean;
   label:tr("Turn User daFisch On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Jordyn {
   type:boolean;
   label:tr("Turn User Gr8fulDead On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_RyanR {
   type:boolean;
   label:tr("Turn User Kaarti_B On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Chance {
   type:boolean;
   label:tr("Turn User chancethewrapper On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_Gary {
   type:boolean;
   label:tr("Turn User Velocimaptor On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_LeanneS {
   type:boolean;
   label:tr("Turn User LSkalayo On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_JacobK {
   type:boolean;
   label:tr("Turn User CoolGuyJake On/Off");
-  default:true;
+  default:false;
 }
 
 setting::user_IanM {
   type:boolean;
   label:tr("Turn User Baconcrisp On/Off");
-  default:true;
+  default:false;
+}
+
+setting::user_Aaron {
+  type:boolean;
+  label:tr("Turn User vespax On/Off");
+  default:false;
 }
 
 setting::user_BrianL {
   type:boolean;
   label:tr("Turn User Unicorn Ostrich On/Off");
-  default:true;
+  default:false;
 }
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
@@ -274,6 +280,10 @@ node:modified < way::modified_layer {
   set .IanM;
 }
 
+*[eval(JOSM_search("user:vespax"))][setting("user_Aaron")] {
+  set .Aaron;
+}
+
 *[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
   set .BrianL;
 }
@@ -304,6 +314,7 @@ way.Gary,
 way.LeanneS,
 way.JacobK,
 way.IanM,
+way.Aaron,
 way.BrianL {
   z-index: -10;
   casing-color: #B108D6;
@@ -339,6 +350,7 @@ node.Gary,
 node.LeanneS,
 node.JacobK,
 node.IanM,
+node.Aaron,
 node.BrianL {
 
   symbol-size: 18;
