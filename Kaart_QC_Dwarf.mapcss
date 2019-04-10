@@ -1,0 +1,366 @@
+meta {
+  title: "QC Styles For Dwarf Team";
+  description: "Highlights features that were created/modified by users";
+  watch-modified: true;
+  version: "1.4";
+  icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
+
+}
+/* Notes
+
+1.2 updates made to usernames
+
+1.3 Added Kaart users -- Aaron -- 12/14/2016
+
+1.4 Added new way & node styles -- Louis -- 3/20/2019
+
+/* User Settings */
+
+setting::user_ben {
+  type: boolean;
+  label: tr("Turn User El Pescador On/Off");
+  default: true;
+}
+
+setting::user_jake {
+  type: boolean;
+  label: tr("Turn User jacob_kubeczko On/Off");
+  default: true;
+}
+
+setting::user_kyle {
+  type: boolean;
+  label: tr("Turn User Kyleta8 On/Off");
+  default: true;
+}
+
+setting::user_luis {
+  type: boolean;
+  label: tr("Turn User medrano93 On/Off");
+  default: true;
+}
+
+setting::user_marshall {
+  type: boolean;
+  label: tr("Turn User MTG5093 On/Off");
+  default: true;
+}
+
+setting::user_mia {
+  type: boolean;
+  label: tr("Turn User notmee-uh On/Off");
+  default: true;
+}
+
+setting::user_nikki {
+  type: boolean;
+  label: tr("Turn User Meowshane On/Off");
+  default: true;
+}
+
+setting::user_sharon {
+  type: boolean;
+  label: tr("Turn User mapcraft On/Off");
+  default: true;
+}
+
+setting::user_zebulon {
+  type: boolean;
+  label: tr("Turn User Zebulonium On/Off");
+  default: true;
+}
+
+setting::user_alejandro {
+  type: boolean;
+  label: tr("Turn User Leonardo DeMAPrio On/Off");
+  default: true;
+}
+
+setting::user_charles {
+  type: boolean;
+  label: tr("Turn User chuck97! On/Off");
+  default: true;
+}
+
+setting::user_katelin {
+  type: boolean;
+  label: tr("Turn User kreimers On/Off");
+  default: true;
+}
+
+setting::user_andrew {
+  type: boolean;
+  label: tr("Turn User G_Fyyar On/Off");
+  default: true;
+}
+
+setting::user_dillon {
+  type: boolean;
+  label: tr("Turn User Dillon9 On/Off");
+  default: true;
+}
+
+setting::user_farris {
+  type: boolean;
+  label: tr("Turn User FarieBerrie On/Off");
+  default: true;
+}
+
+setting::user_lucas {
+  type: boolean;
+  label: tr("Turn User Traaker_L On/Off");
+  default: true;
+}
+
+setting::user_ryanf {
+  type: boolean;
+  label: tr("Turn User rytheking On/Off");
+  default: true;
+}
+
+setting::user_ryans {
+  type: boolean;
+  label: tr("Turn User Senzubeandealer On/Off");
+  default: true;
+}
+
+setting::user_sage {
+  type: boolean;
+  label: tr("Turn User BobGod On/Off");
+  default: true;
+}
+
+setting::user_sarena {
+  type: boolean;
+  label: tr("Turn User swells5 On/Off");
+  default: true;
+}
+
+setting::user_ryank {
+  type: boolean;
+  label: tr("Turn User Whimsical Otter On/Off");
+  default: true;
+}
+
+setting::user_nick {
+  type: boolean;
+  label: tr("Turn User daFisch On/Off");
+  default: true;
+}
+
+setting::user_claire {
+  type: boolean;
+  label: tr("Turn User Clarita On/Off");
+  default: true;
+}
+
+setting::user_nick2 {
+  type: boolean;
+  label: tr("Turn User jedimasterflint On/Off");
+  default: true;
+}
+
+/* Tracking Selectors -- Way and node style BEFORE they are uploaded */
+
+node:modified::modified_layer {
+    symbol-shape: circle;
+    symbol-size: 18;
+    symbol-stroke-color: blue;
+    symbol-fill-color: orange;
+    symbol-fill-opacity: 1;
+    z-index: -5;
+}
+
+way:modified::modified_layer,
+node:modified < way::modified_layer {
+    width: 6;
+    color: transparent;
+    opacity: 0;
+    casing-width: 4;
+    casing-color: #47D608;
+    casing-opacity: 0.7;
+    z-index: -5;
+}
+
+/* QC Styles */
+
+
+/* User specific styles */
+
+*[eval(JOSM_search("user:\"El Pescador\""))][setting("user_ben")] {
+  set .ben;
+}
+
+*[eval(JOSM_search("user:jacob_kubeczko"))][setting("user_jake")] {
+  set .jake;
+}
+
+*[eval(JOSM_search("user:Kyleta8"))][setting("user_kyle")] {
+  set .kyle;
+}
+
+*[eval(JOSM_search("user:medrano93"))][setting("user_luis")] {
+  set .luis;
+}
+
+
+*[eval(JOSM_search("user:MTG5093"))][setting("user_marshall")] {
+  set .marshall;
+}
+
+
+*[eval(JOSM_search("user:notmee-uh"))][setting("user_mia")] {
+  set .mia;
+}
+
+*[eval(JOSM_search("user:Meowshane"))][setting("user_nikki")] {
+  set .nikki;
+}
+
+
+*[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
+  set .sharon;
+}
+
+*[eval(JOSM_search("user:Zebulonium"))][setting("user_zebulon")] {
+  set .zebulon;
+}
+
+*[eval(JOSM_search("user:\"Leonardo DeMAPrio\""))][setting("user_alejandro")] {
+  set .alejandro;
+}
+
+*[eval(JOSM_search("user:chuck97!"))][setting("user_charles")] {
+  set .charles;
+}
+
+*[eval(JOSM_search("user:kreimers"))][setting("user_katelin")] {
+  set .katelin;
+}
+
+*[eval(JOSM_search("user:G_Fyyar"))][setting("user_andrew")] {
+  set .andrew;
+}
+
+*[eval(JOSM_search("user:Dillon9"))][setting("user_dillon")] {
+  set .dillon;
+}
+
+*[eval(JOSM_search("user:FarieBerrie"))][setting("user_farris")] {
+  set .farris;
+}
+
+*[eval(JOSM_search("user:Traaker_L"))][setting("user_lucas")] {
+  set .Lucas;
+}
+
+*[eval(JOSM_search("user:rytheking"))][setting("user_ryanf")] {
+  set .ryanf;
+}
+
+*[eval(JOSM_search("user:Senzubeandealer"))][setting("user_ryans")] {
+  set .ryans;
+}
+
+*[eval(JOSM_search("user:BobGod"))][setting("user_sage")] {
+  set .sage;
+}
+
+*[eval(JOSM_search("user:swells5"))][setting("user_sarena")] {
+  set .sarena;
+}
+
+*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_ryan")] {
+  set .ryan;
+}
+
+*[eval(JOSM_search("user:daFisch"))][setting("user_nick")] {
+  set .nick;
+}
+
+*[eval(JOSM_search("user:Clairita"))][setting("user_claire")] {
+  set .claire;
+}
+
+*[eval(JOSM_search("user:jedimasterflint"))][setting("user_nick2")] {
+  set .nick;
+}
+
+/*
+
+/* Styling of ways and nodes once they belong to "history" for each individual user */
+
+way.ben,
+way.jake,
+way.kyle,
+way.luis,
+way.marshall,
+way.mia,
+way.nikki,
+way.sharon,
+way.alejandro,
+way.charles,
+way.katelin,
+way.andrew,
+way.dillon,
+way.farris,
+way.lucas,
+way.ryanf,
+way.ryans,
+way.sage,
+way.sarena,
+way.ryan,
+way.nick,
+way.claire,
+way.nick2 {
+  z-index: -10;
+  casing-color: #B108D6;
+  casing-width: 7;
+  casing-opacity: 0.6;
+  /*
+  text: eval(concat("Highway type =", " ", tag("highway")));
+  text-offset: -20;
+  */
+
+
+}
+
+
+
+
+node.ben,
+node.jake,
+node.kyle,
+node.luis,
+node.marshall,
+node.mia,
+node.nikki,
+node.sharon,
+node.alejandro,
+node.charles,
+node.katelin,
+node.andrew,
+node.dillon,
+node.farris,
+node.lucas,
+node.ryanf,
+node.ryans,
+node.sage,
+node.sarena,
+node.ryan,
+node.nick,
+node.claire,
+node.nick2 {
+  symbol-size: 18;
+  symbol-shape: triangle;
+  symbol-stroke-color: blue;
+  symbol-fill-color: blue;
+  symbol-fill-opacity: 0.5;
+}
+
+  node:selected {
+    symbol-size: 17;
+    symbol-stroke-color: #DF2E08;
+    symbol-stroke-width: 3px;
+  symbol-fill-color: #DF2E08;
+}

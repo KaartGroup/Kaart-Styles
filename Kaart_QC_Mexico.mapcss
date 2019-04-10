@@ -1,0 +1,534 @@
+meta {
+  title: "QC Styles For Mexico Team";
+  description: "Highlights features that were created/modified by users";
+  watch-modified: true;
+  version: "1.4";
+  icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
+
+}
+/* Notes
+
+1.0 Added styles -- provided by Jenn -- and users -- Ian -- 3/11/2019
+
+1.1 Configured styles -- Louis -- 3/13/2019
+
+1.2 Configured style colors and highlighting -- Ian -- 3/15/2019
+
+1.3 Simplified user lines -- Louis -- 3/18/2019
+
+1.4 Adjusted user, style lines and appearances -- 3/20/2019
+
+
+/* User Settings */
+
+setting::user_JonK {
+  type:boolean;
+  label:tr("Turn User JonKrato On/Off");
+  default:true;
+}
+
+setting::user_JonK_import {
+  type:boolean;
+  label:tr("Turn User JonKrato_import On/Off");
+  default:true;
+}
+
+setting::user_AndyW {
+  type:boolean;
+  label:tr("Turn User The Mapgician On/Off");
+  default:true;
+}
+
+setting::user_AndyW_Import {
+  type:boolean;
+  label:tr("Turn User The Mapgician_import On/Off");
+  default:true;
+}
+
+setting::user_NickF {
+  type:boolean;
+  label:tr("Turn User daFisch On/Off");
+  default:true;
+}
+
+setting::user_NickF_import {
+  type:boolean;
+  label:tr("Turn User daFisch_import On/Off");
+  default:true;
+}
+
+setting::user_MattB {
+  type:boolean;
+  label:tr("Turn User MappnMatt On/Off");
+  default:true;
+}
+
+setting::user_MattB_import {
+  type:boolean;
+  label:tr("Turn User MappnMatt_import On/Off");
+  default:true;
+}
+
+setting::user_NickE {
+  type:boolean;
+  label:tr("Turn User jedimasterflint On/Off");
+  default:true;
+}
+
+setting::user_NickE_import {
+  type:boolean;
+  label:tr("Turn User jedimasterflint_import On/Off");
+  default:true;
+}
+
+setting::user_ArleneC {
+  type:boolean;
+  label:tr("Turn User ArleneC On/Off");
+  default:true;
+}
+
+setting::user_ArleneC_import {
+  type:boolean;
+  label:tr("Turn User ArleneC_import On/Off");
+  default:true;
+}
+
+setting::user_AlexD {
+  type:boolean;
+  label:tr("Turn User Soccersweeper On/Off");
+  default:true;
+}
+
+setting::user_AlexD_import {
+  type:boolean;
+  label:tr("Turn User Soccersweeper_import On/Off");
+  default:true;
+}
+
+setting::user_DannyH {
+  type:boolean;
+  label:tr("Turn User dhic On/Off");
+  default:true;
+}
+
+setting::user_DannyH_import {
+  type:boolean;
+  label:tr("Turn User dhic_import On/Off");
+  default:true;
+}
+
+setting::user_RobinH {
+  type:boolean;
+  label:tr("Turn User RobinNoodles On/Off");
+  default:true;
+}
+
+setting::user_RobinH_import {
+  type:boolean;
+  label:tr("Turn User RobinNoodles_import On/Off");
+  default:true;
+}
+
+setting::user_MorgenM {
+  type:boolean;
+  label:tr("Turn User MMantlo On/Off");
+  default:true;
+}
+
+setting::user_MorgenM_import {
+  type:boolean;
+  label:tr("Turn User MMantlo_import On/Off");
+  default:true;
+}
+
+setting::user_SherryM {
+  type:boolean;
+  label:tr("Turn User Sherbare On/Off");
+  default:true;
+}
+
+setting::user_SherryM_import {
+  type:boolean;
+  label:tr("Turn User Sherbare_import On/Off");
+  default:true;
+}
+
+setting::user_RonmelR {
+  type:boolean;
+  label:tr("Turn User Mel_2 On/Off");
+  default:true;
+}
+
+setting::user_RonmelR_import {
+  type:boolean;
+  label:tr("Turn User Mel_2_import On/Off");
+  default:true;
+}
+
+setting::user_LeanneS {
+  type:boolean;
+  label:tr("Turn User LSkalayo On/Off");
+  default:true;
+}
+
+setting::user_LeanneS_import {
+  type:boolean;
+  label:tr("Turn User LSkalayo_import On/Off");
+  default:true;
+}
+
+setting::user_NatashaS {
+  type:boolean;
+  label:tr("Turn User rallynukab On/Off");
+  default:true;
+}
+
+setting::user_NatashaS_import {
+  type:boolean;
+  label:tr("Turn User rallynukab_import On/Off");
+  default:true;
+}
+
+setting::user_SteveC {
+  type:boolean;
+  label:tr("Turn User Smoothdog On/Off");
+  default:true;
+}
+
+setting::user_SteveC_import {
+  type:boolean;
+  label:tr("Turn User Smoothdogimport On/Off");
+  default:true;
+}
+
+setting::user_BuddyF {
+  type:boolean;
+  label:tr("Turn User ImjusBuddy On/Off");
+  default:true;
+}
+
+setting::user_BuddyF_import {
+  type:boolean;
+  label:tr("Turn User ImjusBuddy_import On/Off");
+  default:true;
+}
+
+setting::user_JacobK {
+  type:boolean;
+  label:tr("Turn User CoolGuyJake On/Off");
+  default:true;
+}
+
+setting::user_LouisM {
+  type:boolean;
+  label:tr("Turn User BlueBot On/Off");
+  default:true;
+}
+
+setting::user_DylanF {
+  type:boolean;
+  label:tr("Turn User RedBot On/Off");
+  default:true;
+}
+
+setting::user_DavidK {
+  type:boolean;
+  label:tr("Turn User krinkov76239 On/Off");
+  default:true;
+}
+
+setting::user_IanM {
+  type:boolean;
+  label:tr("Turn User Baconcrisp On/Off");
+  default:true;
+}
+
+setting::user_BrianL {
+  type:boolean;
+  label:tr("Turn User Unicorn Ostrich On/Off");
+  default:true;
+}
+
+/* Tracking Selectors -- Way and node style BEFORE they are uploaded */
+
+node:modified::modified_layer {
+    symbol-shape: circle;
+    symbol-size: 18;
+    symbol-stroke-color: blue;
+    symbol-fill-color: orange;
+    symbol-fill-opacity: 1;
+    z-index: -5;
+}
+
+way:modified::modified_layer,
+node:modified < way::modified_layer {
+    width: 6;
+    color: transparent;
+    opacity: 0;
+    casing-width: 4;
+    casing-color: #47D608;
+    casing-opacity: 0.7;
+    z-index: -5;
+}
+
+/* QC Styles */
+
+
+/* User specific styles */
+
+*[eval(JOSM_search("user:JonKrato"))][setting("user_JonK")] {
+  set .JonK;
+}
+
+*[eval(JOSM_search("user:JonKrato_import"))][setting("user_JonK_import")] {
+  set .JonK_import;
+}
+
+*[eval(JOSM_search("user:\"The Mapgician\""))][setting("user_AndyW")] {
+  set .AndyW;
+}
+
+*[eval(JOSM_search("user:\"The Mapgician_import\""))][setting("user_AndyW_import")] {
+  set .AndyW_import;
+}
+
+*[eval(JOSM_search("user:daFisch"))][setting("user_NickF")] {
+  set .NickF;
+}
+
+*[eval(JOSM_search("user:daFisch_import"))][setting("user_NickF_import")] {
+  set .NickF_import;
+}
+
+*[eval(JOSM_search("user:MappnMatt"))][setting("user_MattB")] {
+  set .MattB;
+}
+
+*[eval(JOSM_search("user:MappnMatt_import"))][setting("user_MattB_import")] {
+  set .MattB_import;
+}
+
+*[eval(JOSM_search("user:jedimasterflint"))][setting("user_NickE")] {
+  set .NickE;
+}
+
+*[eval(JOSM_search("user:jedimasterflint_import"))][setting("user_NickE_import")] {
+  set .NickE_import;
+}
+
+*[eval(JOSM_search("user:ArleneC"))][setting("user_ArleneC")] {
+  set .ArleneC;
+}
+
+*[eval(JOSM_search("user:ArleneC_import"))][setting("user_AlexD_import")] {
+  set .ArleneC_import;
+}
+
+*[eval(JOSM_search("user:Soccersweeper"))][setting("user_AlexD")] {
+  set .AlexD;
+}
+
+*[eval(JOSM_search("user:Soccersweeper_import"))][setting("user_AlexD_import")] {
+  set .AlexD_import;
+}
+
+*[eval(JOSM_search("user:dhic"))][setting("user_DannyH")] {
+  set .DannyH;
+}
+
+*[eval(JOSM_search("user:dhic_import"))][setting("user_DannyH_import")] {
+  set .uDannyH_import;
+}
+
+*[eval(JOSM_search("user:RobinNoodles"))][setting("user_RobinH")] {
+  set .RobinH;
+}
+
+*[eval(JOSM_search("user:RobinNoodles_import"))][setting("user_RobinH_import")] {
+  set .RobinH_import;
+}
+
+*[eval(JOSM_search("user:MMantlo"))][setting("user_MorgenM")] {
+  set .MorgenM;
+}
+
+*[eval(JOSM_search("user:MMantlo_import"))][setting("user_MorgenM_import")] {
+  set .MorgenM_import;
+}
+
+*[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
+  set .SherryM;
+}
+
+*[eval(JOSM_search("user:Sherbare_import"))][setting("user_SherryM_import")] {
+  set .SherryM_import;
+}
+
+*[eval(JOSM_search("user:Mel_2"))][setting("user_RonmelR")] {
+  set .RonmelR;
+}
+
+*[eval(JOSM_search("user:Mel_2_import"))][setting("user_RonmelR_import")] {
+  set .RonmelR_import;
+}
+
+*[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
+  set .LeanneS;
+}
+
+*[eval(JOSM_search("user:LSkalayo_import"))][setting("user_LeanneS_import")] {
+  set .LeanneS_import;
+}
+
+*[eval(JOSM_search("user:rallynukab"))][setting("user_NatashaS")] {
+  set .NatashaS;
+}
+
+*[eval(JOSM_search("user:rallynukab_import"))][setting("user_NatashaS_import")] {
+  set .NatashaS_import;
+}
+
+*[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
+  set .SteveC;
+}
+
+*[eval(JOSM_search("user:Smoothdog_import"))][setting("user_SteveC_import")] {
+  set .SteveC_import;
+}
+
+*[eval(JOSM_search("user:ImjusBuddy"))][setting("user_BuddyF")] {
+  set .BuddyF;
+}
+
+*[eval(JOSM_search("user:ImjusBuddy_import"))][setting("user_BuddyF_import")] {
+  set .BuddyF_import;
+}
+
+*[eval(JOSM_search("user:CoolGuyJake"))][setting("user_JacobK")] {
+  set .JacobK;
+}
+
+*[eval(JOSM_search("user:BlueBot"))][setting("user_LouisM")] {
+  set .LouisM;
+}
+
+*[eval(JOSM_search("user:RedBot"))][setting("user_DylanF")] {
+  set .DylanF;
+}
+
+*[eval(JOSM_search("user:krinkov76239"))][setting("user_DavidK")] {
+  set .DavidK;
+}
+
+*[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
+  set .IanM;
+}
+
+*[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
+  set .BrianL;
+}
+
+/*
+
+/* Styling of ways and nodes once they belong to "history" for each individual user */
+
+way.JonK,
+way.JonK_import,
+way.AndyW,
+way.AndyW_import,
+way.NickF,
+way.NickF_import,
+way.MattB,
+way.MattB_import,
+way.NickE,
+way.NickE_import,
+way.ArleneC,
+way.ArleneC_import,
+way.AlexD,
+way.AlexD_import,
+way.DannyH,
+way.DannyH_import,
+way.RobinH,
+way.RobinH_import,
+way.MorgenM,
+way.MorgenM_import,
+way.SherryM,
+way.SherryM_import,
+way.RonmelR,
+way.RonmelR_import,
+way.LeanneS,
+way.user_LeanneS_import,
+way.NatashaS,
+way.NatashaS_import,
+way.SteveC,
+way.SteveC_import,
+way.BuddyF,
+way.BuddyF_import,
+way.JacobK,
+way.LouisM,
+way.DylanF,
+way.DavidK,
+way.IanM,
+way.BrianL {
+  z-index: -10;
+  casing-color: #B108D6;
+  casing-width: 7;
+  casing-opacity: 0.6;
+  /*
+  text: eval(concat("Highway type =", " ", tag("highway")));
+  text-offset: -20;
+  */
+
+
+}
+
+node.JonK,
+node.JonK_import
+node.AndyW,
+node.AndyW_import,
+node.NickF,
+node.NickF_import,
+node.MattB,
+node.MattB_import,
+node.NickE,
+node.NickE_import,
+node.ArleneC,
+node.ArleneC_import,
+node.AlexD,
+node.AlexD_import,
+node.DannyH,
+node.DannyH_import,
+node.RobinH,
+node.RobinH_import,
+node.MorgenM,
+node.MorgenM_import,
+node.SherryM,
+node.SherryM_import,
+node.RonmelR,
+node.RonmelR_import,
+node.LeanneS,
+node.LeanneS_import,
+node.NatashaS,
+node.NatashaS_import,
+node.SteveC,
+node.SteveC_import,
+node.BuddyF,
+node.BuddyF_import,
+node.JacobK,
+node.LouisM,
+node.DylanF,
+node.DavidK,
+node.BrianL {
+  symbol-size: 18;
+  symbol-shape: triangle;
+  symbol-stroke-color: blue;
+  symbol-fill-color: blue;
+  symbol-fill-opacity: 0.5;
+}
+
+node:selected {
+    symbol-size: 17;
+    symbol-stroke-color: #DF2E08;
+    symbol-stroke-width: 3px;
+	symbol-fill-color: #DF2E08;
+}

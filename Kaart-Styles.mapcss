@@ -302,7 +302,7 @@ way[highway=service][service=alley]                 { z-index: 5; color: #80D2DE
 
 way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
 
-way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
+way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: black; }
 
 way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: #000000; casing-width: 1; }
 way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFA500; }
@@ -317,7 +317,7 @@ way[highway=unclassified]                           { z-index: 6; color: #96795d
 
 way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
 
-way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: red; }
+way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: black; }
 
 way[highway=living_street]                          { z-index: 5; dashes: 9,9; dashes-background-color: gray; width: 5; color: #E8E8E8; casing-color: #000000; casing-width: 1; }
 
@@ -1419,10 +1419,11 @@ way[highway]
   z-index: 5; 
   text: auto; 
   text-color: white; 
+  font-family: Avenir;
   font-size: 12; 
   text-position: line; 
   text-halo-color: black; 
-  text-halo-radius: 0.9; 
+  text-halo-radius: 2.5; 
   linecap: round; 
   casing-linecap: round }
 

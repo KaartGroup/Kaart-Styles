@@ -183,11 +183,11 @@ setting::check_name {
   default: false;
 }
 
-/* setting::remove_name {
+setting::remove_name {
   type: boolean;
   label: tr("Remove Street Name Labels");
   default: false;
-} */
+}
 
 /* setting::one_2 {
   type: boolean;
@@ -433,7 +433,7 @@ way[oneway=-1]::arrows { z-index: 15; color: #555555; width: 2; dashes: 10,50; l
 /* Under construction */
 
 way[highway=proposed] { z-index: 5; color: #ffff01; width: 6; dashes: 8, 2; }
-way[highway=construction] {  z-index: 5; width: 6; linecap: square; color: #ff6700; casing-color: #0000FF; casing-width: 0; dashes: 20,5; dashes-background-color: #e1ff00;  dashes-casing-color: black;} 
+way[highway=construction] { z-index: 5; color: #ffff00; width: 6; dashes: 8, 4; casing-color: #0000aa; casing-width: 1; casing-dashes: 8,4;}
 
 
 
@@ -2853,7 +2853,7 @@ way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][
 }
 
 
-way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink|service|footway|pedestrian)$/][setting("remove_name")] {
+way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|service|footway|pedestrian)$/][setting("remove_name")] {
   display: none;
   text-offset: -40;
   font-size: 0;
