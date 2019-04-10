@@ -430,7 +430,7 @@ way[oneway=-1]::arrows { z-index: 15; color: #555555; width: 2; dashes: 10,50; l
 
 
 
-//* Under construction */
+/* Under construction */
 
 way[highway=proposed] {   
 
