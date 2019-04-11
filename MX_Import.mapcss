@@ -3007,7 +3007,7 @@ node|z22:connection.tertiary2   { symbol-size: 10; }
 
 node!:connection[setting("knode_setting")] {
 	symbol-shape: circle;
-	symbol-size: 9;
+	symbol-size: 6;
 	set .child_knodes;
     symbol-stroke-color: yellow;
     symbol-fill-color: black;
@@ -3016,7 +3016,7 @@ node!:connection[setting("knode_setting")] {
 }
 
 node.child_knodes:selected {
-    symbol-size: 9;
+    symbol-size: 6;
     symbol-stroke-color: yellow;
 	symbol-fill-color: red;
 }
@@ -3026,7 +3026,7 @@ node.child_knodes:selected {
 
 way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|service|track)$/] > node[setting("node_setting")] {
 	symbol-shape: circle;
-	symbol-size: 9;
+	symbol-size: 4;
 	set .child_knodes;
     symbol-stroke-color: #00FFFF;
     symbol-fill-color: black;
@@ -3035,14 +3035,14 @@ way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|s
 }
 
 node.child_knodes:selected {
-    symbol-size: 9;
+    symbol-size: 6;
     symbol-stroke-color: #00FFFF;
 	symbol-fill-color: red;
 }
 
 node!:connection[setting("node_setting")] {
 	symbol-shape: circle;
-	symbol-size: 9;
+	symbol-size: 6;
 	set .child_nodes;
     symbol-stroke-color: yellow;
     symbol-fill-color: black;
@@ -3051,7 +3051,7 @@ node!:connection[setting("node_setting")] {
 }
 
 node.child_nodes:selected {
-    symbol-size: 9;
+    symbol-size: 6;
     symbol-stroke-color: yellow;
 	symbol-fill-color: red;
 }
