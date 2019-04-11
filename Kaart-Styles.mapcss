@@ -2990,49 +2990,9 @@ way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|s
     symbol-stroke-color: #00FFFF;
     symbol-fill-color: black;
     symbol-shape: circle;
-    
-    node|z13               { symbol-size: 2; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z13        { symbol-size: 2; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-node|z13:connection     { symbol-size: 3.5; symbol-stroke-color: #00FFFF; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-
-    node|z14               { symbol-size: 3; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z14        { symbol-size: 3; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-node|z14:connection     { symbol-size: 3.5; symbol-stroke-color: #00FFFF; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-    
-    node|z15               { symbol-size: 3; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z15        { symbol-size: 3; symbol-stroke-color: yellow; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-node|z15:connection     { symbol-size: 3.5; symbol-stroke-color: #00FFFF; symbol-stroke-width: 0.5; symbol-fill-color: black; symbol-shape: circle;}
-    
-    node|z16               { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z16        { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z16:connection     { symbol-size: 5.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-    
-    node|z17               { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z17        { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z17:connection     { symbol-size: 5.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-
-node|z18              { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z18         { symbol-size: 5; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z18:connection    { symbol-size: 5.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-
-node|z19-             { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z19-        { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z19-:connection   { symbol-size: 6.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-
-node|z20-             { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z20-        { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z20-:connection   { symbol-size: 6.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-
-node|z21-              { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z21-        { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z21-:connection   { symbol-size: 6.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-
-node|z22             { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-way > node|z22        { symbol-size: 6; symbol-stroke-color: yellow; symbol-fill-color: black; symbol-shape: circle;}
-node|z22:connection   { symbol-size: 6.5; symbol-stroke-color: #00FFFF; symbol-fill-color: black; symbol-shape: circle;}
-  
   
 }
+
 
 
 
