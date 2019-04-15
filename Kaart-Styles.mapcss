@@ -1414,7 +1414,7 @@ way[highway][surface=snow][setting("surface_t")]::core_motoroad {
 
 
 /*******************/
-/* way text labels */
+/* way text labels - General Settings for Highways (Do NOT use font-size attribute in this section or it will screw up all other settings below)*/
 /*******************/
 way[highway]
 { 
@@ -1453,7 +1453,7 @@ way|z21-[highway] {
 }
 
 
-/* Increase size of highway labels */
+/* Increase size of highway labels using Setting */
 
 way|z17-[highway^=motorway][setting("highway_labels")],
 way|z17-[highway^=trunk][setting("highway_labels")],
