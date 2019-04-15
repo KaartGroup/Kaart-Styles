@@ -177,6 +177,8 @@ setting::overlap1 {
 */
 
 
+way[highway=missing]                            { z-index: 5; color: #39ff14; width: 5; casing-color: #000000; casing-width: 1; }
+
 
 /* Boundary Styles */
 
@@ -1420,27 +1422,28 @@ way[highway]
   text: auto; 
   text-color: white; 
   font-family: Avenir;
-  font-size: 12; 
   text-position: line; 
   text-halo-color: black; 
   text-halo-radius: 2.5; 
+  text-halo-opacity: .5;
   linecap: round; 
-  casing-linecap: round }
+  casing-linecap: round; 
+  }
 
 
 
 /* Limit highway labels without display labels setting */
 
 way|z17-[highway] {
-    font-size: 8;
+    font-size: 12;
     
 }
 
 way|z18[highway] {
-    font-size: 9;
+    font-size: 12;
 }
 way|z19[highway] {
-    font-size: 10;
+    font-size: 12;
 }
 way|z20[highway] {
     font-size: 11;
@@ -1465,7 +1468,6 @@ way|z17-[highway=service][setting("highway_labels")],
 way|z17-[highway=track][setting("highway_labels")] {
     text: auto;
     text-color: white;
-    font-size: 12;
     text-position: line;
     linecap: round;
     font-weight: bold;
@@ -1476,16 +1478,11 @@ way|z17-[highway=track][setting("highway_labels")] {
     
 }
 
-way|z18[highway][setting("highway_labels")] {
-    font-size: 16;
+way|z-16[highway][setting("highway_labels")] {
+    font-size: 10;
 }
-way|z19[highway][setting("highway_labels")] {
-    font-size: 16;
-}
-way|z20[highway][setting("highway_labels")] {
-    font-size: 18;
-}
-way|z21-[highway][setting("highway_labels")] {
+
+way|z16-[highway][setting("highway_labels")] {
     font-size: 18;
 }
 
@@ -2500,8 +2497,14 @@ way|z17-[highway][setting("surface_t")],
 way|z18-[highway][setting("surface_t")],
 way|z19-[highway][setting("surface_t")],
 way|z20-[highway][setting("surface_t")],
-way|z21-[highway][setting("surface_t")] {
+way|z21-[highway][setting("surface_t")] 
 
+{
+
+  text-color: white;
+  font-family: Avenir;
+  text-halo-color: black;
+}
 
 
 /* Removed the following from this section on surface types 
@@ -2511,10 +2514,7 @@ eval(tag("surface")) To add surface labels again, delete this comment and leave 
 */
   
 
-  text-color: white;
-  text-halo-color: black;
-  font-size: 20;
-}
+
 
 
 
@@ -2816,27 +2816,6 @@ way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][
   
 }
 
-/* Name & Ref Checker */
-
-way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][!noname][setting("check_no_name")] {
-  casing-color: red;
-  casing-width: 3;
-  text: tr("");
-  text-offset: -40;
-  font-size: 15;
-  
-}
-
-/* Name & Ref Checker */
-
-way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][!noname][setting("check_no_name")] {
-  casing-color: red;
-  casing-width: 3;
-  text: tr("");
-  text-offset: -40;
-  font-size: 15;
-  
-}
 
 way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink|service|footway|pedestrian)$/][setting("remove_name")] {
   display: none;
