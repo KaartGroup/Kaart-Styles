@@ -171,7 +171,7 @@ setting::show_boundary {
 
 setting::lowercase {
   type: boolean;
-  label: tr("Flag roads with all lower case name");
+  label: tr("Flag roads where words after the first word in a name are NOT capitalized");
   default: true;
 }
 
