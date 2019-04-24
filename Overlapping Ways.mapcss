@@ -71,12 +71,12 @@ setting::overlap5 {
 
 /* Gray */
 
-way:selected[setting("overlap1")]
+way:selected[setting("overlap1")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/]
  {
 set .select0O;
 }
 
-way.select0O[setting("overlap1")] {
+way.select0O[setting("overlap1")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 casing-width: 2;
 casing-color: black;
 width: 5;
@@ -93,12 +93,12 @@ background-dashes: none;
 
 /* Purple */
 
-way:selected[setting("overlap")]
+way:selected[setting("overlap")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/]
  {
 	set .selectWO;
 }
 
-way.selectWO[setting("overlap")] {
+way.selectWO[setting("overlap")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	casing-width: 2;
 	casing-color: purple;
 	width: 5;
@@ -114,11 +114,11 @@ way.selectWO[setting("overlap")] {
 
 /* black */
 
-way:selected[setting("overlap2")] {
+way:selected[setting("overlap2")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	set .selectW1;
 }
 
-way.selectW1[setting("overlap2")] {
+way.selectW1[setting("overlap2")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	casing-width: 2;
 	casing-color: black;
 	width: 5;
@@ -133,11 +133,11 @@ way.selectW1[setting("overlap2")] {
 
 /* red */
 
-way:selected[setting("overlap3")] {
+way:selected[setting("overlap3")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	set .selectW2;
 }
 
-way.selectW2[setting("overlap3")] {
+way.selectW2[setting("overlap3")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	casing-width: 2;
 	casing-color: #b30000;
 	width: 5;
@@ -153,11 +153,11 @@ way.selectW2[setting("overlap3")] {
 
 /* blue */
 
-way:selected[setting("overlap4")] {
+way:selected[setting("overlap4")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	set .selectW3;
 }
 
-way.selectW3[setting("overlap4")] {
+way.selectW3[setting("overlap4")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	casing-width: 2;
 	casing-color: #b3c6ff;
 	width: 5;
@@ -173,12 +173,12 @@ way.selectW3[setting("overlap4")] {
 
 /* Turqoise */
 
-way:selected[setting("overlap5")]
+way:selected[setting("overlap5")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/]
  {
 	set .selectW4;
 }
 
-way.selectW4[setting("overlap5")] {
+way.selectW4[setting("overlap5")][highway=~/footway|pedestrian|bicycle road|cyclestreet|track|raceway|road|construction|escape|footway|cycleway|path|bridleway|steps|escalator|service|living_street|residential|tertiary|secondary|primary|trunk|motorway/] {
 	casing-width: 2;
 	casing-color: #00ffef;
 	width: 5;

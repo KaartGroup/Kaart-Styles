@@ -167,17 +167,24 @@ setting::show_boundary {
   default: true;
 }
 
-/*
-setting::overlap1 {
+
+
+setting::lowercase {
   type: boolean;
-  label: tr("Selected Ways appear in Gray");
+  label: tr("Flag roads with all lower case name");
   default: true;
 }
 
-*/
 
 
-way[highway=missing]                            { z-index: 5; color: #39ff14; width: 5; casing-color: #000000; casing-width: 1; }
+/*Lower-Case Names*/
+
+
+
+
+
+
+
 
 
 /* Boundary Styles */
@@ -3167,7 +3174,21 @@ way.missl
     text-halor-radius: 2;
     
 }
+/**************************/
+/*Check against incorrect capitalization of names where the first word IS capitalized*/
+/**************************/
 
+*[name=~/^\p{Lu}\p{Ll}*.*\s\p{Ll}{4,}($|\s)/][highway=~/service|living_street|residential|tertiary|secondary|primary|trunk|motorway/][setting("lowercase")]
+
+{
+  
+  casing-color: orange;
+  casing-width: 3;
+  text:"Check Caps";
+  text-offset: -40;
+  font-size: 15;
+  
+}
 
 /**************************/
 /* Building Intersecting Road Checks */
@@ -4222,3 +4243,6 @@ node[waterway=waterfall][setting("osmic")] {
     set icon_z17;
     icon-width: 18;
 }
+
+
+
