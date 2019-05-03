@@ -1181,7 +1181,7 @@ way[highway=tertiary][junction=roundabout] {
     z-index: 4;
     width: 3;
     casing-width: 2;
-    casing-color: ##FB2B11;
+    casing-color: #FB2B11;
     color: #408ccc;
     dashes: 15,15;
 }
