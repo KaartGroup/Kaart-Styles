@@ -14,7 +14,115 @@ meta {
 
 1.4 Added new way & node styles -- Louis -- 3/20/2019
 
+1.5 Alphabetized users, added new users, simplified node highlight & node modified overlays -- Louis,Ian -- 5/15/2019
+
+Tips:
+
+A setting should be created for each separate user:
+
+setting::user_aaron {
+  type: boolean;
+  label: tr("Turn User Aaron On/Off");
+  default: false;
+}
+
+-- after :: comes your setting "class" which can be named as you will. Our example show user_aaron
+-- Type: boolean; should always exist
+-- label: tr("Anything you want to put here") -> This is what shows up under setting in JOSM
+-- Default: false -> the setting will remain disabled on launch until a user enables it
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+at which point, it becomes necessary to create a selector statement for your user:
+
+*[eval(JOSM_search("user:vespax"))][setting("user_aaron")] {
+  set .aaron;
+}
+
+-- * denotes what you are selecting, in this case, every element type in OSM
+-- [eval(JOSM_search("user:vespax"))] -> this is necessary and should be constructed as such.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to construct time stamps, you can use the following:
+
+
+String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
+"timestamp:2016-02-20/" -- Shows all edits edited after date
+"timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So, a timestamped search would look like this:
+
+*[eval(JOSM_search("user:IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"))] {
+  casing-width: 10;
+  casing-color: green;
+  casing-opacity: 0.2;
+}
+
+-- set .aaron; -> this is setting the class for this statement. This allows us to call it out later on. Classes
+can be set like that or as so -> set aaron;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+way.aaron, & node.aaron,
+
+-- This shows that we are looking for all ways/nodes which meet the "aaron" class. The comma here denotes
+that there is another selector we would like to call out after "aaron"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+{
+  z-index: -10;
+  casing-color: lime;
+  casing-width: 10;
+  casing-opacity: 0.3;
+  
+  
+}
+
+-- This is our code block which will style up whatever we called out as a selector
+
+*/
+
+/* Create Settings */
+
 /* User Settings */
+
+/* Brazil Team */
+setting::user_alejandro {
+  type: boolean;
+  label: tr("Turn User Leonardo DeMAPrio On/Off");
+  default: true;
+}
+
+setting::user_andrewp {
+  type: boolean;
+  label: tr("Turn User G_Fyyar On/Off");
+  default: true;
+}
+
+setting::user_andrews {
+  type: boolean;
+  label: tr("Turn User Plutocrats On/Off");
+  default: true;
+}
+
+setting::user_anita {
+  type: boolean;
+  label: tr("Turn User leedlelee On/Off");
+  default: true;
+}
+
+setting::user_anja {
+  type: boolean;
+  label: tr("Turn User Ajaie On/Off");
+  default: true;
+}
 
 setting::user_ben {
   type: boolean;
@@ -22,57 +130,9 @@ setting::user_ben {
   default: true;
 }
 
-setting::user_jake {
+setting::user_callista {
   type: boolean;
-  label: tr("Turn User jacob_kubeczko On/Off");
-  default: true;
-}
-
-setting::user_kyle {
-  type: boolean;
-  label: tr("Turn User Kyleta8 On/Off");
-  default: true;
-}
-
-setting::user_luis {
-  type: boolean;
-  label: tr("Turn User medrano93 On/Off");
-  default: true;
-}
-
-setting::user_marshall {
-  type: boolean;
-  label: tr("Turn User MTG5093 On/Off");
-  default: true;
-}
-
-setting::user_mia {
-  type: boolean;
-  label: tr("Turn User notmee-uh On/Off");
-  default: true;
-}
-
-setting::user_nikki {
-  type: boolean;
-  label: tr("Turn User Meowshane On/Off");
-  default: true;
-}
-
-setting::user_sharon {
-  type: boolean;
-  label: tr("Turn User mapcraft On/Off");
-  default: true;
-}
-
-setting::user_zebulon {
-  type: boolean;
-  label: tr("Turn User Zebulonium On/Off");
-  default: true;
-}
-
-setting::user_alejandro {
-  type: boolean;
-  label: tr("Turn User Leonardo DeMAPrio On/Off");
+  label: tr("Turn User csjupiter1 On/Off");
   default: true;
 }
 
@@ -82,15 +142,21 @@ setting::user_charles {
   default: true;
 }
 
-setting::user_katelin {
+setting::user_claire {
   type: boolean;
-  label: tr("Turn User kreimers On/Off");
+  label: tr("Turn User Clarita On/Off");
   default: true;
 }
 
-setting::user_andrew {
+setting::user_cody {
   type: boolean;
-  label: tr("Turn User G_Fyyar On/Off");
+  label: tr("Turn User yodacodyone1 On/Off");
+  default: true;
+}
+
+setting::user_danielle {
+  type: boolean;
+  label: tr("Turn User GhostEye On/Off");
   default: true;
 }
 
@@ -106,15 +172,63 @@ setting::user_farris {
   default: true;
 }
 
+setting::user_katelin {
+  type: boolean;
+  label: tr("Turn User kreimers On/Off");
+  default: true;
+}
+
+setting::user_kyle {
+  type: boolean;
+  label: tr("Turn User Kyleta8 On/Off");
+  default: true;
+}
+
+setting::user_logan {
+  type: boolean;
+  label: tr("Turn User logans127 On/Off");
+  default: true;
+}
+
 setting::user_lucas {
   type: boolean;
   label: tr("Turn User Traaker_L On/Off");
   default: true;
 }
 
+setting::user_luis {
+  type: boolean;
+  label: tr("Turn User medrano93 On/Off");
+  default: true;
+}
+
+setting::user_mia {
+  type: boolean;
+  label: tr("Turn User notmee-uh On/Off");
+  default: true;
+}
+
+setting::user_nikki {
+  type: boolean;
+  label: tr("Turn User Meowshane On/Off");
+  default: true;
+}
+
+setting::user_rd {
+  type: boolean;
+  label: tr("Turn User mr_et On/Off");
+  default: true;
+}
+
 setting::user_ryanf {
   type: boolean;
   label: tr("Turn User rytheking On/Off");
+  default: true;
+}
+
+setting::user_ryanf2 { /* Ryan F had a second account when he first started */
+  type: boolean;
+  label: tr("Turn User rytheking2 On/Off");
   default: true;
 }
 
@@ -136,38 +250,81 @@ setting::user_sarena {
   default: true;
 }
 
+setting::user_sharon {
+  type: boolean;
+  label: tr("Turn User mapcraft On/Off");
+  default: true;
+}
+
+setting::user_sharon {
+  type: boolean;
+  label: tr("Turn User mapcraft On/Off");
+  default: true;
+}
+
+setting::user_zebulon {
+  type: boolean;
+  label: tr("Turn User Zebulonium On/Off");
+  default: true;
+}
+
+
+
+
+/* Mexico Team */
+setting::user_arlene {
+  type: boolean;
+  label: tr("Turn User ArleneC On/Off");
+  default: true;
+}
+
+setting::user_leanne {
+  type: boolean;
+  label: tr("Turn User LSkalayo On/Off");
+  default: true;
+}
+
+setting::user_marshall {
+  type: boolean;
+  label: tr("Turn User MTG5093 On/Off");
+  default: true;
+}
+
+setting::user_nicke {
+  type: boolean;
+  label: tr("Turn User jedimasterflint On/Off");
+  default: true;
+}
+
+setting::user_nickf {
+  type: boolean;
+  label: tr("Turn User daFisch On/Off");
+  default: true;
+}
+
+setting::user_robin {
+  type: boolean;
+  label: tr("Turn User RobinNoodles On/Off");
+  default: true;
+}
+
 setting::user_ryank {
   type: boolean;
   label: tr("Turn User Whimsical Otter On/Off");
   default: true;
 }
 
-setting::user_nick {
-  type: boolean;
-  label: tr("Turn User daFisch On/Off");
-  default: true;
-}
 
-setting::user_claire {
-  type: boolean;
-  label: tr("Turn User Clarita On/Off");
-  default: true;
-}
 
-setting::user_nick2 {
-  type: boolean;
-  label: tr("Turn User jedimasterflint On/Off");
-  default: true;
-}
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
 
 node:modified::modified_layer {
     symbol-shape: circle;
-    symbol-size: 18;
-    symbol-stroke-color: blue;
-    symbol-fill-color: orange;
-    symbol-fill-opacity: 1;
+    symbol-size: 22;
+    symbol-stroke-color: orange;
+    symbol-fill-width: 3px;
+    symbol-fill-opacity: 0.5;
     z-index: -5;
 }
 
@@ -176,7 +333,7 @@ node:modified < way::modified_layer {
     width: 6;
     color: transparent;
     opacity: 0;
-    casing-width: 4;
+    casing-width: 7;
     casing-color: #47D608;
     casing-opacity: 0.7;
     z-index: -5;
@@ -187,59 +344,48 @@ node:modified < way::modified_layer {
 
 /* User specific styles */
 
+*[eval(JOSM_search("user:\"Leonardo DeMAPrio\""))][setting("user_alejandro")] {
+  set .alejandro;
+}
+
+*[eval(JOSM_search("user:G_Fyyar"))][setting("user_andrewp")] {
+  set .andrewp;
+}
+
+*[eval(JOSM_search("user:Plutocrats"))][setting("user_andrews")] {
+  set .andrews;
+}
+
+*[eval(JOSM_search("user:leedlelee"))][setting("user_anita")] {
+  set .anita;
+}
+
+*[eval(JOSM_search("user:Ajaie"))][setting("user_anja")] {
+  set .anja;
+}
+
 *[eval(JOSM_search("user:\"El Pescador\""))][setting("user_ben")] {
   set .ben;
 }
 
-*[eval(JOSM_search("user:jacob_kubeczko"))][setting("user_jake")] {
-  set .jake;
-}
-
-*[eval(JOSM_search("user:Kyleta8"))][setting("user_kyle")] {
-  set .kyle;
-}
-
-*[eval(JOSM_search("user:medrano93"))][setting("user_luis")] {
-  set .luis;
-}
-
-
-*[eval(JOSM_search("user:MTG5093"))][setting("user_marshall")] {
-  set .marshall;
-}
-
-
-*[eval(JOSM_search("user:notmee-uh"))][setting("user_mia")] {
-  set .mia;
-}
-
-*[eval(JOSM_search("user:Meowshane"))][setting("user_nikki")] {
-  set .nikki;
-}
-
-
-*[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
-  set .sharon;
-}
-
-*[eval(JOSM_search("user:Zebulonium"))][setting("user_zebulon")] {
-  set .zebulon;
-}
-
-*[eval(JOSM_search("user:\"Leonardo DeMAPrio\""))][setting("user_alejandro")] {
-  set .alejandro;
+*[eval(JOSM_search("user:csjupiter1"))][setting("user_callista")] {
+  set .callista;
 }
 
 *[eval(JOSM_search("user:chuck97!"))][setting("user_charles")] {
   set .charles;
 }
 
-*[eval(JOSM_search("user:kreimers"))][setting("user_katelin")] {
-  set .katelin;
+*[eval(JOSM_search("user:Clairita"))][setting("user_claire")] {
+  set .claire;
 }
 
-*[eval(JOSM_search("user:G_Fyyar"))][setting("user_andrew")] {
-  set .andrew;
+*[eval(JOSM_search("user:yodacodyone1"))][setting("user_cody")] {
+  set .cody;
+}
+
+*[eval(JOSM_search("user:GhostEye"))][setting("user_danielle")] {
+  set .danielle;
 }
 
 *[eval(JOSM_search("user:Dillon9"))][setting("user_dillon")] {
@@ -250,12 +396,48 @@ node:modified < way::modified_layer {
   set .farris;
 }
 
+*[eval(JOSM_search("user:jacob_kubeczko"))][setting("user_jake")] {
+  set .jake;
+}
+
+*[eval(JOSM_search("user:kreimers"))][setting("user_katelin")] {
+  set .katelin;
+}
+
+*[eval(JOSM_search("user:Kyleta8"))][setting("user_kyle")] {
+  set .kyle;
+}
+
+*[eval(JOSM_search("user:logans127"))][setting("user_logan")] {
+  set .logan;
+}
+
 *[eval(JOSM_search("user:Traaker_L"))][setting("user_lucas")] {
-  set .Lucas;
+  set .lucas;
+}
+
+*[eval(JOSM_search("user:medrano93"))][setting("user_luis")] {
+  set .luis;
+}
+
+*[eval(JOSM_search("user:notmee-uh"))][setting("user_mia")] {
+  set .mia;
+}
+
+*[eval(JOSM_search("user:Meowshane"))][setting("user_nikki")] {
+  set .nikki;
+}
+
+*[eval(JOSM_search("user:mr_et"))][setting("user_rd")] {
+  set .rd;
 }
 
 *[eval(JOSM_search("user:rytheking"))][setting("user_ryanf")] {
   set .ryanf;
+}
+
+*[eval(JOSM_search("user:rytheking2"))][setting("user_ryanf2")] {
+  set .ryanf2;
 }
 
 *[eval(JOSM_search("user:Senzubeandealer"))][setting("user_ryans")] {
@@ -270,49 +452,91 @@ node:modified < way::modified_layer {
   set .sarena;
 }
 
-*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_ryan")] {
-  set .ryan;
+*[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
+  set .sharon;
 }
 
-*[eval(JOSM_search("user:daFisch"))][setting("user_nick")] {
-  set .nick;
+*[eval(JOSM_search("user:Zebulonium"))][setting("user_zebulon")] {
+  set .zebulon;
 }
 
-*[eval(JOSM_search("user:Clairita"))][setting("user_claire")] {
-  set .claire;
+
+
+
+
+/* Mexico Team */
+*[eval(JOSM_search("user:ArleneC"))][setting("user_arlene")] {
+  set .arlene;
 }
 
-*[eval(JOSM_search("user:jedimasterflint"))][setting("user_nick2")] {
-  set .nick;
+*[eval(JOSM_search("user:LSkalayo"))][setting("user_leanne")] {
+  set .leanne;
 }
 
-/*
+*[eval(JOSM_search("user:MTG5093"))][setting("user_marshall")] {
+  set .marshall;
+}
+
+*[eval(JOSM_search("user:jedimasterflint"))][setting("user_nicke")] {
+  set .nicke;
+}
+
+*[eval(JOSM_search("user:daFisch"))][setting("user_nickf")] {
+  set .nickf;
+}
+
+*[eval(JOSM_search("user:RobinNoodles"))][setting("user_robin")] {
+  set .robin;
+}
+
+*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_ryank")] {
+  set .ryank;
+}
+
+/* This is how you search for someone with a space in their name
+
+*[eval(JOSM_search("user:\"Hector Vector\""))] {
+  set .jman;
+}
+
+*/
 
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
-way.ben,
-way.jake,
-way.kyle,
-way.luis,
-way.marshall,
-way.mia,
-way.nikki,
-way.sharon,
 way.alejandro,
-way.charles,
-way.katelin,
-way.andrew,
+way.andrewp,
+way.andrews,
+way.anita,
+way.anja,
+way.ben,
+way.callista,
+way.claire,
+way.cody,
+way.danielle,
 way.dillon,
 way.farris,
+way.jake,
+way.katelin,
+way.kyle,
+way.mia,
+way.nikki,
+way.logan,
 way.lucas,
+way.luis,
+way.rd,
 way.ryanf,
+way.ryanf2,
 way.ryans,
 way.sage,
 way.sarena,
-way.ryan,
-way.nick,
-way.claire,
-way.nick2 {
+way.sharon,
+way.arlene,
+way.leanne,
+way.marshall,
+way.nicke,
+way.nickf,
+way.robin,
+way.ryank {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -328,39 +552,53 @@ way.nick2 {
 
 
 
-node.ben,
-node.jake,
-node.kyle,
-node.luis,
-node.marshall,
-node.mia,
-node.nikki,
-node.sharon,
 node.alejandro,
-node.charles,
-node.katelin,
-node.andrew,
+node.andrewp,
+node.andrews,
+node.anita,
+node.anja,
+node.ben,
+node.callista,
+node.claire,
+node.cody,
+node.danielle,
 node.dillon,
 node.farris,
+node.jake,
+node.katelin,
+node.kyle,
+node.mia,
+node.nikki,
+node.logan,
 node.lucas,
+node.luis,
+node.rd,
 node.ryanf,
+node.ryanf2,
 node.ryans,
 node.sage,
 node.sarena,
-node.ryan,
-node.nick,
-node.claire,
-node.nick2 {
-  symbol-size: 18;
+node.sharon,
+node.arlene,
+node.leanne,
+node.marshall,
+node.nicke,
+node.nickf,
+node.robin,
+node.ryank {
+  symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
-  symbol-fill-color: blue;
+  symbol-stroke-width: 3px;
   symbol-fill-opacity: 0.5;
+  z-index: -5;
 }
 
-  node:selected {
-    symbol-size: 17;
+  node:selected::selected_layer {
+    symbol-shape: circle;
+    symbol-size: 22;
     symbol-stroke-color: #DF2E08;
     symbol-stroke-width: 3px;
-  symbol-fill-color: #DF2E08;
+  symbol-fill-opacity: 0.5;
+  z-index: -5;
 }
