@@ -125,13 +125,13 @@ setting::user_ArleneC_import {
 setting::user_BreiaV {
   type:boolean;
   label:tr("Turn User 3agleOne On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_BreiaV_import {
   type:boolean;
   label:tr("Turn User 3agleOne_import On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_BrianL {
@@ -143,7 +143,7 @@ setting::user_BrianL {
 setting::user_DylanF {
   type:boolean;
   label:tr("Turn User RedRangerr On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_IanM {
@@ -155,7 +155,7 @@ setting::user_IanM {
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_LeanneS {
@@ -173,19 +173,19 @@ setting::user_LeanneS_import {
 setting::user_LoganM {
   type:boolean;
   label:tr("Turn User Dalekokarta On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_MarshallG {
   type:boolean;
   label:tr("Turn User MTG5093 On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_MattB {
@@ -299,7 +299,7 @@ setting::user_WilliamF_import {
 setting::user_ZachB {
   type:boolean;
   label:tr("Turn User MTBdude On/Off");
-  default:false;
+  default:true;
 }
 
 
