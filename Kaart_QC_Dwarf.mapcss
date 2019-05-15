@@ -2,7 +2,7 @@ meta {
   title: "QC Styles For Dwarf Team";
   description: "Highlights features that were created/modified by users";
   watch-modified: true;
-  version: "1.4";
+  version: "1.5";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
 
 }
@@ -323,7 +323,7 @@ node:modified::modified_layer {
     symbol-shape: circle;
     symbol-size: 22;
     symbol-stroke-color: orange;
-    symbol-fill-width: 3px;
+    symbol-stroke-width: 3px;
     symbol-fill-opacity: 0.5;
     z-index: -5;
 }
