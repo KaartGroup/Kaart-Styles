@@ -172,6 +172,12 @@ setting::user_farris {
   default: true;
 }
 
+setting::user_jake {
+  type: boolean;
+  label: tr("Turn User jacob_kubeczko On/Off");
+  default: true;
+}
+
 setting::user_katelin {
   type: boolean;
   label: tr("Turn User kreimers On/Off");
@@ -247,12 +253,6 @@ setting::user_sage {
 setting::user_sarena {
   type: boolean;
   label: tr("Turn User swells5 On/Off");
-  default: true;
-}
-
-setting::user_sharon {
-  type: boolean;
-  label: tr("Turn User mapcraft On/Off");
   default: true;
 }
 
