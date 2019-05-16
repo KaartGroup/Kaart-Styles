@@ -3271,6 +3271,16 @@ node:selected.selectme {
    casing-color: red;
 }
 
+/* Building crossing building check */
+
+*[building][building!~/no|entrance/][any(tag("layer"),"0") = any(parent_tag("layer"),"0")] ⧉ *[building][building!~/no|entrance/]
+/* *[building][building!~/no|entrance/][any(tag("building:levels"),"") = any(parent_tag("building:levels"),"")] ⧉ *[building][building!~/no|entrance/] */ {
+   text: tr("Building crossing building");
+   font-size: 15;
+   width: 10;
+   casing-width: 10;
+   casing-color: red;
+}
 
 /* HUGE Building Check */
 
