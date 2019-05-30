@@ -18,161 +18,280 @@ meta {
 
 1.4 Adjusted user, style lines and appearances -- 3/20/2019
 
+1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
+
+Tips:
+
+A setting should be created for each separate user:
+
+setting::user_aaron {
+  type: boolean;
+  label: tr("Turn User Aaron On/Off");
+  default: false;
+}
+
+-- after :: comes your setting "class" which can be named as you will. Our example show user_aaron
+-- Type: boolean; should always exist
+-- label: tr("Anything you want to put here") -> This is what shows up under setting in JOSM
+-- Default: false -> the setting will remain disabled on launch until a user enables it
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+at which point, it becomes necessary to create a selector statement for your user:
+
+*[eval(JOSM_search("user:vespax"))][setting("user_aaron")] {
+  set .aaron;
+}
+
+-- * denotes what you are selecting, in this case, every element type in OSM
+-- [eval(JOSM_search("user:vespax"))] -> this is necessary and should be constructed as such.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to construct time stamps, you can use the following:
+
+
+String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
+"timestamp:2016-02-20/" -- Shows all edits edited after date
+"timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So, a timestamped search would look like this:
+
+*[eval(JOSM_search("user:IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"))] {
+  casing-width: 10;
+  casing-color: green;
+  casing-opacity: 0.2;
+}
+
+-- set .aaron; -> this is setting the class for this statement. This allows us to call it out later on. Classes
+can be set like that or as so -> set aaron;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+way.aaron, & node.aaron,
+
+-- This shows that we are looking for all ways/nodes which meet the "aaron" class. The comma here denotes
+that there is another selector we would like to call out after "aaron"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+{
+  z-index: -10;
+  casing-color: lime;
+  casing-width: 10;
+  casing-opacity: 0.3;
+  
+  
+}
+
+-- This is our code block which will style up whatever we called out as a selector
+
+*/
+
+/* Create Settings */
+
+
 
 /* User Settings */
 
-setting::user_RyanK {
+/* Clingstone */
+setting::user_Aaron {
   type:boolean;
-  label:tr("Turn User Whimsical Otter On/Off");
-  default:false;
-}
-
-setting::user_Joe {
-  type:boolean;
-  label:tr("Turn User _Poliwrath_ On/Off");
-  default:false;
-}
-
-setting::user_Dan {
-  type:boolean;
-  label:tr("Turn User Te-Ika On/Off");
-  default:false;
-}
-
-setting::user_Corban {
-  type:boolean;
-  label:tr("Turn User Corban8 On/Off");
-  default:false;
-}
-
-setting::user_Jorge {
-  type:boolean;
-  label:tr("Turn User JAAS On/Off");
-  default:false;
-}
-
-setting::user_Michelle {
-  type:boolean;
-  label:tr("Turn User MichNicole On/Off");
-  default:false;
-}
-
-setting::user_Christy {
-  type:boolean;
-  label:tr("Turn User mama_bear On/Off");
-  default:false;
-}
-
-setting::user_Casey {
-  type:boolean;
-  label:tr("Turn User peacewaya On/Off");
-  default:false;
-}
-
-setting::user_Jonathon {
-  type:boolean;
-  label:tr("Turn User spuddy93 On/Off");
-  default:false;
-}
-
-setting::user_Taylor {
-  type:boolean;
-  label:tr("Turn User vorpalblade77-kaart On/Off");
-  default:false;
-}
-
-setting::user_JasonH {
-  type:boolean;
-  label:tr("Turn User AnonJason On/Off");
-  default:false;
-}
-
-setting::user_Garrett {
-  type:boolean;
-  label:tr("Turn User Copernicus529 On/Off");
-  default:false;
-}
-
-setting::user_JakeL {
-  type:boolean;
-  label:tr("Turn User Hulk_Maps On/Off");
-  default:false;
-}
-
-setting::user_Kira {
-  type:boolean;
-  label:tr("Turn User birdeatscake On/Off");
-  default:false;
-}
-
-setting::user_NickF {
-  type:boolean;
-  label:tr("Turn User daFisch On/Off");
-  default:false;
-}
-
-setting::user_Jordyn {
-  type:boolean;
-  label:tr("Turn User Gr8fulDead On/Off");
-  default:false;
-}
-
-setting::user_RyanR {
-  type:boolean;
-  label:tr("Turn User Kaarti_B On/Off");
-  default:false;
+  label:tr("Turn User vespax On/Off");
+  default:true;
 }
 
 setting::user_Chance {
   type:boolean;
   label:tr("Turn User chancethewrapper On/Off");
-  default:false;
+  default:true;
+}
+
+setting::user_Christy {
+  type:boolean;
+  label:tr("Turn User mama_bear On/Off");
+  default:true;
+}
+
+setting::user_Corban {
+  type:boolean;
+  label:tr("Turn User Corban8 On/Off");
+  default:true;
+}
+
+setting::user_Garrett {
+  type:boolean;
+  label:tr("Turn User Copernicus529 On/Off");
+  default:true;
 }
 
 setting::user_Gary {
   type:boolean;
   label:tr("Turn User Velocimaptor On/Off");
-  default:false;
-}
-
-setting::user_LeanneS {
-  type:boolean;
-  label:tr("Turn User LSkalayo On/Off");
-  default:false;
-}
-
-setting::user_JacobK {
-  type:boolean;
-  label:tr("Turn User CoolGuyJake On/Off");
-  default:false;
+  default:true;
 }
 
 setting::user_IanM {
   type:boolean;
   label:tr("Turn User Baconcrisp On/Off");
-  default:false;
+  default:true;
 }
 
-setting::user_Aaron {
+setting::user_JacobK {
   type:boolean;
-  label:tr("Turn User vespax On/Off");
-  default:false;
+  label:tr("Turn User CoolGuyJake On/Off");
+  default:true;
 }
 
-setting::user_BrianL {
+setting::user_JakeL {
   type:boolean;
-  label:tr("Turn User Unicorn Ostrich On/Off");
-  default:false;
+  label:tr("Turn User TheMineralCartographer On/Off");
+  default:true;
 }
+
+setting::user_JasonH {
+  type:boolean;
+  label:tr("Turn User AnonJason On/Off");
+  default:true;
+}
+
+setting::user_Joe {
+  type:boolean;
+  label:tr("Turn User _Poliwrath_ On/Off");
+  default:true;
+}
+
+setting::user_Jonathon {
+  type:boolean;
+  label:tr("Turn User spuddy93 On/Off");
+  default:true;
+}
+
+setting::user_Jordyn {
+  type:boolean;
+  label:tr("Turn User Gr8fulDead On/Off");
+  default:true;
+}
+
+setting::user_Jorge {
+  type:boolean;
+  label:tr("Turn User JAAS On/Off");
+  default:true;
+}
+
+setting::user_Kira {
+  type:boolean;
+  label:tr("Turn User birdeatscake On/Off");
+  default:true;
+}
+
+setting::user_LeanneS {
+  type:boolean;
+  label:tr("Turn User LSkalayo On/Off");
+  default:true;
+}
+
+setting::user_Michelle {
+  type:boolean;
+  label:tr("Turn User MichNicole On/Off");
+  default:true;
+}
+
+setting::user_NickF {
+  type:boolean;
+  label:tr("Turn User daFisch On/Off");
+  default:true;
+}
+
+setting::user_Richard {
+  type:boolean;
+  label:tr("Turn User richardninde On/Off");
+  default:true;
+}
+
+setting::user_RyanK {
+  type:boolean;
+  label:tr("Turn User Whimsical Otter On/Off");
+  default:true;
+}
+
+setting::user_RyanR {
+  type:boolean;
+  label:tr("Turn User Kaarti_B On/Off");
+  default:true;
+}
+
+setting::user_Taylor {
+  type:boolean;
+  label:tr("Turn User vorpalblade77-kaart On/Off");
+  default:true;
+}
+
+
+/* Clingstone Jr */
+setting::user_Alex {
+  type:boolean;
+  label:tr("Turn User Tamangfella On/Off");
+  default:true;
+}
+
+setting::user_Caleb {
+  type:boolean;
+  label:tr("Turn User BaldJJMaster On/Off");
+  default:true;
+}
+
+setting::user_Dan {
+  type:boolean;
+  label:tr("Turn User Te-Ika On/Off");
+  default:true;
+}
+
+setting::user_Derek {
+  type:boolean;
+  label:tr("Turn User DerekBev On/Off");
+  default:true;
+}
+
+setting::user_Nutchaya {
+  type:boolean;
+  label:tr("Turn User nutchayahonvilai On/Off");
+  default:true;
+}
+
+setting::user_Pace {
+  type:boolean;
+  label:tr("Turn User InnerPace On/Off");
+  default:true;
+}
+
+setting::user_Spencer {
+  type:boolean;
+  label:tr("Turn User spence142 On/Off");
+  default:true;
+}
+
+setting::user_Sumittra {
+  type:boolean;
+  label:tr("Turn User sumittra On/Off");
+  default:true;
+}
+
+
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
 
 node:modified::modified_layer {
     symbol-shape: circle;
-    symbol-size: 18;
-    symbol-stroke-color: blue;
-    symbol-fill-color: orange;
-    symbol-fill-opacity: 1;
+    symbol-size: 22;
+    symbol-stroke-color: orange;
+    symbol-stroke-width: 3px;
+    symbol-fill-opacity: 0.5;
     z-index: -5;
 }
 
@@ -181,7 +300,7 @@ node:modified < way::modified_layer {
     width: 6;
     color: transparent;
     opacity: 0;
-    casing-width: 4;
+    casing-width: 7;
     casing-color: #47D608;
     casing-opacity: 0.7;
     z-index: -5;
@@ -192,130 +311,165 @@ node:modified < way::modified_layer {
 
 /* User specific styles */
 
-*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_RyanK")] {
-  set .RyanK;
-}
-
-*[eval(JOSM_search("user:_Poliwrath_"))][setting("user_Joe")] {
-  set .Joe;
-}
-
-*[eval(JOSM_search("user:Te-Ika"))][setting("user_Dan")] {
-  set .Dan;
-}
-
-*[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
-  set .Corban;
-}
-
-*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
-  set .Jorge;
-}
-
-*[eval(JOSM_search("user:MichNicole"))][setting("user_Michelle")] {
-  set .Michelle;
-}
-
-*[eval(JOSM_search("user:mama_bear"))][setting("user_Christy")] {
-  set .Christy;
-}
-
-*[eval(JOSM_search("user:peacewaya"))][setting("user_Casey")] {
-  set .Casey;
-}
-
-*[eval(JOSM_search("user:spuddy93"))][setting("user_Jonathon")] {
-  set .Jonathon;
-}
-
-*[eval(JOSM_search("user:vorpalblade77-kaart"))][setting("user_Taylor")] {
-  set .Taylor;
-}
-
-*[eval(JOSM_search("user:AnonJason"))][setting("user_JasonH")] {
-  set .JasonH;
-}
-
-*[eval(JOSM_search("user:Copernicus529"))][setting("user_Garrett")] {
-  set .Garrett;
-}
-
-*[eval(JOSM_search("user:Hulk_Maps"))][setting("user_JakeL")] {
-  set .JakeL;
-}
-
-*[eval(JOSM_search("user:birdeatscake"))][setting("user_Kira")] {
-  set .Kira;
-}
-
-*[eval(JOSM_search("user:daFisch"))][setting("user_NickF")] {
-  set .NickF;
-}
-
-*[eval(JOSM_search("user:Gr8fulDead"))][setting("user_Jordyn")] {
-  set .Jordyn;
-}
-
-*[eval(JOSM_search("user:Kaarti_B"))][setting("user_RyanR")] {
-  set .RyanR;
+*[eval(JOSM_search("user:vespax"))][setting("user_Aaron")] {
+  set .Aaron;
 }
 
 *[eval(JOSM_search("user:chancethewrapper"))][setting("user_Chance")] {
   set .Chance;
 }
 
+*[eval(JOSM_search("user:mama_bear"))][setting("user_Christy")] {
+  set .Christy;
+}
+
+*[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
+  set .Corban;
+}
+
+*[eval(JOSM_search("user:Copernicus529"))][setting("user_Garrett")] {
+  set .Garrett;
+}
+
 *[eval(JOSM_search("user:Velocimaptor"))][setting("user_Gary")] {
   set .Gary;
-}
-
-*[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
-  set .LeanneS;
-}
-
-*[eval(JOSM_search("user:CoolGuyJake"))][setting("user_JacobK")] {
-  set .JacobK;
 }
 
 *[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
   set .IanM;
 }
 
-*[eval(JOSM_search("user:vespax"))][setting("user_Aaron")] {
-  set .Aaron;
+*[eval(JOSM_search("user:CoolGuyJake"))][setting("user_JacobK")] {
+  set .JacobK;
 }
 
-*[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
-  set .BrianL;
+*[eval(JOSM_search("user:TheMineralCartographer"))][setting("user_JakeL")] {
+  set .JakeL;
 }
 
-/*
+*[eval(JOSM_search("user:AnonJason"))][setting("user_JasonH")] {
+  set .JasonH;
+}
+
+*[eval(JOSM_search("user:_Poliwrath_"))][setting("user_Joe")] {
+  set .Joe;
+}
+
+*[eval(JOSM_search("user:spuddy93"))][setting("user_Jonathon")] {
+  set .Jonathon;
+}
+
+*[eval(JOSM_search("user:Gr8fulDead"))][setting("user_Jordyn")] {
+  set .Jordyn;
+}
+
+*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
+  set .Jorge;
+}
+
+*[eval(JOSM_search("user:birdeatscake"))][setting("user_Kira")] {
+  set .Kira;
+}
+
+*[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
+  set .LeanneS;
+}
+
+*[eval(JOSM_search("user:MichNicole"))][setting("user_Michelle")] {
+  set .Michelle;
+}
+
+*[eval(JOSM_search("user:daFisch"))][setting("user_NickF")] {
+  set .NickF;
+}
+
+*[eval(JOSM_search("user:richardninde"))][setting("user_Richard")] {
+  set .Richard;
+}
+
+*[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_RyanK")] {
+  set .RyanK;
+}
+
+*[eval(JOSM_search("user:Kaarti_B"))][setting("user_RyanR")] {
+  set .RyanR;
+}
+
+*[eval(JOSM_search("user:vorpalblade77-kaart"))][setting("user_Taylor")] {
+  set .Taylor;
+}
+
+
+
+/* Clingstone Jr */
+*[eval(JOSM_search("user:Tamangfella"))][setting("user_Alex")] {
+  set .Alex;
+}
+
+*[eval(JOSM_search("user:BaldJJMaster"))][setting("user_Caleb")] {
+  set .Caleb;
+}
+
+*[eval(JOSM_search("user:Te-Ika"))][setting("user_Dan")] {
+  set .Dan;
+}
+
+*[eval(JOSM_search("user:DerekBev"))][setting("user_Derek")] {
+  set .Derek;
+}
+
+*[eval(JOSM_search("user:nutchayahonvilai"))][setting("user_Nutchaya")] {
+  set .Nutchaya;
+}
+
+*[eval(JOSM_search("user:spence142"))][setting("user_Spencer")] {
+  set .Spencer;
+}
+
+*[eval(JOSM_search("user:sumittra"))][setting("user_Sumittra")] {
+  set .Sumittra;
+}
+
+/* This is how you search for someone with a space in their name
+
+*[eval(JOSM_search("user:\"Hector Vector\""))] {
+  set .jman;
+}
+
+*/
 
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
-way.RyanK,
-way.Joe,
-way.Dan,
-way.Corban,
-way.Jorge,
-way.Michelle,
-way.Christy,
-way.Casey,
-way.Jonathon,
-way.Taylor,
-way.JasonH,
-way.Garrett,
-way.JakeL,
-way.Kira,
-way.NickF,
-way.Jordyn,
-way.RyanR,
-way.Chance,
-way.Gary,
-way.LeanneS,
-way.JacobK,
-way.IanM,
 way.Aaron,
-way.BrianL {
+way.Chance,
+way.Christy,
+way.Corban,
+way.Garrett,
+way.Gary,
+way.IanM,
+way.JacobK,
+way.JakeL,
+way.JasonH,
+way.Joe,
+way.Jonathon,
+way.Jordyn,
+way.Jorge,
+way.Kira,
+way.LeanneS,
+way.Michelle,
+way.NickF,
+way.Richard,
+way.RyanK,
+way.RyanR,
+way.Taylor,
+way.Alex,
+way.Caleb,
+way.Dan,
+way.Derek,
+way.Nutchaya,
+way.Pace,
+way.Spencer,
+way.Sumittra {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -328,41 +482,49 @@ way.BrianL {
 
 }
 
-node.RyanK,
-node.Joe,
-node.Dan,
-node.Corban,
-node.Jorge,
-node.Michelle,
-node.Christy,
-node.Casey,
-node.Jonathon,
-node.Taylor,
-node.JasonH,
-node.Garrett,
-node.JakeL,
-node.Kira,
-node.NickF,
-node.Jordyn,
-node.RyanR,
-node.Chance,
-node.Gary,
-node.LeanneS,
-node.JacobK,
-node.IanM,
 node.Aaron,
-node.BrianL {
-
-  symbol-size: 18;
+node.Chance,
+node.Christy,
+node.Corban,
+node.Garrett,
+node.Gary,
+node.IanM,
+node.JacobK,
+node.JakeL,
+node.JasonH,
+node.Joe,
+node.Jonathon,
+node.Jordyn,
+node.Jorge,
+node.Kira,
+node.LeanneS,
+node.Michelle,
+node.NickF,
+node.Richard,
+node.RyanK,
+node.RyanR,
+node.Taylor,
+node.Alex,
+node.Caleb,
+node.Dan,
+node.Derek,
+node.Nutchaya,
+node.Pace,
+node.Spencer,
+node.Sumittra {
+  symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
-  symbol-fill-color: blue;
+  symbol-stroke-width: 3px;
   symbol-fill-opacity: 0.5;
+  z-index: -5;
 }
 
-node:selected {
-    symbol-size: 17;
-    symbol-stroke-color: #DF2E08;
-    symbol-stroke-width: 3px;
-	symbol-fill-color: #DF2E08;
+node:selected::selected_layer {
+  symbol-shape: circle;
+  symbol-size: 22;
+  symbol-stroke-color: #DF2E08;
+  symbol-stroke-width: 3px;
+  symbol-fill-opacity: 0.5;
+  z-index: -5;
 }
