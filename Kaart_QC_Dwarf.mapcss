@@ -256,6 +256,12 @@ setting::user_sarena {
   default: true;
 }
 
+setting::user_savanah {
+  type: boolean;
+  label: tr("Turn User staysavy On/Off");
+  default: true;
+}
+
 setting::user_sharon {
   type: boolean;
   label: tr("Turn User mapcraft On/Off");
@@ -452,6 +458,10 @@ node:modified < way::modified_layer {
   set .sarena;
 }
 
+*[eval(JOSM_search("user:staysavy"))][setting("user_savanah")] {
+  set .savanah;
+}
+
 *[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
   set .sharon;
 }
@@ -530,6 +540,7 @@ way.ryanf2,
 way.ryans,
 way.sage,
 way.sarena,
+way.savanah,
 way.sharon,
 way.arlene,
 way.leanne,
@@ -580,6 +591,7 @@ node.ryanf2,
 node.ryans,
 node.sage,
 node.sarena,
+node.savanah,
 node.sharon,
 node.arlene,
 node.leanne,
