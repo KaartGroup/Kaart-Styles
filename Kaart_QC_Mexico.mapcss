@@ -250,7 +250,7 @@ setting::user_RobinH_import {
 
 setting::user_RonmelR {
   type:boolean;
-  label:tr("Turn User Mel_2 On/Off");
+  label:tr("Turn User Mel_1 On/Off");
   default:true;
 }
 
@@ -431,7 +431,7 @@ node:modified < way::modified_layer {
   set .RobinH_import;
 }
 
-*[eval(JOSM_search("user:Mel_2"))][setting("user_RonmelR")] {
+*[eval(JOSM_search("user:Mel_1"))][setting("user_RonmelR")] {
   set .RonmelR;
 }
 
