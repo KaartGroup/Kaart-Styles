@@ -140,6 +140,12 @@ setting::user_BrianL {
   default:true;
 }
 
+setting::user_Chris {
+  type:boolean;
+  label:tr("Turn User Goose6thAB On/Off");
+  default:true;
+}
+
 setting::user_DylanF {
   type:boolean;
   label:tr("Turn User RedRangerr On/Off");
@@ -233,6 +239,12 @@ setting::user_NickE {
 setting::user_NickE_import {
   type:boolean;
   label:tr("Turn User jedimasterflint_import On/Off");
+  default:true;
+}
+
+setting::user_Rikki {
+  type:boolean;
+  label:tr("Turn User Chilly Chinchillas On/Off");
   default:true;
 }
 
@@ -359,6 +371,10 @@ node:modified < way::modified_layer {
   set .BrianL;
 }
 
+*[eval(JOSM_search("user:Goose6thAB"))][setting("user_Chris")] {
+  set .Chris;
+}
+
 *[eval(JOSM_search("user:RedRangerr"))][setting("user_DylanF")] {
   set .DylanF;
 }
@@ -421,6 +437,10 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:jedimasterflint_import"))][setting("user_NickE_import")] {
   set .NickE_import;
+}
+
+*[eval(JOSM_search("user:\"Chilly Chinchillas\""))][setting("user_Rikki")] {
+  set .Rikki;
 }
 
 *[eval(JOSM_search("user:RobinNoodles"))][setting("user_RobinH")] {
@@ -486,6 +506,7 @@ way.ArleneC_import,
 way.BreiaV,
 way.BreiaV_import,
 way.BrianL,
+way.Chris,
 way.DylanF,
 way.IanM,
 way.JacindaD,
@@ -502,6 +523,7 @@ way.NatashaS,
 way.NatashaS_import,
 way.NickE,
 way.NickE_import,
+way.Rikki,
 way.RobinH,
 way.RobinH_import,
 way.RonmelR,
@@ -532,6 +554,7 @@ node.ArleneC_import,
 node.BreiaV,
 node.BreiaV_import,
 node.BrianL,
+node.Chris,
 node.DylanF,
 node.IanM,
 node.JacindaD,
@@ -548,6 +571,7 @@ node.NatashaS,
 node.NatashaS_import,
 node.NickE,
 node.NickE_import,
+node.Rikki,
 node.RobinH,
 node.RobinH_import,
 node.RonmelR,
