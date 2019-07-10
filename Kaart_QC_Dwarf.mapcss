@@ -160,6 +160,12 @@ setting::user_danielle {
   default: true;
 }
 
+setting::user_daniel {
+  type: boolean;
+  label: tr("Turn User The_Intern On/Off");
+  default: true;
+}
+
 setting::user_dillon {
   type: boolean;
   label: tr("Turn User Dillon9 On/Off");
@@ -172,9 +178,21 @@ setting::user_farris {
   default: true;
 }
 
+setting::user_iank {
+  type: boolean;
+  label: tr("Turn User Ikohl On/Off");
+  default: true;
+}
+
 setting::user_jake {
   type: boolean;
   label: tr("Turn User jacob_kubeczko On/Off");
+  default: true;
+}
+
+setting::user_johnny {
+  type: boolean;
+  label: tr("Turn User spititout On/Off");
   default: true;
 }
 
@@ -214,6 +232,12 @@ setting::user_mia {
   default: true;
 }
 
+setting::user_nickm {
+  type: boolean;
+  label: tr("Turn User nickmettauer On/Off");
+  default: true;
+}
+
 setting::user_nikki {
   type: boolean;
   label: tr("Turn User Meowshane On/Off");
@@ -223,6 +247,18 @@ setting::user_nikki {
 setting::user_rd {
   type: boolean;
   label: tr("Turn User mr_et On/Off");
+  default: true;
+}
+
+setting::user_riley {
+  type: boolean;
+  label: tr("Turn User rileywhite97 On/Off");
+  default: true;
+}
+
+setting::user_rob {
+  type: boolean;
+  label: tr("Turn User RouteRob On/Off");
   default: true;
 }
 
@@ -394,6 +430,10 @@ node:modified < way::modified_layer {
   set .danielle;
 }
 
+*[eval(JOSM_search("user:The_Intern"))][setting("user_daniel")] {
+  set .daniel;
+}
+
 *[eval(JOSM_search("user:Dillon9"))][setting("user_dillon")] {
   set .dillon;
 }
@@ -402,8 +442,16 @@ node:modified < way::modified_layer {
   set .farris;
 }
 
+*[eval(JOSM_search("user:Ikohl"))][setting("user_iank")] {
+  set .iank;
+}
+
 *[eval(JOSM_search("user:jacob_kubeczko"))][setting("user_jake")] {
   set .jake;
+}
+
+*[eval(JOSM_search("user:spititout"))][setting("user_johnny")] {
+  set .johnny;
 }
 
 *[eval(JOSM_search("user:kreimers"))][setting("user_katelin")] {
@@ -430,12 +478,24 @@ node:modified < way::modified_layer {
   set .mia;
 }
 
+*[eval(JOSM_search("user:nickmettauer"))][setting("user_nickm")] {
+  set .nickm;
+}
+
 *[eval(JOSM_search("user:Meowshane"))][setting("user_nikki")] {
   set .nikki;
 }
 
 *[eval(JOSM_search("user:mr_et"))][setting("user_rd")] {
   set .rd;
+}
+
+*[eval(JOSM_search("user:rileywhite97"))][setting("user_riley")] {
+  set .riley;
+}
+
+*[eval(JOSM_search("user:RouteRob"))][setting("user_rob")] {
+  set .rob;
 }
 
 *[eval(JOSM_search("user:rytheking"))][setting("user_ryanf")] {
@@ -523,18 +583,24 @@ way.callista,
 way.charles,
 way.claire,
 way.cody,
+way.daniel,
 way.danielle,
 way.dillon,
 way.farris,
+way.iank,
 way.jake,
+way.johnny,
 way.katelin,
 way.kyle,
 way.mia,
+way.nickm,
 way.nikki,
 way.logan,
 way.lucas,
 way.luis,
 way.rd,
+way.riley,
+way.rob,
 way.ryanf,
 way.ryanf2,
 way.ryans,
@@ -575,18 +641,24 @@ node.callista,
 node.charles,
 node.claire,
 node.cody,
+node.daniel,
 node.danielle,
 node.dillon,
 node.farris,
+node.iank,
 node.jake,
+node.johnny,
 node.katelin,
 node.kyle,
 node.mia,
+node.nickm,
 node.nikki,
 node.logan,
 node.lucas,
 node.luis,
 node.rd,
+node.riley,
+node.rob,
 node.ryanf,
 node.ryanf2,
 node.ryans,
