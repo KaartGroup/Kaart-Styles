@@ -152,6 +152,12 @@ setting::user_DylanF {
   default:true;
 }
 
+setting::user_Ethan {
+  type:boolean;
+  label:tr("Turn User EthanK On/Off");
+  default:true;
+}
+
 setting::user_IanM {
   type:boolean;
   label:tr("Turn User Baconcrisp On/Off");
@@ -296,6 +302,12 @@ setting::user_SteveC_import {
   default:true;
 }
 
+setting::user_Vince {
+  type:boolean;
+  label:tr("Turn User DreadPirateRoberts On/Off");
+  default:true;
+}
+
 setting::user_WilliamF {
   type:boolean;
   label:tr("Turn User ImjusBuddy On/Off");
@@ -377,6 +389,10 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:RedRangerr"))][setting("user_DylanF")] {
   set .DylanF;
+}
+
+*[eval(JOSM_search("user:EthanK"))][setting("user_Ethan")] {
+  set .Ethan;
 }
 
 *[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
@@ -475,6 +491,10 @@ node:modified < way::modified_layer {
   set .SteveC_import;
 }
 
+*[eval(JOSM_search("user:DreadPirateRoberts"))][setting("user_Vince")] {
+  set .Vince;
+}
+
 *[eval(JOSM_search("user:ImjusBuddy"))][setting("user_WilliamF")] {
   set .WilliamF;
 }
@@ -508,6 +528,7 @@ way.BreiaV_import,
 way.BrianL,
 way.Chris,
 way.DylanF,
+way.Ethan,
 way.IanM,
 way.JacindaD,
 way.LeanneS,
@@ -532,6 +553,7 @@ way.SherryM,
 way.SherryM_import,
 way.SteveC,
 way.SteveC_import,
+way.Vince,
 way.WilliamF,
 way.WilliamF_import,
 way.ZachB {
@@ -556,6 +578,7 @@ node.BreiaV_import,
 node.BrianL,
 node.Chris,
 node.DylanF,
+node.Ethan,
 node.IanM,
 node.JacindaD,
 node.LeanneS,
@@ -580,6 +603,7 @@ node.SherryM,
 node.SherryM_import,
 node.SteveC,
 node.SteveC_import,
+node.Vince,
 node.WilliamF,
 node.WilliamF_import,
 node.ZachB {
