@@ -278,6 +278,12 @@ setting::user_RonmelR_import {
   default:true;
 }
 
+setting::user_Sarah {
+  type:boolean;
+  label:tr("Turn User Yagni On/Off");
+  default:true;
+}
+
 setting::user_SherryM {
   type:boolean;
   label:tr("Turn User Sherbare On/Off");
@@ -475,6 +481,10 @@ node:modified < way::modified_layer {
   set .RonmelR_import;
 }
 
+*[eval(JOSM_search("user:Yagni"))][setting("user_Sarah")] {
+  set .Sarah;
+}
+
 *[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
   set .SherryM;
 }
@@ -549,6 +559,7 @@ way.RobinH,
 way.RobinH_import,
 way.RonmelR,
 way.RonmelR_import,
+way.Sarah,
 way.SherryM,
 way.SherryM_import,
 way.SteveC,
@@ -599,6 +610,7 @@ node.RobinH,
 node.RobinH_import,
 node.RonmelR,
 node.RonmelR_import,
+node.Sarah,
 node.SherryM,
 node.SherryM_import,
 node.SteveC,
