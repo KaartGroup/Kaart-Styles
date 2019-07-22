@@ -122,7 +122,11 @@ setting::user_anja {
   type: boolean;
   label: tr("Turn User Ajaie On/Off");
   default: true;
-}
+  
+setting::user_anthony {
+  type: boolean;
+  label: tr("Turn User acrague On/Off");
+  default: true;
 
 setting::user_ben {
   type: boolean;
@@ -406,6 +410,10 @@ node:modified < way::modified_layer {
   set .anja;
 }
 
+*[eval(JOSM_search("user:acrague"))][setting("user_anthony")] {
+  set .anthony;
+}
+
 *[eval(JOSM_search("user:\"El Pescador\""))][setting("user_ben")] {
   set .ben;
 }
@@ -578,6 +586,7 @@ way.andrewp,
 way.andrews,
 way.anita,
 way.anja,
+way.anthony,
 way.ben,
 way.callista,
 way.charles,
@@ -636,6 +645,7 @@ node.andrewp,
 node.andrews,
 node.anita,
 node.anja,
+node.anthony,
 node.ben,
 node.callista,
 node.charles,
