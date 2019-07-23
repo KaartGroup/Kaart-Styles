@@ -121,12 +121,14 @@ setting::user_anita {
 setting::user_anja {
   type: boolean;
   label: tr("Turn User Ajaie On/Off");
-  default: true;
+  default: true; 
+}
   
 setting::user_anthony {
   type: boolean;
   label: tr("Turn User acrague On/Off");
   default: true;
+}
 
 setting::user_ben {
   type: boolean;
