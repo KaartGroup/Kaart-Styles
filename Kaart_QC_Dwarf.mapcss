@@ -112,6 +112,12 @@ setting::user_andrews {
   default: true;
 }
 
+setting::user_angie {
+  type: boolean;
+  label: tr("Turn User MangoLife On/Off");
+  default: true;
+}
+
 setting::user_anita {
   type: boolean;
   label: tr("Turn User leedlelee On/Off");
@@ -216,7 +222,7 @@ setting::user_kyle {
 
 setting::user_logan {
   type: boolean;
-  label: tr("Turn User logans127 On/Off");
+  label: tr("Turn User 127logs On/Off");
   default: true;
 }
 
@@ -404,6 +410,10 @@ node:modified < way::modified_layer {
   set .andrews;
 }
 
+*[eval(JOSM_search("user:MangoLife"))][setting("user_angie")] {
+  set .angie;
+}
+
 *[eval(JOSM_search("user:leedlelee"))][setting("user_anita")] {
   set .anita;
 }
@@ -472,7 +482,7 @@ node:modified < way::modified_layer {
   set .kyle;
 }
 
-*[eval(JOSM_search("user:logans127"))][setting("user_logan")] {
+*[eval(JOSM_search("user:127logs"))][setting("user_logan")] {
   set .logan;
 }
 
@@ -586,6 +596,7 @@ node:modified < way::modified_layer {
 way.alejandro,
 way.andrewp,
 way.andrews,
+way.angie,
 way.anita,
 way.anja,
 way.anthony,
@@ -645,6 +656,7 @@ way.ryank {
 node.alejandro,
 node.andrewp,
 node.andrews,
+node.angie,
 node.anita,
 node.anja,
 node.anthony,
