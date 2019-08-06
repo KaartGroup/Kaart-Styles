@@ -316,6 +316,12 @@ setting::user_sharon {
   default: true;
 }
 
+setting::user_SherryM {
+  type:boolean;
+  label:tr("Turn User Sherbare On/Off");
+  default:true;
+}
+
 setting::user_zebulon {
   type: boolean;
   label: tr("Turn User Zebulonium On/Off");
@@ -544,8 +550,11 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
   set .sharon;
-}
 
+*[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
+  set .SherryM;
+}
+ 
 *[eval(JOSM_search("user:Zebulonium"))][setting("user_zebulon")] {
   set .zebulon;
 }
@@ -630,6 +639,7 @@ way.sage,
 way.sarena,
 way.savanah,
 way.sharon,
+way.SherryM,
 way.zebulon,
 way.arlene,
 way.leanne,
@@ -690,6 +700,7 @@ node.sage,
 node.sarena,
 node.savanah,
 node.sharon,
+node.SherryM,
 node.zebulon,
 node.arlene,
 node.leanne,
