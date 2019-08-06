@@ -550,6 +550,7 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:mapcraft"))][setting("user_sharon")] {
   set .sharon;
+}
 
 *[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
   set .SherryM;
