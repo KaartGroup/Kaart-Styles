@@ -4,7 +4,7 @@ meta {
     description: "JOSM paint style modified by Kaart to focus on street data";
     author: "Kaart";
     /* Contributors: Gary Clark */
-    /* Credit: Parts of this map paint style were influenced by "Coloured Streets" by geozeisig, Klumbumbus and "snake roads" by SeattleFYI & Potlatch */
+    /* Credit: Parts of this map paint style were influenced by "Coloured Streets" by geozeisig, Klumbumbus and "long roads" by SeattleFYI & Potlatch */
     link: "https://github.com/kaartgroup/";
     license: "https://github.com/KaartGroup/Kaart-Styles/blob/master/LICENSE";
 }
@@ -34,7 +34,7 @@ Single Color Roads - These settings reduce (and make clear) the visbility of roa
 Name/Ref Tags. This may be beneficial, but feed back would be appreciated. 
 
 6.
-Snake Roads helps to highlight roads which "snake" through a given area. This can make adding street names difficult.
+Long Roads helps to highlight roads which "snake" through a given area. This can make adding street names difficult.
 Each road is given a color based on its unique way ID. There are only 33 colors chosen (just as in our Name settings),
 so there might be some overlap in colors. This can be altered if need be.
 
@@ -76,9 +76,9 @@ setting::hide_icons {
 }
 
 
-setting::snakeroads {
+setting::longroads {
   type: boolean;
-  label: tr("Highlights Snake-Roads");
+  label: tr("Highlights Long-Roads");
   default: false;
 }
 
@@ -2211,10 +2211,10 @@ way[highway][oneway=yes][setting("one_2")], way[oneway=-1][setting("one_2")] {
 
 
 
-/* Snake Roads Style */
+/* Long Roads Style */
 
 /* streets text: eval(concat("Length of Way = ", waylength())); */
-way[highway][setting("snakeroads")] {
+way[highway][setting("longroads")] {
     crc:  CRC32_checksum(eval(osm_id()))/429496.7296;
     
     /*text: eval(osm_id());*/
@@ -2827,7 +2827,7 @@ way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][
 }
 
 
-way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_ink|service|footway|pedestrian)$/][setting("remove_name")] {
+way["name"=~/^([\s\S]+)$/][setting("remove_name")] {
   display: none;
   text-offset: -40;
   font-size: 0;
