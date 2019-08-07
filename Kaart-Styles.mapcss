@@ -253,7 +253,9 @@ relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
     dashes: 9,9;
 }
 
+/* Untagged Ways */
 
+way                        { z-index: 6; color: grey; width: 3.5; casing-width: 1; casing-color: #000000; }
 
 
 /* New Road Styling inspired by Potlatch  */
