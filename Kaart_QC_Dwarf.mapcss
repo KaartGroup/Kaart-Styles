@@ -114,7 +114,7 @@ setting::user_andrews {
 
 setting::user_angie {
   type: boolean;
-  label: tr("Turn User MangoLife On/Off");
+  label: tr("Turn User Inigo_Maptoya On/Off");
   default: true;
 }
 
@@ -144,7 +144,7 @@ setting::user_ben {
 
 setting::user_callista {
   type: boolean;
-  label: tr("Turn User csjupiter1 On/Off");
+  label: tr("Turn User camapsta On/Off");
   default: true;
 }
 
@@ -416,7 +416,7 @@ node:modified < way::modified_layer {
   set .andrews;
 }
 
-*[eval(JOSM_search("user:MangoLife"))][setting("user_angie")] {
+*[eval(JOSM_search("user:Inigo_Maptoya"))][setting("user_angie")] {
   set .angie;
 }
 
@@ -436,7 +436,7 @@ node:modified < way::modified_layer {
   set .ben;
 }
 
-*[eval(JOSM_search("user:csjupiter1"))][setting("user_callista")] {
+*[eval(JOSM_search("user:camapsta"))][setting("user_callista")] {
   set .callista;
 }
 
