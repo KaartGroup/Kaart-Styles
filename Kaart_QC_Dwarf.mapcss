@@ -120,7 +120,7 @@ setting::user_angie {
 
 setting::user_anita {
   type: boolean;
-  label: tr("Turn User leedlelee On/Off");
+  label: tr("Turn User natureandchill On/Off");
   default: true;
 }
 
@@ -420,7 +420,7 @@ node:modified < way::modified_layer {
   set .angie;
 }
 
-*[eval(JOSM_search("user:leedlelee"))][setting("user_anita")] {
+*[eval(JOSM_search("user:natureandchill"))][setting("user_anita")] {
   set .anita;
 }
 
