@@ -208,6 +208,12 @@ setting::user_johnny {
   default: true;
 }
 
+setting::user_joseph {
+  type: boolean;
+  label: tr("Turn User Szekha On/Off");
+  default: true;
+}
+
 setting::user_katelin {
   type: boolean;
   label: tr("Turn User kreimers On/Off");
@@ -480,6 +486,10 @@ node:modified < way::modified_layer {
   set .johnny;
 }
 
+*[eval(JOSM_search("user:Szekha"))][setting("user_joseph")] {
+  set .joseph;
+}
+
 *[eval(JOSM_search("user:kreimers"))][setting("user_katelin")] {
   set .katelin;
 }
@@ -622,6 +632,7 @@ way.farris,
 way.iank,
 way.jake,
 way.johnny,
+way.joseph,
 way.katelin,
 way.kyle,
 way.mia,
@@ -683,6 +694,7 @@ node.farris,
 node.iank,
 node.jake,
 node.johnny,
+node.joseph,
 node.katelin,
 node.kyle,
 node.mia,
