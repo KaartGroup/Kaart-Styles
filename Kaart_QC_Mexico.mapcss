@@ -140,6 +140,12 @@ setting::user_BrianL {
   default:true;
 }
 
+setting::user_Casey {
+  type:boolean;
+  label:tr("Turn User CaseyIvanW On/Off");
+  default:true;
+}
+
 setting::user_Chris {
   type:boolean;
   label:tr("Turn User Goose6thAB On/Off");
@@ -158,6 +164,12 @@ setting::user_Ethan {
   default:true;
 }
 
+setting::user_IanK {
+  type:boolean;
+  label:tr("Turn User Ikohl On/Off");
+  default:true;
+}
+
 setting::user_IanM {
   type:boolean;
   label:tr("Turn User Baconcrisp On/Off");
@@ -167,6 +179,12 @@ setting::user_IanM {
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
+  default:true;
+}
+
+setting::user_Jonathan {
+  type:boolean;
+  label:tr("Turn User joni5isalive On/Off");
   default:true;
 }
 
@@ -254,6 +272,12 @@ setting::user_Rikki {
   default:true;
 }
 
+setting::user_Rob {
+  type:boolean;
+  label:tr("Turn User RouteRob On/Off");
+  default:true;
+}
+
 setting::user_RobinH {
   type:boolean;
   label:tr("Turn User RobinNoodles On/Off");
@@ -284,6 +308,18 @@ setting::user_Sarah {
   default:true;
 }
 
+setting::user_Savana {
+  type:boolean;
+  label:tr("Turn User staysavy On/Off");
+  default:true;
+}
+
+setting::user_Sharon {
+  type:boolean;
+  label:tr("Turn User mapcraft On/Off");
+  default:true;
+}
+
 setting::user_SherryM {
   type:boolean;
   label:tr("Turn User Sherbare On/Off");
@@ -305,6 +341,12 @@ setting::user_SteveC {
 setting::user_SteveC_import {
   type:boolean;
   label:tr("Turn User Smoothdogimport On/Off");
+  default:true;
+}
+
+setting::user_Tony {
+  type:boolean;
+  label:tr("Turn User acrague On/Off");
   default:true;
 }
 
@@ -389,6 +431,10 @@ node:modified < way::modified_layer {
   set .BrianL;
 }
 
+*[eval(JOSM_search("user:CaseyIvanW"))][setting("user_Casey")] {
+  set .Casey;
+}
+
 *[eval(JOSM_search("user:Goose6thAB"))][setting("user_Chris")] {
   set .Chris;
 }
@@ -401,12 +447,20 @@ node:modified < way::modified_layer {
   set .Ethan;
 }
 
+*[eval(JOSM_search("user:Ikohl"))][setting("user_IanK")] {
+  set .IanK;
+}
+
 *[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
   set .IanM;
 }
 
 *[eval(JOSM_search("user:Cinderblock"))][setting("user_JacindaD")] {
   set .JacindaD;
+}
+
+*[eval(JOSM_search("user:joni5isalive"))][setting("user_Jonathan")] {
+  set .Jonathan;
 }
 
 *[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
@@ -465,6 +519,10 @@ node:modified < way::modified_layer {
   set .Rikki;
 }
 
+*[eval(JOSM_search("user:RouteRob"))][setting("user_Rob")] {
+  set .Rob;
+}
+
 *[eval(JOSM_search("user:RobinNoodles"))][setting("user_RobinH")] {
   set .RobinH;
 }
@@ -485,6 +543,14 @@ node:modified < way::modified_layer {
   set .Sarah;
 }
 
+*[eval(JOSM_search("user:staysavy"))][setting("user_Savana")] {
+  set .Savana;
+}
+
+*[eval(JOSM_search("user:mapcraft"))][setting("user_Sharon")] {
+  set .Sharon;
+}
+
 *[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
   set .SherryM;
 }
@@ -499,6 +565,10 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:Smoothdog_import"))][setting("user_SteveC_import")] {
   set .SteveC_import;
+}
+
+*[eval(JOSM_search("user:acrague"))][setting("user_Tony")] {
+  set .Tony;
 }
 
 *[eval(JOSM_search("user:DreadPirateRoberts"))][setting("user_Vince")] {
@@ -536,11 +606,14 @@ way.ArleneC_import,
 way.BreiaV,
 way.BreiaV_import,
 way.BrianL,
+way.Casey,
 way.Chris,
 way.DylanF,
 way.Ethan,
+way.IanK,
 way.IanM,
 way.JacindaD,
+way.Jonathan,
 way.LeanneS,
 way.user_LeanneS_import,
 way.LoganM,
@@ -555,15 +628,19 @@ way.NatashaS_import,
 way.NickE,
 way.NickE_import,
 way.Rikki,
+way.Rob,
 way.RobinH,
 way.RobinH_import,
 way.RonmelR,
 way.RonmelR_import,
 way.Sarah,
+way.Savana,
+way.Sharon,
 way.SherryM,
 way.SherryM_import,
 way.SteveC,
 way.SteveC_import,
+way.Tony,
 way.Vince,
 way.WilliamF,
 way.WilliamF_import,
@@ -587,11 +664,14 @@ node.ArleneC_import,
 node.BreiaV,
 node.BreiaV_import,
 node.BrianL,
+node.Casey,
 node.Chris,
 node.DylanF,
 node.Ethan,
+node.IanK,
 node.IanM,
 node.JacindaD,
+node.Jonathan,
 node.LeanneS,
 node.user_LeanneS_import,
 node.LoganM,
@@ -606,15 +686,19 @@ node.NatashaS_import,
 node.NickE,
 node.NickE_import,
 node.Rikki,
+node.Rob,
 node.RobinH,
 node.RobinH_import,
 node.RonmelR,
 node.RonmelR_import,
 node.Sarah,
+node.Savana,
+node.Sharon,
 node.SherryM,
 node.SherryM_import,
 node.SteveC,
 node.SteveC_import,
+node.Tony,
 node.Vince,
 node.WilliamF,
 node.WilliamF_import,
