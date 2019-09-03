@@ -104,33 +104,21 @@ setting::user_AlexD {
   default:true;
 }
 
-setting::user_AlexD_import {
-  type:boolean;
-  label:tr("Turn User Soccersweeper_import On/Off");
-  default:true;
-}
-
 setting::user_ArleneC {
   type:boolean;
   label:tr("Turn User ArleneC On/Off");
   default:true;
 }
 
-setting::user_ArleneC_import {
+setting::user_Anthony {
   type:boolean;
-  label:tr("Turn User ArleneC_import On/Off");
+  label:tr("Turn User acrague On/Off");
   default:true;
 }
 
 setting::user_BreiaV {
   type:boolean;
   label:tr("Turn User 3agleOne On/Off");
-  default:true;
-}
-
-setting::user_BreiaV_import {
-  type:boolean;
-  label:tr("Turn User 3agleOne_import On/Off");
   default:true;
 }
 
@@ -152,12 +140,6 @@ setting::user_Chris {
   default:true;
 }
 
-setting::user_DylanF {
-  type:boolean;
-  label:tr("Turn User RedRangerr On/Off");
-  default:true;
-}
-
 setting::user_Ethan {
   type:boolean;
   label:tr("Turn User EthanK On/Off");
@@ -167,12 +149,6 @@ setting::user_Ethan {
 setting::user_IanK {
   type:boolean;
   label:tr("Turn User Ikohl On/Off");
-  default:true;
-}
-
-setting::user_IanM {
-  type:boolean;
-  label:tr("Turn User Baconcrisp On/Off");
   default:true;
 }
 
@@ -194,12 +170,6 @@ setting::user_LeanneS {
   default:true;
 }
 
-setting::user_LeanneS_import {
-  type:boolean;
-  label:tr("Turn User LSkalayo_import On/Off");
-  default:true;
-}
-
 setting::user_LoganM {
   type:boolean;
   label:tr("Turn User Dalekokarta On/Off");
@@ -212,21 +182,9 @@ setting::user_LouisM {
   default:true;
 }
 
-setting::user_MarshallG {
-  type:boolean;
-  label:tr("Turn User MTG5093 On/Off");
-  default:true;
-}
-
 setting::user_MattB {
   type:boolean;
   label:tr("Turn User MappnMatt On/Off");
-  default:true;
-}
-
-setting::user_MattB_import {
-  type:boolean;
-  label:tr("Turn User MappnMatt_import On/Off");
   default:true;
 }
 
@@ -236,33 +194,15 @@ setting::user_MorgenM {
   default:true;
 }
 
-setting::user_MorgenM_import {
-  type:boolean;
-  label:tr("Turn User MMantlo_import On/Off");
-  default:true;
-}
-
 setting::user_NatashaS {
   type:boolean;
   label:tr("Turn User rallynukab On/Off");
   default:true;
 }
 
-setting::user_NatashaS_import {
-  type:boolean;
-  label:tr("Turn User rallynukab_import On/Off");
-  default:true;
-}
-
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
-  default:true;
-}
-
-setting::user_NickE_import {
-  type:boolean;
-  label:tr("Turn User jedimasterflint_import On/Off");
   default:true;
 }
 
@@ -284,21 +224,9 @@ setting::user_RobinH {
   default:true;
 }
 
-setting::user_RobinH_import {
-  type:boolean;
-  label:tr("Turn User RobinNoodles_import On/Off");
-  default:true;
-}
-
 setting::user_RonmelR {
   type:boolean;
   label:tr("Turn User Mel_1 On/Off");
-  default:true;
-}
-
-setting::user_RonmelR_import {
-  type:boolean;
-  label:tr("Turn User Mel_2_import On/Off");
   default:true;
 }
 
@@ -320,33 +248,9 @@ setting::user_Sharon {
   default:true;
 }
 
-setting::user_SherryM {
-  type:boolean;
-  label:tr("Turn User Sherbare On/Off");
-  default:true;
-}
-
-setting::user_SherryM_import {
-  type:boolean;
-  label:tr("Turn User Sherbare_import On/Off");
-  default:true;
-}
-
 setting::user_SteveC {
   type:boolean;
   label:tr("Turn User Smoothdog On/Off");
-  default:true;
-}
-
-setting::user_SteveC_import {
-  type:boolean;
-  label:tr("Turn User Smoothdogimport On/Off");
-  default:true;
-}
-
-setting::user_Tony {
-  type:boolean;
-  label:tr("Turn User acrague On/Off");
   default:true;
 }
 
@@ -359,18 +263,6 @@ setting::user_Vince {
 setting::user_WilliamF {
   type:boolean;
   label:tr("Turn User ImjusBuddy On/Off");
-  default:true;
-}
-
-setting::user_WilliamF_import {
-  type:boolean;
-  label:tr("Turn User ImjusBuddy_import On/Off");
-  default:true;
-}
-
-setting::user_ZachB {
-  type:boolean;
-  label:tr("Turn User MTBdude On/Off");
   default:true;
 }
 
@@ -407,24 +299,16 @@ node:modified < way::modified_layer {
   set .AlexD;
 }
 
-*[eval(JOSM_search("user:Soccersweeper_import"))][setting("user_AlexD_import")] {
-  set .AlexD_import;
-}
-
 *[eval(JOSM_search("user:ArleneC"))][setting("user_ArleneC")] {
   set .ArleneC;
 }
 
-*[eval(JOSM_search("user:ArleneC_import"))][setting("user_ArleneC_import")] {
-  set .ArleneC_import;
+*[eval(JOSM_search("user:acrague"))][setting("user_Anthony")] {
+  set .Anthony;
 }
 
 *[eval(JOSM_search("user:3agleOne"))][setting("user_BreiaV")] {
   set .BreiaV;
-}
-
-*[eval(JOSM_search("user:3agleOne_import"))][setting("user_BreiaV_import")] {
-  set .BreiaV_import;
 }
 
 *[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
@@ -439,20 +323,12 @@ node:modified < way::modified_layer {
   set .Chris;
 }
 
-*[eval(JOSM_search("user:RedRangerr"))][setting("user_DylanF")] {
-  set .DylanF;
-}
-
 *[eval(JOSM_search("user:EthanK"))][setting("user_Ethan")] {
   set .Ethan;
 }
 
 *[eval(JOSM_search("user:Ikohl"))][setting("user_IanK")] {
   set .IanK;
-}
-
-*[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
-  set .IanM;
 }
 
 *[eval(JOSM_search("user:Cinderblock"))][setting("user_JacindaD")] {
@@ -467,10 +343,6 @@ node:modified < way::modified_layer {
   set .LeanneS;
 }
 
-*[eval(JOSM_search("user:LSkalayo_import"))][setting("user_LeanneS_import")] {
-  set .LeanneS_import;
-}
-
 *[eval(JOSM_search("user:Dalekokarta"))][setting("user_LoganM")] {
   set .LoganM;
 }
@@ -479,40 +351,20 @@ node:modified < way::modified_layer {
   set .LouisM;
 }
 
-*[eval(JOSM_search("user:MTG5093"))][setting("user_MarshallG")] {
-    set .MarshallG;
-}
-
 *[eval(JOSM_search("user:MappnMatt"))][setting("user_MattB")] {
   set .MattB;
-}
-
-*[eval(JOSM_search("user:MappnMatt_import"))][setting("user_MattB_import")] {
-  set .MattB_import;
 }
 
 *[eval(JOSM_search("user:MMantlo"))][setting("user_MorgenM")] {
   set .MorgenM;
 }
 
-*[eval(JOSM_search("user:MMantlo_import"))][setting("user_MorgenM_import")] {
-  set .MorgenM_import;
-}
-
 *[eval(JOSM_search("user:rallynukab"))][setting("user_NatashaS")] {
   set .NatashaS;
 }
 
-*[eval(JOSM_search("user:rallynukab_import"))][setting("user_NatashaS_import")] {
-  set .NatashaS_import;
-}
-
 *[eval(JOSM_search("user:jedimasterflint"))][setting("user_NickE")] {
   set .NickE;
-}
-
-*[eval(JOSM_search("user:jedimasterflint_import"))][setting("user_NickE_import")] {
-  set .NickE_import;
 }
 
 *[eval(JOSM_search("user:\"Chilly Chinchillas\""))][setting("user_Rikki")] {
@@ -527,16 +379,8 @@ node:modified < way::modified_layer {
   set .RobinH;
 }
 
-*[eval(JOSM_search("user:RobinNoodles_import"))][setting("user_RobinH_import")] {
-  set .RobinH_import;
-}
-
 *[eval(JOSM_search("user:Mel_1"))][setting("user_RonmelR")] {
   set .RonmelR;
-}
-
-*[eval(JOSM_search("user:Mel_2_import"))][setting("user_RonmelR_import")] {
-  set .RonmelR_import;
 }
 
 *[eval(JOSM_search("user:Yagni"))][setting("user_Sarah")] {
@@ -551,24 +395,8 @@ node:modified < way::modified_layer {
   set .Sharon;
 }
 
-*[eval(JOSM_search("user:Sherbare"))][setting("user_SherryM")] {
-  set .SherryM;
-}
-
-*[eval(JOSM_search("user:Sherbare_import"))][setting("user_SherryM_import")] {
-  set .SherryM_import;
-}
-
 *[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
   set .SteveC;
-}
-
-*[eval(JOSM_search("user:Smoothdog_import"))][setting("user_SteveC_import")] {
-  set .SteveC_import;
-}
-
-*[eval(JOSM_search("user:acrague"))][setting("user_Tony")] {
-  set .Tony;
 }
 
 *[eval(JOSM_search("user:DreadPirateRoberts"))][setting("user_Vince")] {
@@ -577,14 +405,6 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:ImjusBuddy"))][setting("user_WilliamF")] {
   set .WilliamF;
-}
-
-*[eval(JOSM_search("user:ImjusBuddy_import"))][setting("user_WilliamF_import")] {
-  set .WilliamF_import;
-}
-
-*[eval(JOSM_search("user:MTBdude"))][setting("user_ZachB")] {
-  set .ZachB;
 }
 
 
@@ -600,51 +420,33 @@ node:modified < way::modified_layer {
 
 
 way.AlexD,
-way.AlexD_import,
 way.ArleneC,
-way.ArleneC_import,
+way.Anthony,
 way.BreiaV,
-way.BreiaV_import,
 way.BrianL,
 way.Casey,
 way.Chris,
-way.DylanF,
 way.Ethan,
 way.IanK,
-way.IanM,
 way.JacindaD,
 way.Jonathan,
 way.LeanneS,
-way.user_LeanneS_import,
 way.LoganM,
 way.LouisM,
-way.MarshallG,
 way.MattB,
-way.MattB_import,
 way.MorgenM,
-way.MorgenM_import,
 way.NatashaS,
-way.NatashaS_import,
 way.NickE,
-way.NickE_import,
 way.Rikki,
 way.Rob,
 way.RobinH,
-way.RobinH_import,
 way.RonmelR,
-way.RonmelR_import,
 way.Sarah,
 way.Savana,
 way.Sharon,
-way.SherryM,
-way.SherryM_import,
 way.SteveC,
-way.SteveC_import,
-way.Tony,
 way.Vince,
-way.WilliamF,
-way.WilliamF_import,
-way.ZachB {
+way.WilliamF {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -658,51 +460,33 @@ way.ZachB {
 }
 
 node.AlexD,
-node.AlexD_import,
 node.ArleneC,
-node.ArleneC_import,
+node.Anthony,
 node.BreiaV,
-node.BreiaV_import,
 node.BrianL,
 node.Casey,
 node.Chris,
-node.DylanF,
 node.Ethan,
 node.IanK,
-node.IanM,
 node.JacindaD,
 node.Jonathan,
 node.LeanneS,
-node.user_LeanneS_import,
 node.LoganM,
 node.LouisM,
-node.MarshallG,
 node.MattB,
-node.MattB_import,
 node.MorgenM,
-node.MorgenM_import,
 node.NatashaS,
-node.NatashaS_import,
 node.NickE,
-node.NickE_import,
 node.Rikki,
 node.Rob,
 node.RobinH,
-node.RobinH_import,
 node.RonmelR,
-node.RonmelR_import,
 node.Sarah,
 node.Savana,
 node.Sharon,
-node.SherryM,
-node.SherryM_import,
 node.SteveC,
-node.SteveC_import,
-node.Tony,
 node.Vince,
-node.WilliamF,
-node.WilliamF_import,
-node.ZachB {
+node.WilliamF {
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
