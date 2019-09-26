@@ -51,7 +51,7 @@ In order to construct time stamps, you can use the following:
 String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
 "timestamp:2016-02-20/" -- Shows all edits edited after date
 "timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
-"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -81,8 +81,8 @@ that there is another selector we would like to call out after "aaron"
   casing-color: lime;
   casing-width: 10;
   casing-opacity: 0.3;
-  
-  
+
+
 }
 
 -- This is our code block which will style up whatever we called out as a selector
@@ -122,7 +122,7 @@ setting::user_anita {
 setting::user_anja {
   type: boolean;
   label: tr("Turn User Ajaie On/Off");
-  default: true; 
+  default: true;
 }
 
 setting::user_callista {
@@ -146,6 +146,12 @@ setting::user_farris {
 setting::user_johnny {
   type: boolean;
   label: tr("Turn User spititout On/Off");
+  default: true;
+}
+
+setting::user_joseph {
+  type: boolean;
+  label: tr("Turn User Szekha On/Off");
   default: true;
 }
 
@@ -280,6 +286,10 @@ node:modified < way::modified_layer {
   set .johnny;
 }
 
+*[eval(JOSM_search("user:Szekha"))][setting("user_joseph")] {
+  set .joseph;
+}
+
 *[eval(JOSM_search("user:127logs"))][setting("user_logan")] {
   set .logan;
 }
@@ -344,6 +354,7 @@ way.callista,
 way.daniel,
 way.farris,
 way.johnny,
+way.joseph,
 way.logan,
 way.luis,
 way.marshall,
@@ -379,6 +390,7 @@ node.callista,
 node.daniel,
 node.farris,
 node.johnny,
+node.joseph,
 node.logan,
 node.luis,
 node.marshall,
