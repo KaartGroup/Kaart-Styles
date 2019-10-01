@@ -191,6 +191,12 @@ setting::user_riley {
   default: true;
 }
 
+setting::user_robert {
+  type: boolean;
+  label: tr("Turn User Bravesfan On/Off");
+  default: true;
+}
+
 setting::user_ryanf {
   type: boolean;
   label: tr("Turn User rytheking On/Off");
@@ -221,6 +227,11 @@ setting::user_SherryM {
   default:true;
 }
 
+setting::user_tanner {
+  type:boolean;
+  label:tr("Turn User 3636pacers On/Off");
+  default:true;
+}
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
 
@@ -314,6 +325,10 @@ node:modified < way::modified_layer {
   set .riley;
 }
 
+*[eval(JOSM_search("user:Bravesfan"))][setting("user_robert")] {
+  set .robert;
+}
+
 *[eval(JOSM_search("user:rytheking"))][setting("user_ryanf")] {
   set .ryanf;
 }
@@ -334,6 +349,9 @@ node:modified < way::modified_layer {
   set .SherryM;
 }
 
+*[eval(JOSM_search("user:3636pacers"))][setting("user_tanner")] {
+  set .tanner;
+}
 
 /* This is how you search for someone with a space in their name
 
