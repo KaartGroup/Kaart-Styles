@@ -131,6 +131,12 @@ setting::user_callista {
   default: true;
 }
 
+setting::user_christian {
+  type: boolean;
+  label: tr("Turn User Co2013 On/Off");
+  default: true;
+}
+
 setting::user_daniel {
   type: boolean;
   label: tr("Turn User The_Intern On/Off");
@@ -285,6 +291,10 @@ node:modified < way::modified_layer {
   set .callista;
 }
 
+*[eval(JOSM_search("user:Co2013"))][setting("user_christian")] {
+  set .christian;
+}
+
 *[eval(JOSM_search("user:The_Intern"))][setting("user_daniel")] {
   set .daniel;
 }
@@ -369,6 +379,7 @@ way.angie,
 way.anita,
 way.anja,
 way.callista,
+way.christian,
 way.daniel,
 way.farris,
 way.johnny,
@@ -379,11 +390,13 @@ way.marshall,
 way.nickm,
 way.rd,
 way.riley,
+way.robert,
 way.ryanf,
 way.ryanf2,
 way.sage,
 way.sarena,
-way.SherryM {
+way.SherryM,
+way.tanner{
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -405,6 +418,7 @@ node.angie,
 node.anita,
 node.anja,
 node.callista,
+node.christian,
 node.daniel,
 node.farris,
 node.johnny,
@@ -415,11 +429,13 @@ node.marshall,
 node.nickm,
 node.rd,
 node.riley,
+node.robert,
 node.ryanf,
 node.ryanf2,
 node.sage,
 node.sarena,
-node.SherryM {
+node.SherryM,
+node.tanner {
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
