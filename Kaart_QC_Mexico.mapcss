@@ -266,15 +266,15 @@ setting::user_Sharon {
   default:true;
 }
 
-setting::user_SteveC {
+setting::user_Sherry {
   type:boolean;
-  label:tr("Turn User Smoothdog On/Off");
+  label:tr("Turn User Sherbare On/Off");
   default:true;
 }
 
-setting::user_Vince {
+setting::user_SteveC {
   type:boolean;
-  label:tr("Turn User DreadPirateRoberts On/Off");
+  label:tr("Turn User Smoothdog On/Off");
   default:true;
 }
 
@@ -425,18 +425,17 @@ node:modified < way::modified_layer {
   set .Sharon;
 }
 
-*[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
-  set .SteveC;
+*[eval(JOSM_search("user:Sherbare"))][setting("user_Sherry")] {
+  set .Sherry;
 }
 
-*[eval(JOSM_search("user:DreadPirateRoberts"))][setting("user_Vince")] {
-  set .Vince;
+*[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
+  set .SteveC;
 }
 
 *[eval(JOSM_search("user:ImjusBuddy"))][setting("user_WilliamF")] {
   set .WilliamF;
 }
-
 
 /* This is how you search for someone with a space in their name
 
@@ -477,8 +476,8 @@ way.RonmelR,
 way.Sarah,
 way.Savana,
 way.Sharon,
+way.Sherry,
 way.SteveC,
-way.Vince,
 way.WilliamF {
   z-index: -10;
   casing-color: #B108D6;
@@ -520,8 +519,8 @@ node.RonmelR,
 node.Sarah,
 node.Savana,
 node.Sharon,
+node.Sherry,
 node.SteveC,
-node.Vince,
 node.WilliamF {
   symbol-size: 15;
   symbol-shape: triangle;
