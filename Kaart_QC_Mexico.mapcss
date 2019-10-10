@@ -158,9 +158,21 @@ setting::user_JacindaD {
   default:true;
 }
 
+setting::user_Johnny {
+  type:boolean;
+  label:tr("Turn User spititout On/Off");
+  default:true;
+}
+
 setting::user_Jonathan {
   type:boolean;
-  label:tr("Turn User joni5isalive On/Off");
+  label:tr("Turn User Joni5isalive On/Off");
+  default:true;
+}
+
+setting::user_Keeley {
+  type:boolean;
+  label:tr("Turn User kebobo On/Off");
   default:true;
 }
 
@@ -179,6 +191,12 @@ setting::user_LoganM {
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
+  default:true;
+}
+
+setting::user_Marshall {
+  type:boolean;
+  label:tr("Turn User MTG5093 On/Off");
   default:true;
 }
 
@@ -335,8 +353,16 @@ node:modified < way::modified_layer {
   set .JacindaD;
 }
 
-*[eval(JOSM_search("user:joni5isalive"))][setting("user_Jonathan")] {
+*[eval(JOSM_search("user:spititout"))][setting("user_Johnny")] {
+  set .Johnny;
+}
+
+*[eval(JOSM_search("user:Joni5isalive"))][setting("user_Jonathan")] {
   set .Jonathan;
+}
+
+*[eval(JOSM_search("user:kebobo"))][setting("user_Keeley")] {
+  set .Keeley;
 }
 
 *[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
@@ -349,6 +375,10 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:BlueRanger"))][setting("user_LouisM")] {
   set .LouisM;
+}
+
+*[eval(JOSM_search("user:MTG5093"))][setting("user_Marshall")] {
+  set .Marshall;
 }
 
 *[eval(JOSM_search("user:MappnMatt"))][setting("user_MattB")] {
@@ -429,10 +459,13 @@ way.Chris,
 way.Ethan,
 way.IanK,
 way.JacindaD,
+way.Johnny,
 way.Jonathan,
+way.Keeley,
 way.LeanneS,
 way.LoganM,
 way.LouisM,
+was.Marshall,
 way.MattB,
 way.MorgenM,
 way.NatashaS,
@@ -469,10 +502,13 @@ node.Chris,
 node.Ethan,
 node.IanK,
 node.JacindaD,
+node.Johnny,
 node.Jonathan,
+node.Keeley,
 node.LeanneS,
 node.LoganM,
 node.LouisM,
+node.Marshall,
 node.MattB,
 node.MorgenM,
 node.NatashaS,
