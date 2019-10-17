@@ -233,6 +233,12 @@ setting::user_SherryM {
   default:true;
 }
 
+setting::user_sierra {
+  type:boolean;
+  label:tr("Turn User sierrae-kaart On/Off");
+  default:true;
+}
+
 setting::user_tanner {
   type:boolean;
   label:tr("Turn User 3636pacers On/Off");
@@ -359,6 +365,10 @@ node:modified < way::modified_layer {
   set .SherryM;
 }
 
+*[eval(JOSM_search("user:sierrae-kaart"))][setting("user_sierra")] {
+  set .sierra;
+}
+
 *[eval(JOSM_search("user:3636pacers"))][setting("user_tanner")] {
   set .tanner;
 }
@@ -396,6 +406,7 @@ way.ryanf2,
 way.sage,
 way.sarena,
 way.SherryM,
+way.sierra,
 way.tanner{
   z-index: -10;
   casing-color: #B108D6;
@@ -435,6 +446,7 @@ node.ryanf2,
 node.sage,
 node.sarena,
 node.SherryM,
+node.sierra,
 node.tanner {
   symbol-size: 15;
   symbol-shape: triangle;
