@@ -323,7 +323,7 @@ node:modified < way::modified_layer {
   set .Jonathon;
 }
 
-*[eval(JOSM_search("user:JAAS”))][setting("user_Jorge”)] {
+*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
   set .Jorge;
 }
 
