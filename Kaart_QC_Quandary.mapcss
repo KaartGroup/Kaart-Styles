@@ -355,14 +355,14 @@ node:modified < way::modified_layer {
   set .RyanR;
 }
 
-*[eval(JOSM_search("user: saradenise"))][setting("user_Sarah”)] {
+*[eval(JOSM_search("user:saradenise"))][setting("user_Sarah”)] {
   set .Sarah;
 }
 
-*[eval(JOSM_search("user: timi_hendrix"))][setting("user_Timothy")] {
+*[eval(JOSM_search("user:timi_hendrix"))][setting("user_Timothy")] {
   set .Timothy;
 }
- *[eval(JOSM_search("user: tomincolorado"))][setting("user_Tom”)] {
+ *[eval(JOSM_search("user:tomincolorado"))][setting("user_Tom”)] {
   set .Tom;
 }
 
