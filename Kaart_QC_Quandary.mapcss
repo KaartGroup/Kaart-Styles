@@ -106,9 +106,9 @@ setting::user_Aaron {
   default:true;
 }
 
-setting::user_Ben {
+setting::user_Brent {
   type:boolean;
-  label:tr("Turn User El Pescador On/Off");
+  label:tr("Turn User TheBigBJE On/Off");
   default:true;
 }
 
@@ -142,27 +142,21 @@ setting::user_JacobK {
   default:true;
 }
 
-setting::user_JakeL {
-  type:boolean;
-  label:tr("Turn User TheMineralCartographer On/Off");
-  default:true;
-}
-
 setting::user_JasonH {
   type:boolean;
   label:tr("Turn User AnonJason On/Off");
   default:true;
 }
 
-setting::user_Joe {
-  type:boolean;
-  label:tr("Turn User _Poliwrath_ On/Off");
-  default:true;
-}
-
 setting::user_Jonathon {
   type:boolean;
   label:tr("Turn User spuddy93 On/Off");
+  default:true;
+}
+
+setting::user_Jorge {
+  type:boolean;
+  label:tr("Turn User JAAS On/Off");
   default:true;
 }
 
@@ -184,21 +178,15 @@ setting::user_Michelle {
   default:true;
 }
 
-setting::user_NickF {
-  type:boolean;
-  label:tr("Turn User daFisch On/Off");
-  default:true;
-}
-
 setting::user_Reed {
   type:boolean;
   label:tr("Turn User ReedtheRiver On/Off");
   default:true;
 }
 
-setting::user_Richard {
+setting::user_Rich {
   type:boolean;
-  label:tr("Turn User richardninde On/Off");
+  label:tr("Turn User RConnorsCarte19 On/Off");
   default:true;
 }
 
@@ -214,15 +202,21 @@ setting::user_RyanR {
   default:true;
 }
 
-setting::user_Taylor {
+setting::user_Sarah {
   type:boolean;
-  label:tr("Turn User vorpalblade77-kaart On/Off");
+  label:tr("Turn User saradenise On/Off");
   default:true;
 }
 
-setting::user_Zach {
+setting::user_Timothy {
   type:boolean;
-  label:tr("Turn User MTBdude On/Off");
+  label:tr("Turn User timi_hendrix On/Off");
+  default:true;
+}
+
+setting::user_Tom {
+  type:boolean;
+  label:tr("Turn User tomincolorado On/Off");
   default:true;
 }
 
@@ -291,15 +285,14 @@ node:modified < way::modified_layer {
 
 /* QC Styles */
 
-
 /* User specific styles */
 
 *[eval(JOSM_search("user:vespax"))][setting("user_Aaron")] {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:\"El Pescador\""))][setting("user_Ben")] {
-  set .Ben;
+*[eval(JOSM_search("user:\"TheBigBJE\""))][setting("user_Brent”)] {
+  set .Brent;
 }
 
 *[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
@@ -322,20 +315,16 @@ node:modified < way::modified_layer {
   set .JacobK;
 }
 
-*[eval(JOSM_search("user:TheMineralCartographer"))][setting("user_JakeL")] {
-  set .JakeL;
-}
-
 *[eval(JOSM_search("user:AnonJason"))][setting("user_JasonH")] {
   set .JasonH;
 }
 
-*[eval(JOSM_search("user:_Poliwrath_"))][setting("user_Joe")] {
-  set .Joe;
-}
-
 *[eval(JOSM_search("user:spuddy93"))][setting("user_Jonathon")] {
   set .Jonathon;
+}
+
+*[eval(JOSM_search("user:JAAS”))][setting("user_Jorge”)] {
+  set .Jorge;
 }
 
 *[eval(JOSM_search("user:birdeatscake"))][setting("user_Kira")] {
@@ -350,16 +339,12 @@ node:modified < way::modified_layer {
   set .Michelle;
 }
 
-*[eval(JOSM_search("user:daFisch"))][setting("user_NickF")] {
-  set .NickF;
-}
-
 *[eval(JOSM_search("user:ReedtheRiver"))][setting("user_Reed")] {
   set .Reed;
 }
 
-*[eval(JOSM_search("user:richardninde"))][setting("user_Richard")] {
-  set .Richard;
+*[eval(JOSM_search("user:RConnorsCarte19”))][setting("user_Rich")] {
+  set .Rich;
 }
 
 *[eval(JOSM_search("user:\"Whimsical Otter\""))][setting("user_RyanK")] {
@@ -370,15 +355,16 @@ node:modified < way::modified_layer {
   set .RyanR;
 }
 
-*[eval(JOSM_search("user:vorpalblade77-kaart"))][setting("user_Taylor")] {
-  set .Taylor;
+*[eval(JOSM_search("user: saradenise"))][setting("user_Sarah”)] {
+  set .Sarah;
 }
 
-*[eval(JOSM_search("user:MTBdude"))][setting("user_Zach")] {
-  set .Zach;
+*[eval(JOSM_search("user: timi_hendrix"))][setting("user_Timothy")] {
+  set .Timothy;
 }
-
-
+ *[eval(JOSM_search("user: tomincolorado"))][setting("user_Tom”)] {
+  set .Tom;
+}
 
 /* Clingstone Jr */
 
@@ -417,26 +403,25 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
 way.Aaron,
-way.Ben,
+way.Brent,
 way.Corban,
 way.Danielle,
 way.Gary,
 way.IanM,
 way.JacobK,
-way.JakeL,
 way.JasonH,
-way.Joe,
 way.Jonathon,
+way.Jorge,
 way.Kira,
 way.Lucas,
 way.Michelle,
-way.NickF,
 way.Reed,
-way.Richard,
+way.Rich,
 way.RyanK,
 way.RyanR,
-way.Taylor,
-way.Zach,
+way.Sarah,
+way.Timothy,
+way.Tom,
 way.Derek,
 way.Nathan,
 way.Nutchaya,
@@ -456,26 +441,25 @@ way.Sumittra {
 }
 
 node.Aaron,
-node.Ben,
+node.Brent,
 node.Corban,
 node.Danielle,
 node.Gary,
 node.IanM,
 node.JacobK,
-node.JakeL,
 node.JasonH,
-node.Joe,
 node.Jonathon,
+node.Jorge,
 node.Kira,
 node.Lucas,
 node.Michelle,
-node.NickF,
 node.Reed,
-node.Richard,
+node.Rich,
 node.RyanK,
 node.RyanR,
-node.Taylor,
-node.Zach,
+node.Sarah,
+node.Timothy,
+node.Tom,
 node.Derek,
 node.Nathan,
 node.Nutchaya,
