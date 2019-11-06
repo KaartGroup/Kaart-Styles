@@ -291,8 +291,8 @@ node:modified < way::modified_layer {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:TheBigBJE"))][setting("user_Brent”)] {
-  set .Brent;
+*[eval(JOSM_search("user:TheBigBJE"))][setting("user_Brent")] {
+  set .Aaron;
 }
 
 *[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
