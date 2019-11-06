@@ -292,7 +292,7 @@ node:modified < way::modified_layer {
 }
 
 *[eval(JOSM_search("user:TheBigBJE"))][setting("user_Brent")] {
-  set .Aaron;
+  set .Brent;
 }
 
 *[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
