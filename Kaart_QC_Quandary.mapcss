@@ -1,5 +1,5 @@
 meta {
-  title: "QC Styles For Clingstone Team";
+  title: "QC Styles For Quandary Team";
   description: "Highlights features that were created/modified by users";
   watch-modified: true;
   version: "1.4";
@@ -99,7 +99,7 @@ that there is another selector we would like to call out after "aaron"
 
 /* User Settings */
 
-/* Clingstone */
+/* Quandary */
 setting::user_Aaron {
   type:boolean;
   label:tr("Turn User vespax On/Off");
@@ -221,7 +221,7 @@ setting::user_Tom {
 }
 
 
-/* Clingstone Jr */
+/* Timpanogos */
 
 setting::user_Derek {
   type:boolean;
@@ -284,7 +284,6 @@ node:modified < way::modified_layer {
 }
 
 /* QC Styles */
-
 
 /* User specific styles */
 
@@ -369,8 +368,7 @@ node:modified < way::modified_layer {
 }
 
 
-
-/* Clingstone Jr */
+/* Timpanogos */
 
 *[eval(JOSM_search("user:DerekBev"))][setting("user_Derek")] {
   set .Derek;
@@ -440,8 +438,6 @@ way.Sumittra {
   text: eval(concat("Highway type =", " ", tag("highway")));
   text-offset: -20;
   */
-
-
 }
 
 node.Aaron,
