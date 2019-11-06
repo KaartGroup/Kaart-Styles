@@ -154,7 +154,7 @@ setting::user_Jonathon {
   default:true;
 }
 
-setting::user_Jorge {
+setting::user_Jorge{
   type:boolean;
   label:tr("Turn User JAAS On/Off");
   default:true;
@@ -285,13 +285,14 @@ node:modified < way::modified_layer {
 
 /* QC Styles */
 
+
 /* User specific styles */
 
 *[eval(JOSM_search("user:vespax"))][setting("user_Aaron")] {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:TheBigBJE"))][setting("user_Brent")] {
+*[eval(JOSM_search("user:\"TheBigBJE\""))][setting("user_Brent”)] {
   set .Brent;
 }
 
@@ -323,7 +324,7 @@ node:modified < way::modified_layer {
   set .Jonathon;
 }
 
-*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
+*[eval(JOSM_search("user:JAAS”))][setting("user_Jorge”)] {
   set .Jorge;
 }
 
@@ -355,16 +356,19 @@ node:modified < way::modified_layer {
   set .RyanR;
 }
 
-*[eval(JOSM_search("user:saradenise"))][setting("user_Sarah”)] {
+*[eval(JOSM_search("user: saradenise"))][setting("user_Sarah”)] {
   set .Sarah;
 }
 
-*[eval(JOSM_search("user:timi_hendrix"))][setting("user_Timothy")] {
+*[eval(JOSM_search("user: timi_hendrix"))][setting("user_Timothy")] {
   set .Timothy;
 }
- *[eval(JOSM_search("user:tomincolorado"))][setting("user_Tom”)] {
+
+*[eval(JOSM_search("user: tomincolorado"))][setting("user_Tom”)] {
   set .Tom;
 }
+
+
 
 /* Clingstone Jr */
 
@@ -482,3 +486,4 @@ node:selected::selected_layer {
   symbol-fill-opacity: 0.5;
   z-index: -5;
 }
+
