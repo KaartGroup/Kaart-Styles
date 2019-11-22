@@ -266,12 +266,6 @@ setting::user_Sharon {
   default:true;
 }
 
-setting::user_Sherry {
-  type:boolean;
-  label:tr("Turn User Sherbare On/Off");
-  default:true;
-}
-
 setting::user_SteveC {
   type:boolean;
   label:tr("Turn User Smoothdog On/Off");
@@ -425,10 +419,6 @@ node:modified < way::modified_layer {
   set .Sharon;
 }
 
-*[eval(JOSM_search("user:Sherbare"))][setting("user_Sherry")] {
-  set .Sherry;
-}
-
 *[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
   set .SteveC;
 }
@@ -476,7 +466,6 @@ way.RonmelR,
 way.Sarah,
 way.Savana,
 way.Sharon,
-way.Sherry,
 way.SteveC,
 way.WilliamF {
   z-index: -10;
@@ -519,7 +508,6 @@ node.RonmelR,
 node.Sarah,
 node.Savana,
 node.Sharon,
-node.Sherry,
 node.SteveC,
 node.WilliamF {
   symbol-size: 15;
