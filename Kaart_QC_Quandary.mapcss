@@ -108,7 +108,7 @@ setting::user_Aaron {
 
 setting::user_Brent {
   type:boolean;
-  label:tr("Turn User TheBigBJE On/Off");
+  label:tr("Turn User SmoothWookieFlow On/Off");
   default:true;
 }
 
@@ -291,7 +291,7 @@ node:modified < way::modified_layer {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:\"TheBigBJE\""))][setting("user_Brent”)] {
+*[eval(JOSM_search("user:SmoothWookieFlow"))][setting("user_Brent”)] {
   set .Brent;
 }
 
