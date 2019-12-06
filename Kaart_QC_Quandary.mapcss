@@ -297,7 +297,7 @@ node:modified < way::modified_layer {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:SmoothWookieFlow"))][setting("user_Brent”)] {
+*[eval(JOSM_search("user:SmoothWookieFlow"))][setting("user_Brent")] {
   set .Brent;
 }
 
@@ -361,11 +361,11 @@ node:modified < way::modified_layer {
   set .RyanR;
 }
 
-*[eval(JOSM_search("user:sbburg"))][setting("user_Sara”)] {
+*[eval(JOSM_search("user:sbburg"))][setting("user_Sara")] {
   set .Sara;
 }
 
-*[eval(JOSM_search("user:saradenise"))][setting("user_Sarah”)] {
+*[eval(JOSM_search("user:saradenise"))][setting("user_Sarah")] {
   set .Sarah;
 }
 
@@ -373,7 +373,7 @@ node:modified < way::modified_layer {
   set .Timothy;
 }
 
-*[eval(JOSM_search("user:tomincolorado"))][setting("user_Tom”)] {
+*[eval(JOSM_search("user:tomincolorado"))][setting("user_Tom")] {
   set .Tom;
 }
 
