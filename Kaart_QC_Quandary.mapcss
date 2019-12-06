@@ -202,6 +202,12 @@ setting::user_RyanR {
   default:true;
 }
 
+setting::user_Sara {
+  type:boolean;
+  label:tr("Turn User sbburg On/Off");
+  default:true;
+}
+
 setting::user_Sarah {
   type:boolean;
   label:tr("Turn User saradenise On/Off");
@@ -355,15 +361,19 @@ node:modified < way::modified_layer {
   set .RyanR;
 }
 
-*[eval(JOSM_search("user: saradenise"))][setting("user_Sarah”)] {
+*[eval(JOSM_search("user:sbburg"))][setting("user_Sara”)] {
+  set .Sara;
+}
+
+*[eval(JOSM_search("user:saradenise"))][setting("user_Sarah”)] {
   set .Sarah;
 }
 
-*[eval(JOSM_search("user: timi_hendrix"))][setting("user_Timothy")] {
+*[eval(JOSM_search("user:timi_hendrix"))][setting("user_Timothy")] {
   set .Timothy;
 }
 
-*[eval(JOSM_search("user: tomincolorado"))][setting("user_Tom”)] {
+*[eval(JOSM_search("user:tomincolorado"))][setting("user_Tom”)] {
   set .Tom;
 }
 
@@ -421,6 +431,7 @@ way.Reed,
 way.Rich,
 way.RyanK,
 way.RyanR,
+way.Sara,
 way.Sarah,
 way.Timothy,
 way.Tom,
@@ -457,6 +468,7 @@ node.Reed,
 node.Rich,
 node.RyanK,
 node.RyanR,
+node.Sara,
 node.Sarah,
 node.Timothy,
 node.Tom,
