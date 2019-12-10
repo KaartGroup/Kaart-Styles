@@ -329,7 +329,7 @@ node:modified < way::modified_layer {
   set .Jonathon;
 }
 
-*[eval(JOSM_search("user:JAAS”))][setting("user_Jorge”)] {
+*[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
   set .Jorge;
 }
 
@@ -349,7 +349,7 @@ node:modified < way::modified_layer {
   set .Reed;
 }
 
-*[eval(JOSM_search("user:RConnorsCarte19”))][setting("user_Rich")] {
+*[eval(JOSM_search("user:RConnorsCarte19"))][setting("user_Rich")] {
   set .Rich;
 }
 
