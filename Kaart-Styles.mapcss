@@ -167,15 +167,17 @@ setting::show_boundary {
   default: true;
 }
 
-
-
 setting::lowercase {
   type: boolean;
   label: tr("Flag roads where words after the first word in a name are NOT capitalized");
   default: true;
 }
 
-
+setting::potlatch_crossing {
+  type: boolean;
+  label: tr("Use less specific potlatch-style crossing icon");
+  default: true;
+}
 
 /*Lower-Case Names*/
 
@@ -856,7 +858,7 @@ node[railway=station] { icon-image: icons/transport_train_station.n.16.png; text
 node[railway=tram_stop] { icon-image: icons/transport_tram_stop.n.16.png; z-index: 20; }
 node[leisure=marina] { icon-image: icons/transport_marina.n.16.png; z-index: 20; }
 node[highway=mini_roundabout] { icon-image: icons/transport_miniroundabout_anticlockwise.n.16.png; z-index: 20; }
-node[highway=crossing] { icon-image: icons/transport_zebracrossing.n.16.png; z-index: 20; }
+node[highway=crossing][setting("potlatch_crossing")] { icon-image: icons/transport_zebracrossing.n.16.png; z-index: 20; }
 /* Misc */
 node[leisure=playground] { icon-image: icons/amenity_playground.n.16.png; z-index: 20; }
 node[leisure=sports_centre] { icon-image: icons/sport_leisure_centre.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
