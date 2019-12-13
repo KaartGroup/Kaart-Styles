@@ -199,7 +199,7 @@ way[boundary=national_park][setting("show_boundary")]::core_boundary {
     z-index: 2;
     modifier: false;
     width: 1;
-    color: boundary#FF6600;
+    color: boundary_default#FF6600;
     dashes: 9,9;
 }
 way[admin_level=9][setting("show_boundary")]::core_boundary,
@@ -209,7 +209,7 @@ relation[admin_level=10][setting("show_boundary")] > way::core_boundary {
     z-index: 2;
     modifier: false;
     width: 1.5;
-    color: boundary#801515;
+    color: boundary_high_admin_level#801515;
     dashes: 9,9;
 }
 way[admin_level=7][setting("show_boundary")]::core_boundary,
@@ -219,7 +219,7 @@ relation[admin_level=8][setting("show_boundary")] > way::core_boundary {
     z-index: 2;
     modifier: false;
     width: 2;
-    color: boundary#FFB4AA;
+    color: boundary_high_medium_admin_level#FFB4AA;
     dashes: 9,9;
 }
 way[admin_level=5][setting("show_boundary")]::core_boundary,
@@ -229,7 +229,7 @@ relation[admin_level=6][setting("show_boundary")] > way::core_boundary {
     z-index: 2;
     modifier: false;
     width: 3;
-    color: boundary#FF6600;
+    color: boundary_lower#FF6600;
     dashes: 9,9;
 }
 way[admin_level=3][setting("show_boundary")]::core_boundary,
@@ -239,7 +239,7 @@ relation[admin_level=4][setting("show_boundary")] > way::core_boundary {
     z-index: 2;
     modifier: false;
     width: 4;
-    color: boundary#FF6600;
+    color: boundary_lower#FF6600;
     dashes: 9,9;
 }
 way[admin_level=1][setting("show_boundary")]::core_boundary,
@@ -249,7 +249,7 @@ relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
     z-index: 2;
     modifier: false;
     width: 5;
-    color: boundary#FF6600;
+    color: boundary_lower#FF6600;
     dashes: 9,9;
 }
 
