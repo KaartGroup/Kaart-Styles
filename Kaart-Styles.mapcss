@@ -9,21 +9,21 @@ meta {
     license: "https://github.com/KaartGroup/Kaart-Styles/blob/master/LICENSE";
 }
 
-/* Notes 
+/* Notes
 
 ** Setting 1 & 2 are based on unique names, and route direction. Slight variations in the name will cause colors to change.
 
 1.
-Name setting highlights all ways with a name within a given area. 
+Name setting highlights all ways with a name within a given area.
 Roads with the same names have the same color.
 
 2.
-Ref setting highlights all ways with a  Ref within a given area. 
+Ref setting highlights all ways with a  Ref within a given area.
 Roads with the same ref have the same color.
 
 3.
 Node setting increases node size for easier visiblity.
-This helps when identifying disconnected road networks. 
+This helps when identifying disconnected road networks.
 Also aids in splitting certain sections of roads.
 
 4.
@@ -31,7 +31,7 @@ Highway Labels setting will make road names easier to read within JOSM.
 
 5.
 Single Color Roads - These settings reduce (and make clear) the visbility of roads which contain
-Name/Ref Tags. This may be beneficial, but feed back would be appreciated. 
+Name/Ref Tags. This may be beneficial, but feed back would be appreciated.
 
 6.
 Long Roads helps to highlight roads which "snake" through a given area. This can make adding street names difficult.
@@ -39,7 +39,7 @@ Each road is given a color based on its unique way ID. There are only 33 colors 
 so there might be some overlap in colors. This can be altered if need be.
 
 7.
-Relations Setting allow way[highway]ws you to highlight roads/ways which contain a relation in a given ar way[highway]ea. This is done with line-casing. 
+Relations Setting allow way[highway]ws you to highlight roads/ways which contain a relation in a given ar way[highway]ea. This is done with line-casing.
 Some countries have adopted relations as the go-to way[highway] for adding names and ref tags. If you know where relations exist,
 it co way[highway]uld possibly help in finding and editing names - whilst making sure you do not break relations.
 
@@ -262,11 +262,11 @@ way                        { z-index: 6; color: grey; width: 3.5; casing-width: 
 /* New Road Styling inspired by Potlatch  */
 
 way[highway] {
-text: auto; 
-text-color: white; 
-font-size: 12; 
-text-position: line; 
-text-halo-color: black; 
+text: auto;
+text-color: white;
+font-size: 12;
+text-position: line;
+text-halo-color: black;
 text-halo-radius: 0.9;
 }
 
@@ -392,33 +392,33 @@ way[oneway=-1]::arrows { z-index: 15; color: #555555; width: 2; dashes: 10,50; l
 
 /* Under construction */
 
-way[highway=proposed] {   
+way[highway=proposed] {
 
-                                            z-index: 5; 
-                                            width: 6; 
-                                            linecap: square; 
+                                            z-index: 5;
+                                            width: 6;
+                                            linecap: square;
                                             color: none;
-                                            casing-color:  #00ffef; 
-                                            casing-width: 1; 
+                                            casing-color:  #00ffef;
+                                            casing-width: 1;
                                             opacity: 0.0;
-                                            casing-opacity: 0.6; 
+                                            casing-opacity: 0.6;
                                             linejoin: round;
-                                            
-                                            }
-                                            
-way[highway=construction] {  
 
-                                            z-index: 5; 
-                                            width: 6; 
-                                            linecap: square; 
+                                            }
+
+way[highway=construction] {
+
+                                            z-index: 5;
+                                            width: 6;
+                                            linecap: square;
                                             color: #ff6700;
-                                            casing-color:  #ff6700; 
-                                            casing-width: 2; 
-                                            dashes: 15; 
-                                            dashes-background-color: white;  
-                                            dashes-casing-color: black; 
+                                            casing-color:  #ff6700;
+                                            casing-width: 2;
+                                            dashes: 15;
+                                            dashes-background-color: white;
+                                            dashes-casing-color: black;
                                             linejoin: round;
-                                            
+
                                             }
 
 
@@ -452,10 +452,10 @@ way[construction=light_rail] { z-index: 6; color: black; width: 4; dashes: 8, 4,
 way[construction=light_rail]::dashes { z-index: 7; color: #999999; width: 2; dashes: 8,12; }
 
 
-/* Waterways */ 
+/* Waterways */
 
-way[waterway=river], 
-way[waterway=canal], 
+way[waterway=river],
+way[waterway=canal],
 way[waterway=stream]   { z-index: 5; color: #3434ff; width: 2; text:auto; text-color: #3434ff; font-size:9; text-position: line; text-offset: 7;}
 
 node[ford=stepping_stone],
@@ -483,14 +483,14 @@ way[waterway][tunnel]                {z-index: 5; dashes: 8,4;}
 way[aeroway=aerodrome]:closed
     { z-index: 3; color: #bb44bb; width: 3; casing-color: #660666;  casing-width: 1;  }
 way[aeroway=taxiway]!:closed { z-index: 8; color: #999999; width: 3; casing-color: #aa66aa; casing-width: 2; }
-area[aeroway=taxiway]:closed { z-index: 8; color: #bb99bb; width: 3; fill-color: #ccaacc; } 
+area[aeroway=taxiway]:closed { z-index: 8; color: #bb99bb; width: 3; fill-color: #ccaacc; }
 
 way[aeroway=runway]!:closed { z-index: 9; color: black; width: 5;  }
 way[aeroway=runway]!:closed::aa { z-index: 12; color: white; width: 5;  dashes: 0, 20, 4, 76; }
 way[aeroway=runway]!:closed::bb { z-index: 13; color: black; width: 3; }
 way[aeroway=runway]!:closed::cc { z-index: 14; color: white; width: 1;  dashes: 4, 16; }
 
-area[aeroway=runway]:closed { z-index: 9; color: black; width: 3; fill-color: #775577; } 
+area[aeroway=runway]:closed { z-index: 9; color: black; width: 3; fill-color: #775577; }
 area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #ddaadd; fill-opacity: 0.5;}
 
 
@@ -518,7 +518,7 @@ way[bridge=yes]::bridge1, way[bridge=viaduct]::bridge1, way[bridge=suspension]::
 
 way[bridge=yes]::bridge2, way[bridge=viaduct]::bridge2, way[bridge=suspension]::bridge2 { z-index: 3; color: #444444; width: +6; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
 
-way[tunnel=yes][!waterway]::bridge1 { 
+way[tunnel=yes][!waterway]::bridge1 {
     major-z-index: 2;
     object-z-index: -1;
     width: +7;
@@ -1137,7 +1137,7 @@ way[boundary=administrative][waterway][setting("show_boundary")]      { z-index:
 way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
 area[landuse=cemetery]:closed           { color: #664466; width: 2; fill-color: #664466; opacity: 0.2; prop_area_small_name : 1;}
 
-/* Route relations 
+/* Route relations
 
 relation[type=route] > way::route { z-index: -1; width: 13; color: blue; opacity: 0.3; linecap: none; }
 relation[type=route][route=bicycle][network=ncn] > way::route { z-index: -1; width: 12; color: red; opacity: 0.3; linecap: none; }
@@ -1160,7 +1160,7 @@ way[highway=motorway][junction=roundabout] {
 way[highway=trunk][junction=roundabout] {
     width: 3.7;
     casing-width: 2;
-    casing-color: #FB2B11; 
+    casing-color: #FB2B11;
     color: #DD2F22;
     dashes: 15, 15;
 }
@@ -1180,7 +1180,7 @@ way[highway=secondary][junction=roundabout] {
     color: #FFFF00;
     dashes: 15, 15;
 }
-way[highway=tertiary][junction=roundabout] {                    
+way[highway=tertiary][junction=roundabout] {
     z-index: 4;
     width: 3;
     casing-width: 2;
@@ -1213,10 +1213,10 @@ way[highway=unclassified][junction=roundabout] {
     dashes: 15, 15;
 }
 way[highway=living_street][junction=roundabout] {
-    z-index: 3; 
+    z-index: 3;
     width: 4;
     casing-color: #FB2B11;
-    dashes-background-color: #00ff00; 
+    dashes-background-color: #00ff00;
     color: #00ff00;
     dashes: 15,15;
 }
@@ -1233,7 +1233,7 @@ way[highway=living_street][junction=roundabout] {
 
 way[highway]["layer"="1"] ⧉ way[highway]["layer"="1"],
 way[highway]["layer"="2"] ⧉ way[highway]["layer"="2"],
-way[highway]["layer"="3"] ⧉ way[highway]["layer"="3"], 
+way[highway]["layer"="3"] ⧉ way[highway]["layer"="3"],
 way[highway]["layer"="4"] ⧉ way[highway]["layer"="4"],
 way[highway]["layer"="5"] ⧉ way[highway]["layer"="5"],
 way[highway]["layer"="6"] ⧉ way[highway]["layer"="6"],
@@ -1248,7 +1248,7 @@ way[highway]["layer"="-5"] ⧉ way[highway]["layer"="-5"],
 way[highway]["layer"="-6"] ⧉ way[highway]["layer"="-6"],
 way[highway]["layer"="-7"] ⧉ way[highway]["layer"="-7"],
 way[highway]["layer"="-8"] ⧉ way[highway]["layer"="-8"],
-way[highway]["layer"="-9"] ⧉ way[highway]["layer"="-9"] 
+way[highway]["layer"="-9"] ⧉ way[highway]["layer"="-9"]
 {
         set .conflict;
 }
@@ -1310,7 +1310,7 @@ way[highway][surface=asphalt][setting("surface_t")]::core_motoroad {
     object-z-index: -1;
     color: #2908C1;
     width: 15;
-    
+
 }
 
 way[highway][surface=concrete][setting("surface_t")]::core_motoroad {
@@ -1427,17 +1427,17 @@ way[highway][surface=snow][setting("surface_t")]::core_motoroad {
 /* way text labels - General Settings for Highways (Do NOT use font-size attribute in this section or it will screw up all other settings below)*/
 /*******************/
 way[highway]
-{ 
-  z-index: 5; 
-  text: auto; 
-  text-color: white; 
+{
+  z-index: 5;
+  text: auto;
+  text-color: white;
   font-family: Avenir;
-  text-position: line; 
-  text-halo-color: black; 
-  text-halo-radius: 2.5; 
+  text-position: line;
+  text-halo-color: black;
+  text-halo-radius: 2.5;
   text-halo-opacity: .5;
-  linecap: round; 
-  casing-linecap: round; 
+  linecap: round;
+  casing-linecap: round;
   }
 
 
@@ -1446,7 +1446,7 @@ way[highway]
 
 way|z17-[highway] {
     font-size: 12;
-    
+
 }
 
 way|z18[highway] {
@@ -1485,7 +1485,7 @@ way|z17-[highway=track][setting("highway_labels")] {
     text-halo-opacity: 1;
     text-halo-radius: 2.5;
     text-halo-color: black;
-    
+
 }
 
 way|z-16[highway][setting("highway_labels")] {
@@ -1504,7 +1504,7 @@ way|z16-[highway][setting("highway_labels")] {
     crc: CRC32_checksum(tag("name"))/429496.7296;
     text: eval(tag("name"));
     set .checkname1;
-   
+
 }
 
 
@@ -1523,7 +1523,7 @@ relation[type=route][route=road]["name"][setting("name_setting")] > way[highway]
     crc: CRC32_checksum(tag("ref"))/429496.7296;
     text: eval(tag("ref"));
     set .checkname1;
-   
+
 }
 
 
@@ -1541,236 +1541,236 @@ relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!
 
 /* Color Stylings based on Check Sums */
 
-way.checkname1[prop(crc)<303], 
+way.checkname1[prop(crc)<303],
 way.checkname2[prop(crc)<303]
 {
         color: #8B864E;
 
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=303][prop(crc)<606], 
+way.checkname1[prop(crc)>=303][prop(crc)<606],
 way.checkname2[prop(crc)>=303][prop(crc)<606]
 {
         color: #b88142;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=606][prop(crc)<909], 
+way.checkname1[prop(crc)>=606][prop(crc)<909],
 way.checkname2[prop(crc)>=606][prop(crc)<909]
 {
         color: #a3fe8f;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=909][prop(crc)<1212], 
+way.checkname1[prop(crc)>=909][prop(crc)<1212],
 way.checkname2[prop(crc)>=909][prop(crc)<1212]
 {
         color: #b8674c;
-       
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=1212][prop(crc)<1515], 
+way.checkname1[prop(crc)>=1212][prop(crc)<1515],
 way.checkname2[prop(crc)>=1212][prop(crc)<1515]
 {
         color: #f4ff6b;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=1515][prop(crc)<1818], 
+way.checkname1[prop(crc)>=1515][prop(crc)<1818],
 way.checkname2[prop(crc)>=1515][prop(crc)<1818]
 {
         color: #81c0ff;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=1818][prop(crc)<2121], 
+way.checkname1[prop(crc)>=1818][prop(crc)<2121],
 way.checkname2[prop(crc)>=1818][prop(crc)<2121]
 {
         color: #6b8e23;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=2121][prop(crc)<2424], 
+way.checkname1[prop(crc)>=2121][prop(crc)<2424],
 way.checkname2[prop(crc)>=2121][prop(crc)<2424]
 {
         color: #e1bd6a;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=2424][prop(crc)<2727], 
+way.checkname1[prop(crc)>=2424][prop(crc)<2727],
 way.checkname2[prop(crc)>=2424][prop(crc)<2727]
 {
         color: #7fffd4;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=2727][prop(crc)<3030], 
+way.checkname1[prop(crc)>=2727][prop(crc)<3030],
 way.checkname2[prop(crc)>=2727][prop(crc)<3030]
 {
         color: #8a2be2;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=3030][prop(crc)<3333], 
+way.checkname1[prop(crc)>=3030][prop(crc)<3333],
 way.checkname2[prop(crc)>=3030][prop(crc)<3333]
 {
         color: #a52a2a;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=3333][prop(crc)<3636], 
+way.checkname1[prop(crc)>=3333][prop(crc)<3636],
 way.checkname2[prop(crc)>=3333][prop(crc)<3636]
 {
         color: #f0b9a6;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=3636][prop(crc)<3939], 
+way.checkname1[prop(crc)>=3636][prop(crc)<3939],
 way.checkname2[prop(crc)>=3636][prop(crc)<3939]
 {
         color: #8fbc8f;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=3939][prop(crc)<4242], 
+way.checkname1[prop(crc)>=3939][prop(crc)<4242],
 way.checkname2[prop(crc)>=3939][prop(crc)<4242]
 {
         color: #1b7777;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=4242][prop(crc)<4545], 
+way.checkname1[prop(crc)>=4242][prop(crc)<4545],
 way.checkname2[prop(crc)>=4242][prop(crc)<4545]
 {
         color: #ff1493;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=4545][prop(crc)<4848], 
+way.checkname1[prop(crc)>=4545][prop(crc)<4848],
 way.checkname2[prop(crc)>=4545][prop(crc)<4848]
 {
         color: #0072e2;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=4848][prop(crc)<5151], 
+way.checkname1[prop(crc)>=4848][prop(crc)<5151],
 way.checkname2[prop(crc)>=4848][prop(crc)<5151]
 {
         color: #008f00;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=5151][prop(crc)<5454], 
+way.checkname1[prop(crc)>=5151][prop(crc)<5454],
 way.checkname2[prop(crc)>=5151][prop(crc)<5454]
 {
         color: #ffcc00;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=5454][prop(crc)<5757], 
+way.checkname1[prop(crc)>=5454][prop(crc)<5757],
 way.checkname2[prop(crc)>=5454][prop(crc)<5757]
 {
         color: #BF9017;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=5757][prop(crc)<6060], 
+way.checkname1[prop(crc)>=5757][prop(crc)<6060],
 way.checkname2[prop(crc)>=5757][prop(crc)<6060]
 {
         color: #adff2f;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=6060][prop(crc)<6363], 
+way.checkname1[prop(crc)>=6060][prop(crc)<6363],
 way.checkname2[prop(crc)>=6060][prop(crc)<6363]
 {
         color: #ff69b4;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=6363][prop(crc)<6666], 
+way.checkname1[prop(crc)>=6363][prop(crc)<6666],
 way.checkname2[prop(crc)>=6363][prop(crc)<6666]
 {
         color: #cd5c5c;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=6666][prop(crc)<6969], 
+way.checkname1[prop(crc)>=6666][prop(crc)<6969],
 way.checkname2[prop(crc)>=6666][prop(crc)<6969]
 {
         color: #7d5a07;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=6969][prop(crc)<7272], 
+way.checkname1[prop(crc)>=6969][prop(crc)<7272],
 way.checkname2[prop(crc)>=6969][prop(crc)<7272]
 {
         color: #824600;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=7272][prop(crc)<7575], 
+way.checkname1[prop(crc)>=7272][prop(crc)<7575],
 way.checkname2[prop(crc)>=7272][prop(crc)<7575]
 {
         color: #f08080;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=7575][prop(crc)<7878], 
+way.checkname1[prop(crc)>=7575][prop(crc)<7878],
 way.checkname2[prop(crc)>=7575][prop(crc)<7878]
 {
         color: #F75617;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=7878][prop(crc)<8181], 
+way.checkname1[prop(crc)>=7878][prop(crc)<8181],
 way.checkname2[prop(crc)>=7878][prop(crc)<8181]
 {
         color: #54d954;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=8181][prop(crc)<8484], 
+way.checkname1[prop(crc)>=8181][prop(crc)<8484],
 way.checkname2[prop(crc)>=8181][prop(crc)<8484]
 {
         color: #ba55d3;
-        
+
 }
                 /* --------- */
 way.checkname1[prop(crc)>=8484][prop(crc)<8787],
  way.checkname2[prop(crc)>=8484][prop(crc)<8787]
 {
         color: #9370db;
-        
+
 }
                 /* --------- */
 way.checkname1[prop(crc)>=8787][prop(crc)<9090],
  way.checkname2[prop(crc)>=8787][prop(crc)<9090]
 {
         color: #ff7c00;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=9090][prop(crc)<9393], 
+way.checkname1[prop(crc)>=9090][prop(crc)<9393],
 way.checkname2[prop(crc)>=9090][prop(crc)<9393]
 {
         color: #3cb371;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=9393][prop(crc)<9696], 
+way.checkname1[prop(crc)>=9393][prop(crc)<9696],
 way.checkname2[prop(crc)>=9393][prop(crc)<9696]
 {
         color: #707000;
-        
+
 }
                 /* --------- */
-way.checkname1[prop(crc)>=9696], 
+way.checkname1[prop(crc)>=9696],
 way.checkname2[prop(crc)>=9696]
 {
         color: #ff4444;
-        
+
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
@@ -1855,285 +1855,285 @@ relation[type=route][route=road]["int_ref"][setting("check_ref2")] > way["highwa
 
 /* Color Stylings based on Check Sums */
 
-way.checkme5[prop(crc)<303], 
+way.checkme5[prop(crc)<303],
 way.checkme3[prop(crc)<303],
 way.checkme6[prop(crc)<303],
 way.checkme7[prop(crc)<303]
 {
-        
+
         color: #8B864E;
 
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=303][prop(crc)<606], 
+way.checkme5[prop(crc)>=303][prop(crc)<606],
 way.checkme3[prop(crc)>=303][prop(crc)<606],
 way.checkme6[prop(crc)>=303][prop(crc)<606],
 way.checkme7[prop(crc)>=303][prop(crc)<606]
 {
-        
+
         color: #b88142;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=606][prop(crc)<909], 
+way.checkme5[prop(crc)>=606][prop(crc)<909],
 way.checkme3[prop(crc)>=606][prop(crc)<909],
 way.checkme6[prop(crc)>=606][prop(crc)<909],
-way.checkme7[prop(crc)>=606][prop(crc)<909] 
+way.checkme7[prop(crc)>=606][prop(crc)<909]
 {
-        
+
         color: #a3fe8f;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=909][prop(crc)<1212], 
+way.checkme5[prop(crc)>=909][prop(crc)<1212],
 way.checkme3[prop(crc)>=909][prop(crc)<1212],
-way.checkme6[prop(crc)>=909][prop(crc)<1212], 
-way.checkme7[prop(crc)>=909][prop(crc)<1212] 
+way.checkme6[prop(crc)>=909][prop(crc)<1212],
+way.checkme7[prop(crc)>=909][prop(crc)<1212]
 {
-        
+
         color: #b8674c;
-       
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=1212][prop(crc)<1515], 
+way.checkme5[prop(crc)>=1212][prop(crc)<1515],
 way.checkme3[prop(crc)>=1212][prop(crc)<1515],
-way.checkme6[prop(crc)>=1212][prop(crc)<1515], 
-way.checkme7[prop(crc)>=1212][prop(crc)<1515] 
+way.checkme6[prop(crc)>=1212][prop(crc)<1515],
+way.checkme7[prop(crc)>=1212][prop(crc)<1515]
 {
-        
+
         color: #f4ff6b;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=1515][prop(crc)<1818], 
+way.checkme5[prop(crc)>=1515][prop(crc)<1818],
 way.checkme3[prop(crc)>=1515][prop(crc)<1818],
 way.checkme6[prop(crc)>=1515][prop(crc)<1818],
 way.checkme7[prop(crc)>=1515][prop(crc)<1818]
 {
-        
+
         color: #81c0ff;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=1818][prop(crc)<2121], 
+way.checkme5[prop(crc)>=1818][prop(crc)<2121],
 way.checkme3[prop(crc)>=1818][prop(crc)<2121],
 way.checkme6[prop(crc)>=1818][prop(crc)<2121],
 way.checkme7[prop(crc)>=1818][prop(crc)<2121]
 {
-        
+
         color: #6b8e23;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=2121][prop(crc)<2424], 
+way.checkme5[prop(crc)>=2121][prop(crc)<2424],
 way.checkme3[prop(crc)>=2121][prop(crc)<2424],
 way.checkme6[prop(crc)>=2121][prop(crc)<2424],
 way.checkme7[prop(crc)>=2121][prop(crc)<2424]
 {
-        
+
         color: #e1bd6a;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=2424][prop(crc)<2727], 
+way.checkme5[prop(crc)>=2424][prop(crc)<2727],
 way.checkme3[prop(crc)>=2424][prop(crc)<2727],
 way.checkme6[prop(crc)>=2424][prop(crc)<2727],
 way.checkme7[prop(crc)>=2424][prop(crc)<2727]
 {
-        
+
         color: #7fffd4;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=2727][prop(crc)<3030], 
+way.checkme5[prop(crc)>=2727][prop(crc)<3030],
 way.checkme3[prop(crc)>=2727][prop(crc)<3030],
 way.checkme6[prop(crc)>=2727][prop(crc)<3030],
 way.checkme7[prop(crc)>=2727][prop(crc)<3030]
 {
-        
+
         color: #8a2be2;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=3030][prop(crc)<3333], 
+way.checkme5[prop(crc)>=3030][prop(crc)<3333],
 way.checkme3[prop(crc)>=3030][prop(crc)<3333],
 way.checkme6[prop(crc)>=3030][prop(crc)<3333],
 way.checkme7[prop(crc)>=3030][prop(crc)<3333]
 {
-        
+
         color: #a52a2a;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=3333][prop(crc)<3636], 
+way.checkme5[prop(crc)>=3333][prop(crc)<3636],
 way.checkme3[prop(crc)>=3333][prop(crc)<3636],
 way.checkme6[prop(crc)>=3333][prop(crc)<3636],
 way.checkme7[prop(crc)>=3333][prop(crc)<3636]
 {
-        
+
         color: #f0b9a6;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=3636][prop(crc)<3939], 
+way.checkme5[prop(crc)>=3636][prop(crc)<3939],
 way.checkme3[prop(crc)>=3636][prop(crc)<3939],
 way.checkme6[prop(crc)>=3636][prop(crc)<3939],
 way.checkme7[prop(crc)>=3636][prop(crc)<3939]
 {
-        
+
         color: #8fbc8f;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=3939][prop(crc)<4242], 
+way.checkme5[prop(crc)>=3939][prop(crc)<4242],
 way.checkme3[prop(crc)>=3939][prop(crc)<4242],
 way.checkme6[prop(crc)>=3939][prop(crc)<4242],
 way.checkme7[prop(crc)>=3939][prop(crc)<4242]
 {
-        
+
         color: #1b7777;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=4242][prop(crc)<4545], 
+way.checkme5[prop(crc)>=4242][prop(crc)<4545],
 way.checkme3[prop(crc)>=4242][prop(crc)<4545],
 way.checkme6[prop(crc)>=4242][prop(crc)<4545],
 way.checkme7[prop(crc)>=4242][prop(crc)<4545]
 {
-        
+
         color: #ff1493;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=4545][prop(crc)<4848], 
+way.checkme5[prop(crc)>=4545][prop(crc)<4848],
 way.checkme3[prop(crc)>=4545][prop(crc)<4848],
 way.checkme6[prop(crc)>=4545][prop(crc)<4848],
 way.checkme7[prop(crc)>=4545][prop(crc)<4848]
 {
-        
+
         color: #0072e2;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=4848][prop(crc)<5151], 
+way.checkme5[prop(crc)>=4848][prop(crc)<5151],
 way.checkme3[prop(crc)>=4848][prop(crc)<5151],
 way.checkme6[prop(crc)>=4848][prop(crc)<5151],
 way.checkme7[prop(crc)>=4848][prop(crc)<5151]
 {
-        
+
         color: #008f00;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=5151][prop(crc)<5454], 
+way.checkme5[prop(crc)>=5151][prop(crc)<5454],
 way.checkme3[prop(crc)>=5151][prop(crc)<5454],
 way.checkme6[prop(crc)>=5151][prop(crc)<5454],
 way.checkme7[prop(crc)>=5151][prop(crc)<5454]
 {
-        
+
         color: #ffcc00;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=5454][prop(crc)<5757], 
+way.checkme5[prop(crc)>=5454][prop(crc)<5757],
 way.checkme3[prop(crc)>=5454][prop(crc)<5757],
 way.checkme6[prop(crc)>=5454][prop(crc)<5757],
 way.checkme7[prop(crc)>=5454][prop(crc)<5757]
 {
-        
+
         color: #BF9017;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=5757][prop(crc)<6060], 
+way.checkme5[prop(crc)>=5757][prop(crc)<6060],
 way.checkme3[prop(crc)>=5757][prop(crc)<6060],
 way.checkme6[prop(crc)>=5757][prop(crc)<6060],
 way.checkme7[prop(crc)>=5757][prop(crc)<6060]
 {
-        
+
         color: #adff2f;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=6060][prop(crc)<6363], 
+way.checkme5[prop(crc)>=6060][prop(crc)<6363],
 way.checkme3[prop(crc)>=6060][prop(crc)<6363],
 way.checkme6[prop(crc)>=6060][prop(crc)<6363],
 way.checkme7[prop(crc)>=6060][prop(crc)<6363]
 {
-        
+
         color: #ff69b4;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=6363][prop(crc)<6666], 
+way.checkme5[prop(crc)>=6363][prop(crc)<6666],
 way.checkme3[prop(crc)>=6363][prop(crc)<6666],
 way.checkme6[prop(crc)>=6363][prop(crc)<6666],
 way.checkme7[prop(crc)>=6363][prop(crc)<6666]
 {
-        
+
         color: #cd5c5c;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=6666][prop(crc)<6969], 
+way.checkme5[prop(crc)>=6666][prop(crc)<6969],
 way.checkme3[prop(crc)>=6666][prop(crc)<6969],
 way.checkme6[prop(crc)>=6666][prop(crc)<6969],
 way.checkme7[prop(crc)>=6666][prop(crc)<6969]
 {
-        
+
         color: #7d5a07;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=6969][prop(crc)<7272], 
+way.checkme5[prop(crc)>=6969][prop(crc)<7272],
 way.checkme3[prop(crc)>=6969][prop(crc)<7272],
 way.checkme6[prop(crc)>=6969][prop(crc)<7272],
 way.checkme7[prop(crc)>=6969][prop(crc)<7272]
 {
-        
+
         color: #824600;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=7272][prop(crc)<7575], 
+way.checkme5[prop(crc)>=7272][prop(crc)<7575],
 way.checkme3[prop(crc)>=7272][prop(crc)<7575],
 way.checkme6[prop(crc)>=7272][prop(crc)<7575],
 way.checkme7[prop(crc)>=7272][prop(crc)<7575]
 {
-        
+
         color: #f08080;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=7575][prop(crc)<7878], 
+way.checkme5[prop(crc)>=7575][prop(crc)<7878],
 way.checkme3[prop(crc)>=7575][prop(crc)<7878],
 way.checkme6[prop(crc)>=7575][prop(crc)<7878],
 way.checkme7[prop(crc)>=7575][prop(crc)<7878]
 {
-        
+
         color: #F75617;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=7878][prop(crc)<8181], 
+way.checkme5[prop(crc)>=7878][prop(crc)<8181],
 way.checkme3[prop(crc)>=7878][prop(crc)<8181],
 way.checkme6[prop(crc)>=7878][prop(crc)<8181],
 way.checkme7[prop(crc)>=7878][prop(crc)<8181]
 {
-        
+
         color: #54d954;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=8181][prop(crc)<8484], 
+way.checkme5[prop(crc)>=8181][prop(crc)<8484],
 way.checkme3[prop(crc)>=8181][prop(crc)<8484],
 way.checkme6[prop(crc)>=8181][prop(crc)<8484],
 way.checkme7[prop(crc)>=8181][prop(crc)<8484]
 {
-        
+
         color: #ba55d3;
-        
+
 }
                 /* --------- */
 way.checkme5[prop(crc)>=8484][prop(crc)<8787],
@@ -2141,9 +2141,9 @@ way.checkme3[prop(crc)>=8484][prop(crc)<8787],
 way.checkme6[prop(crc)>=8484][prop(crc)<8787],
 way.checkme7[prop(crc)>=8484][prop(crc)<8787]
 {
-        
+
         color: #9370db;
-        
+
 }
                 /* --------- */
 way.checkme5[prop(crc)>=8787][prop(crc)<9090],
@@ -2151,39 +2151,39 @@ way.checkme3[prop(crc)>=8787][prop(crc)<9090],
 way.checkme6[prop(crc)>=8787][prop(crc)<9090],
 way.checkme7[prop(crc)>=8787][prop(crc)<9090]
 {
-        
+
         color: #ff7c00;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=9090][prop(crc)<9393], 
+way.checkme5[prop(crc)>=9090][prop(crc)<9393],
 way.checkme3[prop(crc)>=9090][prop(crc)<9393],
 way.checkme6[prop(crc)>=9090][prop(crc)<9393],
 way.checkme7[prop(crc)>=9090][prop(crc)<9393]
 {
-        
+
         color: #3cb371;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=9393][prop(crc)<9696], 
+way.checkme5[prop(crc)>=9393][prop(crc)<9696],
 way.checkme3[prop(crc)>=9393][prop(crc)<9696],
 way.checkme6[prop(crc)>=9393][prop(crc)<9696],
 way.checkme7[prop(crc)>=9393][prop(crc)<9696]
 {
-        
+
         color: #707000;
-        
+
 }
                 /* --------- */
-way.checkme5[prop(crc)>=9696], 
+way.checkme5[prop(crc)>=9696],
 way.checkme3[prop(crc)>=9696],
 way.checkme6[prop(crc)>=9696],
 way.checkme7[prop(crc)>=9696]
 {
-        
+
         color: #ff4444;
-        
+
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
@@ -2216,7 +2216,7 @@ way[highway][oneway=yes][setting("one_2")], way[oneway=-1][setting("one_2")] {
 /* streets text: eval(concat("Length of Way = ", waylength())); */
 way[highway][setting("longroads")] {
     crc:  CRC32_checksum(eval(osm_id()))/429496.7296;
-    
+
     /*text: eval(osm_id());*/
 }
 
@@ -2225,7 +2225,7 @@ way[highway][setting("longroads")] {
 way[highway][prop(crc)<303]
 {
         color: #8B864E;
-       
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2233,7 +2233,7 @@ way[highway][prop(crc)<303]
 way[highway][prop(crc)>=303][prop(crc)<606]
 {
         color: #b88142;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2241,7 +2241,7 @@ way[highway][prop(crc)>=303][prop(crc)<606]
 way[highway][prop(crc)>=606][prop(crc)<909]
 {
         color: #a3fe8f;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2249,7 +2249,7 @@ way[highway][prop(crc)>=606][prop(crc)<909]
 way[highway][prop(crc)>=909][prop(crc)<1212]
 {
         color: #b8674c;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2257,7 +2257,7 @@ way[highway][prop(crc)>=909][prop(crc)<1212]
 way[highway][prop(crc)>=1212][prop(crc)<1515]
 {
         color: #f4ff6b;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2265,7 +2265,7 @@ way[highway][prop(crc)>=1212][prop(crc)<1515]
 way[highway][prop(crc)>=1515][prop(crc)<1818]
 {
         color: #81c0ff;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2273,7 +2273,7 @@ way[highway][prop(crc)>=1515][prop(crc)<1818]
 way[highway][prop(crc)>=1818][prop(crc)<2121]
 {
         color: #6b8e23;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2281,7 +2281,7 @@ way[highway][prop(crc)>=1818][prop(crc)<2121]
 way[highway][prop(crc)>=2121][prop(crc)<2424]
 {
         color: #e1bd6a;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2289,7 +2289,7 @@ way[highway][prop(crc)>=2121][prop(crc)<2424]
 way[highway][prop(crc)>=2424][prop(crc)<2727]
 {
         color: #7fffd4;
-       
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2297,7 +2297,7 @@ way[highway][prop(crc)>=2424][prop(crc)<2727]
 way[highway][prop(crc)>=2727][prop(crc)<3030]
 {
         color: #8a2be2;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2305,7 +2305,7 @@ way[highway][prop(crc)>=2727][prop(crc)<3030]
 way[highway][prop(crc)>=3030][prop(crc)<3333]
 {
         color: #a52a2a;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2313,7 +2313,7 @@ way[highway][prop(crc)>=3030][prop(crc)<3333]
 way[highway][prop(crc)>=3333][prop(crc)<3636]
 {
         color: #f0b9a6;
-       
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2321,7 +2321,7 @@ way[highway][prop(crc)>=3333][prop(crc)<3636]
 way[highway][prop(crc)>=3636][prop(crc)<3939]
 {
         color: #8fbc8f;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2329,7 +2329,7 @@ way[highway][prop(crc)>=3636][prop(crc)<3939]
 way[highway][prop(crc)>=3939][prop(crc)<4242]
 {
         color: #1b7777;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2337,7 +2337,7 @@ way[highway][prop(crc)>=3939][prop(crc)<4242]
 way[highway][prop(crc)>=4242][prop(crc)<4545]
 {
         color: #ff1493;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2345,7 +2345,7 @@ way[highway][prop(crc)>=4242][prop(crc)<4545]
 way[highway][prop(crc)>=4545][prop(crc)<4848]
 {
         color: #0072e2;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2353,7 +2353,7 @@ way[highway][prop(crc)>=4545][prop(crc)<4848]
 way[highway][prop(crc)>=4848][prop(crc)<5151]
 {
         color: #008f00;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2361,7 +2361,7 @@ way[highway][prop(crc)>=4848][prop(crc)<5151]
 way[highway][prop(crc)>=5151][prop(crc)<5454]
 {
         color: #ffcc00;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2369,7 +2369,7 @@ way[highway][prop(crc)>=5151][prop(crc)<5454]
 way[highway][prop(crc)>=5454][prop(crc)<5757]
 {
         color: #BF9017;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2377,7 +2377,7 @@ way[highway][prop(crc)>=5454][prop(crc)<5757]
 way[highway][prop(crc)>=5757][prop(crc)<6060]
 {
         color: #adff2f;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2385,7 +2385,7 @@ way[highway][prop(crc)>=5757][prop(crc)<6060]
 way[highway][prop(crc)>=6060][prop(crc)<6363]
 {
         color: #ff69b4;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2393,7 +2393,7 @@ way[highway][prop(crc)>=6060][prop(crc)<6363]
 way[highway][prop(crc)>=6363][prop(crc)<6666]
 {
         color: #cd5c5c;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2401,7 +2401,7 @@ way[highway][prop(crc)>=6363][prop(crc)<6666]
 way[highway][prop(crc)>=6666][prop(crc)<6969]
 {
         color: #7d5a07;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2409,7 +2409,7 @@ way[highway][prop(crc)>=6666][prop(crc)<6969]
 way[highway][prop(crc)>=6969][prop(crc)<7272]
 {
         color: #824600;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2417,7 +2417,7 @@ way[highway][prop(crc)>=6969][prop(crc)<7272]
 way[highway][prop(crc)>=7272][prop(crc)<7575]
 {
         color: #f08080;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2425,7 +2425,7 @@ way[highway][prop(crc)>=7272][prop(crc)<7575]
 way[highway][prop(crc)>=7575][prop(crc)<7878]
 {
         color: #F75617;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2433,7 +2433,7 @@ way[highway][prop(crc)>=7575][prop(crc)<7878]
 way[highway][prop(crc)>=7878][prop(crc)<8181]
 {
         color: #54d954;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2441,7 +2441,7 @@ way[highway][prop(crc)>=7878][prop(crc)<8181]
 way[highway][prop(crc)>=8181][prop(crc)<8484]
 {
         color: #ba55d3;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2449,7 +2449,7 @@ way[highway][prop(crc)>=8181][prop(crc)<8484]
 way[highway][prop(crc)>=8484][prop(crc)<8787]
 {
         color: #9370db;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2457,7 +2457,7 @@ way[highway][prop(crc)>=8484][prop(crc)<8787]
 way[highway][prop(crc)>=8787][prop(crc)<9090]
 {
         color: #ff7c00;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2465,7 +2465,7 @@ way[highway][prop(crc)>=8787][prop(crc)<9090]
 way[highway][prop(crc)>=9090][prop(crc)<9393]
 {
         color: #3cb371;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2473,7 +2473,7 @@ way[highway][prop(crc)>=9090][prop(crc)<9393]
 way[highway][prop(crc)>=9393][prop(crc)<9696]
 {
         color: #707000;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2481,7 +2481,7 @@ way[highway][prop(crc)>=9393][prop(crc)<9696]
 way[highway][prop(crc)>=9696]
 {
         color: #ff4444;
-        
+
         casing-width: 2;
         casing-color: black;
 }
@@ -2507,7 +2507,7 @@ way|z17-[highway][setting("surface_t")],
 way|z18-[highway][setting("surface_t")],
 way|z19-[highway][setting("surface_t")],
 way|z20-[highway][setting("surface_t")],
-way|z21-[highway][setting("surface_t")] 
+way|z21-[highway][setting("surface_t")]
 
 {
 
@@ -2517,12 +2517,12 @@ way|z21-[highway][setting("surface_t")]
 }
 
 
-/* Removed the following from this section on surface types 
+/* Removed the following from this section on surface types
 
 eval(tag("surface")) To add surface labels again, delete this comment and leave the code eval(tag("surface")) here. - Gary
 
 */
-  
+
 
 
 
@@ -2577,61 +2577,61 @@ relation[type=restriction][setting("role_members")] >[role=to] way[highway]::rel
 
 
 /* Combine Restriction types with Role Types in Text */
-/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn / 
+/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn /
 no_straight_on / only_right_turn / only_left_turn / only_straight_on / no_entry / no_exit  */
 
 relation.more3[restriction=no_left_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_Left_Turn!)");
     set .re1;
-  
+
 }
 
 relation.more3[restriction=no_right_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_Right_Turn!)");
     set .re2;
-  
+
 }
 
 relation.more3[restriction=no_u_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_U_Turn!)");
     set .re3;
-  
+
 }
 
 relation.more3[restriction=no_straight_on][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_Straight_On!)");
     set .re4;
-  
+
 }
 
 relation.more3[restriction=only_right_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (Only_Right_Turn!)");
     set .re5;
-  
+
 }
 
 relation.more3[restriction=only_left_turn][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (Only_Left_Turn!)");
     set .re6;
-  
+
 }
 
 relation.more3[restriction=only_straight_on][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (Only_Straight_On!)");
     set .re7;
-  
+
 }
 
 relation.more3[restriction=no_entry][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_Entry!)");
     set .re8;
-  
+
 }
 
 relation.more3[restriction=no_exit][setting("role_members")] >[role=to] way[highway]::relation_underlay {
   text: tr("To (No_Exit!)");
     set .re9;
-  
+
 }
 
 
@@ -2672,7 +2672,7 @@ relation.more1.more3[restriction=no_u_turn][setting("role_members")] > way[highw
 
 
 /* Additional */
-/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn / 
+/* These are meant for the following categories: no_right_turn / no_left_turn / no_u_turn /
 no_straight_on / only_right_turn / only_left_turn / only_straight_on / no_entry / no_exit  */
 
 relation.re1.re2[setting("role_members")] >[role=to] way[highway]::relation_underlay {
@@ -2823,7 +2823,7 @@ way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][
   text: tr("");
   text-offset: -40;
   font-size: 15;
-  
+
 }
 
 
@@ -2831,7 +2831,7 @@ way["name"=~/^([\s\S]+)$/][setting("remove_name")] {
   display: none;
   text-offset: -40;
   font-size: 0;
-  
+
 }
 
 /*Create register checks for roads without reference values */
@@ -2979,7 +2979,7 @@ way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|s
     symbol-stroke-color: #00FFFF;
     symbol-fill-color: black;
     symbol-shape: circle;
-  
+
 }
 
 
@@ -3043,7 +3043,7 @@ node|z-17[setting("hide_icons")] {
 
 
 
-/* Special tertiary node 
+/* Special tertiary node
 
 node > way[highway=tertiary] {
   symbol-size: 1.5;
@@ -3052,7 +3052,7 @@ node > way[highway=tertiary] {
 */
 
 
-/* Tertiary Nodes  
+/* Tertiary Nodes
 
 
 way["highway"=~/^(tertiary|tertiary_link)$/] > node:connection,
@@ -3107,9 +3107,9 @@ area[junction=roundabout][highway=tertiary_link] {
 /**************************/
 
 
-way[highway=motorway][!oneway], 
+way[highway=motorway][!oneway],
 way[highway=motorway_link][!oneway] {
-    
+
     dashes-background-color: red;
     dashes: 4,9;
     opacity: 1;
@@ -3136,7 +3136,7 @@ way[bridge=covered]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
 way[bridge=low_water_crossing]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
 way[bridge=trestle]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
 way[bridge=viaduct]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
-way[bridge=movable]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/], 
+way[bridge=movable]["layer"=~/^(-9|-8|-7|-6|-5|-4|-3|-2|-1)$/],
 way[bridge=aqueduct][!layer],
 way[bridge=cantilever][!layer],
 way[bridge=covered][!layer],
@@ -3145,7 +3145,7 @@ way[bridge=trestle][!layer],
 way[bridge=viaduct][!layer],
 way[bridge=movable][!layer],
 way[tunnel=yes][!layer],
-way[tunnel=yes]["layer"=~/^(9|8|7|6|5|4|3|2|1)$/], 
+way[tunnel=yes]["layer"=~/^(9|8|7|6|5|4|3|2|1)$/],
 way[tunnel=culvert][!layer],
 way[tunnel=avalanche_protector][!layer]
 
@@ -3153,7 +3153,7 @@ way[tunnel=avalanche_protector][!layer]
 removed embankment
 */
  {
-    
+
     set .missl;
 }
 
@@ -3164,7 +3164,7 @@ removed embankment
 way.missl
 
  {
-    
+
     color: yellow;
     dashes-background-color: red;
     dashes: 4,24;
@@ -3175,7 +3175,7 @@ way.missl
     text-color: black;
     text-halo-color: white;
     text-halor-radius: 2;
-    
+
 }
 /**************************/
 /*Check against incorrect capitalization of names where the first word IS capitalized*/
@@ -3184,13 +3184,13 @@ way.missl
 *[name=~/^\p{Lu}\p{Ll}*.*\s\p{Ll}{4,}($|\s)/][highway=~/service|living_street|residential|tertiary|secondary|primary|trunk|motorway/][setting("lowercase")]
 
 {
-  
+
   casing-color: orange;
   casing-width: 3;
   text:"Check Caps";
   text-offset: -40;
   font-size: 15;
-  
+
 }
 
 /**************************/
@@ -3213,7 +3213,7 @@ way["highway"=~/^(service|track)$/] > node:connection[entrance] {
   set .wayexclude;
 }
 
-/* Buildings that are connected to buildings are okay per this 
+/* Buildings that are connected to buildings are okay per this
 
 way[building]:closed > node:connection!.wayintersect {
   color: green;
@@ -3419,7 +3419,7 @@ node[barrier=cattle_grid][setting("osmic")] {
 /* highway tags */
 /*************************/
 
-node[highway=ford][setting("osmic")], 
+node[highway=ford][setting("osmic")],
 node[ford?][setting("osmic")] {
     icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ford-18.svg";
     set icon_z17;
@@ -4158,7 +4158,7 @@ node[public_transport=platform][ferry=yes][setting("osmic")] {
 /* railway tags */
 /****************/
 
-node[railway=station][setting("osmic")], 
+node[railway=station][setting("osmic")],
 node[railway=tram_station][setting("osmic")] {
     icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-station-18.svg";
     set icon_z17;
