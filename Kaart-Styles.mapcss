@@ -96,10 +96,24 @@ setting::name_setting {
 }
 
 
+@supports (min-josm-version: 15289) {
+  settings::ref_settings {
+    label: tr("Highlight ways with ref:tags");
+  }
+}
+
 setting::ref_setting {
   type: boolean;
-  label: tr("Highlights ways with Ref:tags");
+  label: tr("Highlight ways with ref:tags in a solid color");
   default: false;
+  group: "ref_settings";
+}
+
+setting::ref_highlight_setting {
+  type: boolean;
+  label: tr("Highlight ways with ref:tags with a halo");
+  default: false;
+  group: "ref_settings";
 }
 
 
@@ -285,20 +299,28 @@ way[predictedDirection=ONE_WAY_SAME_DIRECTION]         { z-index: 9; color: #D4F
 way[predictedDirection=ONE_WAY_REVERSE_DIRECTION]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
 
 way[highway=motorway]         { z-index: 9; color: #CF2081; width: 8; casing-color: #000000; casing-width: 1; }
-way[highway=motorway_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #CF2081; }
 
 way[highway=trunk]               { z-index: 9; color: #DD2F22; width: 8; casing-color: #000000; casing-width: 1; }
-way[highway=trunk_link]          { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #DD2F22; }
 
 
 way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: #000000; casing-width: 1; }
-way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFA500; }
 
 way[highway=secondary]       { z-index: 7; color: #FFFF00; width: 7; casing-color: #000000; casing-width: 1; }
-way[highway=secondary_link]  { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFFF00; }
 
 way[highway=tertiary]         { z-index: 6; color: #408ccc; width: 5; casing-color: #000000; casing-width: 1; }
-way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #408ccc; }
+way[highway=~/^.*_link$/] {
+  z-index: 7;
+  width: 6;
+  color: #FFFFFF;
+  casing-color: #000000;
+  casing-width: 1;
+  dashes: 18,9;
+}
+way[highway=motorway_link]   { dashes-background-color: #CF2081; }
+way[highway=trunk_link]      { dashes-background-color: #DD2F22; }
+way[highway=primary_link]    { dashes-background-color: #FFA500; }
+way[highway=secondary_link]  { dashes-background-color: #FFFF00; }
+way[highway=tertiary_link]   { dashes-background-color: #408ccc; }
 
 way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
 
@@ -1503,10 +1525,8 @@ way|z16-[highway][setting("highway_labels")] {
 
 
 *["name"][setting("name_setting")] {
-    crc: CRC32_checksum(tag("name"))/429496.7296;
+    color: hsb_color(CRC32_checksum(tag("name")) / 4294967296, 0.9, 0.7);
     text: eval(tag("name"));
-    set .checkname1;
-
 }
 
 
@@ -1518,18 +1538,7 @@ relation[type=route][route=road]["name"][setting("name_setting")] > way[highway]
     text-halo-radius: 0.9;
 }
 
-
-
-
-*["ref"][setting("ref_setting")] {
-    crc: CRC32_checksum(tag("ref"))/429496.7296;
-    text: eval(tag("ref"));
-    set .checkname1;
-
-}
-
-
-/* -- UPDATE Road has name in Relation, will not style like a noraml "named" road */
+/* -- UPDATE Road has ref in Relation, will not style like a noraml "ref" road */
 
 relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!ref]  {
     text: concat("Way is Missing Ref! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(ref)));
@@ -1539,241 +1548,101 @@ relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!
 
 
 
-
-
-/* Color Stylings based on Check Sums */
-
-way.checkname1[prop(crc)<303],
-way.checkname2[prop(crc)<303]
-{
-        color: #8B864E;
-
-
+/*******************************
+ * Ref tags (destination, ref) *
+ *******************************/
+*["ref"][setting("ref_setting") || setting("ref_highlight_setting")] {
+  text: eval(tag("ref"));
 }
-                /* --------- */
-way.checkname1[prop(crc)>=303][prop(crc)<606],
-way.checkname2[prop(crc)>=303][prop(crc)<606]
-{
-        color: #b88142;
 
+*|z17-["destination:ref"][setting("ref_setting") || setting("ref_highlight_setting")]::destination_ref {
+  text: eval(tag("destination:ref"));
+  font-size: 18;
+  text-offset: -20;
+  text-halo-opacity: 1;
+  text-halo-radius: 2.5;
+  text-halo-color: black;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=606][prop(crc)<909],
-way.checkname2[prop(crc)>=606][prop(crc)<909]
-{
-        color: #a3fe8f;
 
+*["ref"][setting("ref_setting")][setting("ref_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("ref"))), 0)) / 4294967296.0, 0.9, 0.7);
 }
-                /* --------- */
-way.checkname1[prop(crc)>=909][prop(crc)<1212],
-way.checkname2[prop(crc)>=909][prop(crc)<1212]
-{
-        color: #b8674c;
+*["destination:ref"][setting("ref_setting")][setting("ref_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination:ref"))), 0)) / 4294967296.0, 0.9, 0.7);
+}
 
+/** This needs trim_list (https://josm.openstreetmap.de/ticket/18408) to remove extraneous whitespace TODO */
+*["ref"][setting("ref_setting")][!setting("ref_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(join_list(";", (sort_list(split(";", tag("ref")))))) / 4294967296.0, 0.9, 0.7);
 }
-                /* --------- */
-way.checkname1[prop(crc)>=1212][prop(crc)<1515],
-way.checkname2[prop(crc)>=1212][prop(crc)<1515]
-{
-        color: #f4ff6b;
+*["destination:ref"][setting("ref_setting")][!setting("ref_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(join_list(";", (sort_list(split(";", tag("destination:ref")))))) / 4294967296.0, 0.9, 0.7);
+}
 
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 4][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_4,
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 4][setting("ref_highlight_setting")]::layer_ref_4 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("ref"))), 3))/4294967296.0, 0.9, 0.7);
+  casing-width: 20;
+  object-z-index: -4.0;
+  linejoin: bevel;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=1515][prop(crc)<1818],
-way.checkname2[prop(crc)>=1515][prop(crc)<1818]
-{
-        color: #81c0ff;
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 4][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_4,
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 4][setting("ref_highlight_setting")]::layer_ref_4 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination:ref"))), 3))/4294967296.0, 0.9, 0.7);
+  casing-width: 20;
+  object-z-index: -4.0;
+  linejoin: bevel;
+}
 
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 3][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_3,
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 3][setting("ref_highlight_setting")]::layer_ref_3 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("ref"))), 2))/4294967296.0, 0.9, 0.7);
+  casing-width: 15;
+  object-z-index: -3.0;
+  linejoin: bevel;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=1818][prop(crc)<2121],
-way.checkname2[prop(crc)>=1818][prop(crc)<2121]
-{
-        color: #6b8e23;
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 3][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_3,
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 3][setting("ref_highlight_setting")]::layer_ref_3 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination:ref"))), 2))/4294967296.0, 0.9, 0.7);
+  casing-width: 15;
+  object-z-index: -3.0;
+  linejoin: bevel;
+}
 
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 2][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_2,
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 2][setting("ref_highlight_setting")]::layer_ref_2 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("ref"))), 1))/4294967296.0, 0.9, 0.7);
+  casing-width: 10;
+  object-z-index: -2.0;
+  linejoin: bevel;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=2121][prop(crc)<2424],
-way.checkname2[prop(crc)>=2121][prop(crc)<2424]
-{
-        color: #e1bd6a;
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 2][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_2,
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 2][setting("ref_highlight_setting")]::layer_ref_2 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination:ref"))), 1))/4294967296.0, 0.9, 0.7);
+  casing-width: 10;
+  object-z-index: -2.0;
+  linejoin: bevel;
+}
 
+way|z17-[ref][count(sort_list(split(";", tag("ref")))) >= 1][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_1 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("ref"))), 0))/4294967296.0, 0.9, 0.7);
+  casing-width: 5;
+  object-z-index: -1.0;
+  linejoin: bevel;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=2424][prop(crc)<2727],
-way.checkname2[prop(crc)>=2424][prop(crc)<2727]
-{
-        color: #7fffd4;
+way|z17-["destination:ref"][count(sort_list(split(";", tag("destination:ref")))) >= 1][!setting("ref_setting")][setting("ref_highlight_setting")]::layer_ref_1 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination:ref"))), 0))/4294967296.0, 0.9, 0.7);
+  casing-width: 5;
+  object-z-index: -1.0;
+  linejoin: bevel;
+}
 
+way|z17-[ref][!setting("ref_setting")][setting("ref_highlight_setting")],
+way|z17-[destination:ref][!setting("ref_setting")][setting("ref_highlight_setting")] {
+  width: 1;
 }
-                /* --------- */
-way.checkname1[prop(crc)>=2727][prop(crc)<3030],
-way.checkname2[prop(crc)>=2727][prop(crc)<3030]
-{
-        color: #8a2be2;
 
-}
-                /* --------- */
-way.checkname1[prop(crc)>=3030][prop(crc)<3333],
-way.checkname2[prop(crc)>=3030][prop(crc)<3333]
-{
-        color: #a52a2a;
 
-}
-                /* --------- */
-way.checkname1[prop(crc)>=3333][prop(crc)<3636],
-way.checkname2[prop(crc)>=3333][prop(crc)<3636]
-{
-        color: #f0b9a6;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=3636][prop(crc)<3939],
-way.checkname2[prop(crc)>=3636][prop(crc)<3939]
-{
-        color: #8fbc8f;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=3939][prop(crc)<4242],
-way.checkname2[prop(crc)>=3939][prop(crc)<4242]
-{
-        color: #1b7777;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=4242][prop(crc)<4545],
-way.checkname2[prop(crc)>=4242][prop(crc)<4545]
-{
-        color: #ff1493;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=4545][prop(crc)<4848],
-way.checkname2[prop(crc)>=4545][prop(crc)<4848]
-{
-        color: #0072e2;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=4848][prop(crc)<5151],
-way.checkname2[prop(crc)>=4848][prop(crc)<5151]
-{
-        color: #008f00;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=5151][prop(crc)<5454],
-way.checkname2[prop(crc)>=5151][prop(crc)<5454]
-{
-        color: #ffcc00;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=5454][prop(crc)<5757],
-way.checkname2[prop(crc)>=5454][prop(crc)<5757]
-{
-        color: #BF9017;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=5757][prop(crc)<6060],
-way.checkname2[prop(crc)>=5757][prop(crc)<6060]
-{
-        color: #adff2f;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=6060][prop(crc)<6363],
-way.checkname2[prop(crc)>=6060][prop(crc)<6363]
-{
-        color: #ff69b4;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=6363][prop(crc)<6666],
-way.checkname2[prop(crc)>=6363][prop(crc)<6666]
-{
-        color: #cd5c5c;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=6666][prop(crc)<6969],
-way.checkname2[prop(crc)>=6666][prop(crc)<6969]
-{
-        color: #7d5a07;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=6969][prop(crc)<7272],
-way.checkname2[prop(crc)>=6969][prop(crc)<7272]
-{
-        color: #824600;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=7272][prop(crc)<7575],
-way.checkname2[prop(crc)>=7272][prop(crc)<7575]
-{
-        color: #f08080;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=7575][prop(crc)<7878],
-way.checkname2[prop(crc)>=7575][prop(crc)<7878]
-{
-        color: #F75617;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=7878][prop(crc)<8181],
-way.checkname2[prop(crc)>=7878][prop(crc)<8181]
-{
-        color: #54d954;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=8181][prop(crc)<8484],
-way.checkname2[prop(crc)>=8181][prop(crc)<8484]
-{
-        color: #ba55d3;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=8484][prop(crc)<8787],
- way.checkname2[prop(crc)>=8484][prop(crc)<8787]
-{
-        color: #9370db;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=8787][prop(crc)<9090],
- way.checkname2[prop(crc)>=8787][prop(crc)<9090]
-{
-        color: #ff7c00;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=9090][prop(crc)<9393],
-way.checkname2[prop(crc)>=9090][prop(crc)<9393]
-{
-        color: #3cb371;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=9393][prop(crc)<9696],
-way.checkname2[prop(crc)>=9393][prop(crc)<9696]
-{
-        color: #707000;
-
-}
-                /* --------- */
-way.checkname1[prop(crc)>=9696],
-way.checkname2[prop(crc)>=9696]
-{
-        color: #ff4444;
-
-}
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------------------ */
