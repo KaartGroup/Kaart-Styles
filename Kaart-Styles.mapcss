@@ -118,7 +118,7 @@ setting::check_no_name {
 
 setting::remove_name {
   type: boolean;
-  label: tr("Remove Street Name and Ref Labels");
+  label: tr("Remove Street Name Labels");
   default: false;
 }
 
@@ -2833,13 +2833,6 @@ way["name"=~/^([\s\S]+)$/][setting("remove_name")] {
   font-size: 0;
   
 }
-
-way["ref"=~/^([\s\S]+)$/][setting("remove_name")] {
-  display: none;
-  text-offset: -40;
-  font-size: 0;
-  
-  }
 
 /*Create register checks for roads without reference values */
 
