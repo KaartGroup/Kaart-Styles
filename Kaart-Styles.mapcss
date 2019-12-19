@@ -102,6 +102,13 @@ setting::name_setting {
   }
 }
 
+setting::ref_labels {
+  type: boolean;
+  label: tr("Show ref tags as text (affected by \"Remove Street Name Labels\")");
+  default: false;
+  group: "ref_settings";
+}
+
 setting::ref_setting {
   type: boolean;
   label: tr("Highlight ways with ref:tags in a solid color");
@@ -115,8 +122,6 @@ setting::ref_highlight_setting {
   default: false;
   group: "ref_settings";
 }
-
-
 
 setting::check_name {
   type: boolean;
@@ -1551,11 +1556,11 @@ relation[type=route][route=road]["ref"][setting("ref_setting")] > way[highway][!
 /*******************************
  * Ref tags (destination, ref) *
  *******************************/
-*["ref"][setting("ref_setting") || setting("ref_highlight_setting")] {
+*["ref"][setting("ref_setting") || setting("ref_highlight_setting")][setting("ref_labels")][!setting("remove_name")] {
   text: eval(tag("ref"));
 }
 
-*|z17-["destination:ref"][setting("ref_setting") || setting("ref_highlight_setting")]::destination_ref {
+*|z17-["destination:ref"][setting("ref_setting") || setting("ref_highlight_setting")][setting("ref_labels")][!setting("remove_name")]::destination_ref {
   text: eval(tag("destination:ref"));
   font-size: 18;
   text-offset: -20;
