@@ -4,7 +4,7 @@ meta {
   watch-modified: true;
   version: "1.5";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
-
+  min-josm-version: "15289"; /* This style uses groups for settings */
 }
 /* Notes
 
@@ -55,7 +55,7 @@ In order to construct time stamps, you can use the following:
 String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
 "timestamp:2016-02-20/" -- Shows all edits edited after date
 "timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
-"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -85,8 +85,8 @@ that there is another selector we would like to call out after "aaron"
   casing-color: lime;
   casing-width: 10;
   casing-opacity: 0.3;
-  
-  
+
+
 }
 
 -- This is our code block which will style up whatever we called out as a selector
@@ -97,185 +97,218 @@ that there is another selector we would like to call out after "aaron"
 
 
 /* User Settings */
-
+/* Mexico Team */
+settings::mexico {
+  label: tr("Mexico");
+}
 setting::user_AlexD {
   type:boolean;
   label:tr("Turn User Soccersweeper On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_ArleneC {
   type:boolean;
   label:tr("Turn User ArleneC On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Anthony {
   type:boolean;
   label:tr("Turn User acrague On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_BreiaV {
   type:boolean;
   label:tr("Turn User 3agleOne On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_BrianL {
   type:boolean;
   label:tr("Turn User Unicorn Ostrich On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Casey {
   type:boolean;
   label:tr("Turn User CaseyIvanW On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Chris {
   type:boolean;
   label:tr("Turn User Goose6thAB On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Ethan {
   type:boolean;
   label:tr("Turn User EthanK On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_IanK {
   type:boolean;
   label:tr("Turn User Ikohl On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Johnny {
   type:boolean;
   label:tr("Turn User spititout On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Jonathan {
   type:boolean;
   label:tr("Turn User Joni5isalive On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Keeley {
   type:boolean;
   label:tr("Turn User kebobo On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_LeanneS {
   type:boolean;
   label:tr("Turn User LSkalayo On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_LoganM {
   type:boolean;
   label:tr("Turn User Dalekokarta On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Marshall {
   type:boolean;
   label:tr("Turn User MTG5093 On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_MattB {
   type:boolean;
   label:tr("Turn User MappnMatt On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_MorgenM {
   type:boolean;
   label:tr("Turn User MMantlo On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_NatashaS {
   type:boolean;
   label:tr("Turn User rallynukab On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Rikki {
   type:boolean;
   label:tr("Turn User Chilly Chinchillas On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Rob {
   type:boolean;
   label:tr("Turn User RouteRob On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_RobinH {
   type:boolean;
   label:tr("Turn User RobinNoodles On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_RonmelR {
   type:boolean;
   label:tr("Turn User Mel_1 On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Sarah {
   type:boolean;
   label:tr("Turn User Yagni On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Savana {
   type:boolean;
   label:tr("Turn User staysavy On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_Sharon {
   type:boolean;
   label:tr("Turn User mapcraft On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_SteveC {
   type:boolean;
   label:tr("Turn User Smoothdog On/Off");
   default:true;
+  group: "mexico";
 }
 
 setting::user_WilliamF {
   type:boolean;
   label:tr("Turn User ImjusBuddy On/Off");
   default:true;
+  group: "mexico";
 }
 
 

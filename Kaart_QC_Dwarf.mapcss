@@ -4,7 +4,7 @@ meta {
   watch-modified: true;
   version: "1.5";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
-
+  min-josm-version: "15289"; /* This style uses groups for settings */
 }
 /* Notes
 
@@ -94,155 +94,183 @@ that there is another selector we would like to call out after "aaron"
 /* User Settings */
 
 /* Brazil Team */
+settings::brazil {
+  label: tr("Brazil");
+}
 
 setting::user_andrewp {
   type: boolean;
   label: tr("Turn User G_Fyyar On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_andrews {
   type: boolean;
   label: tr("Turn User Plutocrats On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_angie {
   type: boolean;
   label: tr("Turn User Inigo_Maptoya On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_anita {
   type: boolean;
   label: tr("Turn User natureandchill On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_anja {
   type: boolean;
   label: tr("Turn User Ajaie On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_callista {
   type: boolean;
   label: tr("Turn User camapsta On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_christian {
   type: boolean;
   label: tr("Turn User Co2013 On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_daniel {
   type: boolean;
   label: tr("Turn User The_Intern On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_farris {
   type: boolean;
   label: tr("Turn User FarieBerrie On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_johnny {
   type: boolean;
   label: tr("Turn User spititout On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_joseph {
   type: boolean;
   label: tr("Turn User Szekha On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_logan {
   type: boolean;
   label: tr("Turn User 127logs On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_luis {
   type: boolean;
   label: tr("Turn User medrano93 On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_marshall {
   type: boolean;
   label: tr("Turn User MTG5093 On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_nickm {
   type: boolean;
   label: tr("Turn User nickmettauer On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_rd {
   type: boolean;
   label: tr("Turn User mr_et On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_riley {
   type: boolean;
   label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_robert {
   type: boolean;
   label: tr("Turn User Bravesfan On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_ryanf {
   type: boolean;
   label: tr("Turn User rytheking On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_ryanf2 { /* Ryan F had a second account when he first started */
   type: boolean;
   label: tr("Turn User rytheking2 On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_sage {
   type: boolean;
   label: tr("Turn User BobGod On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_sarena {
   type: boolean;
   label: tr("Turn User swells5 On/Off");
   default: true;
+  group: "brazil";
 }
 
 setting::user_SherryM {
   type:boolean;
   label:tr("Turn User Sherbare On/Off");
-  default:true;
+  default: true;
+  group: "brazil";
 }
 
 setting::user_sierra {
   type:boolean;
   label:tr("Turn User sierrae-kaart On/Off");
-  default:true;
+  default: true;
+  group: "brazil";
 }
 
 setting::user_tanner {
   type:boolean;
   label:tr("Turn User 3636pacers On/Off");
-  default:true;
+  default: true;
+  group: "brazil";
 }
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */

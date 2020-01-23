@@ -4,7 +4,7 @@ meta {
   watch-modified: true;
   version: "1.4";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
-
+  min-josm-version: "15289"; /* This style uses groups for settings */
 }
 /* Notes
 
@@ -55,7 +55,7 @@ In order to construct time stamps, you can use the following:
 String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
 "timestamp:2016-02-20/" -- Shows all edits edited after date
 "timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
-"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -85,8 +85,8 @@ that there is another selector we would like to call out after "aaron"
   casing-color: lime;
   casing-width: 10;
   casing-opacity: 0.3;
-  
-  
+
+
 }
 
 -- This is our code block which will style up whatever we called out as a selector
@@ -100,169 +100,202 @@ that there is another selector we would like to call out after "aaron"
 /* User Settings */
 
 /* Quandary */
+settings::quandary {
+  label: tr("Quandary");
+}
 setting::user_Aaron {
   type:boolean;
   label:tr("Turn User vespax On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Brent {
   type:boolean;
   label:tr("Turn User SmoothWookieFlow On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Corban {
   type:boolean;
   label:tr("Turn User Corban8 On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Danielle {
   type:boolean;
   label:tr("Turn User GhostEye On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Gary {
   type:boolean;
   label:tr("Turn User Velocimaptor On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_IanM {
   type:boolean;
   label:tr("Turn User Baconcrisp On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_JacobK {
   type:boolean;
   label:tr("Turn User CoolGuyJake On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_JasonH {
   type:boolean;
   label:tr("Turn User AnonJason On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Jonathon {
   type:boolean;
   label:tr("Turn User spuddy93 On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Jorge{
   type:boolean;
   label:tr("Turn User JAAS On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Kira {
   type:boolean;
   label:tr("Turn User birdeatscake On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Lucas {
   type:boolean;
   label:tr("Turn User Traaker_L On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Michelle {
   type:boolean;
   label:tr("Turn User MichNicole On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Reed {
   type:boolean;
   label:tr("Turn User ReedtheRiver On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Rich {
   type:boolean;
   label:tr("Turn User RConnorsCarte19 On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_RyanK {
   type:boolean;
   label:tr("Turn User Whimsical Otter On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_RyanR {
   type:boolean;
   label:tr("Turn User Kaarti_B On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Sara {
   type:boolean;
   label:tr("Turn User sbburg On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Sarah {
   type:boolean;
   label:tr("Turn User saradenise On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Timothy {
   type:boolean;
   label:tr("Turn User timi_hendrix On/Off");
   default:true;
+  group: "quandary";
 }
 
 setting::user_Tom {
   type:boolean;
   label:tr("Turn User tomincolorado On/Off");
   default:true;
+  group: "quandary";
 }
 
 
 /* Timpanogos */
+settings::timpanogos {
+  label: tr("Timpanogos");
+}
 
 setting::user_Derek {
   type:boolean;
   label:tr("Turn User DerekBev On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 setting::user_Nathan {
   type:boolean;
   label:tr("Turn User Nathan_Rose On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 setting::user_Nutchaya {
   type:boolean;
   label:tr("Turn User nutchayahonvilai On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 setting::user_Pace {
   type:boolean;
   label:tr("Turn User InnerPace On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 setting::user_Spencer {
   type:boolean;
   label:tr("Turn User Spence142 On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 setting::user_Sumittra {
   type:boolean;
   label:tr("Turn User Solra On/Off");
   default:true;
+  group: "timpanogos";
 }
 
 
