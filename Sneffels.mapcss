@@ -55,7 +55,7 @@ In order to construct time stamps, you can use the following:
 String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
 "timestamp:2016-02-20/" -- Shows all edits edited after date
 "timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
-"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016. 
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -85,8 +85,8 @@ that there is another selector we would like to call out after "aaron"
   casing-color: lime;
   casing-width: 10;
   casing-opacity: 0.3;
-  
-  
+
+
 }
 
 -- This is our code block which will style up whatever we called out as a selector
@@ -97,29 +97,37 @@ that there is another selector we would like to call out after "aaron"
 
 
 /* User Settings */
+/* Sneffels */
+settings::sneffels {
+  label: tr("Sneffels");
+}
 
 setting::user_Maureen {
   type:boolean;
   label:tr("Turn User VLD026 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Dylan {
   type:boolean;
   label:tr("Turn User VLD032 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Kady {
   type:boolean;
   label:tr("Turn User VLD035 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Olympia {
   type:boolean;
   label:tr("Turn User VLD036 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 
@@ -128,66 +136,77 @@ setting::user_Kaiti {
   type:boolean;
   label:tr("Turn User VLD046 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Gwen {
   type:boolean;
   label:tr("Turn User VLD082 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Steve {
   type:boolean;
   label:tr("Turn User VLD089 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Tukui {
   type:boolean;
   label:tr("Turn User VLD090 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Kayla {
   type:boolean;
   label:tr("Turn User VLD096 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Drew {
   type:boolean;
   label:tr("Turn User VLD098 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Joanna {
   type:boolean;
   label:tr("Turn User VLD150 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Jami {
   type:boolean;
   label:tr("Turn User VLD151 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Brenna {
   type:boolean;
   label:tr("Turn User VLD152 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Johnny {
   type:boolean;
   label:tr("Turn User VLD153 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 setting::user_Goose {
   type:boolean;
   label:tr("Turn User VLD154 On/Off");
   default:true;
+  group:"sneffels";
 }
 
 
