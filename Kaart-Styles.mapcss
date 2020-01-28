@@ -3234,34 +3234,34 @@ setting::osmic {
 /*****************************/
 
 node[entrance=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/entrance-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 
 node[highway=turning_circle][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/turning_circle-3.png";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/turning_circle-3.png";
     set icon_z17;
     icon-width: 30;
 }
 
 node[entrance=main][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-main-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/entrance-main-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[entrance=service][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-service-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/entrance-service-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[entrance=emergency][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-emergency-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/entrance-emergency-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[entrance=exit][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/exit-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/exit-14.svg";
     set icon_z17;
     icon-width: 12
 }
@@ -3271,22 +3271,22 @@ node[entrance=exit][setting("osmic")] {
 /****************/
 
 node[barrier=bollard][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/bollard-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/bollard-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[barrier=gate][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/gate-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/gate-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[barrier=lift_gate][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/lift-gate-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/lift-gate-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[barrier=cattle_grid][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/cattle-grid-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/cattle-grid-14.svg";
     set icon_z17;
     icon-width: 14;
 }
@@ -3297,17 +3297,17 @@ node[barrier=cattle_grid][setting("osmic")] {
 
 node[highway=ford][setting("osmic")],
 node[ford?][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ford-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/ford-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[highway=steps][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/barrier/steps-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/steps-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[highway=elevator][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/elevator-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/elevator-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3317,7 +3317,7 @@ node[highway=elevator][setting("osmic")] {
 /*************************/
 
 node[generator:source=wind][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/energy/power-wind-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/energy/power-wind-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3327,27 +3327,27 @@ node[generator:source=wind][setting("osmic")] {
 /*****************/
 
 node[man_made=lighthouse][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/lighthouse-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/lighthouse-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[man_made=water_tower][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/water-tower-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/water-tower-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[man_made=windmill][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/windmill-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/windmill-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[man_made=mast][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/mast-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/mast-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[man_made=mast][tower:type=communication][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/mast-communications-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/mast-communications-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3357,7 +3357,7 @@ node[man_made=mast][tower:type=communication][setting("osmic")] {
 /***************/
 
 node[office=government][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/government-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/administration/government-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3367,17 +3367,17 @@ node[office=government][setting("osmic")] {
 /****************/
 
 node[leisure=water_park][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/sports/swimming-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/sports/swimming-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[leisure=playground][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/playground-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/playground-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[leisure=picnic_table][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/table-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/table-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3387,209 +3387,209 @@ node[leisure=picnic_table][setting("osmic")] {
 /*************/
 
 node[shop=supermarket][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/supermarket-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/supermarket-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=convenience][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/convenience-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/convenience-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=bakery][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/bakery-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/bakery-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=butcher][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/butcher-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/butcher-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=bicycle][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/bicycle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/bicycle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=doityourself][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/doityourself-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/doityourself-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=dry_cleaning][setting("osmic")],
 node[shop=laundry][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/laundry-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/laundry-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=kiosk][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/kiosk-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/kiosk-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=beverages][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/beverages-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/beverages-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=alcohol][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/alcohol-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/alcohol-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=books][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/books-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/books-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=car][setting("osmic")],
 node[shop=car_dealer][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=car_repair][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/repair-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/repair-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=clothes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/clothes-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/clothes-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=computer][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/computer-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/computer-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=confectionery][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/confectionery-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/confectionery-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=copyshop][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/copyshop-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/copyshop-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=cycle_repair][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/repair-bicycle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/repair-bicycle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=electronics][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/electronics-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/electronics-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=furniture][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/furniture-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/furniture-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=florist][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/florist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/florist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=gift][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/gift-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/gift-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=greengrocer][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/greengrocer-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/greengrocer-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=garden_centre][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/garden-centre-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/garden-centre-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=hairdresser][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/hairdresser-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/hairdresser-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=hardware][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/doityourself-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/doityourself-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=hifi][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/hifi-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/hifi-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=ice_cream][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/ice-cream-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/ice-cream-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=jewelry][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/jewellery-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/jewellery-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=mobile_phone][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/mobile-phone-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/mobile-phone-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=newsagent][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/news-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/news-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=optician][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/optician-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/optician-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=shoes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/shoes-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/shoes-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=stationery][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/stationery-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/stationery-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=toys][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/toys-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/toys-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=pet][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/pet-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/pet-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=photo][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/photo-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/photo-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=car_parts][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/car-parts-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/car-parts-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=beauty][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/beauty-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/beauty-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=wine][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/alcohol-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/alcohol-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[shop=chemist][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/shop/chemist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/shop/chemist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3599,303 +3599,303 @@ node[shop=chemist][setting("osmic")] {
 /****************/
 
 node[amenity=pub][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/pub-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/pub-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=biergarten][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/biergarten-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/biergarten-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=nightclub][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/nightclub-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/nightclub-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=cafe][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/cafe-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/cafe-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=clock][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/clock-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/clock-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=restaurant][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/restaurant-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/restaurant-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=food_court][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/restaurant-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/restaurant-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=fast_food][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/fast-food-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/fast-food-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bar][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/bar-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/bar-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=ice_cream][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/eat-drink/ice-cream-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/eat-drink/ice-cream-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=parking][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/parking-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=parking_entrance][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/parking-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=parking_entrance][parking=multi-storey][setting("osmic")],
 node[amenity=parking][parking=multi-storey][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-garage-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/parking-garage-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bicycle_parking][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/parking-bicycle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/parking-bicycle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bicycle_rental][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/rental-bicycle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/rental-bicycle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bicycle_repair_station][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/repair-bicycle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/repair-bicycle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=car_rental][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/rental-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/rental-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=car_sharing][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/shared-car-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/shared-car-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=taxi][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/taxi-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/taxi-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=fuel][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/fuel-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/fuel-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=charging_station][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/charging-station-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/charging-station-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=telephone][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/telephone-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/telephone-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[emergency=phone][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/emergency-phone-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/emergency/emergency-phone-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=toilets][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/toilets-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/toilets-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=recycling][recycling_type=container][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/recycling-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/recycling-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=waste_basket][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/waste-basket-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/waste-basket-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=townhall][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/town-hall-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/administration/town-hall-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=embassy][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/embassy-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/administration/embassy-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=drinking_water][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/drinking-water-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/drinking-water-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=fountain][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/fountain-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/fountain-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/place-of-worship-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/place-of-worship-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=buddhist][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/buddhist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/buddhist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=christian][denomination!=jehovahs_witness][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/christian-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/christian-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=hindu][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/hinduist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/hinduist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=jewish][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/jewish-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/jewish-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=muslim][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/muslim-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/muslim-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=sikh][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/sikhist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/sikhist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=shinto][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/shintoist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/shintoist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=place_of_worship][religion=taoist][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/religious/taoist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/religious/taoist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=grave_yard][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/cemetery-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/cemetery-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=post_office][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/post-office-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/post-office-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=post_box][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/post-office-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/post-office-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[amenity=pharmacy][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/pharmacy-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/health/pharmacy-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=hospital][setting("osmic")],
 node[amenity=clinic][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/hospital-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/health/hospital-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=doctors][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/doctor-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/health/doctor-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=dentist][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/dentist-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/health/dentist-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=library][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/library-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/library-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=police][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/police-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/emergency/police-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=fire_station][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/emergency/fire-station-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/emergency/fire-station-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bus_station][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-station-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/bus-station-18.svg";
     set icon_z17;
 }
 node[amenity=ferry_terminal][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/ferry-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=theatre][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/theatre-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/theatre-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=cinema][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/cinema-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/cinema-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=courthouse][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/courthouse-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/administration/courthouse-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=prison][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/administration/prison-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/administration/prison-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bank][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/money/bank-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/money/bank-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=atm][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/money/atm-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/money/atm-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=bench][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/bench-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/bench-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=hunting_stand][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/hunting-stand-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/hunting-stand-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[amenity=veterinary][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/health/veterinary-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/health/veterinary-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3905,42 +3905,42 @@ node[amenity=veterinary][setting("osmic")] {
 /****************/
 
 node[tourism=hotel][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/hotel-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/accommodation/hotel-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=motel][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/motel-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/accommodation/motel-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=hostel][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/accommodation/hostel-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/accommodation/hostel-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=camp_site][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/camping-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/camping-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=caravan_site][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/caravan-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/caravan-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=picnic_site][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/table-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/table-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=viewpoint][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/viewpoint-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/viewpoint-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=museum][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/museum-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/museum-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3950,17 +3950,17 @@ node[tourism=museum][setting("osmic")] {
 /********************/
 
 node[tourism=information][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/information-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/information-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=information][information=guidepost][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/outdoor/guidepost-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/guidepost-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[tourism=information][information=office][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/information-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/information-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3970,22 +3970,22 @@ node[tourism=information][information=office][setting("osmic")] {
 /*****************/
 
 node[historic=castle][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/castle-fortress-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/castle-fortress-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[historic=monument][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/monument-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/monument-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[historic=memorial][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/memorial-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/memorial-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[historic=archaeological_site][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/tourism/archaeological-site-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/archaeological-site-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -3995,37 +3995,37 @@ node[historic=archaeological_site][setting("osmic")] {
 /*************************/
 
 node[highway=bus_stop][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/bus-stop-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[public_transport=stop_position][bus=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/bus-stop-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[public_transport=stop_position][ferry=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/ferry-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[public_transport=stop_position][tram=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/tram-stop-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/tram-stop-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[public_transport=stop_position][train=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-halt-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/railway-halt-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[public_transport=platform][bus=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/bus-stop-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/bus-stop-14.svg";
     set icon_z17;
     icon-width: 14;
 }
 node[public_transport=platform][ferry=yes][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/ferry-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/ferry-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -4036,27 +4036,27 @@ node[public_transport=platform][ferry=yes][setting("osmic")] {
 
 node[railway=station][setting("osmic")],
 node[railway=tram_station][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-station-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/railway-station-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[railway=halt][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/railway-halt-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/railway-halt-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[railway=tram_stop][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/tram-stop-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/tram-stop-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[railway=station][transport=subway][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/metro-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/metro-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[railway=subway_entrance][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/amenity/entrance-transport-14.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/amenity/entrance-transport-14.svg";
     set icon_z17;
     icon-width: 14;
 }
@@ -4066,12 +4066,12 @@ node[railway=subway_entrance][setting("osmic")] {
 /****************/
 
 node[aeroway=aerodrome][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/airport-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/airport-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[aeroway=helipad][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/transport/heliport-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/heliport-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -4081,7 +4081,7 @@ node[aeroway=helipad][setting("osmic")] {
 /**************/
 
 node[sport=swimming][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/sports/swimming-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/sports/swimming-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -4091,34 +4091,34 @@ node[sport=swimming][setting("osmic")] {
 /****************/
 
 node[natural=spring][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/spring-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/spring-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[natural=saddle][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/saddle-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/saddle-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[natural=peak][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/peak-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/peak-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[natural=tree][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-unspecified-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/tree-unspecified-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[natural=tree][type=conifer][setting("osmic")],
 node[natural=tree][leaf_type=needleleaved][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-coniferous-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/tree-coniferous-18.svg";
     set icon_z17;
     icon-width: 18;
 }
 node[natural=tree][type=broad_leaved][setting("osmic")],
 node[natural=tree][leaf_type=broadleaved][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/tree-deciduous-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/tree-deciduous-18.svg";
     set icon_z17;
     icon-width: 18;
 }
@@ -4128,7 +4128,7 @@ node[natural=tree][leaf_type=broadleaved][setting("osmic")] {
 /*****************/
 
 node[waterway=waterfall][setting("osmic")] {
-    icon-image: "http://garylancelot.com/happilyalive/Mapping/icons/nature/waterfall-18.svg";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/nature/waterfall-18.svg";
     set icon_z17;
     icon-width: 18;
 }
