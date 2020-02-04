@@ -143,16 +143,9 @@ setting::user_Casey {
   group: "mexico";
 }
 
-setting::user_Chris {
+setting::user_David {
   type:boolean;
-  label:tr("Turn User Goose6thAB On/Off");
-  default:true;
-  group: "mexico";
-}
-
-setting::user_Ethan {
-  type:boolean;
-  label:tr("Turn User EthanK On/Off");
+  label:tr("Turn User krinkov76239 On/Off");
   default:true;
   group: "mexico";
 }
@@ -167,20 +160,6 @@ setting::user_IanK {
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
-  default:true;
-  group: "mexico";
-}
-
-setting::user_Johnny {
-  type:boolean;
-  label:tr("Turn User spititout On/Off");
-  default:true;
-  group: "mexico";
-}
-
-setting::user_Jonathan {
-  type:boolean;
-  label:tr("Turn User Joni5isalive On/Off");
   default:true;
   group: "mexico";
 }
@@ -248,13 +227,6 @@ setting::user_NickE {
   group: "mexico";
 }
 
-setting::user_Rikki {
-  type:boolean;
-  label:tr("Turn User Chilly Chinchillas On/Off");
-  default:true;
-  group: "mexico";
-}
-
 setting::user_Rob {
   type:boolean;
   label:tr("Turn User RouteRob On/Off");
@@ -306,7 +278,7 @@ setting::user_SteveC {
 
 setting::user_WilliamF {
   type:boolean;
-  label:tr("Turn User ImjusBuddy On/Off");
+  label:tr("Turn User Buddy-the-Elf On/Off");
   default:true;
   group: "mexico";
 }
@@ -364,12 +336,8 @@ node:modified < way::modified_layer {
   set .Casey;
 }
 
-*[eval(JOSM_search("user:Goose6thAB"))][setting("user_Chris")] {
-  set .Chris;
-}
-
-*[eval(JOSM_search("user:EthanK"))][setting("user_Ethan")] {
-  set .Ethan;
+*[eval(JOSM_search("user:krinkov76239"))][setting("user_David")] {
+  set .David;
 }
 
 *[eval(JOSM_search("user:Ikohl"))][setting("user_IanK")] {
@@ -378,14 +346,6 @@ node:modified < way::modified_layer {
 
 *[eval(JOSM_search("user:Cinderblock"))][setting("user_JacindaD")] {
   set .JacindaD;
-}
-
-*[eval(JOSM_search("user:spititout"))][setting("user_Johnny")] {
-  set .Johnny;
-}
-
-*[eval(JOSM_search("user:Joni5isalive"))][setting("user_Jonathan")] {
-  set .Jonathan;
 }
 
 *[eval(JOSM_search("user:kebobo"))][setting("user_Keeley")] {
@@ -424,10 +384,6 @@ node:modified < way::modified_layer {
   set .NickE;
 }
 
-*[eval(JOSM_search("user:\"Chilly Chinchillas\""))][setting("user_Rikki")] {
-  set .Rikki;
-}
-
 *[eval(JOSM_search("user:RouteRob"))][setting("user_Rob")] {
   set .Rob;
 }
@@ -456,7 +412,7 @@ node:modified < way::modified_layer {
   set .SteveC;
 }
 
-*[eval(JOSM_search("user:ImjusBuddy"))][setting("user_WilliamF")] {
+*[eval(JOSM_search("user:Buddy-the-Elf"))][setting("user_WilliamF")] {
   set .WilliamF;
 }
 
@@ -477,12 +433,9 @@ way.Anthony,
 way.BreiaV,
 way.BrianL,
 way.Casey,
-way.Chris,
-way.Ethan,
+way.David,
 way.IanK,
 way.JacindaD,
-way.Johnny,
-way.Jonathan,
 way.Keeley,
 way.LeanneS,
 way.LoganM,
@@ -492,7 +445,6 @@ way.MattB,
 way.MorgenM,
 way.NatashaS,
 way.NickE,
-way.Rikki,
 way.Rob,
 way.RobinH,
 way.RonmelR,
@@ -519,12 +471,9 @@ node.Anthony,
 node.BreiaV,
 node.BrianL,
 node.Casey,
-node.Chris,
-node.Ethan,
+node.David,
 node.IanK,
 node.JacindaD,
-node.Johnny,
-node.Jonathan,
 node.Keeley,
 node.LeanneS,
 node.LoganM,
@@ -534,7 +483,6 @@ node.MattB,
 node.MorgenM,
 node.NatashaS,
 node.NickE,
-node.Rikki,
 node.Rob,
 node.RobinH,
 node.RonmelR,
