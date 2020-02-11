@@ -40,12 +40,12 @@ setting::user_aaron {
 
 at which point, it becomes necessary to create a selector statement for your user:
 
-*[eval(JOSM_search("user:vespax"))][setting("user_aaron")] {
+*[osm_user_name() == "vespax"][setting("user_aaron")] {
   set .aaron;
 }
 
 -- * denotes what you are selecting, in this case, every element type in OSM
--- [eval(JOSM_search("user:vespax"))] -> this is necessary and should be constructed as such.
+-- [osm_user_name() == "vespax"] -> this is necessary and should be constructed as such.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -61,7 +61,7 @@ String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in severa
 
 So, a timestamped search would look like this:
 
-*[eval(JOSM_search("user:IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"))] {
+*[osm_user_name() == "IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"] {
   casing-width: 10;
   casing-color: green;
   casing-opacity: 0.2;
@@ -239,75 +239,75 @@ node:modified < way::modified_layer {
 
 /* User specific styles */
 
-*[eval(JOSM_search("user:VLD026"))][setting("user_Maureen")] {
+*[osm_user_name() == "VLD026"][setting("user_Maureen")] {
   set .Maureen
 }
 
-*[eval(JOSM_search("user:VLD032"))][setting("user_Dylan")] {
+*[osm_user_name() == "VLD032"][setting("user_Dylan")] {
   set .Dylan
 }
 
-*[eval(JOSM_search("user:VLD035"))][setting("user_Kady")] {
+*[osm_user_name() == "VLD035"][setting("user_Kady")] {
   set .Kady;
 }
 
-*[eval(JOSM_search("user:VLD035"))][setting("user_Olympia")] {
+*[osm_user_name() == "VLD035"][setting("user_Olympia")] {
   set .Olympia;
 }
 
 
-*[eval(JOSM_search("user:VLD046"))][setting("user_Kaiti")] {
+*[osm_user_name() == "VLD046"][setting("user_Kaiti")] {
   set .Kaiti;
 }
 
-*[eval(JOSM_search("user:VLD082"))][setting("user_Gwen")] {
+*[osm_user_name() == "VLD082"][setting("user_Gwen")] {
   set .Gwen;
 }
 
-*[eval(JOSM_search("user:VLD089"))][setting("user_Steve")] {
+*[osm_user_name() == "VLD089"][setting("user_Steve")] {
   set .Steve;
 }
 
-*[eval(JOSM_search("user:VLD090"))][setting("user_Tukui")] {
+*[osm_user_name() == "VLD090"][setting("user_Tukui")] {
   set .Tukui;
 }
 
-*[eval(JOSM_search("user:VLD096"))][setting("user_Kayla")] {
+*[osm_user_name() == "VLD096"][setting("user_Kayla")] {
   set .Kayla;
 }
 
-*[eval(JOSM_search("user:VLD098"))][setting("user_Drew")] {
+*[osm_user_name() == "VLD098"][setting("user_Drew")] {
   set .Drew;
 }
 
-*[eval(JOSM_search("user:VLD150"))][setting("user_Joanna")] {
+*[osm_user_name() == "VLD150"][setting("user_Joanna")] {
   set .Joanna;
 }
 
-*[eval(JOSM_search("user:VLD151"))][setting("user_Jami")] {
+*[osm_user_name() == "VLD151"][setting("user_Jami")] {
   set .Jami;
 }
 
-*[eval(JOSM_search("user:VLD152"))][setting("user_Brenna")] {
+*[osm_user_name() == "VLD152"][setting("user_Brenna")] {
   set .Brenna;
 }
 
-*[eval(JOSM_search("user:DVLD153"))][setting("user_Johnny")] {
+*[osm_user_name() == "DVLD153"][setting("user_Johnny")] {
   set .Johnny;
 }
 
-*[eval(JOSM_search("user:VLD154"))][setting("user_LouisM")] {
+*[osm_user_name() == "VLD154"][setting("user_LouisM")] {
   set .LouisM;
 }
 
-*[eval(JOSM_search("user:MTG5093"))][setting("user_Goose")] {
+*[osm_user_name() == "MTG5093"][setting("user_Goose")] {
   set .Goose;
 }
 
 
 /* This is how you search for someone with a space in their name
 
-*[eval(JOSM_search("user:\"Hector Vector\""))] {
+*[osm_user_name() == "\"Hector Vector\""] {
   set .jman;
 }
 
