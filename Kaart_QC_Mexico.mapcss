@@ -2,23 +2,19 @@ meta {
   title: "QC Styles For Mexico Team";
   description: "Highlights features that were created/modified by users";
   watch-modified: true;
-  version: "1.5";
+  version: "1.6";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
   min-josm-version: "15289"; /* This style uses groups for settings */
 }
+
 /* Notes
-
 1.0 Added styles -- provided by Jenn -- and users -- Ian -- 3/11/2019
-
 1.1 Configured styles -- Louis -- 3/13/2019
-
 1.2 Configured style colors and highlighting -- Ian -- 3/15/2019
-
 1.3 Simplified user lines -- Louis -- 3/18/2019
-
 1.4 Adjusted user, style lines and appearances -- 3/20/2019
-
 1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
+1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
 
 Tips:
 
@@ -37,7 +33,6 @@ setting::user_aaron {
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 at which point, it becomes necessary to create a selector statement for your user:
 
 *[eval(JOSM_search("user:vespax"))][setting("user_aaron")] {
@@ -50,7 +45,6 @@ at which point, it becomes necessary to create a selector statement for your use
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to construct time stamps, you can use the following:
-
 
 String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
 "timestamp:2016-02-20/" -- Shows all edits edited after date
@@ -78,212 +72,301 @@ way.aaron, & node.aaron,
 that there is another selector we would like to call out after "aaron"
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 {
   z-index: -10;
   casing-color: lime;
   casing-width: 10;
   casing-opacity: 0.3;
-
-
 }
 
 -- This is our code block which will style up whatever we called out as a selector
-
 */
 
 /* Create Settings */
 
-
 /* User Settings */
-/* Mexico Team */
-settings::mexico {
-  label: tr("Mexico");
+/* Sanitas */
+settings::sanitas {
+  label: tr("Sanitas");
 }
+
 setting::user_AlexD {
   type:boolean;
   label:tr("Turn User Soccersweeper On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_ArleneC {
   type:boolean;
   label:tr("Turn User ArleneC On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Anthony {
   type:boolean;
   label:tr("Turn User acrague On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_BreiaV {
   type:boolean;
   label:tr("Turn User 3agleOne On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_BrianL {
   type:boolean;
   label:tr("Turn User Unicorn Ostrich On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Casey {
   type:boolean;
   label:tr("Turn User CaseyIvanW On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_David {
   type:boolean;
   label:tr("Turn User krinkov76239 On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_IanK {
   type:boolean;
   label:tr("Turn User Ikohl On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Keeley {
   type:boolean;
   label:tr("Turn User kebobo On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_LeanneS {
   type:boolean;
   label:tr("Turn User LSkalayo On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_LoganM {
   type:boolean;
   label:tr("Turn User Dalekokarta On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Marshall {
   type:boolean;
   label:tr("Turn User MTG5093 On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_MattB {
   type:boolean;
   label:tr("Turn User MappnMatt On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_MorgenM {
   type:boolean;
   label:tr("Turn User MMantlo On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_NatashaS {
   type:boolean;
   label:tr("Turn User rallynukab On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Rob {
   type:boolean;
   label:tr("Turn User RouteRob On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_RobinH {
   type:boolean;
   label:tr("Turn User RobinNoodles On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_RonmelR {
   type:boolean;
   label:tr("Turn User Mel_1 On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Sarah {
   type:boolean;
   label:tr("Turn User Yagni On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Savana {
   type:boolean;
   label:tr("Turn User staysavy On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_Sharon {
   type:boolean;
   label:tr("Turn User mapcraft On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_SteveC {
   type:boolean;
   label:tr("Turn User Smoothdog On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
 setting::user_WilliamF {
   type:boolean;
   label:tr("Turn User Buddy-the-Elf On/Off");
   default:true;
-  group: "mexico";
+  group: "sanitas";
 }
 
+/* Nokhu */
+settings::nokhu {
+  label: tr("Nokhu");
+}
 
+setting::user_Angie {
+  type: boolean;
+  label: tr("Turn User Inigo_Maptoya On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Anita {
+  type: boolean;
+  label: tr("Turn User natureandchill On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Anja {
+  type: boolean;
+  label: tr("Turn User Ajaie On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Daniel {
+  type: boolean;
+  label: tr("Turn User The_Intern On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Joseph {
+  type: boolean;
+  label: tr("Turn User Szekha On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_LoganS {
+  type: boolean;
+  label: tr("Turn User 127logs On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Luis {
+  type: boolean;
+  label: tr("Turn User medrano93 On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_NickM {
+  type: boolean;
+  label: tr("Turn User nickmettauer On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_RD {
+  type: boolean;
+  label: tr("Turn User mr_et On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Riley {
+  type: boolean;
+  label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_RyanF {
+  type: boolean;
+  label: tr("Turn User rytheking On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Sage {
+  type: boolean;
+  label: tr("Turn User BobGod On/Off");
+  default: true;
+  group: "nokhu";
+}
+
+setting::user_Sierra {
+  type:boolean;
+  label:tr("Turn User sierrae-kaart On/Off");
+  default: true;
+  group: "nokhu";
+}
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
 
@@ -308,9 +391,7 @@ node:modified < way::modified_layer {
 }
 
 /* QC Styles */
-
-
-/* User specific styles */
+/* User specific styles: Sanitas */
 
 *[eval(JOSM_search("user:Soccersweeper"))][setting("user_AlexD")] {
   set .AlexD;
@@ -416,16 +497,68 @@ node:modified < way::modified_layer {
   set .WilliamF;
 }
 
+/* User specific styles: Nokhu */
+
+*[eval(JOSM_search("user:Inigo_Maptoya"))][setting("user_Angie")] {
+  set .Angie;
+}
+
+*[eval(JOSM_search("user:natureandchill"))][setting("user_Anita")] {
+  set .Anita;
+}
+
+*[eval(JOSM_search("user:Ajaie"))][setting("user_Anja")] {
+  set .Anja;
+}
+
+*[eval(JOSM_search("user:The_Intern"))][setting("user_Daniel")] {
+  set .Daniel;
+}
+
+*[eval(JOSM_search("user:Szekha"))][setting("user_Joseph")] {
+  set .Joseph;
+}
+
+*[eval(JOSM_search("user:127logs"))][setting("user_LoganS")] {
+  set .LoganS;
+}
+
+*[eval(JOSM_search("user:medrano93"))][setting("user_Luis")] {
+  set .Luis;
+}
+
+*[eval(JOSM_search("user:nickmettauer"))][setting("user_NickM")] {
+  set .NickM;
+}
+
+*[eval(JOSM_search("user:mr_et"))][setting("user_RD")] {
+  set .RD;
+}
+
+*[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))][setting("user_Riley")] {
+  set .Riley;
+}
+
+*[eval(JOSM_search("user:rytheking"))][setting("user_RyanF")] {
+  set .RyanF;
+}
+
+*[eval(JOSM_search("user:BobGod"))][setting("user_Sage")] {
+  set .Sage;
+}
+
+*[eval(JOSM_search("user:sierrae-kaart"))][setting("user_Sierra")] {
+  set .Sierra;
+}
+
 /* This is how you search for someone with a space in their name
 
 *[eval(JOSM_search("user:\"Hector Vector\""))] {
   set .jman;
 }
 
-*/
-
 /* Styling of ways and nodes once they belong to "history" for each individual user */
-
+/*Sanitas*/
 
 way.AlexD,
 way.ArleneC,
@@ -452,7 +585,24 @@ way.Sarah,
 way.Savana,
 way.Sharon,
 way.SteveC,
-way.WilliamF {
+way.WilliamF,
+
+/*Nokhu*/
+
+way.Angie,
+way.Anita,
+way.Anja,
+way.Daniel,
+way.Joseph,
+way.LoganS,
+way.Luis,
+way.NickM,
+way.RD,
+way.Riley,
+way.RyanF,
+way.Sage,
+way.Sierra
+{
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -461,9 +611,9 @@ way.WilliamF {
   text: eval(concat("Highway type =", " ", tag("highway")));
   text-offset: -20;
   */
-
-
 }
+
+/*Sanitas*/
 
 node.AlexD,
 node.ArleneC,
@@ -490,7 +640,24 @@ node.Sarah,
 node.Savana,
 node.Sharon,
 node.SteveC,
-node.WilliamF {
+node.WilliamF, 
+
+/*Nokhu*/
+
+node.Angie,
+node.Anita,
+node.Anja,
+node.Daniel,
+node.Joseph,
+node.LoganS,
+node.Luis,
+node.NickM,
+node.RD,
+node.Riley,
+node.RyanF,
+node.Sage,
+node.Sierra
+{
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
