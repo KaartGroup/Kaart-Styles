@@ -110,9 +110,9 @@ setting::user_Aaron {
   group: "quandary";
 }
 
-setting::user_Brent {
+setting::user_Abby {
   type:boolean;
-  label:tr("Turn User SmoothWookieFlow On/Off");
+  label:tr("Turn User DowntownAbby On/Off");
   default:true;
   group: "quandary";
 }
@@ -131,9 +131,9 @@ setting::user_Danielle {
   group: "quandary";
 }
 
-setting::user_Gary {
+setting::user_Kaiti {
   type:boolean;
-  label:tr("Turn User Velocimaptor On/Off");
+  label:tr("Turn User ProfessorLupin On/Off");
   default:true;
   group: "quandary";
 }
@@ -159,9 +159,9 @@ setting::user_JasonH {
   group: "quandary";
 }
 
-setting::user_Jonathon {
+setting::user_William {
   type:boolean;
-  label:tr("Turn User spuddy93 On/Off");
+  label:tr("Turn User Buddy-The-Elf On/Off");
   default:true;
   group: "quandary";
 }
@@ -187,9 +187,9 @@ setting::user_Lucas {
   group: "quandary";
 }
 
-setting::user_Michelle {
+setting::user_Hamish {
   type:boolean;
-  label:tr("Turn User MichNicole On/Off");
+  label:tr("Turn User hairyhaggis On/Off");
   default:true;
   group: "quandary";
 }
@@ -250,6 +250,19 @@ setting::user_Tom {
   group: "quandary";
 }
 
+setting::user_Gray {
+  type:boolean;
+  label:tr("Turn User TheArchDruid On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_Jon {
+  type:boolean;
+  label:tr("Turn User JonKrato On/Off");
+  default:true;
+  group: "quandary";
+}
 
 /* Timpanogos */
 settings::timpanogos {
@@ -259,13 +272,6 @@ settings::timpanogos {
 setting::user_Derek {
   type:boolean;
   label:tr("Turn User DerekBev On/Off");
-  default:true;
-  group: "timpanogos";
-}
-
-setting::user_Nathan {
-  type:boolean;
-  label:tr("Turn User Nathan_Rose On/Off");
   default:true;
   group: "timpanogos";
 }
@@ -284,16 +290,9 @@ setting::user_Pace {
   group: "timpanogos";
 }
 
-setting::user_Spencer {
+setting::user_Dain {
   type:boolean;
-  label:tr("Turn User Spence142 On/Off");
-  default:true;
-  group: "timpanogos";
-}
-
-setting::user_Sumittra {
-  type:boolean;
-  label:tr("Turn User Solra On/Off");
+  label:tr("Turn User DRM150 On/Off");
   default:true;
   group: "timpanogos";
 }
@@ -330,8 +329,8 @@ node:modified < way::modified_layer {
   set .Aaron;
 }
 
-*[eval(JOSM_search("user:SmoothWookieFlow"))][setting("user_Brent")] {
-  set .Brent;
+*[eval(JOSM_search("user:DowntownAbby"))][setting("user_Abby")] {
+  set .Abby;
 }
 
 *[eval(JOSM_search("user:Corban8"))][setting("user_Corban")] {
@@ -342,8 +341,8 @@ node:modified < way::modified_layer {
   set .Danielle;
 }
 
-*[eval(JOSM_search("user:Velocimaptor"))][setting("user_Gary")] {
-  set .Gary;
+*[eval(JOSM_search("user:ProfessorLupin"))][setting("user_Kaiti")] {
+  set .Kaiti;
 }
 
 *[eval(JOSM_search("user:Baconcrisp"))][setting("user_IanM")] {
@@ -358,8 +357,8 @@ node:modified < way::modified_layer {
   set .JasonH;
 }
 
-*[eval(JOSM_search("user:spuddy93"))][setting("user_Jonathon")] {
-  set .Jonathon;
+*[eval(JOSM_search("user:Buddy-The-Elf"))][setting("user_William")] {
+  set .William;
 }
 
 *[eval(JOSM_search("user:JAAS"))][setting("user_Jorge")] {
@@ -374,8 +373,8 @@ node:modified < way::modified_layer {
   set .Lucas;
 }
 
-*[eval(JOSM_search("user:MichNicole"))][setting("user_Michelle")] {
-  set .Michelle;
+*[eval(JOSM_search("user:hairyhaggis"))][setting("user_Hamish")] {
+  set .Hamish;
 }
 
 *[eval(JOSM_search("user:ReedtheRiver"))][setting("user_Reed")] {
@@ -410,15 +409,18 @@ node:modified < way::modified_layer {
   set .Tom;
 }
 
+*[eval(JOSM_search("user:TheArchDruid"))][setting("user_Gray")] {
+  set .Gray;
+}
+
+*[eval(JOSM_search("user:JonKrato"))][setting("user_Jon")] {
+  set .Jon;
+}
 
 /* Timpanogos */
 
 *[eval(JOSM_search("user:DerekBev"))][setting("user_Derek")] {
   set .Derek;
-}
-
-*[eval(JOSM_search("user:Nathan_Rose"))][setting("user_Nathan")] {
-  set .Nathan;
 }
 
 *[eval(JOSM_search("user:nutchayahonvilai"))][setting("user_Nutchaya")] {
@@ -429,12 +431,8 @@ node:modified < way::modified_layer {
   set .Pace;
 }
 
-*[eval(JOSM_search("user:Spence142"))][setting("user_Spencer")] {
-  set .Spencer;
-}
-
-*[eval(JOSM_search("user:Solra"))][setting("user_Sumittra")] {
-  set .Sumittra;
+*[eval(JOSM_search("user:DRM150"))][setting("user_Dain")] {
+  set .Dain;
 }
 
 /* This is how you search for someone with a space in their name
@@ -448,18 +446,18 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
 way.Aaron,
-way.Brent,
+way.Abby,
 way.Corban,
 way.Danielle,
-way.Gary,
+way.Kaiti,
 way.IanM,
 way.JacobK,
 way.JasonH,
-way.Jonathon,
+way.William,
 way.Jorge,
 way.Kira,
 way.Lucas,
-way.Michelle,
+way.Hamish,
 way.Reed,
 way.Rich,
 way.RyanK,
@@ -469,11 +467,11 @@ way.Sarah,
 way.Timothy,
 way.Tom,
 way.Derek,
-way.Nathan,
+way.Gray,
 way.Nutchaya,
 way.Pace,
-way.Spencer,
-way.Sumittra {
+way.Jon,
+way.Dain {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -485,18 +483,18 @@ way.Sumittra {
 }
 
 node.Aaron,
-node.Brent,
+node.Abby,
 node.Corban,
 node.Danielle,
-node.Gary,
+node.Kaiti,
 node.IanM,
 node.JacobK,
 node.JasonH,
-node.Jonathon,
+node.William,
 node.Jorge,
 node.Kira,
 node.Lucas,
-node.Michelle,
+node.Hamish,
 node.Reed,
 node.Rich,
 node.RyanK,
@@ -506,11 +504,11 @@ node.Sarah,
 node.Timothy,
 node.Tom,
 node.Derek,
-node.Nathan,
+node.Gray,
 node.Nutchaya,
 node.Pace,
-node.Spencer,
-node.Sumittra {
+node.Jon,
+node.Dain {
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
@@ -527,4 +525,3 @@ node:selected::selected_layer {
   symbol-fill-opacity: 0.5;
   z-index: -5;
 }
-
