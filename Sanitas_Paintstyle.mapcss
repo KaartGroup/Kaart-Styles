@@ -1,5 +1,5 @@
 meta {
-    title: "Mexico Import Style";
+    title: "Sanitas Style";
     version: "1.0";
     description: "Adds custom styling to elements/features within JOSM";
     author: "SomethingSimple, RoadMapsYou, NodiusWayus, Zack LaVergne";
@@ -145,7 +145,7 @@ setting::node_setting {
 /* setting::hide_icons {
   type: boolean;
   label: tr("Hide icons & icon text (at low zoom)");
-  default: false;
+  default: true;
 } */
 
 
@@ -3056,13 +3056,52 @@ node.child_nodes:selected {
 	symbol-fill-color: red;
 }
 
+/* Node unconnected Styles */
 
+way[highway]!:closed >[index=-1] node!:connection,
+way[highway]!:closed >[index=1] node!:connection {
+    set .unconnected
+}
+
+node|z20-.unconnected {
+    symbol-shape: triangle;
+    symbol-size: 20;
+    symbol-fill-color: red;
+    symbol-fill-opacity: 1;
+    symbol-stroke-color: red;
+    symbol-stroke-opacity: 0.6;
+}
+
+node|z17-19.unconnected {
+    symbol-shape: triangle;
+    symbol-size: 15;
+    symbol-fill-color: red;
+    symbol-fill-opacity: 1;
+    symbol-stroke-color: red;
+    symbol-stroke-opacity: 0.6;
+}
+
+node|z14-16.unconnected {
+    symbol-shape: triangle;
+    symbol-size: 10;
+    symbol-fill-color: red;
+    symbol-fill-opacity: 1;
+    symbol-stroke-color: red;
+    symbol-stroke-opacity: 0.6;
+}
+
+node:selected.unconnected {
+    symbol-shape: circle;
+    symbol-size: 6;
+    symbol-stroke-color: #00FFFF;
+	symbol-fill-color: red;
+}
 
 
 
 /* Hide Icons at certain zoom levels */
 
-node|z-16[setting("hide_icons")],
+node|z-1[setting("hide_icons")],
 node|z17-[is_prop_set("icon-image")][setting("hide_icons")],
 node[is_prop_set("icon-image")][setting("hide_icons")] {
     symbol-size: .5;
@@ -3084,7 +3123,11 @@ node|z-17[setting("hide_icons")] {
     symbol-size: .5;
     icon-image: none;
 }
-
+node|z-18[setting("hide_icons")] {
+    text: none;
+    symbol-size: .5;
+    icon-image: none;
+}
 
 
 /* Special tertiary node
