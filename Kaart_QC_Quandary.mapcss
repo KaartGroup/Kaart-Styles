@@ -252,7 +252,7 @@ setting::user_Tom {
 
 setting::user_Gray {
   type:boolean;
-  label:tr("Turn User TheArchDruid On/Off");
+  label:tr("Turn User theArchDruid On/Off");
   default:true;
   group: "quandary";
 }
@@ -409,7 +409,7 @@ node:modified < way::modified_layer {
   set .Tom;
 }
 
-*[eval(JOSM_search("user:TheArchDruid"))][setting("user_Gray")] {
+*[eval(JOSM_search("user:theArchDruid"))][setting("user_Gray")] {
   set .Gray;
 }
 
