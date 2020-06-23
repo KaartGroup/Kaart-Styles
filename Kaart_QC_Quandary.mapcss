@@ -278,7 +278,7 @@ setting::user_Derek {
 
 setting::user_Nutchaya {
   type:boolean;
-  label:tr("Turn User nutchayahonvilai On/Off");
+  label:tr("Turn User nutchayahongvilai On/Off");
   default:true;
   group: "timpanogos";
 }
@@ -423,7 +423,7 @@ node:modified < way::modified_layer {
   set .Derek;
 }
 
-*[eval(JOSM_search("user:nutchayahonvilai"))][setting("user_Nutchaya")] {
+*[eval(JOSM_search("user:nutchayahongvilai"))][setting("user_Nutchaya")] {
   set .Nutchaya;
 }
 
