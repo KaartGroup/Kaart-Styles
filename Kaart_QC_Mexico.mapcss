@@ -35,12 +35,12 @@ setting::user_aaron {
 
 at which point, it becomes necessary to create a selector statement for your user:
 
-*[eval(JOSM_search("user:vespax"))][setting("user_aaron")] {
+*[osm_user_name() == "vespax"][setting("user_aaron")] {
   set .aaron;
 }
 
 -- * denotes what you are selecting, in this case, every element type in OSM
--- [eval(JOSM_search("user:vespax"))] -> this is necessary and should be constructed as such.
+-- [osm_user_name() == "vespax"] -> this is necessary and should be constructed as such.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -55,7 +55,7 @@ String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in severa
 
 So, a timestamped search would look like this:
 
-*[eval(JOSM_search("user:IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"))] {
+*[osm_user_name() == "IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"] {
   casing-width: 10;
   casing-color: green;
   casing-opacity: 0.2;
@@ -393,167 +393,167 @@ node:modified < way::modified_layer {
 /* QC Styles */
 /* User specific styles: Sanitas */
 
-*[eval(JOSM_search("user:Soccersweeper"))][setting("user_AlexD")] {
+*[osm_user_name() == "Soccersweeper"][setting("user_AlexD")] {
   set .AlexD;
 }
 
-*[eval(JOSM_search("user:ArleneC"))][setting("user_ArleneC")] {
+*[osm_user_name() == "ArleneC"][setting("user_ArleneC")] {
   set .ArleneC;
 }
 
-*[eval(JOSM_search("user:acrague"))][setting("user_Anthony")] {
+*[osm_user_name() == "acrague"][setting("user_Anthony")] {
   set .Anthony;
 }
 
-*[eval(JOSM_search("user:3agleOne"))][setting("user_BreiaV")] {
+*[osm_user_name() == "3agleOne"][setting("user_BreiaV")] {
   set .BreiaV;
 }
 
-*[eval(JOSM_search("user:\"Unicorn Ostrich\""))][setting("user_BrianL")] {
+*[osm_user_name() == "Unicorn Ostrich"][setting("user_BrianL")] {
   set .BrianL;
 }
 
-*[eval(JOSM_search("user:CaseyIvanW"))][setting("user_Casey")] {
+*[osm_user_name() == "CaseyIvanW"][setting("user_Casey")] {
   set .Casey;
 }
 
-*[eval(JOSM_search("user:krinkov76239"))][setting("user_David")] {
+*[osm_user_name() == "krinkov76239"][setting("user_David")] {
   set .David;
 }
 
-*[eval(JOSM_search("user:Ikohl"))][setting("user_IanK")] {
+*[osm_user_name() == "Ikohl"][setting("user_IanK")] {
   set .IanK;
 }
 
-*[eval(JOSM_search("user:Cinderblock"))][setting("user_JacindaD")] {
+*[osm_user_name() == "Cinderblock"][setting("user_JacindaD")] {
   set .JacindaD;
 }
 
-*[eval(JOSM_search("user:kebobo"))][setting("user_Keeley")] {
+*[osm_user_name() == "kebobo"][setting("user_Keeley")] {
   set .Keeley;
 }
 
-*[eval(JOSM_search("user:LSkalayo"))][setting("user_LeanneS")] {
+*[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
   set .LeanneS;
 }
 
-*[eval(JOSM_search("user:Dalekokarta"))][setting("user_LoganM")] {
+*[osm_user_name() == "Dalekokarta"][setting("user_LoganM")] {
   set .LoganM;
 }
 
-*[eval(JOSM_search("user:BlueRanger"))][setting("user_LouisM")] {
+*[osm_user_name() == "BlueRanger"][setting("user_LouisM")] {
   set .LouisM;
 }
 
-*[eval(JOSM_search("user:MTG5093"))][setting("user_Marshall")] {
+*[osm_user_name() == "MTG5093"][setting("user_Marshall")] {
   set .Marshall;
 }
 
-*[eval(JOSM_search("user:MappnMatt"))][setting("user_MattB")] {
+*[osm_user_name() == "MappnMatt"][setting("user_MattB")] {
   set .MattB;
 }
 
-*[eval(JOSM_search("user:MMantlo"))][setting("user_MorgenM")] {
+*[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
   set .MorgenM;
 }
 
-*[eval(JOSM_search("user:rallynukab"))][setting("user_NatashaS")] {
+*[osm_user_name() == "rallynukab"][setting("user_NatashaS")] {
   set .NatashaS;
 }
 
-*[eval(JOSM_search("user:jedimasterflint"))][setting("user_NickE")] {
+*[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
   set .NickE;
 }
 
-*[eval(JOSM_search("user:RouteRob"))][setting("user_Rob")] {
+*[osm_user_name() == "RouteRob"][setting("user_Rob")] {
   set .Rob;
 }
 
-*[eval(JOSM_search("user:RobinNoodles"))][setting("user_RobinH")] {
+*[osm_user_name() == "RobinNoodles"][setting("user_RobinH")] {
   set .RobinH;
 }
 
-*[eval(JOSM_search("user:Mel_1"))][setting("user_RonmelR")] {
+*[osm_user_name() == "Mel_1"][setting("user_RonmelR")] {
   set .RonmelR;
 }
 
-*[eval(JOSM_search("user:Yagni"))][setting("user_Sarah")] {
+*[osm_user_name() == "Yagni"][setting("user_Sarah")] {
   set .Sarah;
 }
 
-*[eval(JOSM_search("user:staysavy"))][setting("user_Savana")] {
+*[osm_user_name() == "staysavy"][setting("user_Savana")] {
   set .Savana;
 }
 
-*[eval(JOSM_search("user:mapcraft"))][setting("user_Sharon")] {
+*[osm_user_name() == "mapcraft"][setting("user_Sharon")] {
   set .Sharon;
 }
 
-*[eval(JOSM_search("user:Smoothdog"))][setting("user_SteveC")] {
+*[osm_user_name() == "Smoothdog"][setting("user_SteveC")] {
   set .SteveC;
 }
 
-*[eval(JOSM_search("user:Buddy-the-Elf"))][setting("user_WilliamF")] {
+*[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")] {
   set .WilliamF;
 }
 
 /* User specific styles: Nokhu */
 
-*[eval(JOSM_search("user:Inigo_Maptoya"))][setting("user_Angie")] {
+*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
   set .Angie;
 }
 
-*[eval(JOSM_search("user:natureandchill"))][setting("user_Anita")] {
+*[osm_user_name() == "natureandchill"][setting("user_Anita")] {
   set .Anita;
 }
 
-*[eval(JOSM_search("user:Ajaie"))][setting("user_Anja")] {
+*[osm_user_name() == "Ajaie"][setting("user_Anja")] {
   set .Anja;
 }
 
-*[eval(JOSM_search("user:The_Intern"))][setting("user_Daniel")] {
+*[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
   set .Daniel;
 }
 
-*[eval(JOSM_search("user:Szekha"))][setting("user_Joseph")] {
+*[osm_user_name() == "Szekha"][setting("user_Joseph")] {
   set .Joseph;
 }
 
-*[eval(JOSM_search("user:127logs"))][setting("user_LoganS")] {
+*[osm_user_name() == "127logs"][setting("user_LoganS")] {
   set .LoganS;
 }
 
-*[eval(JOSM_search("user:medrano93"))][setting("user_Luis")] {
+*[osm_user_name() == "medrano93"][setting("user_Luis")] {
   set .Luis;
 }
 
-*[eval(JOSM_search("user:nickmettauer"))][setting("user_NickM")] {
+*[osm_user_name() == "nickmettauer"][setting("user_NickM")] {
   set .NickM;
 }
 
-*[eval(JOSM_search("user:mr_et"))][setting("user_RD")] {
+*[osm_user_name() == "mr_et"][setting("user_RD")] {
   set .RD;
 }
 
-*[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))][setting("user_Riley")] {
+*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
   set .Riley;
 }
 
-*[eval(JOSM_search("user:rytheking"))][setting("user_RyanF")] {
+*[osm_user_name() == "rytheking"][setting("user_RyanF")] {
   set .RyanF;
 }
 
-*[eval(JOSM_search("user:BobGod"))][setting("user_Sage")] {
+*[osm_user_name() == "BobGod"][setting("user_Sage")] {
   set .Sage;
 }
 
-*[eval(JOSM_search("user:sierrae-kaart"))][setting("user_Sierra")] {
+*[osm_user_name() == "sierrae-kaart"][setting("user_Sierra")] {
   set .Sierra;
 }
 
 /* This is how you search for someone with a space in their name
 
-*[eval(JOSM_search("user:\"Hector Vector\""))] {
+*[osm_user_name() == "Hector Vector"] {
   set .jman;
 }
 
@@ -640,7 +640,7 @@ node.Sarah,
 node.Savana,
 node.Sharon,
 node.SteveC,
-node.WilliamF, 
+node.WilliamF,
 
 /*Nokhu*/
 
