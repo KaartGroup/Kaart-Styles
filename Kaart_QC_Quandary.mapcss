@@ -429,7 +429,7 @@ node:modified < way::modified_layer {
   set .Derek;
 }
 
-*[setting("user_Nutchaya")][osm_user_name() == "nutchayahonvilai"] {
+*[setting("user_Nutchaya")][osm_user_name() == "nutchayahongvilai"] {
   set .Nutchaya;
 }
 
