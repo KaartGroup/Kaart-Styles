@@ -270,6 +270,10 @@ setting::user_Jon {
   group: "quandary";
 }
 
+
+
+
+
 /* Timpanogos */
 settings::timpanogos {
   label: tr("Timpanogos");
@@ -423,13 +427,16 @@ node:modified < way::modified_layer {
   set .Jon;
 }
 
+
+
+
 /* Timpanogos */
 
 *[setting("user_Derek")][osm_user_name() == "DerekBev"] {
   set .Derek;
 }
 
-*[setting("user_Nutchaya")][osm_user_name() == "nutchayahongvilai"] {
+*[setting("user_Nutchaya")][osm_user_id() == 10028134] {
   set .Nutchaya;
 }
 
