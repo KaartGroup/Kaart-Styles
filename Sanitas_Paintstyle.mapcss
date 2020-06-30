@@ -1,5 +1,5 @@
 meta {
-    title: "Sanitas Style";
+    title: "Mexico Import Style";
     version: "1.0";
     description: "Adds custom styling to elements/features within JOSM";
     author: "SomethingSimple, RoadMapsYou, NodiusWayus, Zack LaVergne";
@@ -103,7 +103,7 @@ along those ways. Same goes for names which hold the "name" value - not name:en 
 
 3. Added more inline validation checks
   - Building inside of building check (does not count multi-polygons)
-  - Highway connected to buiolding check
+  - Highway connected to building check
   - Huge building check
   - Waterway connected to bridge check
 
@@ -113,6 +113,13 @@ along those ways. Same goes for names which hold the "name" value - not name:en 
 
 6. Tertiary nodes now render well with yellow & black instead of black & yellow
 
+~~~~~~~~~~~~  2.2 -- Added default style for unconnected nodes -- Louis Morales -- 3/2/2020
+
+1. Nodes on end of a road will be a red triangle If unconnected
+
+~~~~~~~~~~~~  2.3 -- Unconnected nodes visible at all zoom levels -- Louis Morales -- 5/11/2020
+
+1. Unconnected nodes will resize as user zooms out
 
 
 
@@ -3007,7 +3014,7 @@ node|z22:connection.tertiary2   { symbol-size: 10; }
 
 node!:connection[setting("knode_setting")] {
 	symbol-shape: circle;
-	symbol-size: 6;
+	symbol-size:6;
 	set .child_knodes;
     symbol-stroke-color: yellow;
     symbol-fill-color: black;
@@ -3063,25 +3070,7 @@ way[highway]!:closed >[index=1] node!:connection {
     set .unconnected
 }
 
-node|z20-.unconnected {
-    symbol-shape: triangle;
-    symbol-size: 20;
-    symbol-fill-color: red;
-    symbol-fill-opacity: 1;
-    symbol-stroke-color: red;
-    symbol-stroke-opacity: 0.6;
-}
-
-node|z17-19.unconnected {
-    symbol-shape: triangle;
-    symbol-size: 15;
-    symbol-fill-color: red;
-    symbol-fill-opacity: 1;
-    symbol-stroke-color: red;
-    symbol-stroke-opacity: 0.6;
-}
-
-node|z14-16.unconnected {
+node|z10-.unconnected {
     symbol-shape: triangle;
     symbol-size: 10;
     symbol-fill-color: red;
