@@ -260,7 +260,7 @@ setting::user_Savana {
 
 setting::user_Sierra {
   type:boolean;
-  label:tr("Turn User sierrae-kaart On/Off");
+  label:tr("Turn User riskybiznu On/Off");
   default: true;
   group: "sanitas";
 }
@@ -393,7 +393,7 @@ node:modified < way::modified_layer {
   set .Savana;
 }
 
-*[osm_user_name() == "sierrae-kaart"][setting("user_Sierra")] {
+*[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
   set .Sierra;
 }
 
