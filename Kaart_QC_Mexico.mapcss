@@ -97,6 +97,27 @@ setting::user_AlexD {
   group: "sanitas";
 }
 
+setting::user_Angie {
+  type: boolean;
+  label: tr("Turn User Inigo_Maptoya On/Off");
+  default: true;
+  group: "sanitas";
+}
+
+setting::user_Anita {
+  type: boolean;
+  label: tr("Turn User natureandchill On/Off");
+  default: true;
+  group: "sanitas";
+}
+
+setting::user_Anja {
+  type: boolean;
+  label: tr("Turn User Ajaie On/Off");
+  default: true;
+  group: "sanitas";
+}
+
 setting::user_ArleneC {
   type:boolean;
   label:tr("Turn User ArleneC On/Off");
@@ -118,13 +139,6 @@ setting::user_BreiaV {
   group: "sanitas";
 }
 
-setting::user_BrianL {
-  type:boolean;
-  label:tr("Turn User Unicorn Ostrich On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_Casey {
   type:boolean;
   label:tr("Turn User CaseyIvanW On/Off");
@@ -132,10 +146,10 @@ setting::user_Casey {
   group: "sanitas";
 }
 
-setting::user_David {
-  type:boolean;
-  label:tr("Turn User krinkov76239 On/Off");
-  default:true;
+setting::user_Daniel {
+  type: boolean;
+  label: tr("Turn User The_Intern On/Off");
+  default: true;
   group: "sanitas";
 }
 
@@ -149,13 +163,6 @@ setting::user_IanK {
 setting::user_JacindaD {
   type:boolean;
   label:tr("Turn User Cinderblock On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Keeley {
-  type:boolean;
-  label:tr("Turn User kebobo On/Off");
   default:true;
   group: "sanitas";
 }
@@ -174,6 +181,13 @@ setting::user_LoganM {
   group: "sanitas";
 }
 
+setting::user_LoganS {
+  type: boolean;
+  label: tr("Turn User 127logs On/Off");
+  default: true;
+  group: "sanitas";
+}
+
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
@@ -184,13 +198,6 @@ setting::user_LouisM {
 setting::user_Marshall {
   type:boolean;
   label:tr("Turn User MTG5093 On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_MattB {
-  type:boolean;
-  label:tr("Turn User MappnMatt On/Off");
   default:true;
   group: "sanitas";
 }
@@ -216,10 +223,10 @@ setting::user_NickE {
   group: "sanitas";
 }
 
-setting::user_Rob {
-  type:boolean;
-  label:tr("Turn User RouteRob On/Off");
-  default:true;
+setting::user_Riley {
+  type: boolean;
+  label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
+  default: true;
   group: "sanitas";
 }
 
@@ -237,10 +244,10 @@ setting::user_RonmelR {
   group: "sanitas";
 }
 
-setting::user_Sarah {
-  type:boolean;
-  label:tr("Turn User Yagni On/Off");
-  default:true;
+setting::user_Sage {
+  type: boolean;
+  label: tr("Turn User BobGod On/Off");
+  default: true;
   group: "sanitas";
 }
 
@@ -251,10 +258,10 @@ setting::user_Savana {
   group: "sanitas";
 }
 
-setting::user_Sharon {
+setting::user_Sierra {
   type:boolean;
-  label:tr("Turn User mapcraft On/Off");
-  default:true;
+  label:tr("Turn User riskybiznu On/Off");
+  default: true;
   group: "sanitas";
 }
 
@@ -263,109 +270,6 @@ setting::user_SteveC {
   label:tr("Turn User Smoothdog On/Off");
   default:true;
   group: "sanitas";
-}
-
-setting::user_WilliamF {
-  type:boolean;
-  label:tr("Turn User Buddy-the-Elf On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-/* Nokhu */
-settings::nokhu {
-  label: tr("Nokhu");
-}
-
-setting::user_Angie {
-  type: boolean;
-  label: tr("Turn User Inigo_Maptoya On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Anita {
-  type: boolean;
-  label: tr("Turn User natureandchill On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Anja {
-  type: boolean;
-  label: tr("Turn User Ajaie On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Daniel {
-  type: boolean;
-  label: tr("Turn User The_Intern On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Joseph {
-  type: boolean;
-  label: tr("Turn User Szekha On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_LoganS {
-  type: boolean;
-  label: tr("Turn User 127logs On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Luis {
-  type: boolean;
-  label: tr("Turn User medrano93 On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_NickM {
-  type: boolean;
-  label: tr("Turn User nickmettauer On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_RD {
-  type: boolean;
-  label: tr("Turn User mr_et On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Riley {
-  type: boolean;
-  label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_RyanF {
-  type: boolean;
-  label: tr("Turn User rytheking On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Sage {
-  type: boolean;
-  label: tr("Turn User BobGod On/Off");
-  default: true;
-  group: "nokhu";
-}
-
-setting::user_Sierra {
-  type:boolean;
-  label:tr("Turn User sierrae-kaart On/Off");
-  default: true;
-  group: "nokhu";
 }
 
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
@@ -397,28 +301,36 @@ node:modified < way::modified_layer {
   set .AlexD;
 }
 
-*[osm_user_name() == "ArleneC"][setting("user_ArleneC")] {
-  set .ArleneC;
+*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
+  set .Angie;
+}
+
+*[osm_user_name() == "natureandchill"][setting("user_Anita")] {
+  set .Anita;
+}
+
+*[osm_user_name() == "Ajaie"][setting("user_Anja")] {
+  set .Anja;
 }
 
 *[osm_user_name() == "acrague"][setting("user_Anthony")] {
   set .Anthony;
 }
 
-*[osm_user_name() == "3agleOne"][setting("user_BreiaV")] {
-  set .BreiaV;
+*[osm_user_name() == "ArleneC"][setting("user_ArleneC")] {
+  set .ArleneC;
 }
 
-*[osm_user_name() == "Unicorn Ostrich"][setting("user_BrianL")] {
-  set .BrianL;
+*[osm_user_name() == "3agleOne"][setting("user_BreiaV")] {
+  set .BreiaV;
 }
 
 *[osm_user_name() == "CaseyIvanW"][setting("user_Casey")] {
   set .Casey;
 }
 
-*[osm_user_name() == "krinkov76239"][setting("user_David")] {
-  set .David;
+*[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
+  set .Daniel;
 }
 
 *[osm_user_name() == "Ikohl"][setting("user_IanK")] {
@@ -429,10 +341,6 @@ node:modified < way::modified_layer {
   set .JacindaD;
 }
 
-*[osm_user_name() == "kebobo"][setting("user_Keeley")] {
-  set .Keeley;
-}
-
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
   set .LeanneS;
 }
@@ -441,16 +349,16 @@ node:modified < way::modified_layer {
   set .LoganM;
 }
 
+*[osm_user_name() == "127logs"][setting("user_LoganS")] {
+  set .LoganS;
+}
+
 *[osm_user_name() == "BlueRanger"][setting("user_LouisM")] {
   set .LouisM;
 }
 
 *[osm_user_name() == "MTG5093"][setting("user_Marshall")] {
   set .Marshall;
-}
-
-*[osm_user_name() == "MappnMatt"][setting("user_MattB")] {
-  set .MattB;
 }
 
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
@@ -465,8 +373,8 @@ node:modified < way::modified_layer {
   set .NickE;
 }
 
-*[osm_user_name() == "RouteRob"][setting("user_Rob")] {
-  set .Rob;
+*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
+  set .Riley;
 }
 
 *[osm_user_name() == "RobinNoodles"][setting("user_RobinH")] {
@@ -477,78 +385,20 @@ node:modified < way::modified_layer {
   set .RonmelR;
 }
 
-*[osm_user_name() == "Yagni"][setting("user_Sarah")] {
-  set .Sarah;
+*[osm_user_name() == "BobGod"][setting("user_Sage")] {
+  set .Sage;
 }
 
 *[osm_user_name() == "staysavy"][setting("user_Savana")] {
   set .Savana;
 }
 
-*[osm_user_name() == "mapcraft"][setting("user_Sharon")] {
-  set .Sharon;
+*[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
+  set .Sierra;
 }
 
 *[osm_user_name() == "Smoothdog"][setting("user_SteveC")] {
   set .SteveC;
-}
-
-*[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")] {
-  set .WilliamF;
-}
-
-/* User specific styles: Nokhu */
-
-*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
-  set .Angie;
-}
-
-*[osm_user_name() == "natureandchill"][setting("user_Anita")] {
-  set .Anita;
-}
-
-*[osm_user_name() == "Ajaie"][setting("user_Anja")] {
-  set .Anja;
-}
-
-*[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
-  set .Daniel;
-}
-
-*[osm_user_name() == "Szekha"][setting("user_Joseph")] {
-  set .Joseph;
-}
-
-*[osm_user_name() == "127logs"][setting("user_LoganS")] {
-  set .LoganS;
-}
-
-*[osm_user_name() == "medrano93"][setting("user_Luis")] {
-  set .Luis;
-}
-
-*[osm_user_name() == "nickmettauer"][setting("user_NickM")] {
-  set .NickM;
-}
-
-*[osm_user_name() == "mr_et"][setting("user_RD")] {
-  set .RD;
-}
-
-*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
-  set .Riley;
-}
-
-*[osm_user_name() == "rytheking"][setting("user_RyanF")] {
-  set .RyanF;
-}
-
-*[osm_user_name() == "BobGod"][setting("user_Sage")] {
-  set .Sage;
-}
-
-*[osm_user_name() == "sierrae-kaart"][setting("user_Sierra")] {
-  set .Sierra;
 }
 
 /* This is how you search for someone with a space in their name
@@ -561,47 +411,31 @@ node:modified < way::modified_layer {
 /*Sanitas*/
 
 way.AlexD,
-way.ArleneC,
-way.Anthony,
-way.BreiaV,
-way.BrianL,
-way.Casey,
-way.David,
-way.IanK,
-way.JacindaD,
-way.Keeley,
-way.LeanneS,
-way.LoganM,
-way.LouisM,
-way.Marshall,
-way.MattB,
-way.MorgenM,
-way.NatashaS,
-way.NickE,
-way.Rob,
-way.RobinH,
-way.RonmelR,
-way.Sarah,
-way.Savana,
-way.Sharon,
-way.SteveC,
-way.WilliamF,
-
-/*Nokhu*/
-
 way.Angie,
 way.Anita,
 way.Anja,
+way.Anthony,
+way.ArleneC,
+way.BreiaV,
+way.Casey,
 way.Daniel,
-way.Joseph,
+way.IanK,
+way.JacindaD,
+way.LeanneS,
+way.LoganM,
 way.LoganS,
-way.Luis,
-way.NickM,
-way.RD,
+way.LouisM,
+way.Marshall,
+way.MorgenM,
+way.NatashaS,
+way.NickE,
 way.Riley,
-way.RyanF,
+way.RobinH,
+way.RonmelR,
 way.Sage,
-way.Sierra
+way.Savana,
+way.Sierra,
+way.SteveC
 {
   z-index: -10;
   casing-color: #B108D6;
@@ -616,47 +450,32 @@ way.Sierra
 /*Sanitas*/
 
 node.AlexD,
-node.ArleneC,
+node.Angie,
+node.Anita,
+node.Anja,
 node.Anthony,
+node.ArleneC,
 node.BreiaV,
-node.BrianL,
 node.Casey,
-node.David,
+node.Daniel,
 node.IanK,
 node.JacindaD,
 node.Keeley,
 node.LeanneS,
 node.LoganM,
+node.LoganS,
 node.LouisM,
 node.Marshall,
-node.MattB,
 node.MorgenM,
 node.NatashaS,
 node.NickE,
-node.Rob,
+node.Riley,
 node.RobinH,
 node.RonmelR,
-node.Sarah,
-node.Savana,
-node.Sharon,
-node.SteveC,
-node.WilliamF,
-
-/*Nokhu*/
-
-node.Angie,
-node.Anita,
-node.Anja,
-node.Daniel,
-node.Joseph,
-node.LoganS,
-node.Luis,
-node.NickM,
-node.RD,
-node.Riley,
-node.RyanF,
 node.Sage,
-node.Sierra
+node.Savana,
+node.Sierra,
+node.SteveC
 {
   symbol-size: 15;
   symbol-shape: triangle;
