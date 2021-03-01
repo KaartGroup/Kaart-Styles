@@ -100,6 +100,9 @@ setting::name_setting {
   settings::ref_settings {
     label: tr("Highlight ways with ref:tags");
   }
+  settings::destination_settings {
+    label: tr("Highlight ways with destination tags");
+  }
 }
 
 setting::ref_labels {
@@ -121,6 +124,27 @@ setting::ref_highlight_setting {
   label: tr("Highlight ways with ref:tags with a halo");
   default: false;
   group: "ref_settings";
+}
+
+setting::destination_labels {
+  type: boolean;
+  label: tr("Show destination tags as text (affected by \"Remove Street Name Labels\")");
+  default: false;
+  group: "destination_settings";
+}
+
+setting::destination_setting {
+  type: boolean;
+  label: tr("Highlight ways with destination:tags in a solid color");
+  default: false;
+  group: "destination_settings";
+}
+
+setting::destination_highlight_setting {
+  type: boolean;
+  label: tr("Highlight ways with destination:tags with a halo");
+  default: false;
+  group: "destination_settings";
 }
 
 setting::check_name {
@@ -1647,6 +1671,58 @@ way|z17-[destination:ref][!setting("ref_setting")][setting("ref_highlight_settin
   width: 1;
 }
 
+
+/*******************************
+ * Destination tags (destination) *
+ *******************************/
+*["destination"][setting("destination_setting") || setting("destination_highlight_setting")][setting("destination_labels")][!setting("remove_name")] {
+  text: eval(tag("destination"));
+}
+
+*["destination"][setting("destination_setting")][setting("destination_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination"))), 0)) / 4294967296.0, 0.9, 0.7);
+}
+
+/** This needs trim_list (https://josm.openstreetmap.de/ticket/18408) to remove extraneous whitespace TODO */
+*["destination"][setting("destination_setting")][!setting("destination_highlight_setting")] {
+  color: hsb_color(CRC32_checksum(join_list(";", (sort_list(split(";", tag("destination")))))) / 4294967296.0, 0.9, 0.7);
+}
+
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 4][!setting("destination_setting")][setting("destination_highlight_setting")]::layer_destination_4,
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 4][setting("destination_highlight_setting")]::layer_destination_4 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination"))), 3))/4294967296.0, 0.9, 0.7);
+  casing-width: 20;
+  object-z-index: -4.0;
+  linejoin: bevel;
+}
+
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 3][!setting("destination_setting")][setting("destination_highlight_setting")]::layer_destination_3,
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 3][setting("destination_highlight_setting")]::layer_destination_3 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination"))), 2))/4294967296.0, 0.9, 0.7);
+  casing-width: 15;
+  object-z-index: -3.0;
+  linejoin: bevel;
+}
+
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 2][!setting("destination_setting")][setting("destination_highlight_setting")]::layer_destination_2,
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 2][setting("destination_highlight_setting")]::layer_destination_2 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination"))), 1))/4294967296.0, 0.9, 0.7);
+  casing-width: 10;
+  object-z-index: -2.0;
+  linejoin: bevel;
+}
+
+way|z17-[destination][count(sort_list(split(";", tag("destination")))) >= 1][!setting("destination_setting")][setting("destination_highlight_setting")]::layer_destination_1 {
+  casing-color: hsb_color(CRC32_checksum(get(sort_list(split(";", tag("destination"))), 0))/4294967296.0, 0.9, 0.7);
+  casing-width: 5;
+  object-z-index: -1.0;
+  linejoin: bevel;
+}
+
+way|z17-[destination][!setting("destination_setting")][setting("destination_highlight_setting")],
+way|z17-[destination:destination][!setting("destination_setting")][setting("destination_highlight_setting")] {
+  width: 1;
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
