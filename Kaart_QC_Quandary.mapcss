@@ -116,9 +116,9 @@ setting::user_Aaron {
   group: "quandary";
 }
 
-setting::user_Abby {
+setting::user_AllysonS {
   type:boolean;
-  label:tr("Turn User DowntownAbby On/Off");
+  label:tr("Turn User CostelloMellow On/Off");
   default:true;
   group: "quandary";
 }
@@ -126,13 +126,6 @@ setting::user_Abby {
 setting::user_Corban {
   type:boolean;
   label:tr("Turn User Corban8 On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Danielle {
-  type:boolean;
-  label:tr("Turn User GhostEye On/Off");
   default:true;
   group: "quandary";
 }
@@ -154,6 +147,13 @@ setting::user_IanM {
 setting::user_JacobK {
   type:boolean;
   label:tr("Turn User CoolGuyJake On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_JakeK {
+  type:boolean;
+  label:tr("Turn User TerraFormerJake On/Off");
   default:true;
   group: "quandary";
 }
@@ -186,13 +186,6 @@ setting::user_Kira {
   group: "quandary";
 }
 
-setting::user_Lucas {
-  type:boolean;
-  label:tr("Turn User Traaker_L On/Off");
-  default:true;
-  group: "quandary";
-}
-
 setting::user_Hamish {
   type:boolean;
   label:tr("Turn User hairyhaggis On/Off");
@@ -214,58 +207,9 @@ setting::user_Rich {
   group: "quandary";
 }
 
-setting::user_RyanK {
-  type:boolean;
-  label:tr("Turn User Whimsical Otter On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_RyanR {
-  type:boolean;
-  label:tr("Turn User Kaarti_B On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Sara {
-  type:boolean;
-  label:tr("Turn User sbburg On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Sarah {
-  type:boolean;
-  label:tr("Turn User saradenise On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Timothy {
-  type:boolean;
-  label:tr("Turn User timi_hendrix On/Off");
-  default:true;
-  group: "quandary";
-}
-
 setting::user_Tom {
   type:boolean;
   label:tr("Turn User tomincolorado On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Gray {
-  type:boolean;
-  label:tr("Turn User theArchDruid On/Off");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_Jon {
-  type:boolean;
-  label:tr("Turn User JonKrato On/Off");
   default:true;
   group: "quandary";
 }
@@ -296,13 +240,6 @@ setting::user_Nutchaya {
 setting::user_Pace {
   type:boolean;
   label:tr("Turn User InnerPace On/Off");
-  default:true;
-  group: "timpanogos";
-}
-
-setting::user_Dain {
-  type:boolean;
-  label:tr("Turn User DRM150 On/Off");
   default:true;
   group: "timpanogos";
 }
@@ -339,16 +276,12 @@ node:modified < way::modified_layer {
   set .Aaron;
 }
 
-*[setting("user_Abby")][osm_user_name() == "DowntownAbby"] {
-  set .Abby;
+*[setting("user_AllysonS")][osm_user_name() == "CostelloMellow"] {
+  set .Aaron;
 }
 
 *[setting("user_Corban")][osm_user_name() == "Corban8"] {
   set .Corban;
-}
-
-*[setting("user_Danielle")][osm_user_name() == "GhostEye"] {
-  set .Danielle;
 }
 
 *[setting("user_Kaiti")][osm_user_name() == "ProfessorLupin"] {
@@ -360,6 +293,10 @@ node:modified < way::modified_layer {
 }
 
 *[setting("user_JacobK")][osm_user_name() == "CoolGuyJake"] {
+  set .JacobK;
+}
+
+*[setting("user_JakeK")][osm_user_name() == "TerraFormerJake"] {
   set .JacobK;
 }
 
@@ -379,10 +316,6 @@ node:modified < way::modified_layer {
   set .Kira;
 }
 
-*[setting("user_Lucas")][osm_user_name() == "Traaker_L"] {
-  set .Lucas;
-}
-
 *[setting("user_Hamish")][osm_user_name() == "hairyhaggis"] {
   set .Hamish;
 }
@@ -395,36 +328,8 @@ node:modified < way::modified_layer {
   set .Rich;
 }
 
-*[setting("user_RyanK")][osm_user_name() == "Whimsical Otter"] {
-  set .RyanK;
-}
-
-*[setting("user_RyanR")][osm_user_name() == "Kaarti_B"] {
-  set .RyanR;
-}
-
-*[setting("user_Sara")][osm_user_name() == "sbburg"] {
-  set .Sara;
-}
-
-*[setting("user_Sarah")][osm_user_name() == "saradenise"] {
-  set .Sarah;
-}
-
-*[setting("user_Timothy")][osm_user_name() == "timi_hendrix"] {
-  set .Timothy;
-}
-
 *[setting("user_Tom")][osm_user_name() == "tomincolorado"] {
   set .Tom;
-}
-
-*[setting("user_Gray")][osm_user_name() == "theArchDruid"] {
-  set .Gray;
-}
-
-*[setting("user_Jon")][osm_user_name() == "JonKrato"] {
-  set .Jon;
 }
 
 
@@ -444,9 +349,6 @@ node:modified < way::modified_layer {
   set .Pace;
 }
 
-*[setting("user_Dain")][osm_user_name() == "DRM150"] {
-  set .Dain;
-}
 
 /* This is how you search for someone with a space in their name
 
@@ -459,32 +361,23 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
 way.Aaron,
-way.Abby,
+way.AllysonS,
 way.Corban,
-way.Danielle,
 way.Kaiti,
 way.IanM,
 way.JacobK,
+way.JakeK,
 way.JasonH,
 way.William,
 way.Jorge,
 way.Kira,
-way.Lucas,
 way.Hamish,
 way.Reed,
 way.Rich,
-way.RyanK,
-way.RyanR,
-way.Sara,
-way.Sarah,
-way.Timothy,
 way.Tom,
 way.Derek,
-way.Gray,
 way.Nutchaya,
-way.Pace,
-way.Jon,
-way.Dain {
+way.Pace {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -496,32 +389,23 @@ way.Dain {
 }
 
 node.Aaron,
-node.Abby,
+node.AllysonS,
 node.Corban,
-node.Danielle,
 node.Kaiti,
 node.IanM,
 node.JacobK,
+node.JakeK,
 node.JasonH,
 node.William,
 node.Jorge,
 node.Kira,
-node.Lucas,
 node.Hamish,
 node.Reed,
 node.Rich,
-node.RyanK,
-node.RyanR,
-node.Sara,
-node.Sarah,
-node.Timothy,
 node.Tom,
 node.Derek,
-node.Gray,
 node.Nutchaya,
-node.Pace,
-node.Jon,
-node.Dain {
+node.Pace {
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
