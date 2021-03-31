@@ -214,6 +214,13 @@ setting::user_Tom {
   group: "quandary";
 }
 
+setting::user_Paul {
+  type:boolean;
+  label:tr("Turn User hayduke1275 On/Off");
+  default:true;
+  group: "quandary";
+}
+
 
 
 
@@ -332,6 +339,10 @@ node:modified < way::modified_layer {
   set .Tom;
 }
 
+*[setting("user_Paul")][osm_user_name() == "hayduke1275"] {
+  set .Tom;
+}
+
 
 
 
@@ -377,7 +388,8 @@ way.Rich,
 way.Tom,
 way.Derek,
 way.Nutchaya,
-way.Pace {
+way.Pace,
+way.Paul {
   z-index: -10;
   casing-color: #B108D6;
   casing-width: 7;
@@ -405,7 +417,8 @@ node.Rich,
 node.Tom,
 node.Derek,
 node.Nutchaya,
-node.Pace {
+node.Pace,
+node.Paul {
   symbol-size: 15;
   symbol-shape: triangle;
   symbol-stroke-color: blue;
