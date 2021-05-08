@@ -139,13 +139,6 @@ setting::user_BreiaV {
   group: "sanitas";
 }
 
-setting::user_Casey {
-  type:boolean;
-  label:tr("Turn User CaseyIvanW On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_Daniel {
   type: boolean;
   label: tr("Turn User The_Intern On/Off");
@@ -174,6 +167,13 @@ setting::user_LeanneS {
   group: "sanitas";
 }
 
+setting::user_LoganB {
+  type:boolean;
+  label:tr("Turn User LoganBarnes On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_LoganM {
   type:boolean;
   label:tr("Turn User Dalekokarta On/Off");
@@ -191,13 +191,6 @@ setting::user_LoganS {
 setting::user_LouisM {
   type:boolean;
   label:tr("Turn User BlueRanger On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Marshall {
-  type:boolean;
-  label:tr("Turn User MTG5093 On/Off");
   default:true;
   group: "sanitas";
 }
@@ -237,20 +230,6 @@ setting::user_RobinH {
   group: "sanitas";
 }
 
-setting::user_RonmelR {
-  type:boolean;
-  label:tr("Turn User Mel_1 On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Sage {
-  type: boolean;
-  label: tr("Turn User BobGod On/Off");
-  default: true;
-  group: "sanitas";
-}
-
 setting::user_Savana {
   type:boolean;
   label:tr("Turn User staysavy On/Off");
@@ -262,13 +241,6 @@ setting::user_Sierra {
   type:boolean;
   label:tr("Turn User riskybiznu On/Off");
   default: true;
-  group: "sanitas";
-}
-
-setting::user_SteveC {
-  type:boolean;
-  label:tr("Turn User Smoothdog On/Off");
-  default:true;
   group: "sanitas";
 }
 
@@ -325,10 +297,6 @@ node:modified < way::modified_layer {
   set .BreiaV;
 }
 
-*[osm_user_name() == "CaseyIvanW"][setting("user_Casey")] {
-  set .Casey;
-}
-
 *[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
   set .Daniel;
 }
@@ -345,6 +313,10 @@ node:modified < way::modified_layer {
   set .LeanneS;
 }
 
+*[osm_user_name() == "LoganBarnes"][setting("user_LoganB")] {
+  set .LoganB;
+}
+
 *[osm_user_name() == "Dalekokarta"][setting("user_LoganM")] {
   set .LoganM;
 }
@@ -355,10 +327,6 @@ node:modified < way::modified_layer {
 
 *[osm_user_name() == "BlueRanger"][setting("user_LouisM")] {
   set .LouisM;
-}
-
-*[osm_user_name() == "MTG5093"][setting("user_Marshall")] {
-  set .Marshall;
 }
 
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
@@ -381,24 +349,12 @@ node:modified < way::modified_layer {
   set .RobinH;
 }
 
-*[osm_user_name() == "Mel_1"][setting("user_RonmelR")] {
-  set .RonmelR;
-}
-
-*[osm_user_name() == "BobGod"][setting("user_Sage")] {
-  set .Sage;
-}
-
 *[osm_user_name() == "staysavy"][setting("user_Savana")] {
   set .Savana;
 }
 
 *[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
   set .Sierra;
-}
-
-*[osm_user_name() == "Smoothdog"][setting("user_SteveC")] {
-  set .SteveC;
 }
 
 /* This is how you search for someone with a space in their name
@@ -417,25 +373,21 @@ way.Anja,
 way.Anthony,
 way.ArleneC,
 way.BreiaV,
-way.Casey,
 way.Daniel,
 way.IanK,
 way.JacindaD,
 way.LeanneS,
+way.LoganB,
 way.LoganM,
 way.LoganS,
 way.LouisM,
-way.Marshall,
 way.MorgenM,
 way.NatashaS,
 way.NickE,
 way.Riley,
 way.RobinH,
-way.RonmelR,
-way.Sage,
 way.Savana,
-way.Sierra,
-way.SteveC
+way.Sierra
 {
   z-index: -10;
   casing-color: #B108D6;
@@ -456,26 +408,22 @@ node.Anja,
 node.Anthony,
 node.ArleneC,
 node.BreiaV,
-node.Casey,
 node.Daniel,
 node.IanK,
 node.JacindaD,
 node.Keeley,
 node.LeanneS,
+node.LoganB,
 node.LoganM,
 node.LoganS,
 node.LouisM,
-node.Marshall,
 node.MorgenM,
 node.NatashaS,
 node.NickE,
 node.Riley,
 node.RobinH,
-node.RonmelR,
-node.Sage,
 node.Savana,
-node.Sierra,
-node.SteveC
+node.Sierra
 {
   symbol-size: 15;
   symbol-shape: triangle;
