@@ -1203,6 +1203,8 @@ relation[type=route][route=foot] > way::route { z-index: -1; width: 10; color: #
 
 /* Junctions */
 
+/* Roundabouts */
+
 way[highway=motorway][junction=roundabout] {
     width: 4;
     casing-width: 2;
@@ -1274,7 +1276,78 @@ way[highway=living_street][junction=roundabout] {
     dashes: 15,15;
 }
 
+/* Circular */
 
+way[highway=motorway][junction=circular] {
+    width: 4;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #CF2081;
+    dashes: 5, 5;
+}
+way[highway=trunk][junction=circular] {
+    width: 3.7;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #DD2F22;
+    dashes: 5, 5;
+}
+way[highway=primary][junction=circular] {
+    z-index: 6;
+    width: 3.1;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #FFA500;
+    dashes: 5, 5;
+}
+way[highway=secondary][junction=circular] {
+    z-index: 5;
+    width: 3;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #FFFF00;
+    dashes: 5, 5;
+}
+way[highway=tertiary][junction=circular] {
+    z-index: 4;
+    width: 3;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #408ccc;
+    dashes: 5, 5;
+}
+way[highway=residential][junction=circular] {
+    z-index: 3;
+    width: 2.8;
+    casing-width: 1;
+    casing-color: #0BE3AC;
+    color: #ffffff;
+    dashes: 5, 5;
+}
+way[highway=service][junction=circular] {
+    z-index: 3;
+    width: 2.8;
+    casing-width: 1.3;
+    casing-color: #0BE3AC;
+    color: #D4FF33;
+    dashes: 5, 5;
+}
+way[highway=unclassified][junction=circular] {
+    z-index: 3;
+    width: 4;
+    casing-width: 2;
+    casing-color: #0BE3AC;
+    color: #96795d;
+    dashes: 5, 5;
+}
+way[highway=living_street][junction=circular] {
+    z-index: 3;
+    width: 4;
+    casing-color: #0BE3AC;
+    dashes-background-color: #00ff00;
+    color: #00ff00;
+    dashes: 5, 5;
+}
 
 
 
