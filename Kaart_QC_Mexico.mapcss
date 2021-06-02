@@ -160,6 +160,13 @@ setting::user_JacindaD {
   group: "sanitas";
 }
 
+setting::user_Landon {
+  type:boolean;
+  label:tr("Turn User luin132 On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_LeanneS {
   type:boolean;
   label:tr("Turn User LSkalayo On/Off");
@@ -309,6 +316,10 @@ node:modified < way::modified_layer {
   set .JacindaD;
 }
 
+*[osm_user_name() == "luin132"][setting("user_Landon")] {
+  set .Landon;
+}
+
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
   set .LeanneS;
 }
@@ -376,6 +387,7 @@ way.BreiaV,
 way.Daniel,
 way.IanK,
 way.JacindaD,
+way.Landon,
 way.LeanneS,
 way.LoganB,
 way.LoganM,
@@ -411,7 +423,7 @@ node.BreiaV,
 node.Daniel,
 node.IanK,
 node.JacindaD,
-node.Keeley,
+node.Landon,
 node.LeanneS,
 node.LoganB,
 node.LoganM,
