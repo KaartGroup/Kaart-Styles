@@ -43,6 +43,10 @@ Relations Setting allow way[highway]ws you to highlight roads/ways which contain
 Some countries have adopted relations as the go-to way[highway] for adding names and ref tags. If you know where relations exist,
 it co way[highway]uld possibly help in finding and editing names - whilst making sure you do not break relations.
 
+8.
+Added unconnected nodes style setting originally from Sanitas paintstyle as written by Louis Morales. 
+Added the ability to toggle the feature on and off and changes some of the visual properties.
+
 
  */
 
@@ -67,6 +71,12 @@ setting::node_setting {
   default: false;
 }
 
+
+setting::unconnected_setting {
+  type: boolean;
+  label: tr("Show unconnected nodes");
+  default: false;
+}
 
 
 setting::hide_icons {
@@ -3038,6 +3048,32 @@ node.child_nodes:selected {
 }
 
 
+/* Node Unconnected Styles */
+
+/* Set unconnected nodes */
+way[highway]!:closed >[index=-1] node!:connection[setting("unconnected_setting")],
+way[highway]!:closed >[index=1] node!:connection[setting("unconnected_setting")] {
+    set .unconnected;
+}
+
+/* Unconnected nodes zoom 10 and above */
+node|z10-.unconnected {
+    symbol-shape: triangle;
+    symbol-size: 6;
+    symbol-fill-color: red;
+    symbol-fill-opacity: 1;
+    symbol-stroke-color: red;
+    symbol-stroke-opacity: 0.6;
+}
+
+node:selected.unconnected {
+    symbol-shape: triangle;
+    symbol-size: 12;
+	symbol-fill-color: red;
+    symbol-fill-opacity: 1;
+    symbol-stroke-color: #00FFFF;
+    symbol-stroke-opacity: 1.0;
+}
 
 
 
