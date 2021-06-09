@@ -97,6 +97,13 @@ setting::user_AlexD {
   group: "sanitas";
 }
 
+setting::user_AllanR {
+  type:boolean;
+  label:tr("Turn User allanross2 On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_Angie {
   type: boolean;
   label: tr("Turn User Inigo_Maptoya On/Off");
@@ -176,7 +183,7 @@ setting::user_LeanneS {
 
 setting::user_LoganB {
   type:boolean;
-  label:tr("Turn User LoganBarnes On/Off");
+  label:tr("Turn User WinterCartographer On/Off");
   default:true;
   group: "sanitas";
 }
@@ -219,6 +226,13 @@ setting::user_NatashaS {
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_Raul {
+  type:boolean;
+  label:tr("Turn User RaulKaart On/Off");
   default:true;
   group: "sanitas";
 }
@@ -280,6 +294,10 @@ node:modified < way::modified_layer {
   set .AlexD;
 }
 
+*[osm_user_name() == "allanross2"][setting("user_AllanR")] {
+  set .AllanR;
+}
+
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
   set .Angie;
 }
@@ -324,7 +342,7 @@ node:modified < way::modified_layer {
   set .LeanneS;
 }
 
-*[osm_user_name() == "LoganBarnes"][setting("user_LoganB")] {
+*[osm_user_name() == "WinterCartographer"][setting("user_LoganB")] {
   set .LoganB;
 }
 
@@ -350,6 +368,10 @@ node:modified < way::modified_layer {
 
 *[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
   set .NickE;
+}
+
+*[osm_user_name() == "RaulKaart"][setting("user_Raul)] {
+  set .Raul;
 }
 
 *[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
@@ -378,6 +400,7 @@ node:modified < way::modified_layer {
 /*Sanitas*/
 
 way.AlexD,
+way.AllanR,
 way.Angie,
 way.Anita,
 way.Anja,
@@ -396,6 +419,7 @@ way.LouisM,
 way.MorgenM,
 way.NatashaS,
 way.NickE,
+way.Raul,
 way.Riley,
 way.RobinH,
 way.Savana,
@@ -414,6 +438,7 @@ way.Sierra
 /*Sanitas*/
 
 node.AlexD,
+node.AllanR,
 node.Angie,
 node.Anita,
 node.Anja,
@@ -432,6 +457,7 @@ node.LouisM,
 node.MorgenM,
 node.NatashaS,
 node.NickE,
+node.Raul,
 node.Riley,
 node.RobinH,
 node.Savana,
