@@ -370,7 +370,7 @@ node:modified < way::modified_layer {
   set .NickE;
 }
 
-*[osm_user_name() == "RaulKaart"][setting("user_Raul)] {
+*[osm_user_name() == "RaulKaart"][setting("user_Raul")] {
   set .Raul;
 }
 
