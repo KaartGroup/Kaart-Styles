@@ -45,7 +45,7 @@ it co way[highway]uld possibly help in finding and editing names - whilst making
 
 8.
 Added unconnected nodes style setting originally from Sanitas paintstyle as written by Louis Morales. 
-Added the ability to toggle the feature on and off and changes some of the visual properties.
+Added the ability to toggle the feature on and off and changed some of the visual properties.
 
 
  */
@@ -3059,7 +3059,7 @@ way[highway]!:closed >[index=1] node!:connection[setting("unconnected_setting")]
 /* Unconnected nodes zoom 10 and above */
 node|z10-.unconnected {
     symbol-shape: triangle;
-    symbol-size: 6;
+    symbol-size: 9;
     symbol-fill-color: red;
     symbol-fill-opacity: 1;
     symbol-stroke-color: red;
@@ -3069,7 +3069,7 @@ node|z10-.unconnected {
 node:selected.unconnected {
     symbol-shape: triangle;
     symbol-size: 12;
-	symbol-fill-color: red;
+    symbol-fill-color: red;
     symbol-fill-opacity: 1;
     symbol-stroke-color: #00FFFF;
     symbol-stroke-opacity: 1.0;
