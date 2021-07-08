@@ -1562,74 +1562,62 @@ way[highway][surface=snow][setting("surface_t")]::core_motoroad {
 /*******************/
 /* way text labels - General Settings for Highways (Do NOT use font-size attribute in this section or it will screw up all other settings below)*/
 /*******************/
-way[highway]
-{
+
+way[highway] {
   z-index: 5;
   text: auto;
   text-color: white;
-  font-family: Avenir;
   text-position: line;
   text-halo-color: black;
   text-halo-radius: 2.5;
   text-halo-opacity: .5;
   linecap: round;
   casing-linecap: round;
-  }
-
+}
 
 
 /* Limit highway labels without display labels setting */
 
 way|z17-[highway] {
     font-size: 12;
-
-}
-
-way|z18[highway] {
-    font-size: 12;
-}
-way|z19[highway] {
-    font-size: 12;
-}
-way|z20[highway] {
-    font-size: 11;
-}
-way|z21-[highway] {
-    font-size: 12;
 }
 
 
 /* Increase size of highway labels using Setting */
 
-way|z17-[highway^=motorway][setting("highway_labels")],
-way|z17-[highway^=trunk][setting("highway_labels")],
-way|z17-[highway^=primary][setting("highway_labels")],
-way|z17-[highway^=secondary][setting("highway_labels")],
-way|z17-[highway^=tertiary][setting("highway_labels")],
-way|z17-[highway=unclassified][setting("highway_labels")],
-way|z17-[highway=residential][setting("highway_labels")],
-way|z17-[highway=living_street][setting("highway_labels")],
-way|z17-[highway=pedestrian][!area?][setting("highway_labels")],
-way|z17-[highway=service][setting("highway_labels")],
-way|z17-[highway=track][setting("highway_labels")] {
+way|z15-[highway^=motorway][setting("highway_labels")],
+way|z15-[highway^=trunk][setting("highway_labels")],
+way|z15-[highway^=primary][setting("highway_labels")],
+way|z15-[highway^=secondary][setting("highway_labels")],
+way|z15-[highway^=tertiary][setting("highway_labels")],
+way|z15-[highway=unclassified][setting("highway_labels")],
+way|z15-[highway=residential][setting("highway_labels")],
+way|z15-[highway=living_street][setting("highway_labels")],
+way|z15-[highway=pedestrian][!area?][setting("highway_labels")],
+way|z15-[highway=service][setting("highway_labels")],
+way|z15-[highway=track][setting("highway_labels")] {
     text: auto;
+    font-weight: bold;
     text-color: white;
     text-position: line;
-    linecap: round;
-    font-weight: bold;
-    casing-linecap: round;
-    text-halo-opacity: 1;
-    text-halo-radius: 2.5;
     text-halo-color: black;
-
+    text-halo-radius: 2.5;
+    text-halo-opacity: 1;
+    linecap: round;
+    casing-linecap: round;
 }
 
-way|z-16[highway][setting("highway_labels")] {
-    font-size: 10;
+
+way|z-15[highway][setting("highway_labels")] {
+    font-size: 12;
 }
 
-way|z16-[highway][setting("highway_labels")] {
+way|z16-17[highway][setting("highway_labels")] {
     font-size: 18;
+}
+
+way|z18-[highway][setting("highway_labels")] {
+    font-size: 20;
 }
 
 

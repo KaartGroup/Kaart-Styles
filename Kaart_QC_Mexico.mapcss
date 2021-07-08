@@ -90,16 +90,16 @@ settings::sanitas {
   label: tr("Sanitas");
 }
 
-setting::user_AlexD {
+setting::user_AaronL {
   type:boolean;
-  label:tr("Turn User Soccersweeper On/Off");
+  label:tr("Turn User StriDez On/Off");
   default:true;
   group: "sanitas";
 }
 
-setting::user_AllanR {
+setting::user_AlexD {
   type:boolean;
-  label:tr("Turn User allanross2 On/Off");
+  label:tr("Turn User Soccersweeper On/Off");
   default:true;
   group: "sanitas";
 }
@@ -160,13 +160,6 @@ setting::user_IanK {
   group: "sanitas";
 }
 
-setting::user_JacindaD {
-  type:boolean;
-  label:tr("Turn User Cinderblock On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_Landon {
   type:boolean;
   label:tr("Turn User luin132 On/Off");
@@ -177,6 +170,13 @@ setting::user_Landon {
 setting::user_LeanneS {
   type:boolean;
   label:tr("Turn User LSkalayo On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_LillianM {
+  type:boolean;
+  label:tr("Turn User noodlemommy On/Off");
   default:true;
   group: "sanitas";
 }
@@ -251,13 +251,6 @@ setting::user_RobinH {
   group: "sanitas";
 }
 
-setting::user_Savana {
-  type:boolean;
-  label:tr("Turn User staysavy On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_Sierra {
   type:boolean;
   label:tr("Turn User riskybiznu On/Off");
@@ -290,12 +283,12 @@ node:modified < way::modified_layer {
 /* QC Styles */
 /* User specific styles: Sanitas */
 
-*[osm_user_name() == "Soccersweeper"][setting("user_AlexD")] {
-  set .AlexD;
+*[osm_user_name() == "StriDez"][setting("user_AaronL")] {
+  set .AaronL;
 }
 
-*[osm_user_name() == "allanross2"][setting("user_AllanR")] {
-  set .AllanR;
+*[osm_user_name() == "Soccersweeper"][setting("user_AlexD")] {
+  set .AlexD;
 }
 
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
@@ -330,16 +323,16 @@ node:modified < way::modified_layer {
   set .IanK;
 }
 
-*[osm_user_name() == "Cinderblock"][setting("user_JacindaD")] {
-  set .JacindaD;
-}
-
 *[osm_user_name() == "luin132"][setting("user_Landon")] {
   set .Landon;
 }
 
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
   set .LeanneS;
+}
+
+*[osm_user_name() == "noodlemommy"][setting("user_LillianM")] {
+  set .LillianM;
 }
 
 *[osm_user_name() == "WinterCartographer"][setting("user_LoganB")] {
@@ -382,10 +375,6 @@ node:modified < way::modified_layer {
   set .RobinH;
 }
 
-*[osm_user_name() == "staysavy"][setting("user_Savana")] {
-  set .Savana;
-}
-
 *[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
   set .Sierra;
 }
@@ -399,8 +388,8 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 /*Sanitas*/
 
+way.AaronL,
 way.AlexD,
-way.AllanR,
 way.Angie,
 way.Anita,
 way.Anja,
@@ -409,9 +398,9 @@ way.ArleneC,
 way.BreiaV,
 way.Daniel,
 way.IanK,
-way.JacindaD,
 way.Landon,
 way.LeanneS,
+way.LillianM,
 way.LoganB,
 way.LoganM,
 way.LoganS,
@@ -422,7 +411,6 @@ way.NickE,
 way.Raul,
 way.Riley,
 way.RobinH,
-way.Savana,
 way.Sierra
 {
   z-index: -10;
@@ -437,8 +425,8 @@ way.Sierra
 
 /*Sanitas*/
 
+node.AaronL,
 node.AlexD,
-node.AllanR,
 node.Angie,
 node.Anita,
 node.Anja,
@@ -447,9 +435,9 @@ node.ArleneC,
 node.BreiaV,
 node.Daniel,
 node.IanK,
-node.JacindaD,
 node.Landon,
 node.LeanneS,
+node.LillianM,
 node.LoganB,
 node.LoganM,
 node.LoganS,
@@ -460,7 +448,6 @@ node.NickE,
 node.Raul,
 node.Riley,
 node.RobinH,
-node.Savana,
 node.Sierra
 {
   symbol-size: 15;
