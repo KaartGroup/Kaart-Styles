@@ -562,6 +562,12 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 way[barrier] {z-index: 5; color: #000000; width: 1}
 way[barrier=fence] {z-index: 5; color: #000000; width: 1; dashes: 8,4,2,4; }
 
+node[barrier=sliding_gate]::tagged, node[barrier=debris]::tagged, node[barrier=full-height_turnstile]::tagged, node[barrier=height_restrictor]::tagged, node[barrier=horse_stile]::tagged, node[barrier=kent_carriage_gap]::tagged, node[barrier=motorcycle_barrier]::tagged, node[barrier=sump_buster]::tagged, node[barrier=wicket_gate]::tagged, node[barrier=yes]::tagged, node[barrier=tyres]::tagged, node[barrier=log]::tagged, node[barrier=rope]::tagged, node[barrier=tank_trap]::tagged, node[barrier=fence]::tagged {symbol-shape: square;
+symbol-size: 5;
+symbol-stroke-color: #FC03E5;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
 
 /* Power */
 
@@ -1079,7 +1085,7 @@ node[barrier=lift_gate] {
 }
 node[barrier=swing_gate] {
     icon-image: "presets/barrier/swing_gate.svg";
-    set icon_z17;
+    set icon_z17; icon-width: 25;
 }
 area[barrier=toll_booth]:closed {
     fill-color: barrier#F0F050;
