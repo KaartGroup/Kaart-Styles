@@ -97,13 +97,6 @@ setting::user_AaronL {
   group: "sanitas";
 }
 
-setting::user_AlexD {
-  type:boolean;
-  label:tr("Turn User Soccersweeper On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_Angie {
   type: boolean;
   label: tr("Turn User Inigo_Maptoya On/Off");
@@ -120,7 +113,7 @@ setting::user_Anita {
 
 setting::user_Anja {
   type: boolean;
-  label: tr("Turn User Ajaie On/Off");
+  label: tr("Turn User PlinyTheYoungest On/Off");
   default: true;
   group: "sanitas";
 }
@@ -160,7 +153,7 @@ setting::user_IanK {
   group: "sanitas";
 }
 
-setting::user_Landon {
+setting::user_LandonS {
   type:boolean;
   label:tr("Turn User luin132 On/Off");
   default:true;
@@ -183,7 +176,7 @@ setting::user_LillianM {
 
 setting::user_LoganB {
   type:boolean;
-  label:tr("Turn User WinterCartographer On/Off");
+  label:tr("Turn User WinterWitcher On/Off");
   default:true;
   group: "sanitas";
 }
@@ -216,13 +209,6 @@ setting::user_MorgenM {
   group: "sanitas";
 }
 
-setting::user_NatashaS {
-  type:boolean;
-  label:tr("Turn User rallynukab On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
@@ -230,7 +216,7 @@ setting::user_NickE {
   group: "sanitas";
 }
 
-setting::user_Raul {
+setting::user_RaulM {
   type:boolean;
   label:tr("Turn User RaulKaart On/Off");
   default:true;
@@ -287,10 +273,6 @@ node:modified < way::modified_layer {
   set .AaronL;
 }
 
-*[osm_user_name() == "Soccersweeper"][setting("user_AlexD")] {
-  set .AlexD;
-}
-
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
   set .Angie;
 }
@@ -299,7 +281,7 @@ node:modified < way::modified_layer {
   set .Anita;
 }
 
-*[osm_user_name() == "Ajaie"][setting("user_Anja")] {
+*[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")] {
   set .Anja;
 }
 
@@ -323,8 +305,8 @@ node:modified < way::modified_layer {
   set .IanK;
 }
 
-*[osm_user_name() == "luin132"][setting("user_Landon")] {
-  set .Landon;
+*[osm_user_name() == "luin132"][setting("user_LandonS")] {
+  set .LandonS;
 }
 
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
@@ -335,7 +317,7 @@ node:modified < way::modified_layer {
   set .LillianM;
 }
 
-*[osm_user_name() == "WinterCartographer"][setting("user_LoganB")] {
+*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")] {
   set .LoganB;
 }
 
@@ -355,16 +337,12 @@ node:modified < way::modified_layer {
   set .MorgenM;
 }
 
-*[osm_user_name() == "rallynukab"][setting("user_NatashaS")] {
-  set .NatashaS;
-}
-
 *[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
   set .NickE;
 }
 
-*[osm_user_name() == "RaulKaart"][setting("user_Raul")] {
-  set .Raul;
+*[osm_user_name() == "RaulKaart"][setting("user_RaulM")] {
+  set .RaulM;
 }
 
 *[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
@@ -389,7 +367,6 @@ node:modified < way::modified_layer {
 /*Sanitas*/
 
 way.AaronL,
-way.AlexD,
 way.Angie,
 way.Anita,
 way.Anja,
@@ -398,7 +375,7 @@ way.ArleneC,
 way.BreiaV,
 way.Daniel,
 way.IanK,
-way.Landon,
+way.LandonS,
 way.LeanneS,
 way.LillianM,
 way.LoganB,
@@ -406,9 +383,8 @@ way.LoganM,
 way.LoganS,
 way.LouisM,
 way.MorgenM,
-way.NatashaS,
 way.NickE,
-way.Raul,
+way.RaulM,
 way.Riley,
 way.RobinH,
 way.Sierra
@@ -426,7 +402,6 @@ way.Sierra
 /*Sanitas*/
 
 node.AaronL,
-node.AlexD,
 node.Angie,
 node.Anita,
 node.Anja,
@@ -435,7 +410,7 @@ node.ArleneC,
 node.BreiaV,
 node.Daniel,
 node.IanK,
-node.Landon,
+node.LandonS,
 node.LeanneS,
 node.LillianM,
 node.LoganB,
@@ -443,9 +418,8 @@ node.LoganM,
 node.LoganS,
 node.LouisM,
 node.MorgenM,
-node.NatashaS,
 node.NickE,
-node.Raul,
+node.RaulM,
 node.Riley,
 node.RobinH,
 node.Sierra
