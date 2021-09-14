@@ -216,6 +216,13 @@ setting::user_NickE {
   group: "sanitas";
 }
 
+setting::user_NutchayaH {
+  type:boolean;
+  label:tr("Turn User nutchayahongvilai On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_RaulM {
   type:boolean;
   label:tr("Turn User RaulKaart On/Off");
@@ -341,6 +348,10 @@ node:modified < way::modified_layer {
   set .NickE;
 }
 
+*[osm_user_name() == "nutchayahongvilai"][setting("user_NutchayaH")] {
+  set .NutchayaH;
+}
+
 *[osm_user_name() == "RaulKaart"][setting("user_RaulM")] {
   set .RaulM;
 }
@@ -384,6 +395,7 @@ way.LoganS,
 way.LouisM,
 way.MorgenM,
 way.NickE,
+way.NutchayaH,
 way.RaulM,
 way.Riley,
 way.RobinH,
@@ -419,6 +431,7 @@ node.LoganS,
 node.LouisM,
 node.MorgenM,
 node.NickE,
+node.NutchayaH,
 node.RaulM,
 node.Riley,
 node.RobinH,
