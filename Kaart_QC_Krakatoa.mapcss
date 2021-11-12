@@ -1,0 +1,268 @@
+meta {
+  title: "QC Styles For Krakatoa Team";
+  description: "Highlights features that were created/modified by users";
+  watch-modified: true;
+  version: "1.0";
+  icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
+  min-josm-version: "15289"; /* This style uses groups for settings */
+}
+
+/* Notes
+1.0 Copied template from QC_Mexico(Sanitas) and added Krakatoa team members -- Logan Barnes -- 11/2/21
+
+Tips:
+
+A setting should be created for each separate user:
+
+setting::user_aaron {
+  type: boolean;
+  label: tr("Turn User Aaron On/Off");
+  default: false;
+}
+
+-- after :: comes your setting "class" which can be named as you will. Our example show user_aaron
+-- Type: boolean; should always exist
+-- label: tr("Anything you want to put here") -> This is what shows up under setting in JOSM
+-- Default: false -> the setting will remain disabled on launch until a user enables it
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+at which point, it becomes necessary to create a selector statement for your user:
+
+*[osm_user_name() == "vespax"][setting("user_aaron")] {
+  set .aaron;
+}
+
+-- * denotes what you are selecting, in this case, every element type in OSM
+-- [osm_user_name() == "vespax"] -> this is necessary and should be constructed as such.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to construct time stamps, you can use the following:
+
+String: "[eval(JOSM_search("timestamp:2016-02-20/"))]" can be modified in several ways
+"timestamp:2016-02-20/" -- Shows all edits edited after date
+"timestamp:2016-02-20/2016-02-22" -- Shows all edits after 02-20 but before 02-22
+"timestamp:2016-02/ Day and Month can be removed to widen the range of edits shown, example here shows all edits starting in FEB2016.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So, a timestamped search would look like this:
+
+*[osm_user_name() == "IndianaJones737"))][eval(JOSM_search("timestamp:2016-03-14/2016-03-15"] {
+  casing-width: 10;
+  casing-color: green;
+  casing-opacity: 0.2;
+}
+
+-- set .aaron; -> this is setting the class for this statement. This allows us to call it out later on. Classes
+can be set like that or as so -> set aaron;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+way.aaron, & node.aaron,
+
+-- This shows that we are looking for all ways/nodes which meet the "aaron" class. The comma here denotes
+that there is another selector we would like to call out after "aaron"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{
+  z-index: -10;
+  casing-color: lime;
+  casing-width: 10;
+  casing-opacity: 0.3;
+}
+
+-- This is our code block which will style up whatever we called out as a selector
+*/
+
+/* Create Settings */
+
+/* User Settings */
+/* Krakatoa */
+settings::krakatoa {
+  label: tr("Krakatoa");
+}
+
+
+setting::user_AnjaR {
+  type: boolean;
+  label: tr("Turn User PlinyTheYoungest On/Off");
+  default: true;
+  group: "krakatoa";
+}
+
+setting::user_ByronT {
+  type:boolean;
+  label:tr("Turn User btorsteinn On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_JustinP {
+  type: boolean;
+  label: tr("Turn User desudesu On/Off");
+  default: true;
+  group: "krakatoa";
+}
+
+setting::user_JoseL {
+  type: boolean;
+  label: tr("Turn User JDKaart On/Off");
+  default: true;
+  group: "krakatoa";
+}
+
+setting::user_KiraM {
+  type:boolean;
+  label:tr("Turn User birdeatscake On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_LoganB {
+  type:boolean;
+  label:tr("Turn User WinterWitcher On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_ReillyM {
+  type:boolean;
+  label:tr("Turn User smileyreilly On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_RoanH {
+  type:boolean;
+  label:tr("Turn User Blathmac98 On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_RyanM {
+  type:boolean;
+  label:tr("Turn User martymcfly14 On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+/* Tracking Selectors -- Way and node style BEFORE they are uploaded */
+
+node:modified::modified_layer {
+    symbol-shape: circle;
+    symbol-size: 22;
+    symbol-stroke-color: orange;
+    symbol-stroke-width: 3px;
+    symbol-fill-opacity: 0.5;
+    z-index: -5;
+}
+
+way:modified::modified_layer,
+node:modified < way::modified_layer {
+    width: 6;
+    color: transparent;
+    opacity: 0;
+    casing-width: 7;
+    casing-color: #47D608;
+    casing-opacity: 0.7;
+    z-index: -5;
+}
+
+/* QC Styles */
+/* User specific styles: Krakatoa */
+
+*[osm_user_name() == "PlinyTheYoungest"][setting("user_AnjaR")] {
+  set .Anja;
+}
+
+*[osm_user_name() == "btorsteinn"][setting("user_ByronT")] {
+  set .ByronT;
+}
+
+*[osm_user_name() == "btorsteinn"][setting("user_JustinP")] {
+  set .JustinP;
+}
+
+*[osm_user_name() == "btorsteinn"][setting("user_JoseL")] {
+  set .JoseL;
+}
+
+*[osm_user_name() == "birdeatscake"][setting("user_KiraM")] {
+  set .KiraM;
+}
+
+*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")] {
+  set .LoganB;
+}
+
+*[osm_user_name() == "WinterWitcher"][setting("user_ReillyM")] {
+  set .ReillyM;
+}
+
+*[osm_user_name() == "WinterWitcher"][setting("user_RoanH")] {
+  set .RoanH;
+}
+
+*[osm_user_name() == "WinterWitcher"][setting("user_RyanM")] {
+  set .RyanM;
+}
+
+/* This is how you search for someone with a space in their name
+
+*[osm_user_name() == "Hector Vector"] {
+  set .jman;
+}
+
+/* Styling of ways and nodes once they belong to "history" for each individual user */
+/*Krakatoa*/
+
+way.AnjaR,
+way.ByronT,
+way.JustinP,
+way.JoseL,
+way.KiraM,
+way.LoganB,
+way.ReillyM,
+way.RoanH,
+way.RyanM
+{
+  z-index: -10;
+  casing-color: #B108D6;
+  casing-width: 7;
+  casing-opacity: 0.6;
+  /*
+  text: eval(concat("Highway type =", " ", tag("highway")));
+  text-offset: -20;
+  */
+}
+
+/*Krakatoa*/
+
+node.AnjaR,
+node.ByronT,
+node.JustinP,
+node.JoseL,
+node.KiraM,
+node.LoganB,
+node.ReillyM,
+node.RoanH,
+node.RyanM
+{
+  symbol-size: 15;
+  symbol-shape: triangle;
+  symbol-stroke-color: blue;
+  symbol-stroke-width: 3px;
+  symbol-fill-opacity: 0.5;
+  z-index: -5;
+}
+
+node:selected::selected_layer {
+    symbol-shape: circle;
+    symbol-size: 22;
+    symbol-stroke-color: #DF2E08;
+    symbol-stroke-width: 3px;
+    symbol-fill-opacity: 0.5;
+    z-index: -5;
+}
