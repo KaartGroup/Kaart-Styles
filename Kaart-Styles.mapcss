@@ -422,6 +422,164 @@ way[highway=cycleway]  { z-index: 5; color: #b100ff; width: 2; dashes: 4, 2; pro
 
 way[is_prop_set("prop_path")]  { z-index: 5; text: auto; text-color: black; text-position: line; text-offset: 7; font-size: 12; }
 
+/*****************/
+/* cycleway tags */
+/*****************/
+
+    /* prepare lane */
+way[oneway?][cycleway=lane]:righthandtraffic::core_cycleway,
+way[oneway=-1][cycleway=opposite_lane]:righthandtraffic::core_cycleway {
+    set laneRight;
+    set righthandtr;
+}
+way[oneway?][cycleway=opposite_lane]:righthandtraffic::core_cycleway,
+way[oneway=-1][cycleway=lane]:righthandtraffic::core_cycleway {
+    set laneLeft;
+    set righthandtr;
+}
+way[oneway?][cycleway=lane]!.righthandtr::core_cycleway,
+way[oneway=-1][cycleway=opposite_lane]!.righthandtr::core_cycleway {
+    set laneLeft;
+}
+way[oneway?][cycleway=opposite_lane]!.righthandtr::core_cycleway,
+way[oneway=-1][cycleway=lane]!.righthandtr::core_cycleway {
+    set laneRight;
+}
+way[cycleway:left=lane]::core_cycleway {
+    set laneLeft;
+}
+way[cycleway:right=lane]::core_cycleway {
+    set laneRight;
+}
+way[oneway=no][cycleway=lane]::core_cycleway,
+way[!oneway][cycleway=lane]::core_cycleway {
+    set laneLeft;
+    set laneRight;
+}
+
+    /* prepare shared_lane */
+way[oneway?][cycleway=shared_lane]:righthandtraffic::core_cycleway {
+    set shared_laneRight;
+    set righthandtr;
+}
+way[oneway=-1][cycleway=shared_lane]:righthandtraffic::core_cycleway {
+    set shared_laneLeft;
+    set righthandtr;
+}
+way[oneway?][cycleway=shared_lane]!.righthandtr::core_cycleway {
+    set shared_laneLeft;
+}
+way[oneway=-1][cycleway=shared_lane]!.righthandtr::core_cycleway {
+    set shared_laneRight;
+}
+way[cycleway:left=shared_lane]::core_cycleway {
+    set shared_laneLeft;
+}
+way[cycleway:right=shared_lane]::core_cycleway {
+    set shared_laneRight;
+}
+way[oneway=no][cycleway=shared_lane]::core_cycleway,
+way[!oneway][cycleway=shared_lane]::core_cycleway {
+    set shared_laneLeft;
+    set shared_laneRight;
+}
+
+    /* prepare track */
+way[oneway?][cycleway=track]:righthandtraffic::core_cycleway,
+way[oneway=-1][cycleway=opposite_track]:righthandtraffic::core_cycleway {
+    set trackRight;
+    set righthandtr;
+}
+way[oneway?][cycleway=opposite_track]:righthandtraffic::core_cycleway,
+way[oneway=-1][cycleway=track]:righthandtraffic::core_cycleway {
+    set trackLeft;
+    set righthandtr;
+}
+way[oneway?][cycleway=track]!.righthandtr::core_cycleway,
+way[oneway=-1][cycleway=opposite_track]!.righthandtr::core_cycleway {
+    set trackLeft;
+}
+way[oneway?][cycleway=opposite_track]!.righthandtr::core_cycleway,
+way[oneway=-1][cycleway=track]!.righthandtr::core_cycleway {
+    set trackRight;
+}
+way[cycleway:left=track]::core_cycleway {
+    set trackLeft;
+}
+way[cycleway:right=track]::core_cycleway {
+    set trackRight;
+}
+way[oneway=no][cycleway=track]::core_cycleway,
+way[!oneway][cycleway=track]::core_cycleway {
+    set trackLeft;
+    set trackRight;
+}
+
+    /* render lane */
+way.laneRight::core_cycleway {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 6, 10;
+    offset: 0 - (prop("width", "default") / 2) - 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+way[prop("laneLeft","core_cycleway")]::core_cycleway2 {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 6, 10;
+    offset: (prop("width", "default") / 2) + 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+    /* render shared_lane */
+way.shared_laneRight::core_cycleway {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 6, 3;
+    offset: 0 - (prop("width", "default") / 2) - 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+way[prop("shared_laneLeft","core_cycleway")]::core_cycleway2 {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 6, 3;
+    offset: (prop("width", "default") / 2) + 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+    /* render track */
+way.trackRight::core_cycleway {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 25, 8;
+    offset: 0 - (prop("width", "default") / 2) - 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+way[prop("trackLeft","core_cycleway")]::core_cycleway2 {
+    width: 4;
+    color: bicycle#b100ff;
+    dashes: 25, 8;
+    offset: (prop("width", "default") / 2) + 2;
+    major-z-index: 2.1;
+    modifier: true;
+}
+    /* render opposite */
+way[oneway:bicycle=no][oneway][oneway!=no]::core_cycleway,
+way[cycleway=opposite][oneway][oneway!=no]::core_cycleway {
+    z-index: 1;
+    width: +2;
+    color: bicycle#b100ff;
+    dashes: 4,10;
+}
+node[cycleway=lane ], node[cycleway=opposite_lane ],
+node[cycleway=track], node[cycleway=opposite_track],
+node[cycleway=opposite] {
+    icon-image: "presets/misc/deprecated.svg";
+    set icon_z17;
+}
 
 /******************/
 /* tracktype tags */
