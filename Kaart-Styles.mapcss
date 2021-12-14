@@ -232,6 +232,12 @@ setting::potlatch_crossing {
   default: true;
 }
 
+setting::cycleway_setting {
+type: boolean;
+label: tr("Enlarge Cycleway Styling");
+default: true;
+}
+
 /*Lower-Case Names*/
 
 
@@ -516,7 +522,7 @@ way[!oneway][cycleway=track]::core_cycleway {
 }
 
     /* render lane */
-way.laneRight::core_cycleway {
+way.laneRight[setting("cycleway_setting")]::core_cycleway {
     width: 4;
     color: bicycle#b100ff;
     dashes: 6, 10;
@@ -524,7 +530,7 @@ way.laneRight::core_cycleway {
     major-z-index: 2.1;
     modifier: true;
 }
-way[prop("laneLeft","core_cycleway")]::core_cycleway2 {
+way[prop("laneLeft","core_cycleway")][setting("cycleway_setting")]::core_cycleway2 {
     width: 4;
     color: bicycle#b100ff;
     dashes: 6, 10;
@@ -533,7 +539,7 @@ way[prop("laneLeft","core_cycleway")]::core_cycleway2 {
     modifier: true;
 }
     /* render shared_lane */
-way.shared_laneRight::core_cycleway {
+way.shared_laneRight[setting("cycleway_setting")]::core_cycleway {
     width: 4;
     color: bicycle#b100ff;
     dashes: 6, 3;
@@ -541,7 +547,7 @@ way.shared_laneRight::core_cycleway {
     major-z-index: 2.1;
     modifier: true;
 }
-way[prop("shared_laneLeft","core_cycleway")]::core_cycleway2 {
+way[prop("shared_laneLeft","core_cycleway")][setting("cycleway_setting")]::core_cycleway2 {
     width: 4;
     color: bicycle#b100ff;
     dashes: 6, 3;
@@ -550,7 +556,7 @@ way[prop("shared_laneLeft","core_cycleway")]::core_cycleway2 {
     modifier: true;
 }
     /* render track */
-way.trackRight::core_cycleway {
+way.trackRight[setting("cycleway_setting")]::core_cycleway {
     width: 4;
     color: bicycle#b100ff;
     dashes: 25, 8;
@@ -558,7 +564,7 @@ way.trackRight::core_cycleway {
     major-z-index: 2.1;
     modifier: true;
 }
-way[prop("trackLeft","core_cycleway")]::core_cycleway2 {
+way[prop("trackLeft","core_cycleway")][setting("cycleway_setting")]::core_cycleway2 {
     width: 4;
     color: bicycle#b100ff;
     dashes: 25, 8;
@@ -567,8 +573,8 @@ way[prop("trackLeft","core_cycleway")]::core_cycleway2 {
     modifier: true;
 }
     /* render opposite */
-way[oneway:bicycle=no][oneway][oneway!=no]::core_cycleway,
-way[cycleway=opposite][oneway][oneway!=no]::core_cycleway {
+way[oneway:bicycle=no][oneway][oneway!=no][setting("cycleway_setting")]::core_cycleway,
+way[cycleway=opposite][oneway][oneway!=no][setting("cycleway_setting")]::core_cycleway {
     z-index: 1;
     width: +2;
     color: bicycle#b100ff;
