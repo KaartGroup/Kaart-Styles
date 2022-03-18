@@ -90,10 +90,17 @@ settings::sanitas {
   label: tr("Sanitas");
 }
 
-setting::user_AlexD {
+setting::user_AaronL {
   type:boolean;
-  label:tr("Turn User Soccersweeper On/Off");
+  label:tr("Turn User StriDez On/Off");
   default:true;
+  group: "sanitas";
+}
+
+setting::user_Alba {
+  type: boolean;
+  label: tr("Turn User albahabla On/Off");
+  default: true;
   group: "sanitas";
 }
 
@@ -104,16 +111,9 @@ setting::user_Angie {
   group: "sanitas";
 }
 
-setting::user_Anita {
-  type: boolean;
-  label: tr("Turn User natureandchill On/Off");
-  default: true;
-  group: "sanitas";
-}
-
 setting::user_Anja {
   type: boolean;
-  label: tr("Turn User Ajaie On/Off");
+  label: tr("Turn User PlinyTheYoungest On/Off");
   default: true;
   group: "sanitas";
 }
@@ -125,9 +125,9 @@ setting::user_ArleneC {
   group: "sanitas";
 }
 
-setting::user_Anthony {
+setting::user_BrandonP {
   type:boolean;
-  label:tr("Turn User acrague On/Off");
+  label:tr("Turn User Almapthea On/Off");
   default:true;
   group: "sanitas";
 }
@@ -139,10 +139,17 @@ setting::user_BreiaV {
   group: "sanitas";
 }
 
-setting::user_Daniel {
-  type: boolean;
-  label: tr("Turn User The_Intern On/Off");
-  default: true;
+setting::user_ColterM {
+  type:boolean;
+  label:tr("Turn User Coltrain On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_Gabe {
+  type:boolean;
+  label:tr("Turn User GbabethemapGod On/Off");
+  default:true;
   group: "sanitas";
 }
 
@@ -153,14 +160,21 @@ setting::user_IanK {
   group: "sanitas";
 }
 
-setting::user_JacindaD {
+setting::user_JamesP {
   type:boolean;
-  label:tr("Turn User Cinderblock On/Off");
+  label:tr("Turn User jmpeake On/Off");
   default:true;
   group: "sanitas";
 }
 
-setting::user_Landon {
+setting::user_JessicaH {
+  type:boolean;
+  label:tr("Turn User Mapistopheles On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_LandonS {
   type:boolean;
   label:tr("Turn User luin132 On/Off");
   default:true;
@@ -174,9 +188,9 @@ setting::user_LeanneS {
   group: "sanitas";
 }
 
-setting::user_LoganB {
+setting::user_LillianM {
   type:boolean;
-  label:tr("Turn User LoganBarnes On/Off");
+  label:tr("Turn User noodlemommy On/Off");
   default:true;
   group: "sanitas";
 }
@@ -195,23 +209,9 @@ setting::user_LoganS {
   group: "sanitas";
 }
 
-setting::user_LouisM {
-  type:boolean;
-  label:tr("Turn User BlueRanger On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_MorgenM {
   type:boolean;
   label:tr("Turn User MMantlo On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_NatashaS {
-  type:boolean;
-  label:tr("Turn User rallynukab On/Off");
   default:true;
   group: "sanitas";
 }
@@ -223,24 +223,17 @@ setting::user_NickE {
   group: "sanitas";
 }
 
+setting::user_RickZ {
+  type:boolean;
+  label:tr("Turn User Ouray On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_Riley {
   type: boolean;
   label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
   default: true;
-  group: "sanitas";
-}
-
-setting::user_RobinH {
-  type:boolean;
-  label:tr("Turn User RobinNoodles On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Savana {
-  type:boolean;
-  label:tr("Turn User staysavy On/Off");
-  default:true;
   group: "sanitas";
 }
 
@@ -276,56 +269,64 @@ node:modified < way::modified_layer {
 /* QC Styles */
 /* User specific styles: Sanitas */
 
-*[osm_user_name() == "Soccersweeper"][setting("user_AlexD")] {
-  set .AlexD;
+*[osm_user_name() == "StriDez"][setting("user_AaronL")] {
+  set .AaronL;
+}
+
+*[osm_user_name() == "albahabla"][setting("user_Alba")] {
+  set .Alba;
 }
 
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
   set .Angie;
 }
 
-*[osm_user_name() == "natureandchill"][setting("user_Anita")] {
-  set .Anita;
-}
-
-*[osm_user_name() == "Ajaie"][setting("user_Anja")] {
+*[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")] {
   set .Anja;
-}
-
-*[osm_user_name() == "acrague"][setting("user_Anthony")] {
-  set .Anthony;
 }
 
 *[osm_user_name() == "ArleneC"][setting("user_ArleneC")] {
   set .ArleneC;
 }
 
+*[osm_user_name() == "Almapthea"][setting("user_BrandonP")] {
+  set .BrandonP;
+}
+
 *[osm_user_name() == "3agleOne"][setting("user_BreiaV")] {
   set .BreiaV;
 }
 
-*[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
-  set .Daniel;
+*[osm_user_name() == "Coltrain"][setting("user_ColterM")] {
+  set .ColterM;
+}
+
+*[osm_user_name() == "GbabethemapGod"][setting("user_Gabe")] {
+  set .Gabe;
 }
 
 *[osm_user_name() == "Ikohl"][setting("user_IanK")] {
   set .IanK;
 }
 
-*[osm_user_name() == "Cinderblock"][setting("user_JacindaD")] {
-  set .JacindaD;
+*[osm_user_name() == "jmpeake"][setting("user_JamesP")] {
+  set .JamesP;
 }
 
-*[osm_user_name() == "luin132"][setting("user_Landon")] {
-  set .Landon;
+*[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")] {
+  set .JessicaH;
+}
+
+*[osm_user_name() == "luin132"][setting("user_LandonS")] {
+  set .LandonS;
 }
 
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
   set .LeanneS;
 }
 
-*[osm_user_name() == "LoganBarnes"][setting("user_LoganB")] {
-  set .LoganB;
+*[osm_user_name() == "noodlemommy"][setting("user_LillianM")] {
+  set .LillianM;
 }
 
 *[osm_user_name() == "Dalekokarta"][setting("user_LoganM")] {
@@ -336,32 +337,20 @@ node:modified < way::modified_layer {
   set .LoganS;
 }
 
-*[osm_user_name() == "BlueRanger"][setting("user_LouisM")] {
-  set .LouisM;
-}
-
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
   set .MorgenM;
-}
-
-*[osm_user_name() == "rallynukab"][setting("user_NatashaS")] {
-  set .NatashaS;
 }
 
 *[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
   set .NickE;
 }
 
+*[osm_user_name() == "Ouray"][setting("user_RickZ")] {
+  set .RickZ;
+}
+
 *[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
   set .Riley;
-}
-
-*[osm_user_name() == "RobinNoodles"][setting("user_RobinH")] {
-  set .RobinH;
-}
-
-*[osm_user_name() == "staysavy"][setting("user_Savana")] {
-  set .Savana;
 }
 
 *[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
@@ -377,28 +366,27 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 /*Sanitas*/
 
-way.AlexD,
+way.AaronL,
+way.Alba,
 way.Angie,
-way.Anita,
 way.Anja,
-way.Anthony,
 way.ArleneC,
+way.BrandonP,
 way.BreiaV,
-way.Daniel,
+way.ColterM,
+way.Gabe,
 way.IanK,
-way.JacindaD,
-way.Landon,
+way.JamesP,
+way.JessicaH,
+way.LandonS,
 way.LeanneS,
-way.LoganB,
+way.LillianM,
 way.LoganM,
 way.LoganS,
-way.LouisM,
 way.MorgenM,
-way.NatashaS,
 way.NickE,
+way.RickZ,
 way.Riley,
-way.RobinH,
-way.Savana,
 way.Sierra
 {
   z-index: -10;
@@ -413,28 +401,27 @@ way.Sierra
 
 /*Sanitas*/
 
-node.AlexD,
+node.AaronL,
+node.Alba,
 node.Angie,
-node.Anita,
 node.Anja,
-node.Anthony,
 node.ArleneC,
+node.BrandonP,
 node.BreiaV,
-node.Daniel,
+node.ColterM,
+node.Gabe,
 node.IanK,
-node.JacindaD,
-node.Landon,
+node.JamesP,
+node.JessicaH,
+node.LandonS,
 node.LeanneS,
-node.LoganB,
+node.LillianM,
 node.LoganM,
 node.LoganS,
-node.LouisM,
 node.MorgenM,
-node.NatashaS,
 node.NickE,
+node.RickZ,
 node.Riley,
-node.RobinH,
-node.Savana,
 node.Sierra
 {
   symbol-size: 15;
