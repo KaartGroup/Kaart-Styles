@@ -15,6 +15,7 @@ meta {
 1.4 Adjusted user, style lines and appearances -- 3/20/2019
 1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
 1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
+1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
 
 Tips:
 
@@ -97,16 +98,16 @@ setting::user_AaronL {
   group: "sanitas";
 }
 
-setting::user_Angie {
-  type: boolean;
-  label: tr("Turn User Inigo_Maptoya On/Off");
-  default: true;
+setting::user_AlbaW {
+  type:boolean;
+  label:tr("Turn User albahabla On/Off");
+  default:true;
   group: "sanitas";
 }
 
-setting::user_Anita {
+setting::user_Angie {
   type: boolean;
-  label: tr("Turn User natureandchill On/Off");
+  label: tr("Turn User Inigo_Maptoya On/Off");
   default: true;
   group: "sanitas";
 }
@@ -125,16 +126,23 @@ setting::user_ArleneC {
   group: "sanitas";
 }
 
-setting::user_BreiaV {
+setting::user_BrandonP {
   type:boolean;
-  label:tr("Turn User 3agleOne On/Off");
+  label:tr("Turn User Almapthea On/Off");
   default:true;
   group: "sanitas";
 }
 
-setting::user_ByronT {
+setting::user_BreiaV {
   type:boolean;
-  label:tr("Turn User btorsteinn On/Off");
+  label:tr("Turn User ToastShark On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_ColterM {
+  type:boolean;
+  label:tr("Turn User Coltrain On/Off");
   default:true;
   group: "sanitas";
 }
@@ -146,6 +154,13 @@ setting::user_Daniel {
   group: "sanitas";
 }
 
+setting::user_GabeG {
+  type: boolean;
+  label: tr("Turn User GbabethemapGod On/Off");
+  default: true;
+  group: "sanitas";
+}
+
 setting::user_IanK {
   type:boolean;
   label:tr("Turn User Ikohl On/Off");
@@ -153,9 +168,16 @@ setting::user_IanK {
   group: "sanitas";
 }
 
+setting::user_JamesP {
+  type:boolean;
+  label:tr("Turn User eggothy On/Off");
+  default:true;
+  group: "sanitas";
+}
+
 setting::user_JessicaH {
   type:boolean;
-  label:tr("Turn User JessHed On/Off");
+  label:tr("Turn User Mapistopheles On/Off");
   default:true;
   group: "sanitas";
 }
@@ -181,16 +203,9 @@ setting::user_LillianM {
   group: "sanitas";
 }
 
-setting::user_LoganB {
-  type:boolean;
-  label:tr("Turn User WinterWitcher On/Off");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_LoganM {
   type:boolean;
-  label:tr("Turn User Dalekokarta On/Off");
+  label:tr("Turn User WarpathPeacock On/Off");
   default:true;
   group: "sanitas";
 }
@@ -199,13 +214,6 @@ setting::user_LoganS {
   type: boolean;
   label: tr("Turn User 127logs On/Off");
   default: true;
-  group: "sanitas";
-}
-
-setting::user_LouisM {
-  type:boolean;
-  label:tr("Turn User BlueRanger On/Off");
-  default:true;
   group: "sanitas";
 }
 
@@ -219,20 +227,6 @@ setting::user_MorgenM {
 setting::user_NickE {
   type:boolean;
   label:tr("Turn User jedimasterflint On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_NutchayaH {
-  type:boolean;
-  label:tr("Turn User nutchayahongvilai On/Off");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_RaulM {
-  type:boolean;
-  label:tr("Turn User RaulKaart On/Off");
   default:true;
   group: "sanitas";
 }
@@ -287,12 +281,12 @@ node:modified < way::modified_layer {
   set .AaronL;
 }
 
-*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
-  set .Angie;
+*[osm_user_name() == "albahabla"][setting("user_AlbaW")] {
+  set .AlbaW;
 }
 
-*[osm_user_name() == "natureandchill"][setting("user_Anita")] {
-  set .Anita;
+*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
+  set .Angie;
 }
 
 *[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")] {
@@ -303,23 +297,35 @@ node:modified < way::modified_layer {
   set .ArleneC;
 }
 
-*[osm_user_name() == "3agleOne"][setting("user_BreiaV")] {
+*[osm_user_name() == "Almapthea"][setting("user_BrandonP")] {
+  set .BrandonP;
+}
+
+*[osm_user_name() == "ToastShark"][setting("user_BreiaV")] {
   set .BreiaV;
 }
 
-*[osm_user_name() == "btorsteinn"][setting("user_ByronT")] {
-  set .ByronT;
+*[osm_user_name() == "Coltrain"][setting("user_ColterM")] {
+  set .ColterM;
 }
 
 *[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
   set .Daniel;
 }
 
+*[osm_user_name() == "GbabethemapGod"][setting("user_GabeG")] {
+  set .GabeG;
+}
+
 *[osm_user_name() == "Ikohl"][setting("user_IanK")] {
   set .IanK;
 }
 
-*[osm_user_name() == "JessHed"][setting("user_JessicaH")] {
+*[osm_user_name() == "eggothy"][setting("user_JamesP")] {
+  set .JamesP;
+}
+
+*[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")] {
   set .JessicaH;
 }
 
@@ -335,20 +341,12 @@ node:modified < way::modified_layer {
   set .LillianM;
 }
 
-*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")] {
-  set .LoganB;
-}
-
-*[osm_user_name() == "Dalekokarta"][setting("user_LoganM")] {
+*[osm_user_name() == "WarpathPeacock"][setting("user_LoganM")] {
   set .LoganM;
 }
 
 *[osm_user_name() == "127logs"][setting("user_LoganS")] {
   set .LoganS;
-}
-
-*[osm_user_name() == "BlueRanger"][setting("user_LouisM")] {
-  set .LouisM;
 }
 
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
@@ -357,14 +355,6 @@ node:modified < way::modified_layer {
 
 *[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
   set .NickE;
-}
-
-*[osm_user_name() == "nutchayahongvilai"][setting("user_NutchayaH")] {
-  set .NutchayaH;
-}
-
-*[osm_user_name() == "RaulKaart"][setting("user_RaulM")] {
-  set .RaulM;
 }
 
 *[osm_user_name() == "Ouray"][setting("user_RickZ")] {
@@ -389,26 +379,25 @@ node:modified < way::modified_layer {
 /*Sanitas*/
 
 way.AaronL,
+way.AlbaW,
 way.Angie,
-way.Anita,
 way.Anja,
 way.ArleneC,
+way.BrandonP,
 way.BreiaV,
-way.ByronT,
+way.ColterM,
 way.Daniel,
+way.GabeG,
 way.IanK,
+way.JamesP,
 way.JessicaH,
 way.LandonS,
 way.LeanneS,
 way.LillianM,
-way.LoganB,
 way.LoganM,
 way.LoganS,
-way.LouisM,
 way.MorgenM,
 way.NickE,
-way.NutchayaH,
-way.RaulM,
 way.RickZ,
 way.Riley,
 way.Sierra
@@ -426,26 +415,25 @@ way.Sierra
 /*Sanitas*/
 
 node.AaronL,
+node.AlbaW,
 node.Angie,
-node.Anita,
 node.Anja,
 node.ArleneC,
+node.BrandonP,
 node.BreiaV,
-node.ByronT,
+node.ColterM,
 node.Daniel,
+node.GabeG,
 node.IanK,
+node.JamesP,
 node.JessicaH,
 node.LandonS,
 node.LeanneS,
 node.LillianM,
-node.LoganB,
 node.LoganM,
 node.LoganS,
-node.LouisM,
 node.MorgenM,
 node.NickE,
-node.NutchayaH,
-node.RaulM,
 node.RickZ,
 node.Riley,
 node.Sierra
