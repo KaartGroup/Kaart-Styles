@@ -9,6 +9,7 @@ meta {
 
 /* Notes
 1.0 Copied template from QC_Mexico(Sanitas) and added Krakatoa team members -- Logan Barnes -- 11/2/21
+1.1 Updated list of team members -- Logan Barnes -- 4/8/22
 
 Tips:
 
@@ -84,28 +85,6 @@ settings::krakatoa {
   label: tr("Krakatoa");
 }
 
-
-setting::user_AnjaR {
-  type: boolean;
-  label: tr("Turn User PlinyTheYoungest On/Off");
-  default: true;
-  group: "krakatoa";
-}
-
-setting::user_ByronT {
-  type:boolean;
-  label:tr("Turn User btorsteinn On/Off");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_JustinP {
-  type: boolean;
-  label: tr("Turn User desudesu On/Off");
-  default: true;
-  group: "krakatoa";
-}
-
 setting::user_JoseL {
   type: boolean;
   label: tr("Turn User JDKaart On/Off");
@@ -115,7 +94,7 @@ setting::user_JoseL {
 
 setting::user_KiraM {
   type:boolean;
-  label:tr("Turn User birdeatscake On/Off");
+  label:tr("Turn User birdymaps On/Off");
   default:true;
   group: "krakatoa";
 }
@@ -130,13 +109,6 @@ setting::user_LoganB {
 setting::user_ReillyM {
   type:boolean;
   label:tr("Turn User smileyreilly On/Off");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_RoanH {
-  type:boolean;
-  label:tr("Turn User Blathmac98 On/Off");
   default:true;
   group: "krakatoa";
 }
@@ -173,23 +145,11 @@ node:modified < way::modified_layer {
 /* QC Styles */
 /* User specific styles: Krakatoa */
 
-*[osm_user_name() == "PlinyTheYoungest"][setting("user_AnjaR")] {
-  set .Anja;
-}
-
-*[osm_user_name() == "btorsteinn"][setting("user_ByronT")] {
-  set .ByronT;
-}
-
-*[osm_user_name() == "btorsteinn"][setting("user_JustinP")] {
-  set .JustinP;
-}
-
-*[osm_user_name() == "btorsteinn"][setting("user_JoseL")] {
+*[osm_user_name() == "JDKaart"][setting("user_JoseL")] {
   set .JoseL;
 }
 
-*[osm_user_name() == "birdeatscake"][setting("user_KiraM")] {
+*[osm_user_name() == "birdymaps"][setting("user_KiraM")] {
   set .KiraM;
 }
 
@@ -197,15 +157,11 @@ node:modified < way::modified_layer {
   set .LoganB;
 }
 
-*[osm_user_name() == "WinterWitcher"][setting("user_ReillyM")] {
+*[osm_user_name() == "smileyreilly"][setting("user_ReillyM")] {
   set .ReillyM;
 }
 
-*[osm_user_name() == "WinterWitcher"][setting("user_RoanH")] {
-  set .RoanH;
-}
-
-*[osm_user_name() == "WinterWitcher"][setting("user_RyanM")] {
+*[osm_user_name() == "martymcfly14"][setting("user_RyanM")] {
   set .RyanM;
 }
 
@@ -218,14 +174,10 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 /*Krakatoa*/
 
-way.AnjaR,
-way.ByronT,
-way.JustinP,
 way.JoseL,
 way.KiraM,
 way.LoganB,
 way.ReillyM,
-way.RoanH,
 way.RyanM
 {
   z-index: -10;
@@ -240,14 +192,10 @@ way.RyanM
 
 /*Krakatoa*/
 
-node.AnjaR,
-node.ByronT,
-node.JustinP,
 node.JoseL,
 node.KiraM,
 node.LoganB,
 node.ReillyM,
-node.RoanH,
 node.RyanM
 {
   symbol-size: 15;
