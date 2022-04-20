@@ -1,8 +1,8 @@
 meta {
-  title: "QC Styles For Mexico Team";
+  title: "Sinopah QC";
   description: "Highlights features that were created/modified by users";
   watch-modified: true;
-  version: "1.6";
+  version: "1.8";
   icon: "http://uncrate.com/p/2016/02/smart-kart.jpg";
   min-josm-version: "15289"; /* This style uses groups for settings */
 }
@@ -16,6 +16,7 @@ meta {
 1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
 1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
 1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
+1.8 Added new team categories and new users. Updated title. --Landon S.-- 04/20/2022
 
 Tips:
 
@@ -86,7 +87,9 @@ that there is another selector we would like to call out after "aaron"
 /* Create Settings */
 
 /* User Settings */
+
 /* Sanitas */
+
 settings::sanitas {
   label: tr("Sanitas");
 }
@@ -164,6 +167,13 @@ setting::user_GabeG {
 setting::user_IanK {
   type:boolean;
   label:tr("Turn User Ikohl On/Off");
+  default:true;
+  group: "sanitas";
+}
+
+setting::user_IanM {
+  type:boolean;
+  label:tr("Turn User Winterson On/Off");
   default:true;
   group: "sanitas";
 }
@@ -252,6 +262,117 @@ setting::user_Sierra {
   group: "sanitas";
 }
 
+/* Seattle */
+
+settings::seattle {
+  label: tr("Seattle");
+}
+
+setting::user_AlbertG {
+  type:boolean;
+  label:tr("Turn User TheJAwesome1 On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_AlecH {
+  type:boolean;
+  label:tr("Turn User CapAhab On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_AnoudA {
+  type:boolean;
+  label:tr("Turn User And_12 On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_EduardoT {
+  type:boolean;
+  label:tr("Turn User VigotheCarpathian On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_EdwardD {
+  type:boolean;
+  label:tr("Turn User Ned_Stark On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_EvanD {
+  type:boolean;
+  label:tr("Turn User Evandering On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_FasickM {
+  type:boolean;
+  label:tr("Turn User Goatosm On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_HoraceH {
+  type:boolean;
+  label:tr("Turn User Hoordinates On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_JasonC {
+  type:boolean;
+  label:tr("Turn User Red_Ranger On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_JenniferS {
+  type:boolean;
+  label:tr("Turn User geoJenn On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_MichaelT {
+  type:boolean;
+  label:tr("Turn User trigeo On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_NiyomiK {
+  type:boolean;
+  label:tr("Turn User n1y0m1 On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_RikH {
+  type:boolean;
+  label:tr("Turn User whatmeinfallible On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_StephanieH {
+  type:boolean;
+  label:tr("Turn User Avocadough! On/Off");
+  default:true;
+  group: "seattle";
+}
+
+setting::user_ViancaS {
+  type:boolean;
+  label:tr("Turn User Amonite1025 On/Off");
+  default:true;
+  group: "seattle";
+}
+
 /* Tracking Selectors -- Way and node style BEFORE they are uploaded */
 
 node:modified::modified_layer {
@@ -275,6 +396,7 @@ node:modified < way::modified_layer {
 }
 
 /* QC Styles */
+
 /* User specific styles: Sanitas */
 
 *[osm_user_name() == "StriDez"][setting("user_AaronL")] {
@@ -319,6 +441,10 @@ node:modified < way::modified_layer {
 
 *[osm_user_name() == "Ikohl"][setting("user_IanK")] {
   set .IanK;
+}
+
+*[osm_user_name() == "Winterson"][setting("user_IanM")] {
+  set .IanM;
 }
 
 *[osm_user_name() == "eggothy"][setting("user_JamesP")] {
@@ -369,6 +495,68 @@ node:modified < way::modified_layer {
   set .Sierra;
 }
 
+/* User specific styles: Seattle */
+
+*[osm_user_name() == "TheJAwesome1"][setting("user_AlbertG")] {
+  set .AlbertG;
+}
+
+ *[osm_user_name() == "CapAhab"][setting("user_AlecH")] {
+  set .AlecH;
+}
+
+ *[osm_user_name() == "And_12"][setting("user_AnoudA")] {
+  set .AnoudA;
+}
+
+ *[osm_user_name() == "VigotheCarpathian"][setting("user_EduardoT")] {
+  set .EduardoT;
+}
+
+ *[osm_user_name() == "Ned_Stark"][setting("user_EdwardD")] {
+  set .EdwardD;
+}
+
+ *[osm_user_name() == "Evandering"][setting("user_EvanD")] {
+  set .EvanD;
+}
+
+ *[osm_user_name() == "Goatosm"][setting("user_FasickM")] {
+  set .FasickM;
+}
+
+ *[osm_user_name() == "Hoordinates"][setting("user_HoraceH")] {
+  set .HoraceH;
+}
+
+ *[osm_user_name() == "Red_Ranger"][setting("user_JasonC")] {
+  set .JasonC;
+}
+
+ *[osm_user_name() == "geoJenn"][setting("user_JenniferS")] {
+  set .JenniferS;
+}
+
+ *[osm_user_name() == "trigeo"][setting("user_MichaelT")] {
+  set .MichaelT;
+}
+
+ *[osm_user_name() == "n1y0m1"][setting("user_NiyomiK")] {
+  set .NiyomiK;
+}
+
+ *[osm_user_name() == "whatmeinfallible"][setting("user_RikH")] {
+  set .RikH;
+}
+
+ *[osm_user_name() == "Avocadough!"][setting("user_StephanieH")] {
+  set .StephanieH;
+}
+
+ *[osm_user_name() == "Amonite1025"][setting("user_ViancaS")] {
+  set .ViancaS;
+}
+
 /* This is how you search for someone with a space in their name
 
 *[osm_user_name() == "Hector Vector"] {
@@ -376,6 +564,7 @@ node:modified < way::modified_layer {
 }
 
 /* Styling of ways and nodes once they belong to "history" for each individual user */
+
 /*Sanitas*/
 
 way.AaronL,
@@ -389,6 +578,7 @@ way.ColterM,
 way.Daniel,
 way.GabeG,
 way.IanK,
+way.IanM,
 way.JamesP,
 way.JessicaH,
 way.LandonS,
@@ -400,7 +590,26 @@ way.MorgenM,
 way.NickE,
 way.RickZ,
 way.Riley,
-way.Sierra
+way.Sierra,
+
+/* Seattle */
+
+way.AlbertG,
+way.AlecH,
+way.AnoudA,
+way.EduardoT,
+way.EdwardD,
+way.EvanD,
+way.FasickM,
+way.HoraceH,
+way.JasonC,
+way.JenniferS,
+way.MichaelT,
+way.NiyomiK,
+way.RikH,
+way.StephanieH,
+way.ViancaS
+
 {
   z-index: -10;
   casing-color: #B108D6;
@@ -425,6 +634,7 @@ node.ColterM,
 node.Daniel,
 node.GabeG,
 node.IanK,
+node.IanM,
 node.JamesP,
 node.JessicaH,
 node.LandonS,
@@ -436,7 +646,26 @@ node.MorgenM,
 node.NickE,
 node.RickZ,
 node.Riley,
-node.Sierra
+node.Sierra,
+
+/* Seattle */
+
+node.AlbertG,
+node.AlecH,
+node.AnoudA,
+node.EduardoT,
+node.EvanD,
+node.EdwardD,
+node.FasickM,
+node.HoraceH,
+node.JasonC,
+node.JenniferS,
+node.MichaelT,
+node.NiyomiK,
+node.RikH,
+node.StephanieH,
+node.ViancaS
+
 {
   symbol-size: 15;
   symbol-shape: triangle;
