@@ -16,7 +16,7 @@ meta {
 1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
 1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
 1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
-1.8 Added new team categories and new users. Updated title. --Landon S.-- 04/20/2022
+1.8 Added Seattle, Quandry, and Krakatoa teams, new users, updated title -- Landon S. -- 04/21/2022
 
 Tips:
 
@@ -87,6 +87,135 @@ that there is another selector we would like to call out after "aaron"
 /* Create Settings */
 
 /* User Settings */
+
+/* Krakatoa */
+
+settings::krakatoa {
+  label: tr("Krakatoa");
+}
+
+setting::user_JoseL {
+  type:boolean;
+  label:tr("Turn User JDKaart On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_KiraM {
+  type:boolean;
+  label:tr("Turn User martymcfly14 On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_ReillyM {
+  type:boolean;
+  label:tr("Turn User smileyreilly On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+setting::user_RyanM {
+  type:boolean;
+  label:tr("Turn User birdeatscake On/Off");
+  default:true;
+  group: "krakatoa";
+}
+
+/* Quandary */
+
+settings::quandary {
+  label: tr("Quandary");
+}
+
+setting::user_CorbanG {
+  type:boolean;
+  label:tr("Turn User Corban8 On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_HamishH {
+  type:boolean;
+  label:tr("Turn User hairyhaggis On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_IanMa {
+  type:boolean;
+  label:tr("Turn User Baconcrisp On/Off");
+  default:true;
+  group: "quandary";
+}
+
+
+setting::user_JakeK {
+  type:boolean;
+  label:tr("Turn User CoolGuyJake On/Off");
+  default:true;
+  group: "quandary";
+}
+
+
+setting::user_JasonH {
+  type:boolean;
+  label:tr("Turn User AnonJason On/Off");
+  default:true;
+  group: "quandary";
+}
+
+
+setting::user_JorgeA {
+  type:boolean;
+  label:tr("Turn User JAAS On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_LaurenH {
+  type:boolean;
+  label:tr("Turn User Pegasus21 On/Off");
+  default:true;
+  group: "quandary";
+}
+
+
+setting::user_PaceM {
+  type:boolean;
+  label:tr("Turn User InnerPace On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_PaulS {
+  type:boolean;
+  label:tr("Turn User hayduke1275 On/Off");
+  default:true;
+  group: "quandary";
+}
+
+
+setting::user_ToddK {
+  type:boolean;
+  label:tr("Turn User Toddtodd On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_TomH {
+  type:boolean;
+  label:tr("Turn User tomincolorado On/Off");
+  default:true;
+  group: "quandary";
+}
+
+setting::user_WilliamF {
+  type:boolean;
+  label:tr("Turn User Buddy-the-Elf On/Off");
+  default:true;
+  group: "quandary";
+}
 
 /* Sanitas */
 
@@ -171,7 +300,7 @@ setting::user_IanK {
   group: "sanitas";
 }
 
-setting::user_IanM {
+setting::user_IanMc {
   type:boolean;
   label:tr("Turn User Winterson On/Off");
   default:true;
@@ -397,6 +526,74 @@ node:modified < way::modified_layer {
 
 /* QC Styles */
 
+/* User specific styles: Krakatoa */
+
+*[osm_user_name() == "JDKaart"][setting("user_JoseL")] {
+  set .JoseL;
+}
+  
+*[osm_user_name() == "birdeatscake"][setting("user_KiraM")] {
+  set .KiraM;
+}
+ 
+*[osm_user_name() == "smileyreilly"][setting("user_ReillyM")] {
+  set .ReillyM;
+}
+
+*[osm_user_name() == "martymcfly14"][setting("user_RyanM")] {
+  set .RyanM;
+}
+
+/* User specific styles: Quandary */
+
+*[osm_user_name() == "Corban8"][setting("user_CorbanG")] {
+  set .CorbanG;
+}
+
+*[osm_user_name() == "hairyhaggis"][setting("user_HamishH")] {
+  set .HamishH;
+}
+
+*[osm_user_name() == "Baconcrisp"][setting("user_IanMa")] {
+  set .IanMa;
+}
+
+*[osm_user_name() == "CoolGuyJake"][setting("user_JakeK")] {
+  set .JakeK;
+}
+
+*[osm_user_name() == "AnonJason"][setting("user_JasonH")] {
+  set .JasonH;
+}
+
+*[osm_user_name() == "JAAS"][setting("user_JorgeA")] {
+  set .JorgeA;
+}
+
+*[osm_user_name() == "Pegasus21"][setting("user_LaurenH")] {
+  set .LaurenH;
+}
+
+*[osm_user_name() == "InnerPace"][setting("user_PaceM")] {
+  set .PaceM;
+}
+
+*[osm_user_name() == "hayduke1275"][setting("user_PaulS")] {
+  set .PaulS;
+}
+
+*[osm_user_name() == "Toddtodd"][setting("user_ToddK")] {
+  set .ToddK;
+}
+
+*[osm_user_name() == "tomincolorado"][setting("user_TomH")] {
+  set .TomH;
+}
+
+*[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")] {
+  set .WilliamF;
+}
+
 /* User specific styles: Sanitas */
 
 *[osm_user_name() == "StriDez"][setting("user_AaronL")] {
@@ -444,7 +641,7 @@ node:modified < way::modified_layer {
 }
 
 *[osm_user_name() == "Winterson"][setting("user_IanM")] {
-  set .IanM;
+  set .IanMc;
 }
 
 *[osm_user_name() == "eggothy"][setting("user_JamesP")] {
@@ -565,6 +762,28 @@ node:modified < way::modified_layer {
 
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
+/* Krakatoa */
+
+way.JoseL,
+way.KiraM,
+way.ReillyM,
+way.RyanM,
+
+/* Quandary */
+
+way.CorbanG,
+way.HamishH,
+way.IanMa,
+way.JakeK,
+way.JasonH,
+way.JorgeA,
+way.LaurenH,
+way.PaceM,
+way.PaulS,
+way.ToddK,
+way.TomH,
+way.WilliamF,
+
 /*Sanitas*/
 
 way.AaronL,
@@ -578,7 +797,7 @@ way.ColterM,
 way.Daniel,
 way.GabeG,
 way.IanK,
-way.IanM,
+way.IanMc,
 way.JamesP,
 way.JessicaH,
 way.LandonS,
@@ -621,6 +840,28 @@ way.ViancaS
   */
 }
 
+/* Krakatoa */
+
+node.JoseL,
+node.KiraM,
+node.ReillyM,
+node.RyanM,
+
+/* Quandary */
+
+node.CorbanG,
+node.HamishH,
+node.IanMa,
+node.JakeK,
+node.JasonH,
+node.JorgeA,
+node.LaurenH,
+node.PaceM,
+node.PaulS,
+node.ToddK,
+node.TomH,
+node.WilliamF,
+
 /*Sanitas*/
 
 node.AaronL,
@@ -634,7 +875,7 @@ node.ColterM,
 node.Daniel,
 node.GabeG,
 node.IanK,
-node.IanM,
+node.IanMc,
 node.JamesP,
 node.JessicaH,
 node.LandonS,
