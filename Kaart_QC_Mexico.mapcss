@@ -640,7 +640,7 @@ node:modified < way::modified_layer {
   set .IanK;
 }
 
-*[osm_user_name() == "Winterson"][setting("user_IanM")] {
+*[osm_user_name() == "Winterson"][setting("user_IanMc")] {
   set .IanMc;
 }
 
