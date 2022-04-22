@@ -529,229 +529,229 @@ node:modified < way::modified_layer {
 /* User specific styles: Krakatoa */
 
 *[osm_user_name() == "JDKaart"][setting("user_JoseL")] {
-  set .JoseL;
+  set .Kaart;
 }
   
 *[osm_user_name() == "birdeatscake"][setting("user_KiraM")] {
-  set .KiraM;
+  set .Kaart;
 }
  
 *[osm_user_name() == "smileyreilly"][setting("user_ReillyM")] {
-  set .ReillyM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "martymcfly14"][setting("user_RyanM")] {
-  set .RyanM;
+  set .Kaart;
 }
 
 /* User specific styles: Quandary */
 
 *[osm_user_name() == "Corban8"][setting("user_CorbanG")] {
-  set .CorbanG;
+  set .Kaart;
 }
 
 *[osm_user_name() == "hairyhaggis"][setting("user_HamishH")] {
-  set .HamishH;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Baconcrisp"][setting("user_IanMa")] {
-  set .IanMa;
+  set .Kaart;
 }
 
 *[osm_user_name() == "CoolGuyJake"][setting("user_JakeK")] {
-  set .JakeK;
+  set .Kaart;
 }
 
 *[osm_user_name() == "AnonJason"][setting("user_JasonH")] {
-  set .JasonH;
+  set .Kaart;
 }
 
 *[osm_user_name() == "JAAS"][setting("user_JorgeA")] {
-  set .JorgeA;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Pegasus21"][setting("user_LaurenH")] {
-  set .LaurenH;
+  set .Kaart;
 }
 
 *[osm_user_name() == "InnerPace"][setting("user_PaceM")] {
-  set .PaceM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "hayduke1275"][setting("user_PaulS")] {
-  set .PaulS;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Toddtodd"][setting("user_ToddK")] {
-  set .ToddK;
+  set .Kaart;
 }
 
 *[osm_user_name() == "tomincolorado"][setting("user_TomH")] {
-  set .TomH;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")] {
-  set .WilliamF;
+  set .Kaart;
 }
 
 /* User specific styles: Sanitas */
 
 *[osm_user_name() == "StriDez"][setting("user_AaronL")] {
-  set .AaronL;
+  set .Kaart;
 }
 
 *[osm_user_name() == "albahabla"][setting("user_AlbaW")] {
-  set .AlbaW;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")] {
-  set .Angie;
+  set .Kaart;
 }
 
 *[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")] {
-  set .Anja;
+  set .Kaart;
 }
 
 *[osm_user_name() == "ArleneC"][setting("user_ArleneC")] {
-  set .ArleneC;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Almapthea"][setting("user_BrandonP")] {
-  set .BrandonP;
+  set .Kaart;
 }
 
 *[osm_user_name() == "ToastShark"][setting("user_BreiaV")] {
-  set .BreiaV;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Coltrain"][setting("user_ColterM")] {
-  set .ColterM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "The_Intern"][setting("user_Daniel")] {
-  set .Daniel;
+  set .Kaart;
 }
 
 *[osm_user_name() == "GbabethemapGod"][setting("user_GabeG")] {
-  set .GabeG;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Ikohl"][setting("user_IanK")] {
-  set .IanK;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Winterson"][setting("user_IanMc")] {
-  set .IanMc;
+  set .Kaart;
 }
 
 *[osm_user_name() == "eggothy"][setting("user_JamesP")] {
-  set .JamesP;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")] {
-  set .JessicaH;
+  set .Kaart;
 }
 
 *[osm_user_name() == "luin132"][setting("user_LandonS")] {
-  set .LandonS;
+  set .Kaart;
 }
 
 *[osm_user_name() == "LSkalayo"][setting("user_LeanneS")] {
-  set .LeanneS;
+  set .Kaart;
 }
 
 *[osm_user_name() == "noodlemommy"][setting("user_LillianM")] {
-  set .LillianM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "WarpathPeacock"][setting("user_LoganM")] {
-  set .LoganM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "127logs"][setting("user_LoganS")] {
-  set .LoganS;
+  set .Kaart;
 }
 
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")] {
-  set .MorgenM;
+  set .Kaart;
 }
 
 *[osm_user_name() == "jedimasterflint"][setting("user_NickE")] {
-  set .NickE;
+  set .Kaart;
 }
 
 *[osm_user_name() == "Ouray"][setting("user_RickZ")] {
-  set .RickZ;
+  set .Kaart;
 }
 
 *[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")] {
-  set .Riley;
+  set .Kaart;
 }
 
 *[osm_user_name() == "riskybiznu"][setting("user_Sierra")] {
-  set .Sierra;
+  set .Kaart;
 }
 
 /* User specific styles: Seattle */
 
 *[osm_user_name() == "TheJAwesome1"][setting("user_AlbertG")] {
-  set .AlbertG;
+  set .Kaart;
 }
 
  *[osm_user_name() == "CapAhab"][setting("user_AlecH")] {
-  set .AlecH;
+  set .Kaart;
 }
 
  *[osm_user_name() == "And_12"][setting("user_AnoudA")] {
-  set .AnoudA;
+  set .Kaart;
 }
 
  *[osm_user_name() == "VigotheCarpathian"][setting("user_EduardoT")] {
-  set .EduardoT;
+  set .KaartT;
 }
 
  *[osm_user_name() == "Ned_Stark"][setting("user_EdwardD")] {
-  set .EdwardD;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Evandering"][setting("user_EvanD")] {
-  set .EvanD;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Goatosm"][setting("user_FasickM")] {
-  set .FasickM;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Hoordinates"][setting("user_HoraceH")] {
-  set .HoraceH;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Red_Ranger"][setting("user_JasonC")] {
-  set .JasonC;
+  set .Kaart;
 }
 
  *[osm_user_name() == "geoJenn"][setting("user_JenniferS")] {
-  set .JenniferS;
+  set .Kaart;
 }
 
  *[osm_user_name() == "trigeo"][setting("user_MichaelT")] {
-  set .MichaelT;
+  set .Kaart;
 }
 
  *[osm_user_name() == "n1y0m1"][setting("user_NiyomiK")] {
-  set .NiyomiK;
+  set .Kaart;
 }
 
  *[osm_user_name() == "whatmeinfallible"][setting("user_RikH")] {
-  set .RikH;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Avocadough!"][setting("user_StephanieH")] {
-  set .StephanieH;
+  set .Kaart;
 }
 
  *[osm_user_name() == "Amonite1025"][setting("user_ViancaS")] {
-  set .ViancaS;
+  set .Kaart;
 }
 
 /* This is how you search for someone with a space in their name
@@ -762,72 +762,7 @@ node:modified < way::modified_layer {
 
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
-/* Krakatoa */
-
-way.JoseL,
-way.KiraM,
-way.ReillyM,
-way.RyanM,
-
-/* Quandary */
-
-way.CorbanG,
-way.HamishH,
-way.IanMa,
-way.JakeK,
-way.JasonH,
-way.JorgeA,
-way.LaurenH,
-way.PaceM,
-way.PaulS,
-way.ToddK,
-way.TomH,
-way.WilliamF,
-
-/*Sanitas*/
-
-way.AaronL,
-way.AlbaW,
-way.Angie,
-way.Anja,
-way.ArleneC,
-way.BrandonP,
-way.BreiaV,
-way.ColterM,
-way.Daniel,
-way.GabeG,
-way.IanK,
-way.IanMc,
-way.JamesP,
-way.JessicaH,
-way.LandonS,
-way.LeanneS,
-way.LillianM,
-way.LoganM,
-way.LoganS,
-way.MorgenM,
-way.NickE,
-way.RickZ,
-way.Riley,
-way.Sierra,
-
-/* Seattle */
-
-way.AlbertG,
-way.AlecH,
-way.AnoudA,
-way.EduardoT,
-way.EdwardD,
-way.EvanD,
-way.FasickM,
-way.HoraceH,
-way.JasonC,
-way.JenniferS,
-way.MichaelT,
-way.NiyomiK,
-way.RikH,
-way.StephanieH,
-way.ViancaS
+way.Kaart
 
 {
   z-index: -10;
@@ -840,72 +775,7 @@ way.ViancaS
   */
 }
 
-/* Krakatoa */
-
-node.JoseL,
-node.KiraM,
-node.ReillyM,
-node.RyanM,
-
-/* Quandary */
-
-node.CorbanG,
-node.HamishH,
-node.IanMa,
-node.JakeK,
-node.JasonH,
-node.JorgeA,
-node.LaurenH,
-node.PaceM,
-node.PaulS,
-node.ToddK,
-node.TomH,
-node.WilliamF,
-
-/*Sanitas*/
-
-node.AaronL,
-node.AlbaW,
-node.Angie,
-node.Anja,
-node.ArleneC,
-node.BrandonP,
-node.BreiaV,
-node.ColterM,
-node.Daniel,
-node.GabeG,
-node.IanK,
-node.IanMc,
-node.JamesP,
-node.JessicaH,
-node.LandonS,
-node.LeanneS,
-node.LillianM,
-node.LoganM,
-node.LoganS,
-node.MorgenM,
-node.NickE,
-node.RickZ,
-node.Riley,
-node.Sierra,
-
-/* Seattle */
-
-node.AlbertG,
-node.AlecH,
-node.AnoudA,
-node.EduardoT,
-node.EvanD,
-node.EdwardD,
-node.FasickM,
-node.HoraceH,
-node.JasonC,
-node.JenniferS,
-node.MichaelT,
-node.NiyomiK,
-node.RikH,
-node.StephanieH,
-node.ViancaS
+node.Kaart
 
 {
   symbol-size: 15;
