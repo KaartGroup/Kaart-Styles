@@ -16,7 +16,7 @@ meta {
 1.5 Alphabetized users, added new users, added tips, simplified node highlight & node modified overlays -- Louis,Ian,AndrewP -- 5/15/2019
 1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
 1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
-1.8 Added Seattle, Quandry, and Krakatoa teams, new users, updated title and simplified set -- Landon S. -- 04/22/2022
+1.8 Added Seattle, Quandry, and Krakatoa teams, new users, updated title and simplified set -- Landon S. -- 04/25/2022
 
 Tips:
 
@@ -96,28 +96,28 @@ settings::krakatoa {
 
 setting::user_JoseL {
   type:boolean;
-  label:tr("Turn User JDKaart On/Off");
+  label:tr("JDKaart|JoseL");
   default:true;
   group: "krakatoa";
 }
 
 setting::user_KiraM {
   type:boolean;
-  label:tr("Turn User martymcfly14 On/Off");
+  label:tr("martymcfly14|KiraM");
   default:true;
   group: "krakatoa";
 }
 
 setting::user_ReillyM {
   type:boolean;
-  label:tr("Turn User smileyreilly On/Off");
+  label:tr("smileyreilly|ReillyM");
   default:true;
   group: "krakatoa";
 }
 
 setting::user_RyanM {
   type:boolean;
-  label:tr("Turn User birdeatscake On/Off");
+  label:tr("birdeatscake|RyanM");
   default:true;
   group: "krakatoa";
 }
@@ -130,21 +130,21 @@ settings::quandary {
 
 setting::user_CorbanG {
   type:boolean;
-  label:tr("Turn User Corban8 On/Off");
+  label:tr("Corban8|CorbanG");
   default:true;
   group: "quandary";
 }
 
 setting::user_HamishH {
   type:boolean;
-  label:tr("Turn User hairyhaggis On/Off");
+  label:tr("hairyhaggis|HamishH");
   default:true;
   group: "quandary";
 }
 
 setting::user_IanMa {
   type:boolean;
-  label:tr("Turn User Baconcrisp On/Off");
+  label:tr("Baconcrisp|IanMa");
   default:true;
   group: "quandary";
 }
@@ -152,7 +152,7 @@ setting::user_IanMa {
 
 setting::user_JakeK {
   type:boolean;
-  label:tr("Turn User CoolGuyJake On/Off");
+  label:tr("CoolGuyJake|JakeK");
   default:true;
   group: "quandary";
 }
@@ -160,7 +160,7 @@ setting::user_JakeK {
 
 setting::user_JasonH {
   type:boolean;
-  label:tr("Turn User AnonJason On/Off");
+  label:tr("AnonJason|JasonH");
   default:true;
   group: "quandary";
 }
@@ -168,14 +168,14 @@ setting::user_JasonH {
 
 setting::user_JorgeA {
   type:boolean;
-  label:tr("Turn User JAAS On/Off");
+  label:tr("JAAS|JorgeA");
   default:true;
   group: "quandary";
 }
 
 setting::user_LaurenH {
   type:boolean;
-  label:tr("Turn User Pegasus21 On/Off");
+  label:tr("Pegasus21|LaurenH");
   default:true;
   group: "quandary";
 }
@@ -183,14 +183,14 @@ setting::user_LaurenH {
 
 setting::user_PaceM {
   type:boolean;
-  label:tr("Turn User InnerPace On/Off");
+  label:tr("InnerPace|PaceM");
   default:true;
   group: "quandary";
 }
 
 setting::user_PaulS {
   type:boolean;
-  label:tr("Turn User hayduke1275 On/Off");
+  label:tr("hayduke1275|PaulS");
   default:true;
   group: "quandary";
 }
@@ -198,21 +198,21 @@ setting::user_PaulS {
 
 setting::user_ToddK {
   type:boolean;
-  label:tr("Turn User Toddtodd On/Off");
+  label:tr("Toddtodd|ToddK");
   default:true;
   group: "quandary";
 }
 
 setting::user_TomH {
   type:boolean;
-  label:tr("Turn User tomincolorado On/Off");
+  label:tr("tomincolorado|TomH");
   default:true;
   group: "quandary";
 }
 
 setting::user_WilliamF {
   type:boolean;
-  label:tr("Turn User Buddy-the-Elf On/Off");
+  label:tr("Buddy-the-Elf|WilliamF");
   default:true;
   group: "quandary";
 }
@@ -225,168 +225,168 @@ settings::sanitas {
 
 setting::user_AaronL {
   type:boolean;
-  label:tr("Turn User StriDez On/Off");
+  label:tr("StriDez|AaronL");
   default:true;
   group: "sanitas";
 }
 
 setting::user_AlbaW {
   type:boolean;
-  label:tr("Turn User albahabla On/Off");
+  label:tr("albahabla|AlbaW");
   default:true;
   group: "sanitas";
 }
 
 setting::user_Angie {
   type: boolean;
-  label: tr("Turn User Inigo_Maptoya On/Off");
+  label: tr("Inigo_Maptoya|Angie");
   default: true;
   group: "sanitas";
 }
 
 setting::user_Anja {
   type: boolean;
-  label: tr("Turn User PlinyTheYoungest On/Off");
+  label: tr("PlinyTheYoungest|Anja");
   default: true;
   group: "sanitas";
 }
 
 setting::user_ArleneC {
   type:boolean;
-  label:tr("Turn User ArleneC On/Off");
+  label:tr("ArleneC|ArleneC");
   default:true;
   group: "sanitas";
 }
 
 setting::user_BrandonP {
   type:boolean;
-  label:tr("Turn User Almapthea On/Off");
+  label:tr("Almapthea|BrandonP");
   default:true;
   group: "sanitas";
 }
 
 setting::user_BreiaV {
   type:boolean;
-  label:tr("Turn User ToastShark On/Off");
+  label:tr("ToastShark|BreiaV");
   default:true;
   group: "sanitas";
 }
 
 setting::user_ColterM {
   type:boolean;
-  label:tr("Turn User Coltrain On/Off");
+  label:tr("Coltrain|ColterM");
   default:true;
   group: "sanitas";
 }
 
 setting::user_Daniel {
   type: boolean;
-  label: tr("Turn User The_Intern On/Off");
+  label: tr("The_Intern|Daniel");
   default: true;
   group: "sanitas";
 }
 
 setting::user_GabeG {
   type: boolean;
-  label: tr("Turn User GbabethemapGod On/Off");
+  label: tr("GbabethemapGod|GabeG");
   default: true;
   group: "sanitas";
 }
 
 setting::user_IanK {
   type:boolean;
-  label:tr("Turn User Ikohl On/Off");
+  label:tr("Ikohl|IanK");
   default:true;
   group: "sanitas";
 }
 
 setting::user_IanMc {
   type:boolean;
-  label:tr("Turn User Winterson On/Off");
+  label:tr("Winterson|IanMc");
   default:true;
   group: "sanitas";
 }
 
 setting::user_JamesP {
   type:boolean;
-  label:tr("Turn User eggothy On/Off");
+  label:tr("eggothy|JamesP");
   default:true;
   group: "sanitas";
 }
 
 setting::user_JessicaH {
   type:boolean;
-  label:tr("Turn User Mapistopheles On/Off");
+  label:tr("Mapistopheles|JessicaH");
   default:true;
   group: "sanitas";
 }
 
 setting::user_LandonS {
   type:boolean;
-  label:tr("Turn User luin132 On/Off");
+  label:tr("luin132|LandonS");
   default:true;
   group: "sanitas";
 }
 
 setting::user_LeanneS {
   type:boolean;
-  label:tr("Turn User LSkalayo On/Off");
+  label:tr("LSkalayo|LeanneS");
   default:true;
   group: "sanitas";
 }
 
 setting::user_LillianM {
   type:boolean;
-  label:tr("Turn User noodlemommy On/Off");
+  label:tr("noodlemommy|LillianM");
   default:true;
   group: "sanitas";
 }
 
 setting::user_LoganM {
   type:boolean;
-  label:tr("Turn User WarpathPeacock On/Off");
+  label:tr("WarpathPeacock|LoganM");
   default:true;
   group: "sanitas";
 }
 
 setting::user_LoganS {
   type: boolean;
-  label: tr("Turn User 127logs On/Off");
+  label: tr("127logs|LoganS");
   default: true;
   group: "sanitas";
 }
 
 setting::user_MorgenM {
   type:boolean;
-  label:tr("Turn User MMantlo On/Off");
+  label:tr("MMantlo|MorgenM");
   default:true;
   group: "sanitas";
 }
 
 setting::user_NickE {
   type:boolean;
-  label:tr("Turn User jedimasterflint On/Off");
+  label:tr("jedimasterflint|NickE");
   default:true;
   group: "sanitas";
 }
 
 setting::user_RickZ {
   type:boolean;
-  label:tr("Turn User Ouray On/Off");
+  label:tr("Ouray|RickZ");
   default:true;
   group: "sanitas";
 }
 
 setting::user_Riley {
   type: boolean;
-  label: tr("Turn User AlwaysSunnyInMapadelphia On/Off");
+  label: tr("AlwaysSunnyInMapadelphia|Riley");
   default: true;
   group: "sanitas";
 }
 
 setting::user_Sierra {
   type:boolean;
-  label:tr("Turn User riskybiznu On/Off");
+  label:tr(riskybiznu|Sierra");
   default: true;
   group: "sanitas";
 }
@@ -399,105 +399,105 @@ settings::seattle {
 
 setting::user_AlbertG {
   type:boolean;
-  label:tr("Turn User TheJAwesome1 On/Off");
+  label:tr("TheJAwesome1|AlbertG");
   default:true;
   group: "seattle";
 }
 
 setting::user_AlecH {
   type:boolean;
-  label:tr("Turn User CapAhab On/Off");
+  label:tr("CapAhab|AlecH");
   default:true;
   group: "seattle";
 }
 
 setting::user_AnoudA {
   type:boolean;
-  label:tr("Turn User And_12 On/Off");
+  label:tr("And_12|AnoudA");
   default:true;
   group: "seattle";
 }
 
 setting::user_EduardoT {
   type:boolean;
-  label:tr("Turn User VigotheCarpathian On/Off");
+  label:tr("VigotheCarpathian|EduardoT");
   default:true;
   group: "seattle";
 }
 
 setting::user_EdwardD {
   type:boolean;
-  label:tr("Turn User Ned_Stark On/Off");
+  label:tr("Ned_Stark|EdwardD");
   default:true;
   group: "seattle";
 }
 
 setting::user_EvanD {
   type:boolean;
-  label:tr("Turn User Evandering On/Off");
+  label:tr("Evandering|EvanD");
   default:true;
   group: "seattle";
 }
 
 setting::user_FasickM {
   type:boolean;
-  label:tr("Turn User Goatosm On/Off");
+  label:tr("Goatosm|FasickM");
   default:true;
   group: "seattle";
 }
 
 setting::user_HoraceH {
   type:boolean;
-  label:tr("Turn User Hoordinates On/Off");
+  label:tr("Hoordinates|HoraceH");
   default:true;
   group: "seattle";
 }
 
 setting::user_JasonC {
   type:boolean;
-  label:tr("Turn User Red_Ranger On/Off");
+  label:tr("Red_Ranger|JasonC");
   default:true;
   group: "seattle";
 }
 
 setting::user_JenniferS {
   type:boolean;
-  label:tr("Turn User geoJenn On/Off");
+  label:tr("geoJenn|JenniferS");
   default:true;
   group: "seattle";
 }
 
 setting::user_MichaelT {
   type:boolean;
-  label:tr("Turn User trigeo On/Off");
+  label:tr("trigeo|MichaelT");
   default:true;
   group: "seattle";
 }
 
 setting::user_NiyomiK {
   type:boolean;
-  label:tr("Turn User n1y0m1 On/Off");
+  label:tr("n1y0m1|NiyomiK");
   default:true;
   group: "seattle";
 }
 
 setting::user_RikH {
   type:boolean;
-  label:tr("Turn User whatmeinfallible On/Off");
+  label:tr("whatmeinfallible|RikH");
   default:true;
   group: "seattle";
 }
 
 setting::user_StephanieH {
   type:boolean;
-  label:tr("Turn User Avocadough! On/Off");
+  label:tr("Avocadough!|StephanieH");
   default:true;
   group: "seattle";
 }
 
 setting::user_ViancaS {
   type:boolean;
-  label:tr("Turn User Amonite1025 On/Off");
+  label:tr("Amonite1025|ViancaS");
   default:true;
   group: "seattle";
 }
