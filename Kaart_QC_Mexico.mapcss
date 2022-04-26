@@ -386,7 +386,7 @@ setting::user_Riley {
 
 setting::user_Sierra {
   type:boolean;
-  label:tr(riskybiznu|Sierra");
+  label: tr("riskybiznu|Sierra");
   default: true;
   group: "sanitas";
 }
