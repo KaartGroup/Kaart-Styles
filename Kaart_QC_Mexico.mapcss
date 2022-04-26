@@ -149,7 +149,6 @@ setting::user_IanMa {
   group: "quandary";
 }
 
-
 setting::user_JakeK {
   type:boolean;
   label:tr("CoolGuyJake|JakeK");
@@ -157,14 +156,12 @@ setting::user_JakeK {
   group: "quandary";
 }
 
-
 setting::user_JasonH {
   type:boolean;
   label:tr("AnonJason|JasonH");
   default:true;
   group: "quandary";
 }
-
 
 setting::user_JorgeA {
   type:boolean;
@@ -180,7 +177,6 @@ setting::user_LaurenH {
   group: "quandary";
 }
 
-
 setting::user_PaceM {
   type:boolean;
   label:tr("InnerPace|PaceM");
@@ -194,7 +190,6 @@ setting::user_PaulS {
   default:true;
   group: "quandary";
 }
-
 
 setting::user_ToddK {
   type:boolean;
@@ -605,7 +600,6 @@ node:modified < way::modified_layer {
 /* Styling of ways and nodes once they belong to "history" for each individual user */
 
 way.Kaart
-
 {
   z-index: -10;
   casing-color: #B108D6;
@@ -618,7 +612,6 @@ way.Kaart
 }
 
 node.Kaart
-
 {
   symbol-size: 15;
   symbol-shape: triangle;
@@ -627,7 +620,6 @@ node.Kaart
   symbol-fill-opacity: 0.5;
   z-index: -5;
 }
-
 node:selected::selected_layer {
     symbol-shape: circle;
     symbol-size: 22;
