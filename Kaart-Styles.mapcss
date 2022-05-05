@@ -726,7 +726,7 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 way[barrier] {z-index: 5; color: #000000; width: 1}
 way[barrier=fence] {z-index: 5; color: #000000; width: 1; dashes: 8,4,2,4; }
 
-node[barrier=sliding_gate]::tagged, node[barrier=debris]::tagged, node[barrier=full-height_turnstile]::tagged, node[barrier=height_restrictor]::tagged, node[barrier=horse_stile]::tagged, node[barrier=kent_carriage_gap]::tagged, node[barrier=motorcycle_barrier]::tagged, node[barrier=sump_buster]::tagged, node[barrier=wicket_gate]::tagged, node[barrier=yes]::tagged, node[barrier=tyres]::tagged, node[barrier=log]::tagged, node[barrier=rope]::tagged, node[barrier=tank_trap]::tagged, node[barrier=fence]::tagged {symbol-shape: square;
+node[barrier=sliding_gate]::tagged, node[barrier=debris]::tagged, node[barrier=horse_stile]::tagged, node[barrier=kent_carriage_gap]::tagged, node[barrier=motorcycle_barrier]::tagged, node[barrier=sump_buster]::tagged, node[barrier=wicket_gate]::tagged, node[barrier=yes]::tagged, node[barrier=tyres]::tagged, node[barrier=rope]::tagged, node[barrier=tank_trap]::tagged, node[barrier=fence]::tagged {symbol-shape: square;
 symbol-size: 5;
 symbol-stroke-color: #FC03E5;
 symbol-stroke-width: 20px;
@@ -972,7 +972,6 @@ node { text-anchor-horizontal: center; text-anchor-vertical: below; }
 
 node[place] { icon-image: icons/place.png; font-family: DejaVu; text: auto; font-size: 10; font-weight: bold; z-index: 20; }
 node[amenity=telephone] { icon-image: icons/telephone.png; z-index: 20; }
-node[barrier=cattle_grid] { icon-image: icons/cattle_grid.png; z-index: 20; }
 node[tourism=guesthouse] { icon-image: icons/accommodation_bed_and_breakfast.n.16.png; z-index: 20; }
 node[tourism=alpine_hut] { icon-image: icons/accommodation_alpinehut.n.16.png; z-index: 20; }
 node[tourism=camp_site] { icon-image: icons/accommodation_camping.n.16.png; z-index: 20; }
@@ -995,6 +994,7 @@ node[barrier=kissing_gate] { icon-image: icons/barrier_kissing_gate.16.png; z-in
 node[barrier=cycle_barrier] { icon-image: icons/barrier_cycle_barrier.16.png; z-index: 20; }
 node[barrier=block] { icon-image: icons/barrier_blocks.16.png; z-index: 20; }
 node[barrier=cattle_grid] { icon-image: icons/barrier_cattle_grid.16.png; z-index: 20; }
+node[barrier=height_restrictor] {icon-image: icons/barrier_height_restrictor.n.16.png; z-index: 20; icon-width: 25; }
 node[amenity=school] { icon-image: icons/education_school.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 area[amenity=school]:closed { color: yellow; fill-color: yellow; fill-opacity: 0.1; prop_area_small_name : 1; }
 node[amenity=bar] { icon-image: icons/food_bar.n.16.png; text-offset:0; text: auto; font-size: 10; z-index: 20; }
