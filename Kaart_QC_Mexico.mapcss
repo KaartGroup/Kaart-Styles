@@ -17,7 +17,7 @@ meta {
 1.6 Updated to include both Sanitas and Nokhu teams -- Sarah R. -- 3/05/2020
 1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
 1.8 Updated to include new team categories, new users, and updated title -- Landon S. -- 04/20/2022
-2.0 Updated to include more teams, added relations, quality of life improvements and settings -- Landon S. -- 05/4/2022
+2.0 Updated to include more teams, added relations, and added settings -- Landon S. -- 05/4/2022
 
 Tips:
 
@@ -169,13 +169,6 @@ setting::user_IanMa {
 setting::user_JakeK {
   type:boolean;
   label:tr("CoolGuyJake|Jake Kaplan");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_JasonH {
-  type:boolean;
-  label:tr("AnonJason|Jason Hurst");
   default:true;
   group: "quandary";
 }
@@ -340,20 +333,6 @@ setting::user_LandonS {
   group: "sanitas";
 }
 
-setting::user_LeanneS {
-  type:boolean;
-  label:tr("LSkalayo|Leanne Schneider");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_LillianM {
-  type:boolean;
-  label:tr("noodlemommy|Lillian Moore");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_LoganM {
   type:boolean;
   label:tr("WarpathPeacock|Logan McGovern");
@@ -375,13 +354,6 @@ setting::user_MorgenM {
   group: "sanitas";
 }
 
-setting::user_NickE {
-  type:boolean;
-  label:tr("jedimasterflint|Nick Eglet");
-  default:true;
-  group: "sanitas";
-}
-
 setting::user_RickZ {
   type:boolean;
   label:tr("Ouray|Rick Zortman");
@@ -392,13 +364,6 @@ setting::user_RickZ {
 setting::user_Riley {
   type: boolean;
   label: tr("AlwaysSunnyInMapadelphia|Riley White");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_Sierra {
-  type:boolean;
-  label: tr("riskybiznu|Sierra Ethridge");
   default: true;
   group: "sanitas";
 }
@@ -454,13 +419,6 @@ setting::user_FasickM {
 setting::user_HoraceH {
   type:boolean;
   label:tr("Hoordinates|Horace Hou");
-  default:true;
-  group: "seattle";
-}
-
-setting::user_JasonC {
-  type:boolean;
-  label:tr("Red_Ranger|Jason Chen");
   default:true;
   group: "seattle";
 }
@@ -530,7 +488,6 @@ setting::user_ViancaS {
 *[osm_user_name() == "hairyhaggis"][setting("user_HamishH")],
 *[osm_user_name() == "Baconcrisp"][setting("user_IanMa")],
 *[osm_user_name() == "CoolGuyJake"][setting("user_JakeK")],
-*[osm_user_name() == "AnonJason"][setting("user_JasonH")],
 *[osm_user_name() == "JAAS"][setting("user_JorgeA")],
 *[osm_user_name() == "Pegasus21"][setting("user_LaurenH")],
 *[osm_user_name() == "InnerPace"][setting("user_PaceM")],
@@ -556,15 +513,11 @@ setting::user_ViancaS {
 *[osm_user_name() == "eggothy"][setting("user_JamesP")],
 *[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")],
 *[osm_user_name() == "luin132"][setting("user_LandonS")],
-*[osm_user_name() == "LSkalayo"][setting("user_LeanneS")],
-*[osm_user_name() == "noodlemommy"][setting("user_LillianM")],
 *[osm_user_name() == "WarpathPeacock"][setting("user_LoganM")],
 *[osm_user_name() == "127logs"][setting("user_LoganS")],
 *[osm_user_name() == "MMantlo"][setting("user_MorgenM")],
-*[osm_user_name() == "jedimasterflint"][setting("user_NickE")],
 *[osm_user_name() == "Ouray"][setting("user_RickZ")],
 *[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")],
-*[osm_user_name() == "riskybiznu"][setting("user_Sierra")],
 
 /* Seattle */
 
@@ -575,7 +528,6 @@ setting::user_ViancaS {
 *[osm_user_name() == "Evandering"][setting("user_EvanD")],
 *[osm_user_name() == "Goatosm"][setting("user_FasickM")],
 *[osm_user_name() == "Hoordinates"][setting("user_HoraceH")],
-*[osm_user_name() == "Red_Ranger"][setting("user_JasonC")],
 *[osm_user_name() == "geoJenn"][setting("user_JenniferS")],
 *[osm_user_name() == "trigeo"][setting("user_MickT")],
 *[osm_user_name() == "Ned_Stark"][setting("user_NeddyD")],
@@ -612,8 +564,6 @@ relation[eval(JOSM_search("user:Baconcrisp"))] > node[setting("user_IanMa")],
 relation[eval(JOSM_search("user:Baconcrisp"))] > way[setting("user_IanMa")],
 relation[eval(JOSM_search("user:CoolGuyJake"))] > node[setting("user_JakeK")],
 relation[eval(JOSM_search("user:CoolGuyJake"))] > way[setting("user_JakeK")],
-relation[eval(JOSM_search("user:AnonJason"))] > node[setting("user_JasonH")],
-relation[eval(JOSM_search("user:AnonJason"))] > way[setting("user_JasonH")],
 relation[eval(JOSM_search("user:JAAS"))] > node[setting("user_JorgeA")],
 relation[eval(JOSM_search("user:JAAS"))] > way[setting("user_JorgeA")],
 relation[eval(JOSM_search("user:Pegasus21"))] > node[setting("user_LaurenH")],
@@ -661,24 +611,16 @@ relation[eval(JOSM_search("user:Mapistopheles"))] > node[setting("user_JessicaH"
 relation[eval(JOSM_search("user:Mapistopheles"))] > way[setting("user_JessicaH")],
 relation[eval(JOSM_search("user:luin132"))] > node[setting("user_LandonS")],
 relation[eval(JOSM_search("user:luin132"))] > way[setting("user_LandonS")],
-relation[eval(JOSM_search("user:LSkalayo"))] > node[setting("user_LeanneS")],
-relation[eval(JOSM_search("user:LSkalayo"))] > way[setting("user_LeanneS")],
-relation[eval(JOSM_search("user:noodlemommy"))] > node[setting("user_LillianM")],
-relation[eval(JOSM_search("user:noodlemommy"))] > way[setting("user_LillianM")],
 relation[eval(JOSM_search("user:WarpathPeacock"))] > node[setting("user_LoganM")],
 relation[eval(JOSM_search("user:WarpathPeacock"))] > way[setting("user_LoganM")],
 relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
 relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
 relation[eval(JOSM_search("user:MMantlo"))] > node[setting("user_MorgenM")],
 relation[eval(JOSM_search("user:MMantlo"))] > way[setting("user_MorgenM")],
-relation[eval(JOSM_search("user:jedimasterflint"))] > node[setting("user_NickE")],
-relation[eval(JOSM_search("user:jedimasterflint"))] > way[setting("user_NickE")],
 relation[eval(JOSM_search("user:Ouray"))] > node[setting("user_RickZ")],
 relation[eval(JOSM_search("user:Ouray"))] > way[setting("user_RickZ")],
 relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > node[setting("user_Riley")],
 relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > way[setting("user_Riley")],
-relation[eval(JOSM_search("user:riskybiznu"))] > node[setting("user_Sierra")],
-relation[eval(JOSM_search("user:riskybiznu"))] > way[setting("user_Sierra")],
 
 /* Seattle */
 
@@ -696,8 +638,6 @@ relation[eval(JOSM_search("user:Goatosm"))] > node[setting("user_FasickM")],
 relation[eval(JOSM_search("user:Goatosm"))] > way[setting("user_FasickM")],
 relation[eval(JOSM_search("user:Hoordinates"))] > node[setting("user_HoraceH")],
 relation[eval(JOSM_search("user:Hoordinates"))] > way[setting("user_HoraceH")],
-relation[eval(JOSM_search("user:Red_Ranger"))] > node[setting("user_JasonC")],
-relation[eval(JOSM_search("user:Red_Ranger"))] > way[setting("user_JasonC")],
 relation[eval(JOSM_search("user:geoJenn"))] > node[setting("user_JenniferS")],
 relation[eval(JOSM_search("user:geoJenn"))] > way[setting("user_JenniferS")],
 relation[eval(JOSM_search("user:trigeo"))] > node[setting("user_MickT")],
@@ -758,7 +698,7 @@ way!:modified.User {
   */
 }
 
-relation[setting(relations)]!:modified.User > node {
+relation[setting(relations)]!:modified.Relation > node.User {
   symbol-shape: triangle;
   symbol-size: 15;
   symbol-stroke-color: #49baba; /* Sky Blue */
@@ -767,7 +707,7 @@ relation[setting(relations)]!:modified.User > node {
   z-index: -10;
 }
 
-relation[setting(relations)]!:modified.User > way {
+relation[setting(relations)]!:modified.Relation > way.User {
   casing-width: 7;
   casing-color: #1396ba; /* Light Blue */
   casing-opacity: 0.55;
