@@ -98,47 +98,6 @@ that there is another selector we would like to call out after "aaron"
 
 /* User Settings */
 
-/* Krakatoa */
-
-settings::krakatoa {
-  label: tr("Krakatoa");
-}
-
-setting::user_JoseL {
-  type:boolean;
-  label:tr("JDKaart|Jose Lopez-Aguilera");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_KiraM {
-  type:boolean;
-  label:tr("martymcfly14|Kira Morales");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_LoganB {
-  type:boolean;
-  label:tr("WinterWitcher|Logan Barnes");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_ReillyM {
-  type:boolean;
-  label:tr("smileyreilly|Reilly McGonagil");
-  default:true;
-  group: "krakatoa";
-}
-
-setting::user_RyanM {
-  type:boolean;
-  label:tr("birdeatscake|Ryan Martin");
-  default:true;
-  group: "krakatoa";
-}
-
 /* Quandary */
 
 settings::quandary {
@@ -201,6 +160,13 @@ setting::user_PaulS {
   group: "quandary";
 }
 
+setting::user_RyanM {
+  type:boolean;
+  label:tr("birdeatscake|Ryan Martin");
+  default:true;
+  group: "quandary";
+}
+
 setting::user_ToddK {
   type:boolean;
   label:tr("Toddtodd|Todd Kegley");
@@ -222,265 +188,265 @@ setting::user_WilliamF {
   group: "quandary";
 }
 
-/* Sanitas */
+/* Sinopah */
 
-settings::sanitas {
-  label: tr("Sanitas");
-}
-
-setting::user_AaronL {
-  type:boolean;
-  label:tr("StriDez|Aaron Lewis");
-  default:true;
-  group: "sanitas";
+settings::sinopah {
+  label: tr("Sinopah");
 }
 
 setting::user_AlbaW {
   type:boolean;
   label:tr("albahabla|Alba West");
   default:true;
-  group: "sanitas";
-}
-
-setting::user_Angie {
-  type: boolean;
-  label: tr("Inigo_Maptoya|Angie Hernandez");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_Anja {
-  type: boolean;
-  label: tr("PlinyTheYoungest|Anja Riedel");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_ArleneC {
-  type:boolean;
-  label:tr("ArleneC|Arlene Coglietti");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_BrandonP {
-  type:boolean;
-  label:tr("Almapthea|Brandon Piechota");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_BreiaV {
-  type:boolean;
-  label:tr("ToastShark|Breia Velarde");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_ColterM {
-  type:boolean;
-  label:tr("Coltrain|Colter McKay");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Daniel {
-  type: boolean;
-  label: tr("The_Intern|Daniel Arinze");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_GabeG {
-  type: boolean;
-  label: tr("GbabethemapGod|Gabe Gueretta");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_IanK {
-  type:boolean;
-  label:tr("Ikohl|Ian Kohlman");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_IanMc {
-  type:boolean;
-  label:tr("Winterson|Ian McCollum");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_JamesP {
-  type:boolean;
-  label:tr("eggothy|James Peake");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_JessicaH {
-  type:boolean;
-  label:tr("Mapistopheles|Jessica Hedlun");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_LandonS {
-  type:boolean;
-  label:tr("luin132|Landon Sauvage");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_LoganM {
-  type:boolean;
-  label:tr("WarpathPeacock|Logan McGovern");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_LoganS {
-  type: boolean;
-  label: tr("127logs|Logan Smith");
-  default: true;
-  group: "sanitas";
-}
-
-setting::user_MorgenM {
-  type:boolean;
-  label:tr("MMantlo|Morgen Mantlo");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_RickZ {
-  type:boolean;
-  label:tr("Ouray|Rick Zortman");
-  default:true;
-  group: "sanitas";
-}
-
-setting::user_Riley {
-  type: boolean;
-  label: tr("AlwaysSunnyInMapadelphia|Riley White");
-  default: true;
-  group: "sanitas";
-}
-
-/* Seattle */
-
-settings::seattle {
-  label: tr("Seattle");
+  group: "sinopah";
 }
 
 setting::user_AlbertG {
   type:boolean;
   label:tr("TheJAwesome1|Albert Gamponia");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 setting::user_AlecH {
   type:boolean;
   label:tr("CapAhab|Alec Haberman");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_Angie {
+  type: boolean;
+  label: tr("Inigo_Maptoya|Angie Hernandez");
+  default: true;
+  group: "sinopah";
+}
+
+setting::user_Anja {
+  type: boolean;
+  label: tr("PlinyTheYoungest|Anja Riedel");
+  default: true;
+  group: "sinopah";
 }
 
 setting::user_AnoudA {
   type:boolean;
   label:tr("And_12|Anoud Aldrras");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_ArleneC {
+  type:boolean;
+  label:tr("ArleneC|Arlene Coglietti");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_BrandonP {
+  type:boolean;
+  label:tr("Almapthea|Brandon Piechota");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_BreiaV {
+  type:boolean;
+  label:tr("ToastShark|Breia Velarde");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_ColterM {
+  type:boolean;
+  label:tr("Coltrain|Colter McKay");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_Daniel {
+  type: boolean;
+  label: tr("The_Intern|Daniel Arinze");
+  default: true;
+  group: "sinopah";
 }
 
 setting::user_EduardoT {
   type:boolean;
   label:tr("VigotheCarpathian|Eduardo Torrelli");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 setting::user_EvanD {
   type:boolean;
   label:tr("Evandering|Evan Derickson");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 setting::user_FasickM {
   type:boolean;
   label:tr("Goatosm|Fasick Mulugeta");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_GabeG {
+  type: boolean;
+  label: tr("GbabethemapGod|Gabe Gueretta");
+  default: true;
+  group: "sinopah";
 }
 
 setting::user_HoraceH {
   type:boolean;
   label:tr("Hoordinates|Horace Hou");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_IanK {
+  type:boolean;
+  label:tr("Ikohl|Ian Kohlman");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_IanMc {
+  type:boolean;
+  label:tr("Winterson|Ian McCollum");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_JamesP {
+  type:boolean;
+  label:tr("eggothy|James Peake");
+  default:true;
+  group: "sinopah";
 }
 
 setting::user_JenniferS {
   type:boolean;
   label:tr("geoJenn|Jennifer Swagert");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_JessicaH {
+  type:boolean;
+  label:tr("Mapistopheles|Jessica Hedlun");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_JoseL {
+  type:boolean;
+  label:tr("JDKaart|Jose Lopez-Aguilera");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_KiraM {
+  type:boolean;
+  label:tr("martymcfly14|Kira Morales");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_LandonS {
+  type:boolean;
+  label:tr("luin132|Landon Sauvage");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_LoganB {
+  type:boolean;
+  label:tr("WinterWitcher|Logan Barnes");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_LoganM {
+  type:boolean;
+  label:tr("WarpathPeacock|Logan McGovern");
+  default:true;
+  group: "sinopah";
+}
+
+setting::user_LoganS {
+  type: boolean;
+  label: tr("127logs|Logan Smith");
+  default: true;
+  group: "sinopah";
 }
 
 setting::user_MickT {
   type:boolean;
   label:tr("trigeo|Mick Tribe");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_MorgenM {
+  type:boolean;
+  label:tr("MMantlo|Morgen Mantlo");
+  default:true;
+  group: "sinopah";
 }
 
 setting::user_NeddyD {
   type:boolean;
   label:tr("Ned_Stark|Neddy Dondup");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 setting::user_NiyomiK {
   type:boolean;
   label:tr("n1y0m1|Niyomi Khalid");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_RickZ {
+  type:boolean;
+  label:tr("Ouray|Rick Zortman");
+  default:true;
+  group: "sinopah";
 }
 
 setting::user_RikH {
   type:boolean;
   label:tr("whatmeinfallible|Rik Haines");
   default:true;
-  group: "seattle";
+  group: "sinopah";
+}
+
+setting::user_Riley {
+  type: boolean;
+  label: tr("AlwaysSunnyInMapadelphia|Riley White");
+  default: true;
+  group: "sinopah";
 }
 
 setting::user_StephanieH {
   type:boolean;
   label:tr("Avocadough!|Stephanie Hutton");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 setting::user_ViancaS {
   type:boolean;
   label:tr("Amonite1025|Vianca Severino");
   default:true;
-  group: "seattle";
+  group: "sinopah";
 }
 
 /* Retrieving User "History" */
-
-/* Krakatoa */
-
-*[osm_user_name() == "JDKaart"][setting("user_JoseL")],
-*[osm_user_name() == "birdeatscake"][setting("user_KiraM")],
-*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")],
-*[osm_user_name() == "smileyreilly"][setting("user_ReillyM")],
-*[osm_user_name() == "martymcfly14"][setting("user_RyanM")],
 
 /* Quandary */
 
@@ -492,47 +458,47 @@ setting::user_ViancaS {
 *[osm_user_name() == "Pegasus21"][setting("user_LaurenH")],
 *[osm_user_name() == "InnerPace"][setting("user_PaceM")],
 *[osm_user_name() == "hayduke1275"][setting("user_PaulS")],
+*[osm_user_name() == "martymcfly14"][setting("user_RyanM")],
 *[osm_user_name() == "Toddtodd"][setting("user_ToddK")],
 *[osm_user_name() == "tomincolorado"][setting("user_TomH")],
 *[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")],
 
-/* Sanitas */
+/* Sinopah */
 
-*[osm_user_name() == "StriDez"][setting("user_AaronL")],
 *[osm_user_name() == "albahabla"][setting("user_AlbaW")],
+*[osm_user_name() == "TheJAwesome1"][setting("user_AlbertG")],
+*[osm_user_name() == "CapAhab"][setting("user_AlecH")],
 *[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")],
 *[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")],
+*[osm_user_name() == "And_12"][setting("user_AnoudA")],
 *[osm_user_name() == "ArleneC"][setting("user_ArleneC")],
 *[osm_user_name() == "Almapthea"][setting("user_BrandonP")],
 *[osm_user_name() == "ToastShark"][setting("user_BreiaV")],
 *[osm_user_name() == "Coltrain"][setting("user_ColterM")],
 *[osm_user_name() == "The_Intern"][setting("user_Daniel")],
-*[osm_user_name() == "GbabethemapGod"][setting("user_GabeG")],
-*[osm_user_name() == "Ikohl"][setting("user_IanK")],
-*[osm_user_name() == "Winterson"][setting("user_IanMc")],
-*[osm_user_name() == "eggothy"][setting("user_JamesP")],
-*[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")],
-*[osm_user_name() == "luin132"][setting("user_LandonS")],
-*[osm_user_name() == "WarpathPeacock"][setting("user_LoganM")],
-*[osm_user_name() == "127logs"][setting("user_LoganS")],
-*[osm_user_name() == "MMantlo"][setting("user_MorgenM")],
-*[osm_user_name() == "Ouray"][setting("user_RickZ")],
-*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")],
-
-/* Seattle */
-
-*[osm_user_name() == "TheJAwesome1"][setting("user_AlbertG")],
-*[osm_user_name() == "CapAhab"][setting("user_AlecH")],
-*[osm_user_name() == "And_12"][setting("user_AnoudA")],
 *[osm_user_name() == "VigotheCarpathian"][setting("user_EduardoT")],
 *[osm_user_name() == "Evandering"][setting("user_EvanD")],
 *[osm_user_name() == "Goatosm"][setting("user_FasickM")],
+*[osm_user_name() == "GbabethemapGod"][setting("user_GabeG")],
 *[osm_user_name() == "Hoordinates"][setting("user_HoraceH")],
+*[osm_user_name() == "Ikohl"][setting("user_IanK")],
+*[osm_user_name() == "Winterson"][setting("user_IanMc")],
+*[osm_user_name() == "eggothy"][setting("user_JamesP")],
 *[osm_user_name() == "geoJenn"][setting("user_JenniferS")],
+*[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")],
+*[osm_user_name() == "JDKaart"][setting("user_JoseL")],
+*[osm_user_name() == "birdeatscake"][setting("user_KiraM")],
+*[osm_user_name() == "luin132"][setting("user_LandonS")],
+*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")],
+*[osm_user_name() == "WarpathPeacock"][setting("user_LoganM")],
+*[osm_user_name() == "127logs"][setting("user_LoganS")],
 *[osm_user_name() == "trigeo"][setting("user_MickT")],
+*[osm_user_name() == "MMantlo"][setting("user_MorgenM")],
 *[osm_user_name() == "Ned_Stark"][setting("user_NeddyD")],
 *[osm_user_name() == "n1y0m1"][setting("user_NiyomiK")],
+*[osm_user_name() == "Ouray"][setting("user_RickZ")],
 *[osm_user_name() == "whatmeinfallible"][setting("user_RikH")],
+*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")],
 *[osm_user_name() == "Avocadough!"][setting("user_StephanieH")],
 *[osm_user_name() == "Amonite1025"][setting("user_ViancaS")]
 {
@@ -540,19 +506,6 @@ setting::user_ViancaS {
 }
 
 /* Retrieving User "Relation History" */
-
-/* Krakatoa */
-
-relation[eval(JOSM_search("user:JDKaart"))] > node[setting("user_JoseL")],
-relation[eval(JOSM_search("user:JDKaart"))] > way[setting("user_JoseL")],
-relation[eval(JOSM_search("user:birdeatscake"))] > node[setting("user_KiraM")],
-relation[eval(JOSM_search("user:birdeatscake"))] > way[setting("user_KiraM")],
-relation[eval(JOSM_search("user:WinterWitcher"))] > node[setting("user_LoganB")],
-relation[eval(JOSM_search("user:WinterWitcher"))] > way[setting("user_LoganB")],
-relation[eval(JOSM_search("user:smileyreilly"))] > node[setting("user_ReillyM")],
-relation[eval(JOSM_search("user:smileyreilly"))] > way[setting("user_ReillyM")],
-relation[eval(JOSM_search("user:martymcfly14"))] > node[setting("user_RyanM")],
-relation[eval(JOSM_search("user:martymcfly14"))] > way[setting("user_RyanM")],
 
 /* Quandary */
 
@@ -572,6 +525,8 @@ relation[eval(JOSM_search("user:InnerPace"))] > node[setting("user_PaceM")],
 relation[eval(JOSM_search("user:InnerPace"))] > way[setting("user_PaceM")],
 relation[eval(JOSM_search("user:hayduke1275"))] > node[setting("user_PaulS")],
 relation[eval(JOSM_search("user:hayduke1275"))] > way[setting("user_PaulS")],
+relation[eval(JOSM_search("user:martymcfly14"))] > node[setting("user_RyanM")],
+relation[eval(JOSM_search("user:martymcfly14"))] > way[setting("user_RyanM")],
 relation[eval(JOSM_search("user:Toddtodd"))] > node[setting("user_ToddK")],
 relation[eval(JOSM_search("user:Toddtodd"))] > way[setting("user_ToddK")],
 relation[eval(JOSM_search("user:tomincolorado"))] > node[setting("user_TomH")],
@@ -579,16 +534,20 @@ relation[eval(JOSM_search("user:tomincolorado"))] > way[setting("user_TomH")],
 relation[eval(JOSM_search("user:Buddy-the-Elf"))] > node[setting("user_WilliamF")],
 relation[eval(JOSM_search("user:Buddy-the-Elf"))] > way[setting("user_WilliamF")],
 
-/* Sanitas */
+/* Sinopah */
 
-relation[eval(JOSM_search("user:StriDez"))] > node[setting("user_AaronL")],
-relation[eval(JOSM_search("user:StriDez"))] > way[setting("user_AaronL")],
 relation[eval(JOSM_search("user:albahabla"))] > node[setting("user_AlbaW")],
 relation[eval(JOSM_search("user:albahabla"))] > way[setting("user_AlbaW")],
+relation[eval(JOSM_search("user:TheJAwesome1"))] > node[setting("user_AlbertG")],
+relation[eval(JOSM_search("user:TheJAwesome1"))] > way[setting("user_AlbertG")],
+relation[eval(JOSM_search("user:CapAhab"))] > node[setting("user_AlecH")],
+relation[eval(JOSM_search("user:CapAhab"))] > way[setting("user_AlecH")],
 relation[eval(JOSM_search("user:Inigo_Maptoya"))] > node[setting("user_Angie")],
 relation[eval(JOSM_search("user:Inigo_Maptoya"))] > way[setting("user_Angie")],
 relation[eval(JOSM_search("user:PlinyTheYoungest"))] > node[setting("user_Anja")],
 relation[eval(JOSM_search("user:PlinyTheYoungest"))] > way[setting("user_Anja")],
+relation[eval(JOSM_search("user:And_12"))] > node[setting("user_AnoudA")],
+relation[eval(JOSM_search("user:And_12"))] > way[setting("user_AnoudA")],
 relation[eval(JOSM_search("user:ArleneC"))] > node[setting("user_ArleneC")],
 relation[eval(JOSM_search("user:ArleneC"))] > way[setting("user_ArleneC")],
 relation[eval(JOSM_search("user:Almapthea"))] > node[setting("user_BrandonP")],
@@ -599,55 +558,52 @@ relation[eval(JOSM_search("user:Coltrain"))] > node[setting("user_ColterM")],
 relation[eval(JOSM_search("user:Coltrain"))] > way[setting("user_ColterM")],
 relation[eval(JOSM_search("user:The_Intern"))] > node[setting("user_Daniel")],
 relation[eval(JOSM_search("user:The_Intern"))] > way[setting("user_Daniel")],
-relation[eval(JOSM_search("user:GbabethemapGod"))] > node[setting("user_GabeG")],
-relation[eval(JOSM_search("user:GbabethemapGod"))] > way[setting("user_GabeG")],
-relation[eval(JOSM_search("user:Ikohl"))] > node[setting("user_IanK")],
-relation[eval(JOSM_search("user:Ikohl"))] > way[setting("user_IanK")],
-relation[eval(JOSM_search("user:Winterson"))] > node[setting("user_IanMc")],
-relation[eval(JOSM_search("user:Winterson"))] > way[setting("user_IanMc")],
-relation[eval(JOSM_search("user:eggothy"))] > node[setting("user_JamesP")],
-relation[eval(JOSM_search("user:eggothy"))] > way[setting("user_JamesP")],
-relation[eval(JOSM_search("user:Mapistopheles"))] > node[setting("user_JessicaH")],
-relation[eval(JOSM_search("user:Mapistopheles"))] > way[setting("user_JessicaH")],
-relation[eval(JOSM_search("user:luin132"))] > node[setting("user_LandonS")],
-relation[eval(JOSM_search("user:luin132"))] > way[setting("user_LandonS")],
-relation[eval(JOSM_search("user:WarpathPeacock"))] > node[setting("user_LoganM")],
-relation[eval(JOSM_search("user:WarpathPeacock"))] > way[setting("user_LoganM")],
-relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
-relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
-relation[eval(JOSM_search("user:MMantlo"))] > node[setting("user_MorgenM")],
-relation[eval(JOSM_search("user:MMantlo"))] > way[setting("user_MorgenM")],
-relation[eval(JOSM_search("user:Ouray"))] > node[setting("user_RickZ")],
-relation[eval(JOSM_search("user:Ouray"))] > way[setting("user_RickZ")],
-relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > node[setting("user_Riley")],
-relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > way[setting("user_Riley")],
-
-/* Seattle */
-
-relation[eval(JOSM_search("user:TheJAwesome1"))] > node[setting("user_AlbertG")],
-relation[eval(JOSM_search("user:TheJAwesome1"))] > way[setting("user_AlbertG")],
-relation[eval(JOSM_search("user:CapAhab"))] > node[setting("user_AlecH")],
-relation[eval(JOSM_search("user:CapAhab"))] > way[setting("user_AlecH")],
-relation[eval(JOSM_search("user:And_12"))] > node[setting("user_AnoudA")],
-relation[eval(JOSM_search("user:And_12"))] > way[setting("user_AnoudA")],
 relation[eval(JOSM_search("user:VigotheCarpathian"))] > node[setting("user_EduardoT")],
 relation[eval(JOSM_search("user:VigotheCarpathian"))] > way[setting("user_EduardoT")],
 relation[eval(JOSM_search("user:Evandering"))] > node[setting("user_EvanD")],
 relation[eval(JOSM_search("user:Evandering"))] > way[setting("user_EvanD")],
 relation[eval(JOSM_search("user:Goatosm"))] > node[setting("user_FasickM")],
 relation[eval(JOSM_search("user:Goatosm"))] > way[setting("user_FasickM")],
+relation[eval(JOSM_search("user:GbabethemapGod"))] > node[setting("user_GabeG")],
+relation[eval(JOSM_search("user:GbabethemapGod"))] > way[setting("user_GabeG")],
 relation[eval(JOSM_search("user:Hoordinates"))] > node[setting("user_HoraceH")],
 relation[eval(JOSM_search("user:Hoordinates"))] > way[setting("user_HoraceH")],
+relation[eval(JOSM_search("user:Ikohl"))] > node[setting("user_IanK")],
+relation[eval(JOSM_search("user:Ikohl"))] > way[setting("user_IanK")],
+relation[eval(JOSM_search("user:Winterson"))] > node[setting("user_IanMc")],
+relation[eval(JOSM_search("user:Winterson"))] > way[setting("user_IanMc")],
+relation[eval(JOSM_search("user:eggothy"))] > node[setting("user_JamesP")],
+relation[eval(JOSM_search("user:eggothy"))] > way[setting("user_JamesP")],
 relation[eval(JOSM_search("user:geoJenn"))] > node[setting("user_JenniferS")],
 relation[eval(JOSM_search("user:geoJenn"))] > way[setting("user_JenniferS")],
+relation[eval(JOSM_search("user:Mapistopheles"))] > node[setting("user_JessicaH")],
+relation[eval(JOSM_search("user:Mapistopheles"))] > way[setting("user_JessicaH")],
+relation[eval(JOSM_search("user:JDKaart"))] > node[setting("user_JoseL")],
+relation[eval(JOSM_search("user:JDKaart"))] > way[setting("user_JoseL")],
+relation[eval(JOSM_search("user:birdeatscake"))] > node[setting("user_KiraM")],
+relation[eval(JOSM_search("user:birdeatscake"))] > way[setting("user_KiraM")],
+relation[eval(JOSM_search("user:luin132"))] > node[setting("user_LandonS")],
+relation[eval(JOSM_search("user:luin132"))] > way[setting("user_LandonS")],
+relation[eval(JOSM_search("user:WinterWitcher"))] > node[setting("user_LoganB")],
+relation[eval(JOSM_search("user:WinterWitcher"))] > way[setting("user_LoganB")],
+relation[eval(JOSM_search("user:WarpathPeacock"))] > node[setting("user_LoganM")],
+relation[eval(JOSM_search("user:WarpathPeacock"))] > way[setting("user_LoganM")],
+relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
+relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
 relation[eval(JOSM_search("user:trigeo"))] > node[setting("user_MickT")],
 relation[eval(JOSM_search("user:trigeo"))] > way[setting("user_MickT")],
+relation[eval(JOSM_search("user:MMantlo"))] > node[setting("user_MorgenM")],
+relation[eval(JOSM_search("user:MMantlo"))] > way[setting("user_MorgenM")],
 relation[eval(JOSM_search("user:Ned_Stark"))] > node[setting("user_NeddyD")],
 relation[eval(JOSM_search("user:Ned_Stark"))] > way[setting("user_NeddyD")],
 relation[eval(JOSM_search("user:n1y0m1"))] > node[setting("user_NiyomiK")],
 relation[eval(JOSM_search("user:n1y0m1"))] > way[setting("user_NiyomiK")],
+relation[eval(JOSM_search("user:Ouray"))] > node[setting("user_RickZ")],
+relation[eval(JOSM_search("user:Ouray"))] > way[setting("user_RickZ")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > node[setting("user_RikH")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > way[setting("user_RikH")],
+relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > node[setting("user_Riley")],
+relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > way[setting("user_Riley")],
 relation[eval(JOSM_search("user:Avocadough!"))] > node[setting("user_StephanieH")],
 relation[eval(JOSM_search("user:Avocadough!"))] > way[setting("user_StephanieH")],
 relation[eval(JOSM_search("user:Amonite1025"))] > node[setting("user_ViancaS")],
