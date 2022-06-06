@@ -1,15 +1,28 @@
 meta {
     title: "Kaart Street Style";
-    version: "3.1.0";
+    version: "3.3.0";
     description: "JOSM paint style modified by Kaart to focus on street data";
     author: "Kaart";
-    /* Contributors: Gary Clark */
+    /* Contributors: Gary Clark, Logan Barnes */
     /* Credit: Parts of this map paint style were influenced by "Coloured Streets" by geozeisig, Klumbumbus and "long roads" by SeattleFYI & Potlatch */
     link: "https://github.com/kaartgroup/";
     license: "https://github.com/KaartGroup/Kaart-Styles/blob/master/LICENSE";
 }
 
 /* Notes
+
+Version History
+
+3.2 - Logan Barnes
+Added unconnected nodes style setting originally from Sanitas paintstyle as written by Louis Morales (unconnected_setting). 
+Added the ability to toggle the feature on and off and changed some of the visual properties.
+
+3.3 - Logan Barnes - 6/6/22
+Added setting to dynamically hide street name labels based on zoom level (dynamic_hide_name).
+Adjusted zoom scaling in display large street labels setting (highway_labels).
+
+
+Settings Descriptions
 
 ** Setting 1 & 2 are based on unique names, and route direction. Slight variations in the name will cause colors to change.
 
@@ -44,17 +57,20 @@ Some countries have adopted relations as the go-to way[highway] for adding names
 it co way[highway]uld possibly help in finding and editing names - whilst making sure you do not break relations.
 
 8.
-Added unconnected nodes style setting originally from Sanitas paintstyle as written by Louis Morales. 
-Added the ability to toggle the feature on and off and changed some of the visual properties.
+The Unconnected Nodes setting stylizes nodes unconnected to another feature as a red triangle. 
+Useful for identifying ways ending near other ways they may need to be connected to.
 
+9.
+The Dynamically Hide Street Names setting will hide street labels at high and low zoom levels.
 
  */
+
 
 /* Settings for styles */
 
 setting::highway_labels {
   type: boolean;
-  label: tr("Display large street labels");
+  label: tr("Display large street names");
   default: true;
 }
 
@@ -172,6 +188,12 @@ setting::check_no_name {
 setting::remove_name {
   type: boolean;
   label: tr("Remove Street Name Labels");
+  default: false;
+}
+
+setting::dynamic_hide_name {
+  type: boolean;
+  label: tr("Dynamically hide street names");
   default: false;
 }
 
@@ -1755,17 +1777,17 @@ way|z17-[highway] {
 
 /* Increase size of highway labels using Setting */
 
-way|z15-[highway^=motorway][setting("highway_labels")],
-way|z15-[highway^=trunk][setting("highway_labels")],
-way|z15-[highway^=primary][setting("highway_labels")],
-way|z15-[highway^=secondary][setting("highway_labels")],
-way|z15-[highway^=tertiary][setting("highway_labels")],
-way|z15-[highway=unclassified][setting("highway_labels")],
-way|z15-[highway=residential][setting("highway_labels")],
-way|z15-[highway=living_street][setting("highway_labels")],
-way|z15-[highway=pedestrian][!area?][setting("highway_labels")],
-way|z15-[highway=service][setting("highway_labels")],
-way|z15-[highway=track][setting("highway_labels")] {
+way[highway^=motorway][setting("highway_labels")],
+way[highway^=trunk][setting("highway_labels")],
+way[highway^=primary][setting("highway_labels")],
+way[highway^=secondary][setting("highway_labels")],
+way[highway^=tertiary][setting("highway_labels")],
+way[highway=unclassified][setting("highway_labels")],
+way[highway=residential][setting("highway_labels")],
+way[highway=living_street][setting("highway_labels")],
+way[highway=pedestrian][!area?][setting("highway_labels")],
+way[highway=service][setting("highway_labels")],
+way[highway=track][setting("highway_labels")] {
     text: auto;
     font-weight: bold;
     text-color: white;
@@ -1778,16 +1800,26 @@ way|z15-[highway=track][setting("highway_labels")] {
 }
 
 
-way|z-15[highway][setting("highway_labels")] {
-    font-size: 12;
+way|z-16[highway][setting("highway_labels")] {
+    font-size: 14;
 }
 
-way|z16-17[highway][setting("highway_labels")] {
+way|z17-19[highway][setting("highway_labels")] {
+    font-size: 16;
+}
+
+way|z20-[highway][setting("highway_labels")] {
     font-size: 18;
 }
 
-way|z18-[highway][setting("highway_labels")] {
-    font-size: 20;
+/* Hide highway labels at high and low zoom */
+
+way|z-17[highway][setting("dynamic_hide_name")] {
+    font-size: 0;
+}
+
+way|z22-[highway][setting("dynamic_hide_name")] {
+    font-size: 0;
 }
 
 
