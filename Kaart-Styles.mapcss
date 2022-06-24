@@ -769,9 +769,9 @@ area[leisure=sports_centre]:closed { color: #66ddcc; fill-color: #66ddcc; prop_a
 
 /* Bridges and Tunnels */
 
-way[bridge=yes]::bridge1, way[bridge=viaduct]::bridge1, way[bridge=suspension]::bridge1 { z-index: 4; color: #00abff; width: +7; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
+way[bridge=yes]::bridge1, way[bridge=viaduct]::bridge1, way[bridge=suspension]::bridge1, way[bridge=aqueduct]::bridge1, way[bridge=boardwalk]::bridge1, way[bridge=cantilever]::bridge1, way[bridge=covered]::bridge1, way[bridge=low_water_crossing]::bridge1, way[bridge=movable]::bridge1, way[bridge=trestle]::bridge1 { z-index: 4; color: #00abff; width: +7; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
 
-way[bridge=yes]::bridge2, way[bridge=viaduct]::bridge2, way[bridge=suspension]::bridge2 { z-index: 3; color: #444444; width: +6; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
+way[bridge=yes]::bridge2, way[bridge=viaduct]::bridge2, way[bridge=suspension]::bridge2, way[bridge=aqueduct]::bridge2, way[bridge=boardwalk]::bridge2, way[bridge=cantilever]::bridge2, way[bridge=covered]::bridge2, way[bridge=low_water_crossing]::bridge2, way[bridge=movable]::bridge2, way[bridge=trestle]::bridge2 { z-index: 3; color: #444444; width: +6; casing-width: 0; casing-color: black; casing-dashes: 10,10; }
 
 way[tunnel=yes][!waterway]::bridge1 {
     major-z-index: 2;
