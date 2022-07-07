@@ -1,6 +1,6 @@
 meta {
     title: "Kaart Street Style";
-    version: "3.3.0";
+    version: "3.4.0";
     description: "JOSM paint style modified by Kaart to focus on street data";
     author: "Kaart";
     /* Contributors: Gary Clark, Logan Barnes */
@@ -20,6 +20,10 @@ Added the ability to toggle the feature on and off and changed some of the visua
 3.3 - Logan Barnes - 6/6/22
 Added setting to dynamically hide street name labels based on zoom level (dynamic_hide_name).
 Adjusted zoom scaling in display large street labels setting (highway_labels).
+
+3.4 - Logan Barnes - 7/7/22
+Added setting to accentuate military and diplomatic zones (government_setting).
+Increased visibility of aerodrome polygons.
 
 
 Settings Descriptions
@@ -63,23 +67,25 @@ Useful for identifying ways ending near other ways they may need to be connected
 9.
 The Dynamically Hide Street Names setting will hide street labels at high and low zoom levels.
 
+10.
+The Accentuate Military and Diplomatic Areas setting will fill these areas with color and display a text warning.
  */
 
 
-/* Settings for styles */
+
+/* Settings for Styles */
 
 setting::highway_labels {
   type: boolean;
-  label: tr("Display large street names");
+  label: tr("Display Large Street Names");
   default: true;
 }
 
 setting::knode_setting {
   type: boolean;
-  label: tr("Increase connecting node size");
+  label: tr("Increase Connecting Node Size");
   default: false;
 }
-
 
 setting::node_setting {
   type: boolean;
@@ -87,27 +93,23 @@ setting::node_setting {
   default: false;
 }
 
-
 setting::unconnected_setting {
   type: boolean;
-  label: tr("Show unconnected nodes");
+  label: tr("Show Unconnected Nodes");
   default: false;
 }
-
 
 setting::hide_icons {
   type: boolean;
-  label: tr("Hide icons & icon text (at low zoom)");
+  label: tr("Hide Icons & Icon Text (at low zoom)");
   default: false;
 }
-
 
 setting::longroads {
   type: boolean;
   label: tr("Highlights Long-Roads");
   default: false;
 }
-
 
 setting::surface_t {
   type: boolean;
@@ -117,71 +119,64 @@ setting::surface_t {
 
 setting::name_setting {
   type: boolean;
-  label: tr("Highlights ways with Name:tags");
+  label: tr("Highlights Ways with name:tags");
   default: false;
 }
 
-
 @supports (min-josm-version: 15289) {
   settings::ref_settings {
-    label: tr("Highlight ways with ref:tags");
+    label: tr("Highlight Ways with ref:tags");
   }
   settings::destination_settings {
-    label: tr("Highlight ways with destination tags");
+    label: tr("Highlight Ways with destination:tags");
   }
 }
 
 setting::ref_labels {
   type: boolean;
-  label: tr("Show ref tags as text (affected by \"Remove Street Name Labels\")");
+  label: tr("Show ref:tags as Text (affected by \"Remove Street Name Labels\")");
   default: false;
   group: "ref_settings";
 }
 
 setting::ref_setting {
   type: boolean;
-  label: tr("Highlight ways with ref:tags in a solid color");
+  label: tr("Highlight Ways with ref:tags in a Solid Color");
   default: false;
   group: "ref_settings";
 }
 
 setting::ref_highlight_setting {
   type: boolean;
-  label: tr("Highlight ways with ref:tags with a halo");
+  label: tr("Highlight ways with ref:tags with a Halo");
   default: false;
   group: "ref_settings";
 }
 
 setting::destination_labels {
   type: boolean;
-  label: tr("Show destination tags as text (affected by \"Remove Street Name Labels\")");
+  label: tr("Show destination:tags as Text (affected by \"Remove Street Name Labels\")");
   default: false;
   group: "destination_settings";
 }
 
 setting::destination_setting {
   type: boolean;
-  label: tr("Highlight ways with destination:tags in a solid color");
+  label: tr("Highlight Ways with destination:tags in a Solid Color");
   default: false;
   group: "destination_settings";
 }
 
 setting::destination_highlight_setting {
   type: boolean;
-  label: tr("Highlight ways with destination:tags with a halo");
+  label: tr("Highlight Ways with destination:tags with a Halo");
   default: false;
   group: "destination_settings";
 }
 
 setting::check_name {
   type: boolean;
-  label: tr("Flag roads without names");
-  default: false;
-}
-
-setting::check_no_name {
-  type: boolean;
-  label: tr("Flag roads without a name OR noname tag");
+  label: tr("Flag Roads without Names");
   default: false;
 }
 
@@ -193,16 +188,15 @@ setting::remove_name {
 
 setting::dynamic_hide_name {
   type: boolean;
-  label: tr("Dynamically hide street names");
+  label: tr("Dynamically Hide Street Names");
   default: false;
 }
 
 setting::one_2 {
   type: boolean;
-  label: tr("Highlight one_way roads");
+  label: tr("Highlight one_way Roads");
   default: false;
 }
-
 
 setting::role_members {
   type: boolean;
@@ -210,25 +204,23 @@ setting::role_members {
   default: false;
 }
 
-
 setting::check_ref {
   type: boolean;
-  label: tr("Highlight Routes based on Ref tag on Ways & in Relations");
+  label: tr("Highlight Routes based on ref:tag on Ways & in Relations");
   default: false;
 }
 
 setting::check_ref2 {
   type: boolean;
-  label: tr("Highlight Routes based on int_ref tags on Ways & in Relations");
+  label: tr("Highlight Routes based on int_ref:tags on Ways & in Relations");
   default: false;
 }
 
 setting::check_dup {
   type: boolean;
-  label: tr("Check for Roads missing Ref Tag values");
+  label: tr("Check for Roads Missing ref:tag Values");
   default: false;
 }
-
 
 setting::bus_setting {
   type: boolean;
@@ -242,15 +234,21 @@ setting::show_boundary {
   default: true;
 }
 
+setting::government_setting {
+type: boolean;
+label: tr("Accentuate Military and Diplomatic Areas");
+default: true;
+}
+
 setting::lowercase {
   type: boolean;
-  label: tr("Flag roads where words after the first word in a name are NOT capitalized");
+  label: tr("Flag Roads with Uncapitalized Words in the ame");
   default: true;
 }
 
 setting::potlatch_crossing {
   type: boolean;
-  label: tr("Use less specific potlatch-style crossing icon");
+  label: tr("Use Less Specific Potlatch-style Crossing Icon");
   default: true;
 }
 
@@ -260,18 +258,11 @@ label: tr("Enlarge Cycleway Styling");
 default: true;
 }
 
-/*Lower-Case Names*/
-
-
-
-
-
 
 
 
 
 /* Boundary Styles */
-
 
 way[boundary=protected_area][setting("show_boundary")]::core_boundary,
 way[boundary=administrative][setting("show_boundary")]::core_boundary,
@@ -729,8 +720,7 @@ way[waterway][tunnel]                {z-index: 5; dashes: 8,4;}
 
 /* Aeroways */
 
-way[aeroway=aerodrome]:closed
-    { z-index: 3; color: #bb44bb; width: 3; casing-color: #660666;  casing-width: 1;  }
+way[aeroway=aerodrome]:closed { z-index: 9; color: #bb44bb; width: 3; fill-color: #bb44bb; fill-opacity: 0.5; casing-color: #660666;  casing-width: 1;  }
 way[aeroway=taxiway]!:closed { z-index: 8; color: #999999; width: 3; casing-color: #aa66aa; casing-width: 2; }
 area[aeroway=taxiway]:closed { z-index: 8; color: #bb99bb; width: 3; fill-color: #ccaacc; }
 
@@ -1355,13 +1345,13 @@ area[landuse=residential]:closed              { color: #D594FF; width: 2; fill-c
 area[landuse=retail]:closed                   { color: #cc2222; width: 2; fill-color: #aa4422; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
 area[landuse=commercial]:closed               { color: purple; width: 2; fill-color: #444488; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
 area[landuse=industrial]:closed               { color: #4d0000; width: 2; fill-color: #444488; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
-area[landuse=military]:closed                 { color: #ff4444; width: 2; fill-color: #ff4444; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[landuse=military]:closed                 { z-index: 10;color: #ff4444; width: 3; fill-color: #ff4444; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
 area[amenity]:closed, area[shop]:closed                { color: #ADCEB5; width: 1; fill-color: #ADCEB5; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
 /* way[sport] should not be rendered by itself, according to wiki. Can we make it an "if all else fails"? */
 area[leisure]:closed                         { color: #8CD6B5; width: 1; fill-color: #8CD6B5; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
 area[tourism]:closed                          { color: #F7CECE; width: 1; fill-color: #F7CECE; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
 area[historic]:closed, area[ruins]:closed        { color: #F7F7DE; width: 1; fill-color: #F7F7DE; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
-area[military]:closed                         { color: #D6D6D6; width: 1; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
+area[military]:closed                         { z-index: 10; color: #D6D6D6; width: 2; fill-color: #D6D6D6; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
 area[building]:closed                         { color: #87CEFA; width: 2; fill-color: #00BFFF; fill-opacity: 0.2; casing-color: #000000; casing-width: 0.2;}
 area[natural=water]:closed,
 area[waterway][waterway!=dam]:closed          { color: #3434ff;    width: 2; fill-color: #3434ff;    fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
@@ -1391,6 +1381,34 @@ way[boundary=administrative][setting("show_boundary")]                { z-index:
 way[boundary=administrative][waterway][setting("show_boundary")]      { z-index: 5; opacity: 0.8; z-index: 4; dashes: 24,4; width: 6; casing-color: #000000; casing-width: 0.2;}
 way[boundary=administrative][highway][setting("show_boundary")]       { z-index: 5; color: purple; width: 2; opacity: 0.2; dashes: 24,4; z-index: 4; casing-color: #000000; casing-width: 0.2;}
 area[landuse=cemetery]:closed           { color: #664466; width: 2; fill-color: #664466; opacity: 0.2; prop_area_small_name : 1;}
+
+
+/* Accentuate goverment zones when setting is enabled */
+
+area[landuse=military][setting("government_setting")], area[boundary=military][setting("government_setting")] { 
+    fill-color: #ff4444; fill-opacity: 0.4;
+    text:tr("MILITARY"); text-position: center; font-size: 20; font-weight: bold;
+    text-halo-color: black; text-halo-radius: 2.5; text-halo-opacity: 1;
+}
+
+area[military][building][setting("government_setting")] { 
+    fill-color: #ff4444; fill-opacity: 0.4;
+    text:tr("MILITARY"); text-position: center; font-size: 12; font-weight: bold;
+    text-halo-color: black; text-halo-radius: 2.5; text-halo-opacity: 1;
+}
+
+area[landuse=diplomatic][setting("government_setting")] {
+    fill-color: #ffa500; fill-opacity: 0.4;
+    text:tr("DIPLOMATIC"); text-position: center; font-size: 20; font-weight: bold;
+    text-halo-color: black; text-halo-radius: 2.5; text-halo-opacity: 1;
+}
+
+area[diplomatic][building][setting("government_setting")], area[office=diplomatic][setting("government_setting")] {
+    fill-color: #ffa500; fill-opacity: 0.4;
+    text:tr("DIPLOMATIC"); text-position: center; font-size: 12; font-weight: bold;
+    text-halo-color: black; text-halo-radius: 2.5; text-halo-opacity: 1;
+}
+
 
 /* Route relations
 
@@ -1620,6 +1638,12 @@ area|z-13 {
 area:closed2 {
     fill-extent: 25;
     fill-extent-threshold: JOSM_pref("draw.area.extent_threshold", 0.5);
+}
+
+/* Fill entire area for goverment zones if setting is enabled */
+area[military][setting("government_setting")], area[landuse=military][setting("government_setting")], area[boundary=military][setting("government_setting")], 
+area[office=diplomatic][setting("government_setting")], area[diplomatic][setting("government_setting")], area[landuse=diplomatic][setting("government_setting")] { 
+    fill-extent: none;
 }
 
 /* Surface Type Styles */
@@ -3321,12 +3345,6 @@ way["highway"=~/^(tertiary|tertiary_link)$/] > node  {
 
 
 
-
-
-
-
-
-
 /* Inline Validation Checks */
 
 
@@ -3574,21 +3592,6 @@ way[waterway] > node:connection.watercross  {
  symbol-stroke-color: black;
  symbol-stroke-opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4507,6 +4510,3 @@ node[waterway=waterfall][setting("osmic")] {
     set icon_z17;
     icon-width: 18;
 }
-
-
-
