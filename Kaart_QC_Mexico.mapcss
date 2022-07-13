@@ -322,7 +322,7 @@ setting::user_JessicaH {
 
 setting::user_JoseL {
   type:boolean;
-  label:tr("JDKaart|Jose Lopez-Aguilera");
+  label:tr("Mendicant_Slug_097|Jose Lopez-Aguilera");
   default:true;
   group: "sinopah";
 }
@@ -455,7 +455,7 @@ setting::user_ViancaS {
 *[osm_user_name() == "eggothy"][setting("user_JamesP")],
 *[osm_user_name() == "geoJenn"][setting("user_JenniferS")],
 *[osm_user_name() == "Mapistopheles"][setting("user_JessicaH")],
-*[osm_user_name() == "JDKaart"][setting("user_JoseL")],
+*[osm_user_name() == "Mendicant_Slug_097"][setting("user_JoseL")],
 *[osm_user_name() == "birdeatscake"][setting("user_KiraM")],
 *[osm_user_name() == "luin132"][setting("user_LandonS")],
 *[osm_user_name() == "WinterWitcher"][setting("user_LoganB")],
@@ -540,8 +540,8 @@ relation[eval(JOSM_search("user:geoJenn"))] > node[setting("user_JenniferS")],
 relation[eval(JOSM_search("user:geoJenn"))] > way[setting("user_JenniferS")],
 relation[eval(JOSM_search("user:Mapistopheles"))] > node[setting("user_JessicaH")],
 relation[eval(JOSM_search("user:Mapistopheles"))] > way[setting("user_JessicaH")],
-relation[eval(JOSM_search("user:JDKaart"))] > node[setting("user_JoseL")],
-relation[eval(JOSM_search("user:JDKaart"))] > way[setting("user_JoseL")],
+relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > node[setting("user_JoseL")],
+relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > way[setting("user_JoseL")],
 relation[eval(JOSM_search("user:birdeatscake"))] > node[setting("user_KiraM")],
 relation[eval(JOSM_search("user:birdeatscake"))] > way[setting("user_KiraM")],
 relation[eval(JOSM_search("user:luin132"))] > node[setting("user_LandonS")],
