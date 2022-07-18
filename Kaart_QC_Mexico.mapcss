@@ -162,7 +162,7 @@ setting::user_PaulS {
 
 setting::user_RyanM {
   type:boolean;
-  label:tr("birdeatscake|Ryan Martin");
+  label:tr("martymcfly14|Ryan Martin");
   default:true;
   group: "quandary";
 }
@@ -208,13 +208,6 @@ setting::user_AlecH {
   group: "sinopah";
 }
 
-setting::user_Angie {
-  type: boolean;
-  label: tr("Inigo_Maptoya|Angie Hernandez");
-  default: true;
-  group: "sinopah";
-}
-
 setting::user_Anja {
   type: boolean;
   label: tr("PlinyTheYoungest|Anja Riedel");
@@ -238,7 +231,7 @@ setting::user_BrandonP {
 
 setting::user_BreiaV {
   type:boolean;
-  label:tr("ToastShark|Breia Velarde");
+  label:tr("ToastShark!|Breia Velarde");
   default:true;
   group: "sinopah";
 }
@@ -329,7 +322,7 @@ setting::user_JoseL {
 
 setting::user_KiraM {
   type:boolean;
-  label:tr("martymcfly14|Kira Morales");
+  label:tr("birdeatscake|Kira Morales");
   default:true;
   group: "sinopah";
 }
@@ -397,13 +390,6 @@ setting::user_RikH {
   group: "sinopah";
 }
 
-setting::user_Riley {
-  type: boolean;
-  label: tr("AlwaysSunnyInMapadelphia|Riley White");
-  default: true;
-  group: "sinopah";
-}
-
 setting::user_StephanieH {
   type:boolean;
   label:tr("Avocadough!|Stephanie Hutton");
@@ -439,11 +425,10 @@ setting::user_ViancaS {
 
 *[osm_user_name() == "TheJAwesome1"][setting("user_AlbertG")],
 *[osm_user_name() == "CapAhab"][setting("user_AlecH")],
-*[osm_user_name() == "Inigo_Maptoya"][setting("user_Angie")],
 *[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")],
 *[osm_user_name() == "And_12"][setting("user_AnoudA")],
 *[osm_user_name() == "Almapthea"][setting("user_BrandonP")],
-*[osm_user_name() == "ToastShark"][setting("user_BreiaV")],
+*[osm_user_name() == "ToastShark!"][setting("user_BreiaV")],
 *[osm_user_name() == "The_Intern"][setting("user_Daniel")],
 *[osm_user_name() == "VigotheCarpathian"][setting("user_EduardoT")],
 *[osm_user_name() == "Evandering"][setting("user_EvanD")],
@@ -466,7 +451,6 @@ setting::user_ViancaS {
 *[osm_user_name() == "n1y0m1"][setting("user_NiyomiK")],
 *[osm_user_name() == "Ouray"][setting("user_RickZ")],
 *[osm_user_name() == "whatmeinfallible"][setting("user_RikH")],
-*[osm_user_name() == "AlwaysSunnyInMapadelphia"][setting("user_Riley")],
 *[osm_user_name() == "Avocadough!"][setting("user_StephanieH")],
 *[osm_user_name() == "Amonite1025"][setting("user_ViancaS")]
 {
@@ -508,16 +492,14 @@ relation[eval(JOSM_search("user:TheJAwesome1"))] > node[setting("user_AlbertG")]
 relation[eval(JOSM_search("user:TheJAwesome1"))] > way[setting("user_AlbertG")],
 relation[eval(JOSM_search("user:CapAhab"))] > node[setting("user_AlecH")],
 relation[eval(JOSM_search("user:CapAhab"))] > way[setting("user_AlecH")],
-relation[eval(JOSM_search("user:Inigo_Maptoya"))] > node[setting("user_Angie")],
-relation[eval(JOSM_search("user:Inigo_Maptoya"))] > way[setting("user_Angie")],
 relation[eval(JOSM_search("user:PlinyTheYoungest"))] > node[setting("user_Anja")],
 relation[eval(JOSM_search("user:PlinyTheYoungest"))] > way[setting("user_Anja")],
 relation[eval(JOSM_search("user:And_12"))] > node[setting("user_AnoudA")],
 relation[eval(JOSM_search("user:And_12"))] > way[setting("user_AnoudA")],
 relation[eval(JOSM_search("user:Almapthea"))] > node[setting("user_BrandonP")],
 relation[eval(JOSM_search("user:Almapthea"))] > way[setting("user_BrandonP")],
-relation[eval(JOSM_search("user:ToastShark"))] > node[setting("user_BreiaV")],
-relation[eval(JOSM_search("user:ToastShark"))] > way[setting("user_BreiaV")],
+relation[eval(JOSM_search("user:ToastShark!"))] > node[setting("user_BreiaV")],
+relation[eval(JOSM_search("user:ToastShark!"))] > way[setting("user_BreiaV")],
 relation[eval(JOSM_search("user:The_Intern"))] > node[setting("user_Daniel")],
 relation[eval(JOSM_search("user:The_Intern"))] > way[setting("user_Daniel")],
 relation[eval(JOSM_search("user:VigotheCarpathian"))] > node[setting("user_EduardoT")],
@@ -562,8 +544,6 @@ relation[eval(JOSM_search("user:Ouray"))] > node[setting("user_RickZ")],
 relation[eval(JOSM_search("user:Ouray"))] > way[setting("user_RickZ")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > node[setting("user_RikH")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > way[setting("user_RikH")],
-relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > node[setting("user_Riley")],
-relation[eval(JOSM_search("user:AlwaysSunnyInMapadelphia"))] > way[setting("user_Riley")],
 relation[eval(JOSM_search("user:Avocadough!"))] > node[setting("user_StephanieH")],
 relation[eval(JOSM_search("user:Avocadough!"))] > way[setting("user_StephanieH")],
 relation[eval(JOSM_search("user:Amonite1025"))] > node[setting("user_ViancaS")],
