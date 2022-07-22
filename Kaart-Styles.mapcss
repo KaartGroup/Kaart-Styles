@@ -1,6 +1,6 @@
 meta {
     title: "Kaart Street Style";
-    version: "3.4.0";
+    version: "3.5.0";
     description: "JOSM paint style modified by Kaart to focus on street data";
     author: "Kaart";
     /* Contributors: Gary Clark, Logan Barnes */
@@ -8,6 +8,7 @@ meta {
     link: "https://github.com/kaartgroup/";
     license: "https://github.com/KaartGroup/Kaart-Styles/blob/master/LICENSE";
 }
+
 
 /* Notes
 
@@ -24,6 +25,9 @@ Adjusted zoom scaling in display large street labels setting (highway_labels).
 3.4 - Logan Barnes - 7/7/22
 Added setting to accentuate military and diplomatic zones (government_setting).
 Increased visibility of aerodrome polygons.
+
+3.5 - Logan Barnes - 7/18/22
+Added setting groups.
 
 
 Settings Descriptions
@@ -72,6 +76,23 @@ The Accentuate Military and Diplomatic Areas setting will fill these areas with 
  */
 
 
+/* Setting Groups */
+
+@supports (min-josm-version: 15289) {
+
+    settings::destination_group { label: tr("Destination Settings"); }
+
+    settings::icon_group { label: tr("Icon Settings"); }
+
+    settings::name_group { label: tr("Name Settings"); }
+
+    settings::node_group { label: tr("Node Settings"); }
+
+    settings::ref_group { label: tr("Ref Settings"); }
+
+    settings::route_group { label: tr("Route Settings"); }
+}
+
 
 /* Settings for Styles */
 
@@ -79,41 +100,46 @@ setting::highway_labels {
   type: boolean;
   label: tr("Display Large Street Names");
   default: true;
+  group: "name_group";
 }
 
 setting::knode_setting {
   type: boolean;
   label: tr("Increase Connecting Node Size");
   default: false;
+  group: "node_group";
 }
 
 setting::node_setting {
   type: boolean;
-  label: tr("Increase Child Node Sizes");
+  label: tr("Increase Child Node Size");
   default: false;
+  group: "node_group";
 }
 
 setting::unconnected_setting {
   type: boolean;
   label: tr("Show Unconnected Nodes");
   default: false;
+  group: "node_group";
 }
 
 setting::hide_icons {
   type: boolean;
   label: tr("Hide Icons & Icon Text (at low zoom)");
   default: false;
+  group: "icon_group";
 }
 
 setting::longroads {
   type: boolean;
-  label: tr("Highlights Long-Roads");
+  label: tr("Color Long-Roads");
   default: false;
 }
 
 setting::surface_t {
   type: boolean;
-  label: tr("Check Surface Type");
+  label: tr("Highlight Surface Type");
   default: false;
 }
 
@@ -121,80 +147,75 @@ setting::name_setting {
   type: boolean;
   label: tr("Highlights Ways with name:tags");
   default: false;
-}
-
-@supports (min-josm-version: 15289) {
-  settings::ref_settings {
-    label: tr("Highlight Ways with ref:tags");
-  }
-  settings::destination_settings {
-    label: tr("Highlight Ways with destination:tags");
-  }
+  group: "name_group";
 }
 
 setting::ref_labels {
   type: boolean;
   label: tr("Show ref:tags as Text (affected by \"Remove Street Name Labels\")");
   default: false;
-  group: "ref_settings";
+  group: "ref_group";
 }
 
 setting::ref_setting {
   type: boolean;
   label: tr("Highlight Ways with ref:tags in a Solid Color");
   default: false;
-  group: "ref_settings";
+  group: "ref_group";
 }
 
 setting::ref_highlight_setting {
   type: boolean;
   label: tr("Highlight ways with ref:tags with a Halo");
   default: false;
-  group: "ref_settings";
+  group: "ref_group";
 }
 
 setting::destination_labels {
   type: boolean;
   label: tr("Show destination:tags as Text (affected by \"Remove Street Name Labels\")");
   default: false;
-  group: "destination_settings";
+  group: "destination_group";
 }
 
 setting::destination_setting {
   type: boolean;
   label: tr("Highlight Ways with destination:tags in a Solid Color");
   default: false;
-  group: "destination_settings";
+  group: "destination_group";
 }
 
 setting::destination_highlight_setting {
   type: boolean;
   label: tr("Highlight Ways with destination:tags with a Halo");
   default: false;
-  group: "destination_settings";
+  group: "destination_group";
 }
 
 setting::check_name {
   type: boolean;
   label: tr("Flag Roads without Names");
   default: false;
+  group: "name_group";
 }
 
 setting::remove_name {
   type: boolean;
   label: tr("Remove Street Name Labels");
   default: false;
+  group: "name_group";
 }
 
 setting::dynamic_hide_name {
   type: boolean;
   label: tr("Dynamically Hide Street Names");
   default: false;
+  group: "name_group";
 }
 
 setting::one_2 {
   type: boolean;
-  label: tr("Highlight one_way Roads");
+  label: tr("Color one_way Roads");
   default: false;
 }
 
@@ -208,24 +229,28 @@ setting::check_ref {
   type: boolean;
   label: tr("Highlight Routes based on ref:tag on Ways & in Relations");
   default: false;
+  group: "route_group";
 }
 
 setting::check_ref2 {
   type: boolean;
   label: tr("Highlight Routes based on int_ref:tags on Ways & in Relations");
   default: false;
+  group: "route_group";
 }
 
 setting::check_dup {
   type: boolean;
   label: tr("Check for Roads Missing ref:tag Values");
   default: false;
+  group: "ref_group";
 }
 
 setting::bus_setting {
   type: boolean;
   label: tr("Highlight Bus Routes");
   default: false;
+  group: "route_group";
 }
 
 setting::show_boundary {
@@ -242,14 +267,16 @@ default: true;
 
 setting::lowercase {
   type: boolean;
-  label: tr("Flag Roads with Uncapitalized Words in the ame");
+  label: tr("Flag Roads with Uncapitalized Words in the Name");
   default: true;
+  group: "name_group";
 }
 
 setting::potlatch_crossing {
   type: boolean;
   label: tr("Use Less Specific Potlatch-style Crossing Icon");
   default: true;
+  group: "icon_group";
 }
 
 setting::cycleway_setting {
@@ -3605,6 +3632,7 @@ setting::osmic {
     type: boolean;
     label: tr("Alternative Icon Set (Osmic)");
     default: false;
+    group: "icon_group";
 }
 
 /*****************************/
