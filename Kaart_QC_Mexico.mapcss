@@ -390,6 +390,13 @@ setting::user_RikH {
   group: "sinopah";
 }
 
+setting::user_StephanieH {
+  type:boolean;
+  label:tr("Avocadough!|Stephanie Hutton");
+  default:true;
+  group: "sinopah";
+}
+
 setting::user_ViancaS {
   type:boolean;
   label:tr("Amonite1025|Vianca Severino");
@@ -444,6 +451,7 @@ setting::user_ViancaS {
 *[osm_user_name() == "n1y0m1"][setting("user_NiyomiK")],
 *[osm_user_name() == "Ouray"][setting("user_RickZ")],
 *[osm_user_name() == "whatmeinfallible"][setting("user_RikH")],
+*[osm_user_name() == "Avocadough!"][setting("user_StephanieH")],
 *[osm_user_name() == "Amonite1025"][setting("user_ViancaS")]
 {
   set .User;
@@ -536,6 +544,8 @@ relation[eval(JOSM_search("user:Ouray"))] > node[setting("user_RickZ")],
 relation[eval(JOSM_search("user:Ouray"))] > way[setting("user_RickZ")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > node[setting("user_RikH")],
 relation[eval(JOSM_search("user:whatmeinfallible"))] > way[setting("user_RikH")],
+relation[eval(JOSM_search("user:Avocadough!"))] > node[setting("user_StephanieH")],
+relation[eval(JOSM_search("user:Avocadough!"))] > way[setting("user_StephanieH")],
 relation[eval(JOSM_search("user:Amonite1025"))] > node[setting("user_ViancaS")],
 relation[eval(JOSM_search("user:Amonite1025"))] > way[setting("user_ViancaS")]
 {
