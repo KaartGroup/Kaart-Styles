@@ -285,6 +285,12 @@ label: tr("Enlarge Cycleway Styling");
 default: true;
 }
 
+setting::barrier_setting {
+type: boolean;
+label: tr("Barrier Setting");
+default: true;
+}
+
 
 
 
@@ -765,11 +771,34 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 way[barrier] {z-index: 5; color: #000000; width: 1}
 way[barrier=fence] {z-index: 5; color: #000000; width: 1; dashes: 8,4,2,4; }
 
-node[barrier=sliding_gate]::tagged, node[barrier=debris]::tagged, node[barrier=horse_stile]::tagged, node[barrier=kent_carriage_gap]::tagged, node[barrier=motorcycle_barrier]::tagged, node[barrier=sump_buster]::tagged, node[barrier=wicket_gate]::tagged, node[barrier=yes]::tagged, node[barrier=tyres]::tagged, node[barrier=rope]::tagged, node[barrier=tank_trap]::tagged, node[barrier=fence]::tagged {symbol-shape: square;
+/* Ingested Barriers */
+
+node[barrier=fence][setting("Barrier Setting")]::tagged, node[barrier=wall][setting("Barrier Setting")]::tagged, node[barrier=gate][setting("Barrier Setting")]::tagged, node[barrier=hedge][setting("Barrier Setting")]::tagged, node[barrier=bollard][setting("Barrier Setting")]::tagged, node[barrier=lift_gate][setting("Barrier Setting")]::tagged, node[barrier=retaining_wall][setting("Barrier Setting")]::tagged, node[barrier=stile][setting("Barrier Setting")]::tagged, node[barrier=cycle_barrier][setting("Barrier Setting")]::tagged, node[barrier=kerb][setting("Barrier Setting")]::tagged, node[barrier=yes][setting("Barrier Setting")]::tagged, node[barrier=entrance][setting("Barrier Setting")]::tagged, node[barrier=block][setting("Barrier Setting")]::tagged, node[barrier=toll_booth][setting("Barrier Setting")]::tagged, node[barrier=cattle_grid][setting("Barrier Setting")]::tagged, node[barrier=ditch][setting("Barrier Setting")]::tagged, node[barrier=kissing_gate][setting("Barrier Setting")]::tagged, node[barrier=city_wall][setting("Barrier Setting")]::tagged, node[barrier=guard_rail][setting("Barrier Setting")]::tagged, node[barrier=hedge_bank][setting("Barrier Setting")]::tagged, node[barrier=wire_fence][setting("Barrier Setting")]::tagged, node[barrier=line][setting("Barrier Setting")]::tagged, node[barrier=swing_gate][setting("Barrier Setting")]::tagged, node[barrier=chain][setting("Barrier Setting")]::tagged, node[barrier=turnstile][setting("Barrier Setting")]::tagged, node[barrier=embankment][setting("Barrier Setting")]::tagged, node[barrier=field_boundary][setting("Barrier Setting")]::tagged, node[barrier=border_control][setting("Barrier Setting")]::tagged, node[barrier=sally_port][setting("Barrier Setting")]::tagged, node[barrier=door][setting("Barrier Setting")]::tagged, node[barrier=hampshire_gate][setting("Barrier Setting")]::tagged, node[barrier=wood_fence][setting("Barrier Setting")]::tagged, node[barrier=bump_gate][setting("Barrier Setting")]::tagged, node[barrier=jersey_barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
 symbol-size: 5;
-symbol-stroke-color: #FC03E5;
+symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
+z-index: -5; }
+
+node[barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
+symbol-size: 5;
+symbol-strok-color: #28DE03;
+symbol-fill-opacity: 1;
+z-index: -5; }
+
+/* Not Ingested Barriers */
+
+node[barrier=cable_barrier][setting("Barrier Setting")]::tagged, node[barrier=handrail][setting("Barrier Setting")]::tagged, node[barrier=bus_trap][setting("Barrier Setting")]::tagged, node[barrier=coupure][setting("Barrier Setting")]::tagged, node[barrier=debris][setting("Barrier Setting")]::tagged, node[barrier=full-height_turnstile][setting("Barrier Setting")]::tagged, node[barrier=height_restrictor][setting("Barrier Setting")]::tagged, node[barrier=horse_stile][setting("Barrier Setting")]::tagged, node[barrier=kent_carriage_gap][setting("Barrier Setting")]::tagged, node[barrier=motorcycle_barrier][setting("Barrier Setting")]::tagged, node[barrier=planter][setting("Barrier Setting")]::tagged, node[barrier=sliding_beam][setting("Barrier Setting")]::tagged, node[barrier=sliding_gate][setting("Barrier Setting")]::tagged, node[barrier=spikes][setting("Barrier Setting")]::tagged, node[barrier=sump_buster][setting("Barrier Setting")]::tagged, node[barrier=wedge][setting("Barrier Setting")]::tagged, node[barrier=wicket_gate][setting("Barrier Setting")]::tagged, node[barrier=bar][setting("Barrier Setting")]::tagged, node[barrier=barrier_board][setting("Barrier Setting")]::tagged, node[barrier=log][setting("Barrier Setting")]::tagged, node[barrier=rope][setting("Barrier Setting")]::tagged, node[barrier=tank_trap][setting("Barrier Setting")]::tagged, node[barrier=tyres][setting("Barrier Setting")]::tagged {symbol-shape: square;
+symbol-size: 5;
+symbol-stroke-color: #D70D02;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
+
+node[barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
+symbol-size: 5;
+symbol-strok-color: #D70D02;
+symbol-fill-opacity: 1;
 z-index: -5; }
 
 /* Power */
