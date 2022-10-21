@@ -782,7 +782,7 @@ z-index: -5; }
 
 node[barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
 symbol-size: 5;
-symbol-strok-color: #28DE03;
+symbol-stroke-color: #28DE03;
 symbol-fill-opacity: 1;
 z-index: -5; }
 
@@ -797,7 +797,7 @@ z-index: -5; }
 
 node[barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
 symbol-size: 5;
-symbol-strok-color: #D70D02;
+symbol-stroke-color: #D70D02;
 symbol-fill-opacity: 1;
 z-index: -5; }
 
