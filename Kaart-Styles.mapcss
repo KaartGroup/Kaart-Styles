@@ -285,11 +285,11 @@ label: tr("Enlarge Cycleway Styling");
 default: true;
 }
 
-setting::barrier_setting {
+/* setting::barrier_setting {
 type: boolean;
 label: tr("Barrier Setting");
 default: true;
-}
+} */
 
 
 
@@ -773,7 +773,40 @@ way[barrier=fence] {z-index: 5; color: #000000; width: 1; dashes: 8,4,2,4; }
 
 /* Ingested Barriers */
 
-node[barrier=fence][setting("Barrier Setting")]::tagged, node[barrier=wall][setting("Barrier Setting")]::tagged, node[barrier=gate][setting("Barrier Setting")]::tagged, node[barrier=hedge][setting("Barrier Setting")]::tagged, node[barrier=bollard][setting("Barrier Setting")]::tagged, node[barrier=lift_gate][setting("Barrier Setting")]::tagged, node[barrier=retaining_wall][setting("Barrier Setting")]::tagged, node[barrier=stile][setting("Barrier Setting")]::tagged, node[barrier=cycle_barrier][setting("Barrier Setting")]::tagged, node[barrier=kerb][setting("Barrier Setting")]::tagged, node[barrier=yes][setting("Barrier Setting")]::tagged, node[barrier=entrance][setting("Barrier Setting")]::tagged, node[barrier=block][setting("Barrier Setting")]::tagged, node[barrier=toll_booth][setting("Barrier Setting")]::tagged, node[barrier=cattle_grid][setting("Barrier Setting")]::tagged, node[barrier=ditch][setting("Barrier Setting")]::tagged, node[barrier=kissing_gate][setting("Barrier Setting")]::tagged, node[barrier=city_wall][setting("Barrier Setting")]::tagged, node[barrier=guard_rail][setting("Barrier Setting")]::tagged, node[barrier=hedge_bank][setting("Barrier Setting")]::tagged, node[barrier=wire_fence][setting("Barrier Setting")]::tagged, node[barrier=line][setting("Barrier Setting")]::tagged, node[barrier=swing_gate][setting("Barrier Setting")]::tagged, node[barrier=chain][setting("Barrier Setting")]::tagged, node[barrier=turnstile][setting("Barrier Setting")]::tagged, node[barrier=embankment][setting("Barrier Setting")]::tagged, node[barrier=field_boundary][setting("Barrier Setting")]::tagged, node[barrier=border_control][setting("Barrier Setting")]::tagged, node[barrier=sally_port][setting("Barrier Setting")]::tagged, node[barrier=door][setting("Barrier Setting")]::tagged, node[barrier=hampshire_gate][setting("Barrier Setting")]::tagged, node[barrier=wood_fence][setting("Barrier Setting")]::tagged, node[barrier=bump_gate][setting("Barrier Setting")]::tagged, node[barrier=jersey_barrier][setting("Barrier Setting")]::tagged {symbol-shape: square;
+node[barrier=fence]::tagged,
+node[barrier=wall]::tagged,
+node[barrier=gate]::tagged,
+node[barrier=hedge]::tagged,
+node[barrier=bollard]::tagged,
+node[barrier=lift_gate]::tagged,
+node[barrier=retaining_wall]::tagged,
+node[barrier=stile]::tagged,
+node[barrier=cycle_barrier]::tagged,
+node[barrier=kerb]::tagged,
+node[barrier=yes]::tagged,
+node[barrier=entrance]::tagged,
+node[barrier=block]::tagged,
+node[barrier=toll_booth]::tagged,
+node[barrier=cattle_grid]::tagged,
+node[barrier=ditch]::tagged,
+node[barrier=kissing_gate]::tagged,
+node[barrier=city_wall]::tagged,
+node[barrier=guard_rail]::tagged,
+node[barrier=hedge_bank]::tagged,
+node[barrier=wire_fence]::tagged,
+node[barrier=line]::tagged,
+node[barrier=swing_gate]::tagged,
+node[barrier=chain]::tagged,
+node[barrier=turnstile]::tagged,
+node[barrier=embankment]::tagged,
+node[barrier=field_boundary]::tagged,
+node[barrier=border_control]::tagged,
+node[barrier=sally_port]::tagged,
+node[barrier=door]::tagged,
+node[barrier=hampshire_gate]::tagged,
+node[barrier=wood_fence]::tagged,
+node[barrier=bump_gate]::tagged,
+node[barrier=jersey_barrier]::tagged {symbol-shape: square;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -788,7 +821,29 @@ z-index: -5; }
 
 /* Not Ingested Barriers */
 
-node[barrier=cable_barrier][setting("Barrier Setting")]::tagged, node[barrier=handrail][setting("Barrier Setting")]::tagged, node[barrier=bus_trap][setting("Barrier Setting")]::tagged, node[barrier=coupure][setting("Barrier Setting")]::tagged, node[barrier=debris][setting("Barrier Setting")]::tagged, node[barrier=full-height_turnstile][setting("Barrier Setting")]::tagged, node[barrier=height_restrictor][setting("Barrier Setting")]::tagged, node[barrier=horse_stile][setting("Barrier Setting")]::tagged, node[barrier=kent_carriage_gap][setting("Barrier Setting")]::tagged, node[barrier=motorcycle_barrier][setting("Barrier Setting")]::tagged, node[barrier=planter][setting("Barrier Setting")]::tagged, node[barrier=sliding_beam][setting("Barrier Setting")]::tagged, node[barrier=sliding_gate][setting("Barrier Setting")]::tagged, node[barrier=spikes][setting("Barrier Setting")]::tagged, node[barrier=sump_buster][setting("Barrier Setting")]::tagged, node[barrier=wedge][setting("Barrier Setting")]::tagged, node[barrier=wicket_gate][setting("Barrier Setting")]::tagged, node[barrier=bar][setting("Barrier Setting")]::tagged, node[barrier=barrier_board][setting("Barrier Setting")]::tagged, node[barrier=log][setting("Barrier Setting")]::tagged, node[barrier=rope][setting("Barrier Setting")]::tagged, node[barrier=tank_trap][setting("Barrier Setting")]::tagged, node[barrier=tyres][setting("Barrier Setting")]::tagged {symbol-shape: square;
+node[barrier=cable_barrier]::tagged,
+node[barrier=handrail]::tagged,
+node[barrier=bus_trap]::tagged,
+node[barrier=coupure]::tagged,
+node[barrier=debris]::tagged,
+node[barrier=full-height_turnstile]::tagged,
+node[barrier=height_restrictor]::tagged,
+node[barrier=horse_stile]::tagged,
+node[barrier=kent_carriage_gap]::tagged,
+node[barrier=motorcycle_barrier]::tagged,
+node[barrier=planter]::tagged,
+node[barrier=sliding_beam]::tagged,
+node[barrier=sliding_gate]::tagged,
+node[barrier=spikes]::tagged,
+node[barrier=sump_buster]::tagged,
+node[barrier=wedge]::tagged,
+node[barrier=wicket_gate]::tagged,
+node[barrier=bar]::tagged,
+node[barrier=barrier_board]::tagged,
+node[barrier=log]::tagged,
+node[barrier=rope]::tagged,
+node[barrier=tank_trap]::tagged,
+node[barrier=tyres]::tagged {symbol-shape: square;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
