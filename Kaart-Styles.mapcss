@@ -415,9 +415,15 @@ way[highway=tertiary_link]   { dashes-background-color: #408ccc; }
 
 way[highway=unclassified]                           { z-index: 6; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
 
+way[highway=unclassified][motorcar=no]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+
 way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
 
 way[highway=residential][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
+
+way[highway=residential][motorcar=no]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+
+way[highway=living_street][motorcar=no]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
 
 way[highway=service]                                { z-index: 5; color: #39ff14; width: 3; casing-color: #000000; casing-width: 1; }
 
