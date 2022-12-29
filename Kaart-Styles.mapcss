@@ -291,6 +291,12 @@ label: tr("Barrier Setting");
 default: true;
 }
 
+setting::access {
+  type: boolean;
+  label: tr("Access On/off");
+  default: false;
+}
+
 
 
 
@@ -358,6 +364,35 @@ relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
     width: 5;
     color: boundary_lower#FF6600;
     dashes: 9,9;
+}
+
+/****************************/
+/* access restrictions tags */
+/****************************/
+
+way[access?!]::core_access {
+    z-index: -1;
+    width: +2;
+    color: no#ff8080;
+    dashes: 2,2;
+}
+way[access=permissive][setting("access")]::core_access {
+    z-index: -1;
+    width: +5;
+    color: permissive#80ff80;
+    dashes: 2,2;
+}
+way[access=private][setting("access")]::core_access {
+    z-index: -1;
+    width: +5;
+    color: private#ff8080;
+    dashes: 2,2;
+}
+way[access=destination][setting("access")]::core_access {
+    z-index: -1;
+    width: +5;
+    color: destination#8080ff;
+    dashes: 2,2;
 }
 
 /* Untagged Ways */
@@ -3173,7 +3208,7 @@ node[public_transport=platform][ferry=yes] {
 
 /* Name & Ref Checker */
 
-way["highway"=~/^(secondary|tertiary|unclassified|residential|living_street)$/][!name][setting("check_name")] {
+way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street)$/][!name][setting("check_name")] {
   casing-color: red;
   casing-width: 3;
   text: tr("");
