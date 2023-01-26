@@ -3364,7 +3364,7 @@ node.child_knodes:selected {
 
 
 
-way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|service|track|construction|proposed|pedestrian|steps|path)$/] > node[setting("node_setting")] {
+way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|unclassified|living_street|service|track|construction|proposed|pedestrian|steps|path)$/] > node[setting("node_setting")] {
 	symbol-size: 6.5;
 	set .child_knodes;
     symbol-stroke-color: #00FFFF;
