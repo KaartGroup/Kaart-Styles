@@ -253,7 +253,7 @@ setting::user_RoanH {
 *[osm_user_name() == "luin132"][setting("user_LandonS")],
 *[osm_user_name() == "WinterWitcher"][setting("user_LoganB")],
 *[osm_user_name() == "127logs"][setting("user_LoganS")],
-*[osm_user_name() == "Blathmac98"][setting("user_RoanH")],
+*[osm_user_name() == "Blathmac98"][setting("user_RoanH")]
 {
   set .User;
 }
@@ -297,7 +297,7 @@ relation[eval(JOSM_search("user:WinterWitcher"))] > way[setting("user_LoganB")],
 relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
 relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
 relation[eval(JOSM_search("user:Blathmac98"))] > node[setting("user_RoanH")],
-relation[eval(JOSM_search("user:Blathmac98"))] > way[setting("user_RoanH")],
+relation[eval(JOSM_search("user:Blathmac98"))] > way[setting("user_RoanH")]
 {
 set .Relation
 }
