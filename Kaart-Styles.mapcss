@@ -103,7 +103,7 @@ setting::highway_labels {
   group: "name_group";
 }
 
-setting::knode_setting {
+setting::node_setting {
   type: boolean;
   label: tr("Increase Connecting Node Size");
   default: false;
@@ -3570,7 +3570,7 @@ node|z22:connection.tertiary2   { symbol-size: 10; }
 
 /* Node Connection Styles */
 
-node!:connection[setting("knode_setting")] {
+node!:connection[setting("node_setting")] {
 	symbol-shape: circle;
 	symbol-size: 6;
 	set .child_knodes;
@@ -3580,7 +3580,7 @@ node!:connection[setting("knode_setting")] {
 
 }
 
-node.child_knodes:selected {
+node.child_nodes:selected {
     symbol-size: 9;
     symbol-stroke-color: yellow;
 	symbol-fill-color: red;
@@ -3589,7 +3589,7 @@ node.child_knodes:selected {
 
 
 
-way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|unclassified|living_street|service|track|construction|proposed|pedestrian|steps|path)$/] > node[setting("node_setting")] {
+way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|unclassified|living_street|service|track|construction|proposed|pedestrian|steps|footway|path)$/] > node[setting("node_setting")] {
 	symbol-size: 6.5;
 	set .child_knodes;
     symbol-stroke-color: #00FFFF;
