@@ -1,5 +1,5 @@
 meta {
-  title: "Sinopah QC";
+  title: "Kaart QC";
   description: "Highlights features that were created/modified by users";
   watch-modified: true;
   version: "2.0";
@@ -118,17 +118,9 @@ setting::user_HamishH {
   group: "quandary";
 }
 
-setting::user_IanMa {
+setting::user_IanM {
   type:boolean;
   label:tr("Baconcrisp|Ian Malott");
-  default:true;
-  group: "quandary";
-}
-
-
-setting::user_JorgeA {
-  type:boolean;
-  label:tr("JAAS|Jorge Aguirre");
   default:true;
   group: "quandary";
 }
@@ -136,13 +128,6 @@ setting::user_JorgeA {
 setting::user_LaurenH {
   type:boolean;
   label:tr("Pegasus21|Lauren Healy");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_PaceM {
-  type:boolean;
-  label:tr("InnerPace|Pace Martin");
   default:true;
   group: "quandary";
 }
@@ -175,13 +160,6 @@ setting::user_WilliamF {
   group: "quandary";
 }
 
-setting::user_Anja {
-  type: boolean;
-  label: tr("PlinyTheYoungest|Anja Riedel");
-  default: true;
-  group: "quandary";
-}
-
 setting::user_GabeG {
   type: boolean;
   label: tr("GbabethemapGod|Gabe Gueretta");
@@ -189,30 +167,9 @@ setting::user_GabeG {
   group: "quandary";
 }
 
-setting::user_JamesP {
-  type:boolean;
-  label:tr("eggothy|James Peake");
-  default:true;
-  group: "quandary";
-}
-
 setting::user_JoseL {
   type:boolean;
   label:tr("Mendicant_Slug_097|Jose Lopez-Aguilera");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_LandonS {
-  type:boolean;
-  label:tr("luin132|Landon Sauvage");
-  default:true;
-  group: "quandary";
-}
-
-setting::user_LoganB {
-  type:boolean;
-  label:tr("WinterWitcher|Logan Barnes");
   default:true;
   group: "quandary";
 }
@@ -231,31 +188,45 @@ setting::user_RoanH {
   group: "quandary";
 }
 
+setting::user_BrittanyB {
+  type: boolean;
+  label: tr("Brittigra|Brittany Buckley");
+  default: true;
+  group: "quandary";
+}
+
+setting::user_IsaacV {
+  type: boolean;
+  label: tr("Bit_by_Bit|Isaac Van Horn");
+  default: true;
+  group: "quandary";
+}
+
+setting::user_GarrettS {
+  type: boolean;
+  label: tr("Huge_OSM_Fan|Garrett Smith");
+  default: true;
+  group: "quandary";
+}
+
 
 /* Retrieving User "History" */
 
-/* Quandary */
-
-*[osm_user_name() == "Corban8"][setting("user_CorbanG")],
-*[osm_user_name() == "hairyhaggis"][setting("user_HamishH")],
-*[osm_user_name() == "Baconcrisp"][setting("user_IanMa")],
-*[osm_user_name() == "JAAS"][setting("user_JorgeA")],
-*[osm_user_name() == "Pegasus21"][setting("user_LaurenH")],
-*[osm_user_name() == "InnerPace"][setting("user_PaceM")],
-*[osm_user_name() == "hayduke1275"][setting("user_PaulS")],
-*[osm_user_name() == "martymcfly14"][setting("user_RyanM")],
-*[osm_user_name() == "Toddtodd"][setting("user_ToddK")],
-*[osm_user_name() == "Buddy-the-Elf"][setting("user_WilliamF")],
-*[osm_user_name() == "PlinyTheYoungest"][setting("user_Anja")],
-*[osm_user_name() == "GbabethemapGod"][setting("user_GabeG")],
-*[osm_user_name() == "eggothy"][setting("user_JamesP")],
-*[osm_user_name() == "Mendicant_Slug_097"][setting("user_JoseL")],
-*[osm_user_name() == "luin132"][setting("user_LandonS")],
-*[osm_user_name() == "WinterWitcher"][setting("user_LoganB")],
-*[osm_user_name() == "127logs"][setting("user_LoganS")],
-*[osm_user_name() == "Blathmac98"][setting("user_RoanH")]
+/* Quandary Class*/
+*[osm_user_id() == 4240913][setting("user_CorbanG")],
+*[osm_user_id() == 10541438][setting("user_HamishH")],
+*[osm_user_id() == 3778777][setting("user_IanM")],
+*[osm_user_id() == 13510663][setting("user_LaurenH")],
+*[osm_user_id() == 12854712][setting("user_PaulS")],
+*[osm_user_id() == 14434812][setting("user_RyanM")],
+*[osm_user_id() == 13560445][setting("user_ToddK")],
+*[osm_user_id() == 9476874][setting("user_WilliamF")],
+*[osm_user_id() == 15314242][setting("user_GabeG")],
+*[osm_user_id() == 14389175][setting("user_JoseL")],
+*[osm_user_id() == 9633823][setting("user_LoganS")],
+*[osm_user_id() == 14389165][setting("user_RoanH")]
 {
-  set .User;
+  set .quandarystyle;
 }
 
 /* Retrieving User "Relation History" */
@@ -266,14 +237,10 @@ relation[eval(JOSM_search("user:Corban8"))] > node[setting("user_CorbanG")],
 relation[eval(JOSM_search("user:Corban8"))] > way[setting("user_CorbanG")],
 relation[eval(JOSM_search("user:hairyhaggis"))] > node[setting("user_HamishH")],
 relation[eval(JOSM_search("user:hairyhaggis"))] > way[setting("user_HamishH")],
-relation[eval(JOSM_search("user:Baconcrisp"))] > node[setting("user_IanMa")],
-relation[eval(JOSM_search("user:Baconcrisp"))] > way[setting("user_IanMa")],
-relation[eval(JOSM_search("user:JAAS"))] > node[setting("user_JorgeA")],
-relation[eval(JOSM_search("user:JAAS"))] > way[setting("user_JorgeA")],
+relation[eval(JOSM_search("user:Baconcrisp"))] > node[setting("user_IanM")],
+relation[eval(JOSM_search("user:Baconcrisp"))] > way[setting("user_IanM")],
 relation[eval(JOSM_search("user:Pegasus21"))] > node[setting("user_LaurenH")],
 relation[eval(JOSM_search("user:Pegasus21"))] > way[setting("user_LaurenH")],
-relation[eval(JOSM_search("user:InnerPace"))] > node[setting("user_PaceM")],
-relation[eval(JOSM_search("user:InnerPace"))] > way[setting("user_PaceM")],
 relation[eval(JOSM_search("user:hayduke1275"))] > node[setting("user_PaulS")],
 relation[eval(JOSM_search("user:hayduke1275"))] > way[setting("user_PaulS")],
 relation[eval(JOSM_search("user:martymcfly14"))] > node[setting("user_RyanM")],
@@ -282,18 +249,10 @@ relation[eval(JOSM_search("user:Toddtodd"))] > node[setting("user_ToddK")],
 relation[eval(JOSM_search("user:Toddtodd"))] > way[setting("user_ToddK")],
 relation[eval(JOSM_search("user:Buddy-the-Elf"))] > node[setting("user_WilliamF")],
 relation[eval(JOSM_search("user:Buddy-the-Elf"))] > way[setting("user_WilliamF")],
-relation[eval(JOSM_search("user:PlinyTheYoungest"))] > node[setting("user_Anja")],
-relation[eval(JOSM_search("user:PlinyTheYoungest"))] > way[setting("user_Anja")],
 relation[eval(JOSM_search("user:GbabethemapGod"))] > node[setting("user_GabeG")],
 relation[eval(JOSM_search("user:GbabethemapGod"))] > way[setting("user_GabeG")],
-relation[eval(JOSM_search("user:eggothy"))] > node[setting("user_JamesP")],
-relation[eval(JOSM_search("user:eggothy"))] > way[setting("user_JamesP")],
 relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > node[setting("user_JoseL")],
 relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > way[setting("user_JoseL")],
-relation[eval(JOSM_search("user:luin132"))] > node[setting("user_LandonS")],
-relation[eval(JOSM_search("user:luin132"))] > way[setting("user_LandonS")],
-relation[eval(JOSM_search("user:WinterWitcher"))] > node[setting("user_LoganB")],
-relation[eval(JOSM_search("user:WinterWitcher"))] > way[setting("user_LoganB")],
 relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
 relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
 relation[eval(JOSM_search("user:Blathmac98"))] > node[setting("user_RoanH")],
@@ -324,7 +283,7 @@ way[setting(relations)].Relation {
 
 /* Styling of nodes, ways, and relations once they belong to "History" */
 
-node!:modified.User {
+node!:modified.quandarystyle {
   symbol-shape: triangle;
   symbol-size: 15;
   symbol-stroke-color: blue;
@@ -333,7 +292,7 @@ node!:modified.User {
   z-index: -10;
 }
 
-way!:modified.User {
+way!:modified.quandarystyle {
   z-index: -10;
   casing-color: #B108D6; /* Purple */
   casing-width: 7;
@@ -344,7 +303,7 @@ way!:modified.User {
   */
 }
 
-relation[setting(relations)]!:modified.Relation > node.User {
+relation[setting(relations)]!:modified.Relation > node.quandarystyle {
   symbol-shape: triangle;
   symbol-size: 15;
   symbol-stroke-color: #49baba; /* Sky Blue */
@@ -353,7 +312,7 @@ relation[setting(relations)]!:modified.Relation > node.User {
   z-index: -10;
 }
 
-relation[setting(relations)]!:modified.Relation > way.User {
+relation[setting(relations)]!:modified.Relation > way.quandarystyle {
   casing-width: 7;
   casing-color: #1396ba; /* Light Blue */
   casing-opacity: 0.55;
