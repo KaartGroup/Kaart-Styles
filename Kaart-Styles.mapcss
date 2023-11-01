@@ -982,6 +982,15 @@ symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
 z-index: -5; }
 
+/* Access:conditional */
+
+node[barrier]["access:conditional"]::tagged
+{symbol-shape: octagon;
+symbol-size: 5;
+symbol-stroke-color: #28DE03;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
 
 /* Not Ingested Barriers */
 
