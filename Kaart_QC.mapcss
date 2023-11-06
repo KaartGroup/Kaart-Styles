@@ -18,6 +18,7 @@ meta {
 1.7 Updated list of team members -- Logan Barnes -- 4/8/2020
 1.8 Updated to include new team categories, new users, and updated title -- Landon S. -- 04/20/2022
 2.0 Updated to include more teams, added relations, and added settings -- Landon S. -- 05/4/2022
+2.1 Added teams and updated members, converted usernames to user_id's, modified modified layer so history can be seen on modified ways -- IanM -- 11/6/2023
 
 Tips:
 
@@ -38,12 +39,27 @@ setting::user_aaron {
 
 at which point, it becomes necessary to create a selector statement for your user:
 
+By username:
 *[osm_user_name() == "vespax"][setting("user_aaron")] {
+  set .aaron;
+}
+By user_id:
+*[osm_user_id() == 2957617][setting("user_AaronY")]{
   set .aaron;
 }
 
 -- * denotes what you are selecting, in this case, every element type in OSM
 -- [osm_user_name() == "vespax"] -> this is necessary and should be constructed as such.
+
+To search for relation touched by an editor based on their username:
+relation[eval(JOSM_search("user:Corban8"))] > node[setting("user_CorbanG")],
+relation[eval(JOSM_search("user:Corban8"))] > way[setting("user_CorbanG")],
+
+To search for relation touched by an editor based on their user id:
+relation[osm_user_id() == 2957617] > node[setting("user_AaronY")],
+relation[osm_user_id() == 2957617] > way[setting("user_AaronY")]{
+  set .Relation
+}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -209,6 +225,637 @@ setting::user_GarrettS {
   group: "quandary";
 }
 
+/* Mauna Kea */
+
+settings::maunakea {
+    label: tr("Mauna Kea");
+  }
+
+/* Argentina */
+setting::user_AndresDuhour {
+  type:boolean;
+  label:tr("ARG - AndresDuhour");
+  default:false;
+  group: "maunakea";
+  }
+
+/* Brazil */
+setting::user_kaartense {
+    type:boolean;
+    label:tr("BRA - kaartense");
+    default:false;
+    group: "maunakea";
+  }
+
+setting::user_LoganM {
+    type:boolean;
+    label:tr("BRA - LoganM");
+    default:false;
+    group: "maunakea";
+  }
+
+setting::user_Raphaelkaart {
+  type:boolean;
+  label:tr("BRA - Raphaelkaart");
+  default:false;
+  group: "maunakea";
+  }
+
+setting::user_mapitero {
+  type:boolean;
+  label:tr("BRA - mapitero");
+  default:false;
+  group: "maunakea";
+  }
+  
+  setting::user_Marcos_Itba_Kaart {
+  type:boolean;
+  label:tr("BRA - Marcos_Itba_Kaart");
+  default:false;
+  group: "maunakea";
+  }
+
+/* Chile */
+
+setting::user_jptolosa87 {
+    type:boolean;
+    label:tr("CHL - jptolosa87");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_filepeedwards {
+    type:boolean;
+    label:tr("CHL - felipeedwards");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Colombia */
+setting::user_JuanMelo {
+    type:boolean;
+    label:tr("COL - JuanMelo");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Malaysia/GRC */
+setting::user_nabilersyad {
+    type:boolean;
+    label:tr("GRC - nabilersyad");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Guatemala/Argentina */
+setting::user_JAAS {
+    type:boolean;
+    label:tr("GTM, ARG - JAAS");
+    default:false;
+    group: "maunakea";
+  }
+  
+/* Indonesia */
+setting::user_f_husni {
+    type:boolean;
+    label:tr("IND - f_husni");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_amtplskaart {
+    type:boolean;
+    label:tr("IND - amtplskaart");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_rbelladinak {
+    type:boolean;
+    label:tr("IND - rbelladinak");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Mexico */
+setting::user_Josuer {
+    type:boolean;
+    label:tr("MEX - Josuer");
+    default:false;
+    group: "maunakea";
+  }
+
+setting::user_luisrobledomx1 {
+    type:boolean;
+    label:tr("MEX - luisrobledomx1");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_mapeadora {
+    type:boolean;
+    label:tr("MEX - mapeadora");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Pakistan */
+setting::user_UzairAhmad {
+  type:boolean;
+  label:tr("PAK - Uzair Ahmad");
+  default:false;
+  group: "maunakea";
+  }
+
+/* Philippines */
+setting::user_GOwin {
+    type:boolean;
+    label:tr("PHL - GOwin");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_Rally {
+    type:boolean;
+    label:tr("PHL - Rally");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_VMPanes {
+    type:boolean;
+    label:tr("PHL - VMPanes");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_Timmy_Tesseract {
+    type:boolean;
+    label:tr("PHL - Timmy_Tesseract");
+    default:false;
+    group: "maunakea";
+  }
+
+/* Romania */
+setting::user_andreiSk {
+    type:boolean;
+    label:tr("ROU - andreiSk");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_RusIonut {
+    type:boolean;
+    label:tr("ROU - Rus Ionut");
+    default:false;
+    group: "maunakea";
+  }
+  
+  setting::user_ArminGheorghina {
+    type:boolean;
+    label:tr("ROU - Armin Gheorghina");
+    default:false;
+    group: "maunakea";
+  }
+
+/* South Africa */
+  setting::user_Khathucry {
+  type:boolean;
+  label:tr("SAF - Khathucry");
+  default:false;
+  group: "maunakea";
+  }
+  
+  setting::user_Stephanievanr {
+  type:boolean;
+  label:tr("SAF - Stephanievanr");
+  default:false;
+  group: "maunakea";
+  }
+
+/* USA */
+setting::user_IanM {
+    type:boolean;
+    label:tr("US - IanM");
+    default:true;
+    group: "maunakea";
+  }
+  
+  setting::user_kebobo {
+  type:boolean;
+  label:tr("US - kebobo");
+  default:false;
+  group: "maunakea";
+  }
+
+  /* Sneffels */
+
+settings::sneffels {
+  label: tr("Sneffels");
+}
+
+setting::user_DylanF {
+  type:boolean;
+  label:tr("DylanF");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_GwenH {
+  type:boolean;
+  label:tr("GwenH");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_CallistaS {
+  type:boolean;
+  label:tr("CallistaS");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_BrianL {
+  type:boolean;
+  label:tr("BrianL");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_MattB {
+  type:boolean;
+  label:tr("MattB");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_RobM {
+  type:boolean;
+  label:tr("RobM");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_LeahB {
+  type:boolean;
+  label:tr("LeahB");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_AriannaB {
+  type:boolean;
+  label:tr("AriannaB");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_AustinM {
+  type:boolean;
+  label:tr("AustinM");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_JacobP {
+  type:boolean;
+  label:tr("JacobP");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_ChrisP {
+  type:boolean;
+  label:tr("ChrisP");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_JustinP {
+  type:boolean;
+  label:tr("JustinP");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_CaseyR {
+  type:boolean;
+  label:tr("CaseyR");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_JessicaF {
+  type:boolean;
+  label:tr("JessicaF");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_JessicaH {
+  type:boolean;
+  label:tr("JessicaH");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_IanMc {
+  type:boolean;
+  label:tr("IanMc");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_RickZ {
+  type:boolean;
+  label:tr("RickZ");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_SusanB {
+  type:boolean;
+  label:tr("SusanB");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_MikaelaW {
+  type:boolean;
+  label:tr("MikaelaW");
+  default:true;
+  group: "sneffels";
+}
+
+setting::user_AngelinaH {
+  type:boolean;
+  label:tr("AngelinaH");
+  default:true;
+  group: "sneffels";
+}
+
+  /* Diablo */
+
+settings::diablo {
+  label: tr("Diablo");
+}
+
+setting::user_YemiA {
+  type:boolean;
+  label:tr("YemiA");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_MichaelB {
+  type:boolean;
+  label:tr("MichaelB");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_AnthonyS {
+  type:boolean;
+  label:tr("AnthonyS");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_JordanW {
+  type:boolean;
+  label:tr("JordanW");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_BalpreetS {
+  type:boolean;
+  label:tr("BalpreetS");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_DavidT {
+  type:boolean;
+  label:tr("DavidT");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_Je-NiH {
+  type:boolean;
+  label:tr("Je-NiH");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_JennavyC {
+  type:boolean;
+  label:tr("JennavyC");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_DylanO {
+  type:boolean;
+  label:tr("DylanO");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_MatthewJ {
+  type:boolean;
+  label:tr("MatthewJ");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_RezaM {
+  type:boolean;
+  label:tr("RezaM");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_AndrewW {
+  type:boolean;
+  label:tr("AndrewW");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_EdwardD {
+  type:boolean;
+  label:tr("EdwardD");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_AlbertG {
+  type:boolean;
+  label:tr("AlbertG");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_AlecH {
+  type:boolean;
+  label:tr("AlecH");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_HoraceH {
+  type:boolean;
+  label:tr("HoraceH");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_JesspherM {
+  type:boolean;
+  label:tr("JesspherM");
+  default:true;
+  group: "diablo";
+}
+
+setting::user_OliviaD {
+  type:boolean;
+  label:tr("OliviaD");
+  default:true;
+  group: "diablo";
+}
+
+  /* Admin */
+
+settings::admin {
+  label: tr("Admin");
+}
+
+setting::user_AaronY {
+  type:boolean;
+  label:tr("AaronY");
+  default:true;
+  group: "admin";
+}
+
+setting::user_SarahJ {
+  type:boolean;
+  label:tr("SarahJ");
+  default:true;
+  group: "admin";
+}
+
+setting::user_KadyO {
+  type:boolean;
+  label:tr("KadyO");
+  default:true;
+  group: "admin";
+}
+
+setting::user_BreiaV {
+  type:boolean;
+  label:tr("BreiaV");
+  default:true;
+  group: "admin";
+}
+
+setting::user_ChadB {
+  type:boolean;
+  label:tr("ChadB");
+  default:true;
+  group: "admin";
+}
+
+setting::user_JennS {
+  type:boolean;
+  label:tr("JennS");
+  default:true;
+  group: "admin";
+}
+
+  /* External Engineers */
+
+settings::engineers1 {
+  label: tr("External Engineers");
+}
+
+setting::user_ZvoneS {
+  type:boolean;
+  label:tr("ZvoneS");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_BryanH {
+  type:boolean;
+  label:tr("BryanH");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_AlexI {
+  type:boolean;
+  label:tr("AlexI");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_TaylorS {
+  type:boolean;
+  label:tr("TaylorS");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_OleksiiT {
+  type:boolean;
+  label:tr("OleksiiT");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_MarcW {
+  type:boolean;
+  label:tr("MarcW");
+  default:true;
+  group: "engineers1";
+}
+
+setting::user_TannerW {
+  type:boolean;
+  label:tr("TannerW");
+  default:true;
+  group: "engineers1";
+}
+
+  /* Internal Engineers */
+
+settings::engineers2 {
+  label: tr("Internal Engineers");
+}
+
+setting::user_ChrisG {
+  type:boolean;
+  label:tr("ChrisG");
+  default:true;
+  group: "engineers2";
+}
+
+setting::user_LoganB {
+  type:boolean;
+  label:tr("LoganB");
+  default:true;
+  group: "engineers2";
+}
+
+setting::user_DevinM {
+  type:boolean;
+  label:tr("DevinM");
+  default:true;
+  group: "engineers2";
+}
+
 
 /* Retrieving User "History" */
 
@@ -224,41 +871,380 @@ setting::user_GarrettS {
 *[osm_user_id() == 15314242][setting("user_GabeG")],
 *[osm_user_id() == 14389175][setting("user_JoseL")],
 *[osm_user_id() == 9633823][setting("user_LoganS")],
+*[osm_user_id() == 19691335][setting("user_BrittanyB")],
+*[osm_user_id() == 17275420][setting("user_GarrettS")],
+*[osm_user_id() == 19558207][setting("user_IsaacV")],
 *[osm_user_id() == 14389165][setting("user_RoanH")]
 {
   set .quandarystyle;
+}
+
+/* Mauna Kea Class */
+
+/* Argentina */
+*[osm_user_id() == 2985830][setting("user_AndresDuhour")],
+/* Brazil */
+*[osm_user_id() == 10292935][setting("user_kaartense")],
+*[osm_user_id() == 9633078][setting("user_LoganM")],
+*[osm_user_id() == 12468685][setting("user_Raphaelkaart")],
+*[osm_user_id() == 12653083][setting("user_mapitero")],
+*[osm_user_id() == 12689837][setting("user_Marcos_Itba_Kaart")],
+/* Chile */
+*[osm_user_id() == 1975220][setting("user_jptolosa87")],
+*[osm_user_id() == 337684][setting("user_felipeedwards")],
+/* Colombia */
+*[osm_user_id() == 12906384][setting("user_JuanMelo")],
+/* Malaysia */
+*[osm_user_id() == 16603244][setting("user_nabilersyad")],
+/* Guatemala */
+*[osm_user_id() == 3321532][setting("user_JAAS")],
+/* Indonesia */
+*[osm_user_id() == 14944781][setting("user_f_husni")],
+*[osm_user_id() == 14902134][setting("user_amtplskaart")],
+*[osm_user_id() == 8250988][setting("user_rbelladinak")],
+/* Mexico */
+*[osm_user_id() == 3382594][setting("user_Josuer")],
+*[osm_user_id() == 10119349][setting("user_luisrobledomx1")],
+*[osm_user_id() == 143769][setting("user_mapeadora")],
+/* Pakistan */
+*[osm_user_id() == 13831509][setting("user_UzairAhmad")],
+/* Philippines */
+*[osm_user_id() == 1041828][setting("user_GOwin")],
+*[osm_user_id() == 24338][setting("user_Rally")],
+*[osm_user_id() == 1488198][setting("user_VMPanes")],
+*[osm_user_id() == 5653955][setting("user_Timmy_Tesseract")],
+/* Romania */
+*[osm_user_id() == 4688028][setting("user_andreiSk")],
+*[osm_user_id() == 1435498][setting("user_RusIonut")],
+*[osm_user_id() == 3207276][setting("user_ArminGheorghina")],
+/* South Africa */
+*[osm_user_id() == 8555719][setting("user_Khathucry")],
+*[osm_user_id() == 10732729][setting("user_Stephanievanr")],
+/* USA */
+*[osm_user_id() == 3778777][setting("user_IanM")],
+*[osm_user_id() == 10306954][setting("user_kebobo")]{
+    set .maunakeastyle;
+}
+
+/* Sneffels */
+
+*[osm_user_id() == 6966758][setting("user_DylanF")],
+*[osm_user_id() == 9269855][setting("user_GwenH")],
+*[osm_user_id() == 9524530][setting("user_CallistaS")],
+*[osm_user_id() == 9319448][setting("user_BrianL")],
+*[osm_user_id() == 9454623][setting("user_MattB")],
+*[osm_user_id() == 10085022][setting("user_RobM")],
+*[osm_user_id() == ][setting("user_LeahB")],
+*[osm_user_id() == 17266055][setting("user_AriannaB")],
+*[osm_user_id() == ][setting("user_AustinM")],
+*[osm_user_id() == ][setting("user_JacobP")],
+*[osm_user_id() == ][setting("user_ChrisP")],
+*[osm_user_id() == 14389164][setting("user_JustinP")],
+*[osm_user_id() == ][setting("user_CaseyR")],
+*[osm_user_id() == ][setting("user_JessicaF")],
+*[osm_user_id() == 14233563][setting("user_JessicaH")],
+*[osm_user_id() == 15551371][setting("user_IanMc")],
+*[osm_user_id() == 14145898][setting("user_RickZ")],
+*[osm_user_id() == ][setting("user_SusanB")],
+*[osm_user_id() == ][setting("user_MikaelaW")],
+*[osm_user_id() == ][setting("user_AngelinaH")]{
+  set .sneffelsstyle;
+}
+
+/* Diablo */
+
+*[osm_user_id() == 17700828][setting("user_YemiA")],
+*[osm_user_id() == 17651465][setting("user_MichaelB")],
+*[osm_user_id() == 17652666][setting("user_AnthonyS")],
+*[osm_user_id() == 17650812][setting("user_JordanW")],
+*[osm_user_id() == 17652820][setting("user_BalpreetS")],
+*[osm_user_id() == 18432819][setting("user_DavidT")],
+*[osm_user_id() == ][setting("user_Je-NiH")],
+*[osm_user_id() == 17630437][setting("user_JennavyC")],
+*[osm_user_id() == 18432852][setting("user_DylanO")],
+*[osm_user_id() == 17642547][setting("user_MatthewJ")],
+*[osm_user_id() == 13352108][setting("user_RezaM")],
+*[osm_user_id() == 17677287][setting("user_AndrewW")],
+*[osm_user_id() == 8988225][setting("user_EdwardD")],
+*[osm_user_id() == 8525923][setting("user_AlbertG")],
+*[osm_user_id() == 6172866][setting("user_AlecH")],
+*[osm_user_id() == 8867106][setting("user_HoraceH")],
+*[osm_user_id() == ][setting("user_JesspherM")],
+*[osm_user_id() == 20000242][setting("user_OliviaD")]{
+  set .diablostyle;
+}
+
+/* Admin */
+
+*[osm_user_id() == 2957617][setting("user_AaronY")],
+*[osm_user_id() == ][setting("user_SarahJ")],
+*[osm_user_id() == ][setting("user_KadyO")],
+*[osm_user_id() == 9550075][setting("user_BreiaV")],
+*[osm_user_id() == ][setting("user_ChadB")],
+*[osm_user_id() == 6172634][setting("user_JennS")]{
+  set .adminstyle;
+}
+
+/* External Engineers */
+
+*[osm_user_id() == ][setting("user_ZvoneS")],
+*[osm_user_id() == ][setting("user_BryanH")],
+*[osm_user_id() == ][setting("user_AlexI")],
+*[osm_user_id() == 9019988][setting("user_TaylorS")],
+*[osm_user_id() == ][setting("user_OleksiiT")],
+*[osm_user_id() == ][setting("user_MarcW")],
+*[osm_user_id() == 10341424][setting("user_TannerW")]{
+  set .engineers1style;
+}
+
+/* Internal Engineers */
+
+*[osm_user_id() == 10082622][setting("user_ChrisG")],
+*[osm_user_id() == 13238152][setting("user_LoganB")],
+*[osm_user_id() == 20108145][setting("user_DevinM")]{
+  set .engineers2style;
 }
 
 /* Retrieving User "Relation History" */
 
 /* Quandary */
 
-relation[eval(JOSM_search("user:Corban8"))] > node[setting("user_CorbanG")],
-relation[eval(JOSM_search("user:Corban8"))] > way[setting("user_CorbanG")],
-relation[eval(JOSM_search("user:hairyhaggis"))] > node[setting("user_HamishH")],
-relation[eval(JOSM_search("user:hairyhaggis"))] > way[setting("user_HamishH")],
-relation[eval(JOSM_search("user:Baconcrisp"))] > node[setting("user_IanM")],
-relation[eval(JOSM_search("user:Baconcrisp"))] > way[setting("user_IanM")],
-relation[eval(JOSM_search("user:Pegasus21"))] > node[setting("user_LaurenH")],
-relation[eval(JOSM_search("user:Pegasus21"))] > way[setting("user_LaurenH")],
-relation[eval(JOSM_search("user:hayduke1275"))] > node[setting("user_PaulS")],
-relation[eval(JOSM_search("user:hayduke1275"))] > way[setting("user_PaulS")],
-relation[eval(JOSM_search("user:martymcfly14"))] > node[setting("user_RyanM")],
-relation[eval(JOSM_search("user:martymcfly14"))] > way[setting("user_RyanM")],
-relation[eval(JOSM_search("user:Toddtodd"))] > node[setting("user_ToddK")],
-relation[eval(JOSM_search("user:Toddtodd"))] > way[setting("user_ToddK")],
-relation[eval(JOSM_search("user:Buddy-the-Elf"))] > node[setting("user_WilliamF")],
-relation[eval(JOSM_search("user:Buddy-the-Elf"))] > way[setting("user_WilliamF")],
-relation[eval(JOSM_search("user:GbabethemapGod"))] > node[setting("user_GabeG")],
-relation[eval(JOSM_search("user:GbabethemapGod"))] > way[setting("user_GabeG")],
-relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > node[setting("user_JoseL")],
-relation[eval(JOSM_search("user:Mendicant_Slug_097"))] > way[setting("user_JoseL")],
-relation[eval(JOSM_search("user:127logs"))] > node[setting("user_LoganS")],
-relation[eval(JOSM_search("user:127logs"))] > way[setting("user_LoganS")],
-relation[eval(JOSM_search("user:Blathmac98"))] > node[setting("user_RoanH")],
-relation[eval(JOSM_search("user:Blathmac98"))] > way[setting("user_RoanH")]
-{
+relation[osm_user_id() == 4240913] > node[setting("user_CorbanG")],
+relation[osm_user_id() == 4240913] > way[setting("user_CorbanG")],
+relation[osm_user_id() == 10541438] > node[setting("user_HamishH")],
+relation[osm_user_id() == 10541438] > way[setting("user_HamishH")],
+relation[osm_user_id() == 13510663] > node[setting("user_LaurenH")],
+relation[osm_user_id() == 13510663] > way[setting("user_LaurenH")],
+relation[osm_user_id() == 12854712] > node[setting("user_PaulS")],
+relation[osm_user_id() == 12854712] > way[setting("user_PaulS")],
+relation[osm_user_id() == 14434812] > node[setting("user_RyanM")],
+relation[osm_user_id() == 14434812] > way[setting("user_RyanM")],
+relation[osm_user_id() == 13560445] > node[setting("user_ToddK")],
+relation[osm_user_id() == 13560445] > way[setting("user_ToddK")],
+relation[osm_user_id() == 9476874] > node[setting("user_WilliamF")],
+relation[osm_user_id() == 9476874] > way[setting("user_WilliamF")],
+relation[osm_user_id() == 15314242] > node[setting("user_GabeG")],
+relation[osm_user_id() == 15314242] > way[setting("user_GabeG")],
+relation[osm_user_id() == 14389175] > node[setting("user_JoseL")],
+relation[osm_user_id() == 14389175] > way[setting("user_JoseL")],
+relation[osm_user_id() == 9633823] > node[setting("user_LoganS")],
+relation[osm_user_id() == 9633823] > way[setting("user_LoganS")],
+relation[osm_user_id() == 19691335] > node[setting("user_BrittanyB")],
+relation[osm_user_id() == 19691335] > way[setting("user_BrittanyB")],
+relation[osm_user_id() == 17275420] > node[setting("user_GarrettS")],
+relation[osm_user_id() == 17275420] > way[setting("user_GarrettS")],
+relation[osm_user_id() == 19558207] > node[setting("user_IsaacV")],
+relation[osm_user_id() == 19558207] > way[setting("user_IsaacV")],
+relation[osm_user_id() == 14389165] > node[setting("user_RoanH")],
+relation[osm_user_id() == 14389165] > way[setting("user_RoanH")]{
 set .Relation
+}
+
+/* Mauna Kea */
+
+/* Argentina */
+relation[osm_user_id() == 2985830] > node[setting("user_AndresDuhour")],
+relation[osm_user_id() == 2985830] > way[setting("user_AndresDuhour")],
+/* Brazil */
+relation[osm_user_id() == 10292935] > node[setting("user_kaartense")],
+relation[osm_user_id() == 10292935] > way[setting("user_kaartense")],
+relation[osm_user_id() == 9633078] > node[setting("user_LoganM")],
+relation[osm_user_id() == 9633078] > way[setting("user_LoganM")],
+relation[osm_user_id() == 12468685] > node[setting("user_Raphaelkaart")],
+relation[osm_user_id() == 12468685] > way[setting("user_Raphaelkaart")],
+relation[osm_user_id() == 12653083] > node[setting("user_mapitero")],
+relation[osm_user_id() == 12653083] > way[setting("user_mapitero")],
+relation[osm_user_id() == 12689837] > node[setting("user_Marcos_Itba_Kaart")],
+relation[osm_user_id() == 12689837] > way[setting("user_Marcos_Itba_Kaart")],
+/* Chile */
+relation[osm_user_id() == 1975220] > node[setting("user_jptolosa87")],
+relation[osm_user_id() == 1975220] > way[setting("user_jptolosa87")],
+relation[osm_user_id() == 337684] > node[setting("user_felipeedwards")],
+relation[osm_user_id() == 337684] > way[setting("user_felipeedwards")],
+/* Colombia */
+relation[osm_user_id() == 12906384] > node[setting("user_JuanMelo")],
+relation[osm_user_id() == 12906384] > way[setting("user_JuanMelo")],
+/* Malaysia */
+relation[osm_user_id() == 16603244] > node[setting("user_nabilersyad")],
+relation[osm_user_id() == 16603244] > way[setting("user_nabilersyad")],
+/* Guatemala */
+relation[osm_user_id() == 3321532] > node[setting("user_JAAS")],
+relation[osm_user_id() == 3321532] > way[setting("user_JAAS")],
+/* Indonesia */
+relation[osm_user_id() == 14944781] > node[setting("user_f_husni")],
+relation[osm_user_id() == 14944781] > way[setting("user_f_husni")],
+relation[osm_user_id() == 14902134] > node[setting("user_amtplskaart")],
+relation[osm_user_id() == 14902134] > way[setting("user_amtplskaart")],
+relation[osm_user_id() == 8250988] > node[setting("user_rbelladinak")],
+relation[osm_user_id() == 8250988] > way[setting("user_rbelladinak")],
+/* Mexico */
+relation[osm_user_id() == 3382594] > node[setting("user_Josuer")],
+relation[osm_user_id() == 3382594] > way[setting("user_Josuer")],
+relation[osm_user_id() == 10119349] > node[setting("user_luisrobledomx1")],
+relation[osm_user_id() == 10119349] > way[setting("user_luisrobledomx1")],
+relation[osm_user_id() == 143769] > node[setting("user_mapeadora")],
+relation[osm_user_id() == 143769] > way[setting("user_mapeadora")],
+/* Pakistan */
+relation[osm_user_id() == 13831509] > node[setting("user_UzairAhmad")],
+relation[osm_user_id() == 13831509] > way[setting("user_UzairAhmad")],
+/* Philippines */
+relation[osm_user_id() == 1041828] > node[setting("user_GOwin")],
+relation[osm_user_id() == 1041828] > way[setting("user_GOwin")],
+relation[osm_user_id() == 1041828] > node[setting("user_Rally")],
+relation[osm_user_id() == 1041828] > way[setting("user_Rally")],
+relation[osm_user_id() == 1488198] > node[setting("user_VMPanes")],
+relation[osm_user_id() == 1488198] > way[setting("user_VMPanes")],
+relation[osm_user_id() == 5653955] > node[setting("user_Timmy_Tesseract")],
+relation[osm_user_id() == 5653955] > way[setting("user_Timmy_Tesseract")],
+/* Romania */
+relation[osm_user_id() == 4688028] > node[setting("user_andreiSk")],
+relation[osm_user_id() == 4688028] > way[setting("user_andreiSk")],
+relation[osm_user_id() == 1435498] > node[setting("user_RusIonut")],
+relation[osm_user_id() == 1435498] > way[setting("user_RusIonut")],
+relation[osm_user_id() == 3207276] > node[setting("user_ArminGheorghina")],
+relation[osm_user_id() == 3207276] > way[setting("user_ArminGheorghina")],
+/* South Africa */
+relation[osm_user_id() == 8555719] > node[setting("user_Khathucry")],
+relation[osm_user_id() == 8555719] > way[setting("user_Khathucry")],
+relation[osm_user_id() == 10732729] > node[setting("user_Stephanievanr")],
+relation[osm_user_id() == 10732729] > way[setting("user_Stephanievanr")],
+/* USA */
+relation[osm_user_id() == 3778777] > node[setting("user_IanM")],
+relation[osm_user_id() == 3778777] > way[setting("user_IanM")],
+relation[osm_user_id() == 10306954] > node[setting("user_kebobo")],
+relation[osm_user_id() == 10306954] > way[setting("user_kebobo")]{
+    set .Relation
+}
+
+/* Sneffels */
+
+relation[osm_user_id() == 6966758] > node[setting("user_DylanF")],
+relation[osm_user_id() == 6966758] > way[setting("user_DylanF")],
+relation[osm_user_id() == 9269855] > node[setting("user_GwenH")],
+relation[osm_user_id() == 9269855] > way[setting("user_GwenH")],
+relation[osm_user_id() == 9524530] > node[setting("user_CallistaS")],
+relation[osm_user_id() == 9524530] > way[setting("user_CallistaS")],
+relation[osm_user_id() == 9319448] > node[setting("user_BrianL")],
+relation[osm_user_id() == 9319448] > way[setting("user_BrianL")],
+relation[osm_user_id() == 9454623] > node[setting("user_MattB")],
+relation[osm_user_id() == 9454623] > way[setting("user_MattB")],
+relation[osm_user_id() == 10085022] > node[setting("user_RobM")],
+relation[osm_user_id() == 10085022] > way[setting("user_RobM")],
+relation[osm_user_id() == ] > node[setting("user_LeahB")],
+relation[osm_user_id() == ] > way[setting("user_LeahB")],
+relation[osm_user_id() == 17266055] > node[setting("user_AriannaB")],
+relation[osm_user_id() == 17266055] > way[setting("user_AriannaB")],
+relation[osm_user_id() == ] > node[setting("user_AustinM")],
+relation[osm_user_id() == ] > way[setting("user_AustinM")],
+relation[osm_user_id() == ] > node[setting("user_JacobP")],
+relation[osm_user_id() == ] > way[setting("user_JacobP")],
+relation[osm_user_id() == ] > node[setting("user_ChrisP")],
+relation[osm_user_id() == ] > way[setting("user_ChrisP")],
+relation[osm_user_id() == 14389164] > node[setting("user_JustinP")],
+relation[osm_user_id() == 14389164] > way[setting("user_JustinP")],
+relation[osm_user_id() == ] > node[setting("user_CaseyR")],
+relation[osm_user_id() == ] > way[setting("user_CaseyR")],
+relation[osm_user_id() == ] > node[setting("user_JessicaF")],
+relation[osm_user_id() == ] > way[setting("user_JessicaF")],
+relation[osm_user_id() == 14233563] > node[setting("user_JessicaH")],
+relation[osm_user_id() == 14233563] > way[setting("user_JessicaH")],
+relation[osm_user_id() == 15551371] > node[setting("user_IanMc")],
+relation[osm_user_id() == 15551371] > way[setting("user_IanMc")],
+relation[osm_user_id() == 14145898] > node[setting("user_RickZ")],
+relation[osm_user_id() == 14145898] > way[setting("user_RickZ")],
+relation[osm_user_id() == ] > node[setting("user_SusanB")],
+relation[osm_user_id() == ] > way[setting("user_SusanB")],
+relation[osm_user_id() == ] > node[setting("user_MikaelaW")],
+relation[osm_user_id() == ] > way[setting("user_MikaelaW")],
+relation[osm_user_id() == ] > node[setting("user_AngelinaH")],
+relation[osm_user_id() == ] > way[setting("user_AngelinaH")]{
+  set .Relation
+}
+
+/* Diablo */
+
+relation[osm_user_id() == 17700828] > node[setting("user_YemiA")],
+relation[osm_user_id() == 17700828] > way[setting("user_YemiA")],
+relation[osm_user_id() == 17651465] > node[setting("user_MichaelB")],
+relation[osm_user_id() == 17651465] > way[setting("user_MichaelB")],
+relation[osm_user_id() == 17652666] > node[setting("user_AnthonyS")],
+relation[osm_user_id() == 17652666] > way[setting("user_AnthonyS")],
+relation[osm_user_id() == 17650812] > node[setting("user_JordanW")],
+relation[osm_user_id() == 17650812] > way[setting("user_JordanW")],
+relation[osm_user_id() == 17652820] > node[setting("user_BalpreetS")],
+relation[osm_user_id() == 17652820] > way[setting("user_BalpreetS")],
+relation[osm_user_id() == 18432819] > node[setting("user_DavidT")],
+relation[osm_user_id() == 18432819] > way[setting("user_DavidT")],
+relation[osm_user_id() == ] > node[setting("user_Je-NiH")],
+relation[osm_user_id() == ] > way[setting("user_Je-NiH")],
+relation[osm_user_id() == 17630437] > node[setting("user_JennavyC")],
+relation[osm_user_id() == 17630437] > way[setting("user_JennavyC")],
+relation[osm_user_id() == 18432852] > node[setting("user_DylanO")],
+relation[osm_user_id() == 18432852] > way[setting("user_DylanO")],
+relation[osm_user_id() == 17642547] > node[setting("user_MatthewJ")],
+relation[osm_user_id() == 17642547] > way[setting("user_MatthewJ")],
+relation[osm_user_id() == 13352108] > node[setting("user_RezaM")],
+relation[osm_user_id() == 13352108] > way[setting("user_RezaM")],
+relation[osm_user_id() == 17677287] > node[setting("user_AndrewW")],
+relation[osm_user_id() == 17677287] > way[setting("user_AndrewW")],
+relation[osm_user_id() == 8988225] > node[setting("user_EdwardD")],
+relation[osm_user_id() == 8988225] > way[setting("user_EdwardD")],
+relation[osm_user_id() == 8525923] > node[setting("user_AlbertG")],
+relation[osm_user_id() == 8525923] > way[setting("user_AlbertG")],
+relation[osm_user_id() == 6172866] > node[setting("user_AlecH")],
+relation[osm_user_id() == 6172866] > way[setting("user_AlecH")],
+relation[osm_user_id() == 8867106] > node[setting("user_HoraceH")],
+relation[osm_user_id() == 8867106] > way[setting("user_HoraceH")],
+relation[osm_user_id() == ] > node[setting("user_JesspherM")],
+relation[osm_user_id() == ] > way[setting("user_JesspherM")],
+relation[osm_user_id() == 20000242] > node[setting("user_OliviaD")],
+relation[osm_user_id() == 20000242] > way[setting("user_OliviaD")]{
+  set .Relation
+}
+/* Admin */
+
+relation[osm_user_id() == 2957617] > node[setting("user_AaronY")],
+relation[osm_user_id() == 2957617] > way[setting("user_AaronY")],
+relation[osm_user_id() == ] > node[setting("user_SarahJ")],
+relation[osm_user_id() == ] > way[setting("user_SarahJ")],
+relation[osm_user_id() == 6979842] > node[setting("user_KadyO")],
+relation[osm_user_id() == 6979842] > way[setting("user_KadyO")],
+relation[osm_user_id() == 9550075] > node[setting("user_BreiaV")],
+relation[osm_user_id() == 9550075] > way[setting("user_BreiaV")],
+relation[osm_user_id() == ] > node[setting("user_ChadB")],
+relation[osm_user_id() == ] > way[setting("user_ChadB")],
+relation[osm_user_id() == 6172634] > node[setting("user_JennS")],
+relation[osm_user_id() == 6172634] > way[setting("user_JennS")]{
+  set .Relation
+}
+/* External Engineers */
+
+relation[osm_user_id() == ] > node[setting("user_ZvoneS")],
+relation[osm_user_id() == ] > way[setting("user_ZvoneS")],
+relation[osm_user_id() == ] > node[setting("user_BryanH")],
+relation[osm_user_id() == ] > way[setting("user_BryanH")],
+relation[osm_user_id() == ] > node[setting("user_AlexI")],
+relation[osm_user_id() == ] > way[setting("user_AlexI")],
+relation[osm_user_id() == 9019988] > node[setting("user_TaylorS")],
+relation[osm_user_id() == 9019988] > way[setting("user_TaylorS")],
+relation[osm_user_id() == ] > node[setting("user_OleksiiT")],
+relation[osm_user_id() == ] > way[setting("user_OleksiiT")],
+relation[osm_user_id() == ] > node[setting("user_MarcW")],
+relation[osm_user_id() == ] > way[setting("user_MarcW")],
+relation[osm_user_id() == 10341424] > node[setting("user_TannerW")],
+relation[osm_user_id() == 10341424] > way[setting("user_TannerW")]{
+  set .Relation
+}
+
+/* Internal Engineers */
+
+relation[osm_user_id() == 10082622] > node[setting("user_ChrisG")],
+relation[osm_user_id() == 10082622] > way[setting("user_ChrisG")],
+relation[osm_user_id() == 13238152] > node[setting("user_LoganB")],
+relation[osm_user_id() == 13238152] > way[setting("user_LoganB")],
+relation[osm_user_id() == 20108145] > node[setting("user_DevinM")],
+relation[osm_user_id() == 20108145] > way[setting("user_DevinM")]{
+  set .Relation
 }
 
 /* Styling of nodes, ways, and relations once they belong to "Relation History" */
@@ -283,7 +1269,13 @@ way[setting(relations)].Relation {
 
 /* Styling of nodes, ways, and relations once they belong to "History" */
 
-node!:modified.quandarystyle {
+node!:modified.quandarystyle,
+node!:modified.maunakeastyle,
+node!:modified.sneffelsstyle,
+node!:modified.diablostyle,
+node!:modified.adminstyle,
+node!:modified.engineers1style,
+node!:modified.engineers2style {
   symbol-shape: triangle;
   symbol-size: 15;
   symbol-stroke-color: blue;
@@ -292,7 +1284,13 @@ node!:modified.quandarystyle {
   z-index: -10;
 }
 
-way!:modified.quandarystyle {
+way!:modified.quandarystyle,
+way!:modified.maunakeastyle,
+way!:modified.sneffelsstyle,
+way!:modified.diablostyle,
+way!:modified.adminstyle,
+way!:modified.engineers1style,
+way!:modified.engineers2style {
   z-index: -10;
   casing-color: #B108D6; /* Purple */
   casing-width: 7;
@@ -303,7 +1301,25 @@ way!:modified.quandarystyle {
   */
 }
 
-relation[setting(relations)]!:modified.Relation > node.quandarystyle {
+way:modified::modified_layer,
+node:modified < way::modified_layer {
+    width: 6;
+    color: transparent;
+    opacity: 0;
+    casing-dashes: 25,20;
+    casing-width: 7;
+    casing-color: #FF9E00;
+    casing-opacity: 0.8;
+    z-index: -5;
+}
+
+relation[setting(relations)]!:modified.Relation > node.quandarystyle,
+relation[setting(relations)]!:modified.Relation > node.maunakeastyle,
+relation[setting(relations)]!:modified.Relation > node.sneffelsstyle,
+relation[setting(relations)]!:modified.Relation > node.diablostyle,
+relation[setting(relations)]!:modified.Relation > node.adminstyle,
+relation[setting(relations)]!:modified.Relation > node.engineers1style,
+relation[setting(relations)]!:modified.Relation > node.engineers2style {
   symbol-shape: triangle;
   symbol-size: 15;
   symbol-stroke-color: #49baba; /* Sky Blue */
@@ -312,7 +1328,13 @@ relation[setting(relations)]!:modified.Relation > node.quandarystyle {
   z-index: -10;
 }
 
-relation[setting(relations)]!:modified.Relation > way.quandarystyle {
+relation[setting(relations)]!:modified.Relation > way.quandarystyle,
+relation[setting(relations)]!:modified.Relation > way.maunakeastyle,
+relation[setting(relations)]!:modified.Relation > way.sneffelsstyle,
+relation[setting(relations)]!:modified.Relation > way.diablostyle,
+relation[setting(relations)]!:modified.Relation > way.adminstyle,
+relation[setting(relations)]!:modified.Relation > way.engineers1style,
+relation[setting(relations)]!:modified.Relation > way.engineers2style {
   casing-width: 7;
   casing-color: #1396ba; /* Light Blue */
   casing-opacity: 0.55;
