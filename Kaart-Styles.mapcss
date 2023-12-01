@@ -394,6 +394,12 @@ way[access=destination][setting("access")]::core_access {
     color: destination#8080ff;
     dashes: 2,2;
 }
+way["access:conditional"][setting("access")]::core_access {
+    z-index: -1;
+    width: +5;
+    color: conditional#FDBB4F;
+    dashes: 2,2;
+}
 
 /* Untagged Ways */
 
