@@ -1599,10 +1599,60 @@ node[piste:type=snow_park] {
 }
 
 
+/****************/
+/* barrier tags */
+/****************/
+
+way[barrier=bollard] {
+    width: 2;
+    color: barrier#F0F050;
+    dashes: 3,9;
+}
+node[barrier=bollard] {
+    icon-image: "presets/barrier/bollard.svg";
+    set icon_z17;
+}
+node[barrier=gate] {
+    icon-image: "presets/barrier/gate.svg";
+    set icon_z17;
+}
+way[barrier=yes],
+way[barrier=hedge],
+way[barrier=fence],
+way[barrier=handrail],
+way[barrier=wall],
+way[barrier=guard_rail],
+way[barrier=cable_barrier],
+way[barrier=city_wall],
 way[barrier=retaining_wall],
+way[barrier=block],
+way[barrier=chain],
+way[barrier=ditch],
+way[barrier=jersey_barrier],
+way[barrier=log],
 way[barrier=kerb] {
+    width: 2;
+    color: barrier#F0F050;
+}
+way[barrier=hedge][area?], relation[type=multipolygon][barrier=hedge],
+way[barrier=wall][area?], relation[type=multipolygon][barrier=wall],
+way[barrier=city_wall][area?], relation[type=multipolygon][barrier=city_wall] {
+    fill-color: barrier#F0F050;
+}
+way[barrier=city_wall][two_sided!=yes] {
+    repeat-image: "presets/barrier/barrier_pattern.svg";
+    repeat-image-align: top;
+    repeat-image-offset: 0.5;
+}
+way[barrier=kerb] {
+    repeat-image: "presets/barrier/kerb_pattern.svg";
+    repeat-image-align: top;
+    repeat-image-offset: 0.5;
+}
+way[barrier=retaining_wall] {
     repeat-image: "presets/misc/cliff_pattern.svg";
     repeat-image-align: top;
+    repeat-image-offset: 0.5;
 }
 node[barrier=hedge],
 node[barrier=wall],
@@ -1631,6 +1681,10 @@ node[barrier=stile] {
 }
 node[barrier=turnstile] {
     icon-image: "presets/barrier/turnstile.svg";
+    set icon_z17;
+}
+node[barrier=full-height_turnstile] {
+    icon-image: "presets/barrier/full-height_turnstile.svg";
     set icon_z17;
 }
 node[barrier=cycle_barrier] {
@@ -1688,9 +1742,11 @@ node[barrier=log] {
     icon-image: "presets/barrier/log.svg";
     set icon_z17;
 }
-node[barrier=kissing_gate][!is_prop_set(icon-image)],
+node[barrier=bus_trap] {
+    icon-image: "presets/barrier/bus_trap.svg";
+    set icon_z17;
+}
 node[barrier=bump_gate][!is_prop_set(icon-image)],
-node[barrier=bus_trap][!is_prop_set(icon-image)],
 node[barrier=hampshire_gate][!is_prop_set(icon-image)] {
     icon-image: "presets/misc/no_icon.svg";
     set icon_z17;
