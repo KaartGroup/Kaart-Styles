@@ -272,10 +272,17 @@ setting::lowercase {
   group: "name_group";
 }
 
-setting::potlatch_crossing {
+setting::potlatch_crossing_icons {
   type: boolean;
-  label: tr("Use Less Specific Potlatch-style Crossing Icon");
-  default: true;
+  label: tr("Use Potlatch-style Crossing Icons");
+  default: false;
+  group: "icon_group";
+}
+
+setting::potlatch_gate_icons {
+  type: boolean;
+  label: tr("Use Potlatch-style Gate Icons");
+  default: false;
   group: "icon_group";
 }
 
@@ -1380,7 +1387,7 @@ node[amenity=police] { icon-image: icons/amenity_police2.n.16.png; z-index: 20; 
 node[amenity=post_box] { icon-image: icons/amenity_post_box.n.16.png; z-index: 20; }
 node[amenity=recycling] { icon-image: icons/amenity_recycling.n.16.png; z-index: 20; }
 node[barrier=bollard] { icon-image: icons/barrier_bollard.n.16.png; z-index: 20; }
-node[barrier=gate], node[highway=gate] { icon-image: icons/barrier_gate.n.16.png; z-index: 20; }
+node[barrier=gate][setting("potlatch_gate_icons")] { icon-image: "icons/barrier_gate.n.svg"; z-index: 20; }
 node[barrier=stile], node[highway=stile] { icon-image: icons/barrier_stile.n.16.png; z-index: 20; }
 node[barrier=toll_booth] { icon-image: icons/barrier_toll_booth.n.16.png; z-index: 20; }
 node[barrier=lift_gate] { icon-image: icons/barrier_lift_gate.n.16.png; z-index: 20; icon-width:25; }
@@ -1483,8 +1490,7 @@ node[railway=station] { icon-image: icons/transport_train_station.n.16.png; text
 node[railway=tram_stop] { icon-image: icons/transport_tram_stop.n.16.png; z-index: 20; }
 node[leisure=marina] { icon-image: icons/transport_marina.n.16.png; z-index: 20; }
 node[highway=mini_roundabout] { icon-image: icons/transport_miniroundabout_anticlockwise.n.16.png; z-index: 20; }
-node[highway=crossing][setting("potlatch_crossing")] { icon-image: icons/transport_zebracrossing.n.16.png; z-index: 20; }
-/* Misc */
+node[highway=crossing][setting("potlatch_crossing_icons")] { icon-image: "icons/potlatch/transport_zebracrossing.n.16.png"; z-index: 20; }
 node[leisure=playground] { icon-image: icons/amenity_playground.n.16.png; z-index: 20; }
 node[leisure=sports_centre] { icon-image: icons/sport_leisure_centre.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 /* node[landuse=cemetery], node[landuse=grave_yard] { i|||con-image: icons/?.png; z-index: 20; } */
@@ -4043,7 +4049,22 @@ way[waterway] > node:connection.watercross  {
  symbol-stroke-opacity: 1;
 }
 
+/******************************/
+/*********Potlatch Icons*******/
+/******************************/
 
+
+
+node[highway=crossing][setting("potlatch_crossing_icons")] {
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/blob/master/icons/transport/transport_zebracrossing.n.16.png";
+    set icon_z17;
+    icon-width: 16;
+}
+node[barrier=gate][setting("potlatch_gate_icons")] {
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/blob/master/icons/barrier/barrier_gate.n.16.png";
+    set icon_z17;
+    icon-width: 16;
+}
 
 
 
