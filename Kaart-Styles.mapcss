@@ -1490,7 +1490,7 @@ node[railway=station] { icon-image: icons/transport_train_station.n.16.png; text
 node[railway=tram_stop] { icon-image: icons/transport_tram_stop.n.16.png; z-index: 20; }
 node[leisure=marina] { icon-image: icons/transport_marina.n.16.png; z-index: 20; }
 node[highway=mini_roundabout] { icon-image: icons/transport_miniroundabout_anticlockwise.n.16.png; z-index: 20; }
-node[highway=crossing][setting("potlatch_crossing_icons")] { icon-image: "icons/potlatch/transport_zebracrossing.n.16.png"; z-index: 20; }
+node[highway=crossing][setting("potlatch_crossing_icons")] { icon-image: "icons/transport/transport_zebracrossing.n.16.png"; z-index: 20; }
 node[leisure=playground] { icon-image: icons/amenity_playground.n.16.png; z-index: 20; }
 node[leisure=sports_centre] { icon-image: icons/sport_leisure_centre.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 /* node[landuse=cemetery], node[landuse=grave_yard] { i|||con-image: icons/?.png; z-index: 20; } */
@@ -4056,12 +4056,12 @@ way[waterway] > node:connection.watercross  {
 
 
 node[highway=crossing][setting("potlatch_crossing_icons")] {
-    icon-image: "https://github.com/KaartGroup/Kaart-Styles/blob/master/icons/transport/transport_zebracrossing.n.16.png";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/transport/transport_zebracrossing.n.16.png";
     set icon_z17;
     icon-width: 16;
 }
 node[barrier=gate][setting("potlatch_gate_icons")] {
-    icon-image: "https://github.com/KaartGroup/Kaart-Styles/blob/master/icons/barrier/barrier_gate.n.16.png";
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/barrier/barrier_gate.n.16.png";
     set icon_z17;
     icon-width: 16;
 }
