@@ -997,7 +997,40 @@ z-index: -5; }
 
 /* Access:conditional */
 
-node[barrier]["access:conditional"]::tagged
+node[barrier=fence]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=wall]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=hedge]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=bollard]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=lift_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=retaining_wall]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=stile]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=cycle_barrier]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=kerb]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=yes]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=entrance]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=block]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=toll_booth]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=cattle_grid]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=ditch]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=kissing_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=city_wall]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=guard_rail]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=hedge_bank]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=wire_fence]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=line]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=swing_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=chain]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=turnstile]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=embankment]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=field_boundary]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=border_control]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=sally_port]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=door]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=hampshire_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=wood_fence]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=bump_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=jersey_barrier]["access:conditional"][setting("barrier_setting")]::tagged
 {symbol-shape: octagon;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
@@ -1005,7 +1038,50 @@ symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
 z-index: -5; }
 
-/* Not Ingested Barriers */
+/* Access Destination */
+
+node[barrier=fence][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=wall][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=hedge][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=bollard][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=lift_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=retaining_wall][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=stile][access=no][setting("barrier_setting")]::tagged,
+node[barrier=cycle_barrier][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=kerb][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=yes][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=entrance][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=block][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=toll_booth][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=cattle_grid][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=ditch][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=kissing_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=city_wall][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=guard_rail][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=hedge_bank][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=wire_fence][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=line][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=swing_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=chain][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=turnstile][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=embankment][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=field_boundary][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=border_control][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=sally_port][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=door][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=hampshire_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=wood_fence][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=bump_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=jersey_barrier][access=destination][setting("barrier_setting")]::tagged {symbol-shape: heptagon;
+symbol-size: 5;
+symbol-stroke-color: #28DE03;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
+
+
+/** Not Ingested Barriers **/
 
 node[barrier=slide_gate][setting("barrier_setting")]::tagged,
 node[barrier=cable_barrier][setting("barrier_setting")]::tagged,
@@ -1127,6 +1203,68 @@ node[barrier=log][access=no][setting("barrier_setting")]::tagged,
 node[barrier=rope][access=no][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][access=no][setting("barrier_setting")]::tagged,
 node[barrier=tyres][access=no][setting("barrier_setting")]::tagged {symbol-shape: circle;
+symbol-size: 5;
+symbol-stroke-color: #D70D02;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
+
+/* Access:conditional */
+
+node[barrier=slide_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=cable_barrier]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=handrail]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=bus_trap]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=coupure]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=debris]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=full-height_turnstile]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=height_restrictor]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=horse_stile]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=kent_carriage_gap]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=motorcycle_barrier]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=planter]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=sliding_beam]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=sliding_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=spikes]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=sump_buster]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=wedge]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=wicket_gate]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=bar]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=barrier_board]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=log]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=rope]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=tank_trap]["access:conditional"][setting("barrier_setting")]::tagged,
+node[barrier=tyres]["access:conditional"][setting("barrier_setting")]::tagged {symbol-shape: octagon;
+symbol-size: 5;
+symbol-stroke-color: #D70D02;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5; }
+
+node[barrier=slide_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=cable_barrier][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=handrail][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=bus_trap][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=coupure][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=debris][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=full-height_turnstile][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=height_restrictor][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=horse_stile][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=kent_carriage_gap][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=motorcycle_barrier][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=planter][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=sliding_beam][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=sliding_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=spikes][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=sump_buster][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=wedge][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=wicket_gate][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=bar][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=barrier_board][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=log][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=rope][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=tank_trap][access=destination][setting("barrier_setting")]::tagged,
+node[barrier=tyres][access=destination][setting("barrier_setting")]::tagged {symbol-shape: heptagon;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
