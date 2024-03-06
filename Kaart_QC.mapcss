@@ -793,7 +793,7 @@ setting::user_SusanB {
 /* Admin */
 
 *[osm_user_id() == 2957617][setting("user_AaronY")],
-*[osm_user_id() == 9550075][setting("user_BreiaV")],
+*[osm_user_id() == 9550075][setting("user_BreiaV")]
 /* *[osm_user_id() == ][setting("user_ChadB")], */
 /*[osm_user_id() == ][setting("user_SarahJ")] */{
   set .adminstyle;
