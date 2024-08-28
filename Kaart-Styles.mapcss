@@ -1078,7 +1078,16 @@ symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
-z-index: -5; }
+
+/*node text styling*/
+z-index: -5; 
+text: tr("D");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 
 /** Not Ingested Barriers **/
@@ -1269,7 +1278,17 @@ symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
-z-index: -5; }
+z-index: -5;
+
+/*node text styling*/
+z-index: -5; 
+text: tr("D");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 
 /* Power */
