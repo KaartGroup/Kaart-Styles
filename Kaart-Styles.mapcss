@@ -1036,7 +1036,17 @@ symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
-z-index: -5; }
+z-index: -5;
+
+/*node text styling*/
+z-index: -5; 
+text: tr("C");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 /* Access Destination */
 
@@ -1248,7 +1258,17 @@ symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
-z-index: -5; }
+z-index: -5;
+
+/*node text styling*/
+z-index: -5; 
+text: tr("C");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 node[barrier=slide_gate][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=cable_barrier][access=destination][setting("barrier_setting")]::tagged,
