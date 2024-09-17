@@ -288,7 +288,7 @@ setting::potlatch_gate_icons {
 
 setting::potlatch_icons {
   type: boolean;
-  label: tr("Use Potlatch-style Gate Icons");
+  label: tr("Use Potlatch-style Icons");
   default: false;
   group: "icon_group";
 }
