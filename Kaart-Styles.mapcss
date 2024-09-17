@@ -286,6 +286,13 @@ setting::potlatch_gate_icons {
   group: "icon_group";
 }
 
+setting::potlatch_icons {
+  type: boolean;
+  label: tr("Use Potlatch-style Gate Icons");
+  default: false;
+  group: "icon_group";
+}
+
 setting::cycleway_setting {
 type: boolean;
 label: tr("Enlarge Cycleway Styling");
@@ -1548,7 +1555,7 @@ node[traffic_sign][toll][!is_prop_set(icon-image)] {
 
 node { text-anchor-horizontal: center; text-anchor-vertical: below; }
 
-node[place] { icon-image: icons/place.png; font-family: DejaVu; text: auto; font-size: 10; font-weight: bold; z-index: 20; }
+node[place][setting("potlatch_icons")] { icon-image: icons/place.png; font-family: DejaVu; text: auto; font-size: 10; font-weight: bold; z-index: 20; }
 node[amenity=telephone] { icon-image: icons/telephone.png; z-index: 20; }
 node[tourism=guesthouse] { icon-image: icons/accommodation_bed_and_breakfast.n.16.png; z-index: 20; }
 node[tourism=alpine_hut] { icon-image: icons/accommodation_alpinehut.n.16.png; z-index: 20; }
@@ -1672,12 +1679,12 @@ node[leisure=playground] { icon-image: icons/amenity_playground.n.16.png; z-inde
 node[leisure=sports_centre] { icon-image: icons/sport_leisure_centre.n.16.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 /* node[landuse=cemetery], node[landuse=grave_yard] { i|||con-image: icons/?.png; z-index: 20; } */
 node[man_made=survey_point] { icon-image: icons/manmade_lighthouse.png; z-index: 20; }
-node[man_made=tower] { icon-image: icons/manmade_tower.png; z-index: 20; }
+node[man_made=tower][setting("potlatch_icons")] { icon-image: icons/manmade_tower.png; z-index: 20; }
 /* Yes these power stations seem a little backward - but that's seemingly what the side menu uses ATM */
 node[power=station] { icon-image: icons/power_substation.n.16.png; z-index: 20; }
 node[power=generator] { icon-image: icons/power_station.png; z-index: 20; text-offset:0; text: auto; font-size: 10; z-index: 20; }
 /* P2 previously had these icons instead of "icon-image: cross" which is not standard MapCSS but a P2 keyword we won't implement, so keep the old icons */
-node[power=tower] { icon-image: icons/power_tower_high2.n.16.png; z-index: 20; }
+node[power=tower][setting("potlatch_icons")] { icon-image: icons/power_tower_high2.n.16.png; z-index: 20; }
 node[power=pole] { icon-image: icons/power_tower_low.n.16.png; z-index: 20; }
 node[waterway=weir] { icon-image: icons/transport_weir.n.16.png; z-index: 20; }
 
