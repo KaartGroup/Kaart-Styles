@@ -4249,6 +4249,21 @@ node[barrier=gate][setting("potlatch_gate_icons")] {
     set icon_z17;
     icon-width: 16;
 }
+node[place][setting("potlatch_icons")] {
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/tourism/place.png";
+    set icon_z17;
+    icon-width: 16;
+}
+node[man_made=tower][setting("potlatch_icons")] {
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/outdoor/manmade_tower.png";
+    set icon_z17;
+    icon-width: 16;
+}
+node[power=tower][setting("potlatch_icons")] {
+    icon-image: "https://github.com/KaartGroup/Kaart-Styles/raw/master/icons/energy/power_tower_high2.n.16.png";
+    set icon_z17;
+    icon-width: 16;
+}
 
 
 
