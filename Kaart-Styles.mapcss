@@ -519,7 +519,7 @@ area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee
 /* Paths */
 
 way[highway=steps]     { z-index: 5; color: #aa3311; width: 3; dashes: 3, 3; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
-
+area[area:highway=steps] {color: #aa3311; width: 3; fill-color: #ddddee; dashes: 3, 3; fill-opacity: 0.2; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
 way[highway=footway]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
 
 way[highway=footway][bicycle=yes]::bike   { z-index: 4; color: #aa3311 ; width: 1; dashes: 6, 3;  casing-color: purple; casing-width: .3; casing-dashes: 6, 3; linecap: round; casing-linecap: round; }
@@ -3846,7 +3846,7 @@ node|z22:connection.tertiary2   { symbol-size: 10; }
 node!:connection[setting("node_setting")] {
 	symbol-shape: circle;
 	symbol-size: 6;
-	set .child_knodes;
+	set .child_nodes;
     symbol-stroke-color: yellow;
     symbol-fill-color: black;
 
@@ -3864,7 +3864,7 @@ node.child_nodes:selected {
 
 way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|unclassified|living_street|service|track|construction|proposed|pedestrian|steps|footway|path)$/] > node[setting("node_setting")] {
 	symbol-size: 6.5;
-	set .child_knodes;
+	set .child_nodes;
     symbol-stroke-color: #00FFFF;
     symbol-fill-color: black;
     symbol-shape: circle;
@@ -3874,7 +3874,7 @@ way["highway"=~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|s
 
 
 
-node.child_knodes:selected {
+node.child_nodes:selected {
     symbol-size: 12;
     symbol-shape: circle;
     symbol-stroke-color: purple;
