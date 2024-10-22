@@ -2608,6 +2608,23 @@ way|z17-[destination:ref][!setting("ref_setting")][setting("ref_highlight_settin
   width: 1;
 }
 
+/**************************/
+/* Check for refs on links*/
+/**************************/
+
+way[highway=motorway_link][ref],
+way[highway=trunk_link][ref],
+way[highway=primary_link][ref],
+way[highway=secondary_link][ref],
+way[highway=tertiary_link][ref] {
+    
+    text: tr("Ref on link");
+    text-color: red;
+    font-size: 20;
+    font-weight: bold;
+    text-halo-color: white;
+    text-halo-radius: 2;
+}
 
 /*******************************
  * Destination tags (destination) *
