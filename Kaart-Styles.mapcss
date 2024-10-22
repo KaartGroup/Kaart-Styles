@@ -384,9 +384,9 @@ relation[admin_level=2][setting("show_boundary")] > way::core_boundary {
 /* access restrictions tags */
 /****************************/
 
-way[access?!]::core_access {
+way[access?!][setting("access")]::core_access {
     z-index: -1;
-    width: +2;
+    width: +5;
     color: no#ff8080;
     dashes: 2,2;
 }
@@ -411,6 +411,71 @@ way[access=destination][setting("access")]::core_access {
 way["access:conditional"][setting("access")]::core_access {
     z-index: -1;
     width: +5;
+    color: conditional#FDBB4F;
+    dashes: 2,2;
+}
+
+/************************************************/
+/* Increased access styling for bridges/tunnels */
+/************************************************/
+
+way[access?!][bridge][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: no#ff8080;
+    dashes: 2,2;
+}
+way[access?!][tunnel][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: no#ff8080;
+    dashes: 2,2;
+}
+way[access=permissive][bridge][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: permissive#80ff80;
+    dashes: 2,2;
+}
+way[access=permissive][tunnel][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: permissive#80ff80;
+    dashes: 2,2;
+}
+way[access=private][bridge][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: private#ff8080;
+    dashes: 2,2;
+}
+way[access=private][tunnel][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: private#ff8080;
+    dashes: 2,2;
+}
+way[access=destination][bridge][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: destination#8080ff;
+    dashes: 2,2;
+}
+way[access=destination][tunnel][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: destination#8080ff;
+    dashes: 2,2;
+}
+way["access:conditional"][bridge][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
+    color: conditional#FDBB4F;
+    dashes: 2,2;
+}
+way["access:conditional"][tunnel][setting("access")]::core_access {
+    z-index: -1;
+    width: +15;
     color: conditional#FDBB4F;
     dashes: 2,2;
 }
