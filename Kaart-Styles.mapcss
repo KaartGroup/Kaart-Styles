@@ -91,6 +91,8 @@ The Accentuate Military and Diplomatic Areas setting will fill these areas with 
     settings::ref_group { label: tr("Ref Settings"); }
 
     settings::route_group { label: tr("Route Settings"); }
+
+    settings::construction_group { label: tr("Construction Settings"); }
 }
 
 
@@ -311,6 +313,20 @@ setting::access {
   default: false;
 }
 
+setting::construction_class_style {
+  type: boolean;
+  label: tr("Show Construction Classification");
+  default: false;
+  group: "construction_group";
+}
+
+setting::construction_class_text {
+  type: boolean;
+  label: tr("Show Construction Classification Text");
+  default: false;
+  group: "construction_group";
+}
+
 
 
 
@@ -416,7 +432,7 @@ way["access:conditional"][setting("access")]::core_access {
 }
 
 /************************************************/
-/* Increased access styling for bridges/tunnels */
+/* Enhanced access styling for bridges/tunnels */
 /************************************************/
 
 way[access?!][bridge][setting("access")]::core_access {
@@ -791,33 +807,418 @@ way[oneway=-1]::arrows { z-index: 15; color: #555555; width: 2; dashes: 10,50; l
 /* Under construction */
 
 way[highway=proposed] {
-
-                                            z-index: 5;
-                                            width: 6;
-                                            linecap: square;
-                                            color: none;
-                                            casing-color:  #00ffef;
-                                            casing-width: 1;
-                                            opacity: 0.0;
-                                            casing-opacity: 0.6;
-                                            linejoin: round;
-
-                                            }
+z-index: 5;
+width: 6;
+linecap: square;
+color: none;
+casing-color:  #00ffef;
+casing-width: 1;
+opacity: 0.0;
+casing-opacity: 0.6;
+linejoin: round;
+}
 
 way[highway=construction] {
+z-index: 5;
+width: 6;
+linecap: square;
+color: #ff6700;
+casing-color:  #ff6700;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
 
-                                            z-index: 5;
-                                            width: 6;
-                                            linecap: square;
-                                            color: #ff6700;
-                                            casing-color:  #ff6700;
-                                            casing-width: 2;
-                                            dashes: 15;
-                                            dashes-background-color: white;
-                                            dashes-casing-color: black;
-                                            linejoin: round;
+/* Construction Classification Styles */
+way[highway=construction][construction=motorway][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #CF2081;
+casing-color:  #CF2081;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+way[highway=construction][construction=motorway_link][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #CF2081;
+casing-color:  #CF2081;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
 
-                                            }
+way[highway=construction][construction=trunk][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #DD2F22;
+casing-color:  #DD2F22;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+way[highway=construction][construction=trunk_link][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #DD2F22;
+casing-color:  #DD2F22;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=primary][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #FFA500;
+casing-color:  #FFA500;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+way[highway=construction][construction=primary_link][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #FFA500;
+casing-color:  #FFA500;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=secondary][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #FFFF00;
+casing-color:  #FFFF00;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+way[highway=construction][construction=secondary_link][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #FFFF00;
+casing-color:  #FFFF00;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=tertiary][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #408ccc;
+casing-color:  #408ccc;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+way[highway=construction][construction=tertiary_link][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #408ccc;
+casing-color:  #408ccc;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=unclassified][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #96795d;
+casing-color:  #96795d;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=residential][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #ffffff;
+casing-color:  #ffffff;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: gray;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=living_street][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: gray;
+casing-color:  gray;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: #E8E8E8;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=service][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #39ff14;
+casing-color:  #39ff14;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=track][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #996644;
+casing-color:  #996644;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=pedestrian][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #ff6700;
+casing-color:  #7FFF00;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=footway][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: #7FFF00;
+casing-color:  #ff6700;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+way[highway=construction][construction=path][setting("construction_class_style")] {
+z-index: 5;
+width: 6;
+linecap: round;
+color: brown;
+casing-color:  brown;
+casing-width: 2;
+dashes: 15;
+dashes-background-color: white;
+dashes-casing-color: black;
+linejoin: round;
+}
+
+/* Construction=* text */
+way[highway=construction][construction=motorway][setting("construction_class_text")] {
+text: tr("construction=motorway");
+text-color: #CF2081;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=motorway_link][setting("construction_class_text")] {
+text: tr("construction=motorway_link");
+text-color: #CF2081;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=trunk][setting("construction_class_text")] {
+text: tr("construction=trunk");
+text-color: #DD2F22;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+way[highway=construction][construction=trunk_link][setting("construction_class_text")] {
+text: tr("construction=trunk_link");
+text-color: #DD2F22;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=primary][setting("construction_class_text")] {
+text: tr("construction=primary");
+text-color: #FFA500;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+way[highway=construction][construction=primary_link][setting("construction_class_text")] {
+text: tr("construction=primary_link");
+text-color: #FFA500;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=secondary][setting("construction_class_text")] {
+text: tr("construction=secondary");
+text-color: #FFFF00;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+way[highway=construction][construction=secondary_link][setting("construction_class_text")] {
+text: tr("construction=secondary_link");
+text-color: #FFFF00;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=tertiary][setting("construction_class_text")] {
+text: tr("construction=tertiary");
+text-color: #408ccc;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+way[highway=construction][construction=tertiary_link][setting("construction_class_text")] {
+text: tr("construction=tertiary_link");
+text-color: #408ccc;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=unclassified][setting("construction_class_text")] {
+text: tr("construction=unclassified");
+text-color: #96795d;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=residential][setting("construction_class_text")] {
+text: tr("construction=residential");
+text-color: #ffffff;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=living_street][setting("construction_class_text")] {
+text: tr("construction=living_street");
+text-color: #E8E8E8;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=service][setting("construction_class_text")] {
+text: tr("construction=service");
+text-color: #39ff14;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=track][setting("construction_class_text")] {
+text: tr("construction=track");
+text-color: #996644;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=pedestrian][setting("construction_class_text")] {
+text: tr("construction=pedestrian");
+text-color: #7FFF00;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=footway][setting("construction_class_text")] {
+text: tr("construction=footway");
+text-color: #7FFF00;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
+
+way[highway=construction][construction=path][setting("construction_class_text")] {
+text: tr("construction=path");
+text-color: brown;
+font-size: 15;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+}
 
 
 
