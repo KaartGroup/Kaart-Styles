@@ -1333,7 +1333,8 @@ node[barrier=door][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier][setting("barrier_setting")]::tagged {symbol-shape: square;
+node[barrier=jersey_barrier][setting("barrier_setting")]::tagged {
+symbol-shape: square;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1341,6 +1342,59 @@ symbol-fill-opacity: 10;
 z-index: -5; }
 
 /* Barrier/Access Style */
+
+/* Access=yes */
+
+node[barrier=fence][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=wall][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=hedge][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=bollard][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=lift_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=retaining_wall][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=stile][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=cycle_barrier][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=kerb][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=yes][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=entrance][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=block][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=toll_booth][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=cattle_grid][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=ditch][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=kissing_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=city_wall][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=guard_rail][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=hedge_bank][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=wire_fence][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=line][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=swing_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=chain][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=turnstile][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=embankment][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=field_boundary][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=border_control][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=sally_port][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=door][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=hampshire_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=wood_fence][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=bump_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=jersey_barrier][access=yes][setting("barrier_setting")]::tagged {
+symbol-shape: square;
+symbol-size: 5;
+symbol-stroke-color: #28DE03;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5;
+
+/*node text styling*/
+z-index: -5; 
+text: tr("Y");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 /* Private Access */
 
@@ -1377,7 +1431,8 @@ node[barrier=door][access=private][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate][access=private][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence][access=private][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate][access=private][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier][access=private][setting("barrier_setting")]::tagged {symbol-shape: pentagon;
+node[barrier=jersey_barrier][access=private][setting("barrier_setting")]::tagged {
+symbol-shape: pentagon;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1419,7 +1474,8 @@ node[barrier=door][access=permissive][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate][access=permissive][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence][access=permissive][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate][access=permissive][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier][access=permissive][setting("barrier_setting")]::tagged {symbol-shape: triangle;
+node[barrier=jersey_barrier][access=permissive][setting("barrier_setting")]::tagged {
+symbol-shape: triangle;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1461,7 +1517,8 @@ node[barrier=door][access=no][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate][access=no][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence][access=no][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate][access=no][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier][access=no][setting("barrier_setting")]::tagged {symbol-shape: circle;
+node[barrier=jersey_barrier][access=no][setting("barrier_setting")]::tagged {
+symbol-shape: circle;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1503,8 +1560,8 @@ node[barrier=door]["access:conditional"][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate]["access:conditional"][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence]["access:conditional"][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate]["access:conditional"][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier]["access:conditional"][setting("barrier_setting")]::tagged
-{symbol-shape: octagon;
+node[barrier=jersey_barrier]["access:conditional"][setting("barrier_setting")]::tagged {
+symbol-shape: octagon;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1556,7 +1613,8 @@ node[barrier=door][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=hampshire_gate][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=wood_fence][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=bump_gate][access=destination][setting("barrier_setting")]::tagged,
-node[barrier=jersey_barrier][access=destination][setting("barrier_setting")]::tagged {symbol-shape: heptagon;
+node[barrier=jersey_barrier][access=destination][setting("barrier_setting")]::tagged {
+symbol-shape: heptagon;
 symbol-size: 5;
 symbol-stroke-color: #28DE03;
 symbol-stroke-width: 20px;
@@ -1598,12 +1656,56 @@ node[barrier=barrier_board][setting("barrier_setting")]::tagged,
 node[barrier=log][setting("barrier_setting")]::tagged,
 node[barrier=rope][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][setting("barrier_setting")]::tagged,
-node[barrier=tyres][setting("barrier_setting")]::tagged {symbol-shape: square;
+node[barrier=tyres][setting("barrier_setting")]::tagged {
+symbol-shape: square;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
 symbol-fill-opacity: 10;
 z-index: -5; }
+
+/* Access=yes */
+
+node[barrier=slide_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=cable_barrier][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=handrail][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=bus_trap][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=coupure][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=debris][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=full-height_turnstile][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=height_restrictor][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=horse_stile][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=kent_carriage_gap][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=motorcycle_barrier][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=planter][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=sliding_beam][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=sliding_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=spikes][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=sump_buster][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=wedge][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=wicket_gate][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=bar][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=barrier_board][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=log][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=rope][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=tank_trap][access=yes][setting("barrier_setting")]::tagged,
+node[barrier=tyres][access=yes][setting("barrier_setting")]::tagged {
+symbol-shape: square;
+symbol-size: 5;
+symbol-stroke-color: #D70D02;
+symbol-stroke-width: 20px;
+symbol-fill-opacity: 10;
+z-index: -5;
+
+/*node text styling*/
+z-index: -5; 
+text: tr("Y");
+text-color: red;
+text-position: line;
+font-size: 15;
+font-weight: bold;
+text-halo-color: white;
+text-halo-radius: 2; }
 
 /* Private Access */
 
@@ -1630,7 +1732,8 @@ node[barrier=barrier_board][access=private][setting("barrier_setting")]::tagged,
 node[barrier=log][access=private][setting("barrier_setting")]::tagged,
 node[barrier=rope][access=private][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][access=private][setting("barrier_setting")]::tagged,
-node[barrier=tyres][access=private][setting("barrier_setting")]::tagged {symbol-shape: pentagon;
+node[barrier=tyres][access=private][setting("barrier_setting")]::tagged {
+symbol-shape: pentagon;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
@@ -1662,7 +1765,8 @@ node[barrier=barrier_board][access=permissive][setting("barrier_setting")]::tagg
 node[barrier=log][access=permissive][setting("barrier_setting")]::tagged,
 node[barrier=rope][access=permissive][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][access=permissive][setting("barrier_setting")]::tagged,
-node[barrier=tyres][access=permissive][setting("barrier_setting")]::tagged {symbol-shape: triangle;
+node[barrier=tyres][access=permissive][setting("barrier_setting")]::tagged {
+symbol-shape: triangle;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
@@ -1694,7 +1798,8 @@ node[barrier=barrier_board][access=no][setting("barrier_setting")]::tagged,
 node[barrier=log][access=no][setting("barrier_setting")]::tagged,
 node[barrier=rope][access=no][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][access=no][setting("barrier_setting")]::tagged,
-node[barrier=tyres][access=no][setting("barrier_setting")]::tagged {symbol-shape: circle;
+node[barrier=tyres][access=no][setting("barrier_setting")]::tagged {
+symbol-shape: circle;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
@@ -1726,7 +1831,8 @@ node[barrier=barrier_board]["access:conditional"][setting("barrier_setting")]::t
 node[barrier=log]["access:conditional"][setting("barrier_setting")]::tagged,
 node[barrier=rope]["access:conditional"][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap]["access:conditional"][setting("barrier_setting")]::tagged,
-node[barrier=tyres]["access:conditional"][setting("barrier_setting")]::tagged {symbol-shape: octagon;
+node[barrier=tyres]["access:conditional"][setting("barrier_setting")]::tagged {
+symbol-shape: octagon;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
@@ -1766,7 +1872,8 @@ node[barrier=barrier_board][access=destination][setting("barrier_setting")]::tag
 node[barrier=log][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=rope][access=destination][setting("barrier_setting")]::tagged,
 node[barrier=tank_trap][access=destination][setting("barrier_setting")]::tagged,
-node[barrier=tyres][access=destination][setting("barrier_setting")]::tagged {symbol-shape: heptagon;
+node[barrier=tyres][access=destination][setting("barrier_setting")]::tagged {
+symbol-shape: heptagon;
 symbol-size: 5;
 symbol-stroke-color: #D70D02;
 symbol-stroke-width: 20px;
