@@ -848,11 +848,11 @@ way[highway=construction][construction=motorway_link][setting("construction_clas
 z-index: 5;
 width: 6;
 linecap: round;
-color: #CF2081;
-casing-color:  #CF2081;
+color: white;
+casing-color:  white;
 casing-width: 2;
 dashes: 15;
-dashes-background-color: white;
+dashes-background-color: #CF2081;
 dashes-casing-color: black;
 linejoin: round;
 }
@@ -873,11 +873,11 @@ way[highway=construction][construction=trunk_link][setting("construction_class_s
 z-index: 5;
 width: 6;
 linecap: round;
-color: #DD2F22;
-casing-color:  #DD2F22;
+color: white;
+casing-color:  white;
 casing-width: 2;
 dashes: 15;
-dashes-background-color: white;
+dashes-background-color: #DD2F22;
 dashes-casing-color: black;
 linejoin: round;
 }
@@ -898,11 +898,11 @@ way[highway=construction][construction=primary_link][setting("construction_class
 z-index: 5;
 width: 6;
 linecap: round;
-color: #FFA500;
-casing-color:  #FFA500;
+color: white;
+casing-color:  white;
 casing-width: 2;
 dashes: 15;
-dashes-background-color: white;
+dashes-background-color: #FFA500;
 dashes-casing-color: black;
 linejoin: round;
 }
@@ -923,11 +923,11 @@ way[highway=construction][construction=secondary_link][setting("construction_cla
 z-index: 5;
 width: 6;
 linecap: round;
-color: #FFFF00;
-casing-color:  #FFFF00;
+color: white;
+casing-color:  white;
 casing-width: 2;
 dashes: 15;
-dashes-background-color: white;
+dashes-background-color: #FFFF00;
 dashes-casing-color: black;
 linejoin: round;
 }
@@ -948,11 +948,11 @@ way[highway=construction][construction=tertiary_link][setting("construction_clas
 z-index: 5;
 width: 6;
 linecap: round;
-color: #408ccc;
-casing-color:  #408ccc;
+color: white;
+casing-color:  white;
 casing-width: 2;
 dashes: 15;
-dashes-background-color: white;
+dashes-background-color: #408ccc;
 dashes-casing-color: black;
 linejoin: round;
 }
