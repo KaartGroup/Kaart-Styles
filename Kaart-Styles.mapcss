@@ -1301,7 +1301,7 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 /* Conditional Restrictions */
 /****************************/
 
-way[highway][!/⌃:conditional/][setting("conditional")]::tagged {
+/* way[highway][!/⌃:conditional/][setting("conditional")]::tagged {
 width: +8;
 color: conditional#FDBB47;
 }
@@ -1312,7 +1312,7 @@ node[barrier][!/⌃:conditional/][setting("conditional")]::tagged {
     symbol-stroke-width: 20px;
     symbol-fill-opacity: 0.1;
     z-index: -5;
-}
+} */
 
 /************/
 /* Barriers */
