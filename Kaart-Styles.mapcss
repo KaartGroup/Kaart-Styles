@@ -327,6 +327,12 @@ setting::construction_class_text {
   group: "construction_group";
 }
 
+setting::conditional {
+  type: boolean;
+  label: tr("Conditional On/off");
+  default: false;
+}
+
 
 
 
@@ -1290,6 +1296,15 @@ way[aeroway=runway]!:closed::cc { z-index: 14; color: white; width: 1;  dashes: 
 
 area[aeroway=runway]:closed { z-index: 9; color: black; width: 3; fill-color: #775577; }
 area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #ddaadd; fill-opacity: 0.5;}
+
+/****************************/
+/* Conditional Restrictions */
+/****************************/
+
+way[highway][!/⌃:conditional/][setting("conditional")]::tagged {
+width: +8;
+color: conditional#FDBB47;
+}
 
 /************/
 /* Barriers */
