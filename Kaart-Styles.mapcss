@@ -1305,6 +1305,14 @@ way[highway][!/⌃:conditional/][setting("conditional")]::tagged {
 width: +8;
 color: conditional#FDBB47;
 }
+node[barrier][!/⌃:conditional/][setting("conditional")]::tagged {
+    symbol-shape: square;
+    symbol-size: 5;
+    symbol-stroke-color: #FDBB47;
+    symbol-stroke-width: 20px;
+    symbol-fill-opacity: 0.1;
+    z-index: -5;
+}
 
 /************/
 /* Barriers */
