@@ -1301,18 +1301,23 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 /* Conditional Restrictions */
 /****************************/
 
-/* way[highway][!/⌃:conditional/][setting("conditional")]::tagged {
+way[highway]["maxspeed:conditional"][setting("conditional")]::tagged,
+way[highway]["motor_vehicle:conditional"][setting("conditional")]::tagged,
+way[highway]["motorcycle:conditional"][setting("conditional")]::tagged,
+way[highway]["maxweight:conditional"][setting("conditional")]::tagged,
+way[highway]["maxweightrating:conditional"][setting("conditional")]::tagged,
+way[highway]["hgv:conditional"][setting("conditional")]::tagged,
+way[highway]["maxlength:conditional"][setting("conditional")]::tagged,
+way[highway]["oneway:conditional"][setting("conditional")]::tagged,
+way[highway]["fee:conditional"][setting("conditional")]::tagged,
+way[highway]["maxstay:conditional"][setting("conditional")]::tagged {
 width: +8;
 color: conditional#FDBB47;
 }
-node[barrier][!/⌃:conditional/][setting("conditional")]::tagged {
-    symbol-shape: square;
-    symbol-size: 5;
-    symbol-stroke-color: #FDBB47;
-    symbol-stroke-width: 20px;
-    symbol-fill-opacity: 0.1;
-    z-index: -5;
-} */
+relation[type=restriction]["restriction:conditional"] > way[highway][setting("conditional")]::tagged {
+width: +8;
+color: conditional#FDBB47;
+}
 
 /************/
 /* Barriers */
