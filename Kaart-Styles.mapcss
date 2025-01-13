@@ -2581,7 +2581,7 @@ area[natural]:closed                          { color: #ADD6A5; width: 1; fill-c
 area[natural=beach]:closed                    { color: #ffdd44; width: 1; fill-color: yellow; fill-opacity: 0.2; prop_area_small_name : 1; casing-color: #000000; casing-width: 0.2;}
 way[natural=coastline]            { z-index: 5; color: black; width: 3; casing-color: #000000; casing-width: 0.2;}
 area[landuse]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; casing-color: #000000; casing-width: 0.2;}
-area[landuse=construction]                          { color: lime; width: 2; fill-color: #444444; fill-opacity: 0.3; dashes: 3,6; casing-color: #000000; casing-width: 0.2;}
+area[landuse=construction]                          { color: #ff6700; width: 2; fill-color: #ff6700; fill-opacity: 0.3; dashes: 3,6; casing-color: white; casing-width: 0.2;}
 area[landuse=residential]:closed              { color: #D594FF; width: 2; fill-color: #D594FF; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
 area[landuse=retail]:closed                   { color: #cc2222; width: 2; fill-color: #aa4422; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
 area[landuse=commercial]:closed               { color: purple; width: 2; fill-color: #444488; fill-opacity: 0.15; casing-color: #000000; casing-width: 0.2;}
