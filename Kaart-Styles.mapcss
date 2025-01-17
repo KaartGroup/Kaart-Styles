@@ -269,7 +269,7 @@ default: true;
 
 setting::lowercase {
   type: boolean;
-  label: tr("Flag Roads with Uncapitalized Words in the Name");
+  label: tr("Flag Roads with known capitalization issues in the name");
   default: true;
   group: "name_group";
 }
@@ -4705,19 +4705,62 @@ way.missl
 
 }
 /**************************/
-/*Check against incorrect capitalization of names where the first word IS capitalized*/
+/*Check against incorrect capitalization of names */
 /**************************/
 
-*[name=~/^\p{Lu}\p{Ll}*.*\s\p{Ll}{4,}($|\s)/][highway=~/service|living_street|residential|tertiary|secondary|primary|trunk|motorway/][setting("lowercase")]
-
-{
-
+/* Highlights all names where both parts of the name are lowercase*/
+*[name=~/^\p{Ll}\p{Ll}{2,}.*\s\p{Ll}{2,}($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
   casing-color: orange;
-  casing-width: 3;
-  text:"Check Caps";
-  text-offset: -40;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
   font-size: 15;
-
+}
+/* Highlights all names that are lowercase */
+*[name=~/^\p{Ll}\p{Ll}{2,}.*($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
+  casing-color: orange;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
+  font-size: 15;
+}
+/* Highlights all names where the first word starts with a lowercase letter and the second starts with an uppercase letter*/
+*[name=~/^\p{Ll}\p{Ll}{2,}.*\s\p{Lu}\p{Ll}{2,}($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
+  casing-color: orange;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
+  font-size: 15;
+}
+/* Highlights all names where the first word starts with an uppercase letter and the second starts with a lowercase letter*/
+*[name=~/^\p{Lu}\p{Ll}{2,}.*\s\p{Ll}\p{Ll}{2,}($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
+  casing-color: orange;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
+  font-size: 15;
+}
+/* Highlights names where both parts are all uppercase */
+*[name=~/^\p{Lu}\p{Lu}{2,}.*\s\p{Lu}\p{Lu}{2,}($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
+  casing-color: orange;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
+  font-size: 15;
+}
+/* Highlights names that are all uppercase */
+*[name=~/^\p{Lu}\p{Lu}{2,}.*($|\s)/][highway=~/motorway|trunk|primary|secondary|tertiary|unclassied|residential|living_street|service/][setting("lowercase")]{
+  casing-color: orange;
+  casing-dashes: 25,20;
+  casing-width: 5;
+  text: concat("Check Caps! ", " || ", "Name = ", tag(name));
+  text-offset: -20;
+  font-size: 15;
 }
 
 /**************************/
