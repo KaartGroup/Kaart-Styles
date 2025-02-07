@@ -1140,6 +1140,7 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 /* Conditional Restrictions */
 /****************************/
 
+way[highway]["highway:conditional"][setting("conditional")]::tagged,
 way[highway]["maxspeed:conditional"][setting("conditional")]::tagged,
 way[highway]["motor_vehicle:conditional"][setting("conditional")]::tagged,
 way[highway]["motorcycle:conditional"][setting("conditional")]::tagged,
