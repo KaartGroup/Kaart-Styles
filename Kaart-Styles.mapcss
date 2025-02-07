@@ -1067,167 +1067,6 @@ dashes-casing-color: black;
 linejoin: round;
 }
 
-/* Construction=* text */
-way[highway=construction][construction=motorway][setting("construction_class_text")] {
-text: tr("construction=motorway");
-text-color: #CF2081;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=motorway_link][setting("construction_class_text")] {
-text: tr("construction=motorway_link");
-text-color: #CF2081;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=trunk][setting("construction_class_text")] {
-text: tr("construction=trunk");
-text-color: #DD2F22;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-way[highway=construction][construction=trunk_link][setting("construction_class_text")] {
-text: tr("construction=trunk_link");
-text-color: #DD2F22;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=primary][setting("construction_class_text")] {
-text: tr("construction=primary");
-text-color: #FFA500;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-way[highway=construction][construction=primary_link][setting("construction_class_text")] {
-text: tr("construction=primary_link");
-text-color: #FFA500;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=secondary][setting("construction_class_text")] {
-text: tr("construction=secondary");
-text-color: #FFFF00;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-way[highway=construction][construction=secondary_link][setting("construction_class_text")] {
-text: tr("construction=secondary_link");
-text-color: #FFFF00;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=tertiary][setting("construction_class_text")] {
-text: tr("construction=tertiary");
-text-color: #408ccc;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-way[highway=construction][construction=tertiary_link][setting("construction_class_text")] {
-text: tr("construction=tertiary_link");
-text-color: #408ccc;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=unclassified][setting("construction_class_text")] {
-text: tr("construction=unclassified");
-text-color: #96795d;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=residential][setting("construction_class_text")] {
-text: tr("construction=residential");
-text-color: #ffffff;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=living_street][setting("construction_class_text")] {
-text: tr("construction=living_street");
-text-color: #E8E8E8;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=service][setting("construction_class_text")] {
-text: tr("construction=service");
-text-color: #39ff14;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=track][setting("construction_class_text")] {
-text: tr("construction=track");
-text-color: #996644;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=pedestrian][setting("construction_class_text")] {
-text: tr("construction=pedestrian");
-text-color: #7FFF00;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=footway][setting("construction_class_text")] {
-text: tr("construction=footway");
-text-color: #7FFF00;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-way[highway=construction][construction=path][setting("construction_class_text")] {
-text: tr("construction=path");
-text-color: brown;
-font-size: 15;
-font-weight: bold;
-text-halo-color: black;
-text-halo-radius: 2;
-}
-
-
-
 /* Railways */
 
 way[railway=rail] { z-index: 6; color: black; width: 5; linecap: round; dashes: 0; }
@@ -3103,6 +2942,166 @@ relation[type=route][route=road]["name"][setting("name_setting")] > way[highway]
     text: concat("Way is Missing Name! ", " || ", "Relation Name = ", join_list(" | ", parent_tags(name)));
     text-offset: -20;
     text-halo-radius: 0.9;
+}
+
+/* Construction=* text */
+/* Use this to also include the name tag with text: text: concat("construction=motorway ", " | ", "Name = ", tag(name));*/
+way[highway=construction][construction=motorway][setting("construction_class_text")] {
+text: tr("construction=motorway");
+text-color: #CF2081;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=motorway_link][setting("construction_class_text")] {
+text: tr("construction=motorway_link");
+text-color: #CF2081;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=trunk][setting("construction_class_text")] {
+text: tr("construction=trunk");
+text-color: #DD2F22;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+way[highway=construction][construction=trunk_link][setting("construction_class_text")] {
+text: tr("construction=trunk_link");
+text-color: #DD2F22;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=primary][setting("construction_class_text")] {
+text: tr("construction=primary");
+text-color: #FFA500;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+way[highway=construction][construction=primary_link][setting("construction_class_text")] {
+text: tr("construction=primary_link");
+text-color: #FFA500;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=secondary][setting("construction_class_text")] {
+text: tr("construction=secondary");
+text-color: #FFFF00;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+way[highway=construction][construction=secondary_link][setting("construction_class_text")] {
+text: tr("construction=secondary_link");
+text-color: #FFFF00;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=tertiary][setting("construction_class_text")] {
+text: tr("construction=tertiary");
+text-color: #408ccc;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+way[highway=construction][construction=tertiary_link][setting("construction_class_text")] {
+text: tr("construction=tertiary_link");
+text-color: #408ccc;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=unclassified][setting("construction_class_text")] {
+text: tr("construction=unclassified");
+text-color: #96795d;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=residential][setting("construction_class_text")] {
+text: tr("construction=residential");
+text-color: #ffffff;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=living_street][setting("construction_class_text")] {
+text: tr("construction=living_street");
+text-color: #E8E8E8;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=service][setting("construction_class_text")] {
+text: tr("construction=service");
+text-color: #39ff14;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=track][setting("construction_class_text")] {
+text: tr("construction=track");
+text-color: #996644;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=pedestrian][setting("construction_class_text")] {
+text: tr("construction=pedestrian");
+text-color: #7FFF00;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=footway][setting("construction_class_text")] {
+text: tr("construction=footway");
+text-color: #7FFF00;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
+}
+
+way[highway=construction][construction=path][setting("construction_class_text")] {
+text: tr("construction=path");
+text-color: brown;
+font-weight: bold;
+text-halo-color: black;
+text-halo-radius: 2;
+text-halo-opacity: 1;
 }
 
 /* -- UPDATE Road has ref in Relation, will not style like a noraml "ref" road */
