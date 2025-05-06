@@ -4273,7 +4273,111 @@ way[route=ferry] {
     text-color: white;
     font-size: 15;
 }
-
+way[route=ferry][ferry=trunk] {
+    width: 2;
+    color: ferry#DD2F22;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=primary] {
+    width: 2;
+    color: ferry#FFA500;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=secondary] {
+    width: 2;
+    color: ferry#FFFF00;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=tertiary] {
+    width: 2;
+    color: ferry#408ccc;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=unclassified] {
+    width: 2;
+    color: ferry#96795d;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=residential] {
+    width: 2;
+    color: ferry#ffffff;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
+way[route=ferry][ferry=footway] {
+    width: 2;
+    color: ferry#7FFF00;
+    casing-width: 5;
+    casing-color: blue;
+    dashes: 9,9;
+    casing-opacity: 0.3;
+    casing-dashes: 3,3;
+    text: eval(concat("Name = ", tag("name"), " | ", "Ref = ", tag("ref")));
+    text-offset: -20;
+    text-halo-radius: 1.2;
+    text-halo-color: black;
+    text-color: white;
+    font-size: 15;
+}
 
 
 
