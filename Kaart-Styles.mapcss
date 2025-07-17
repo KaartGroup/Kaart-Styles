@@ -2644,7 +2644,6 @@ way[highway=living_street][junction=circular] {
     z-index: 3;
     width: 4;
     casing-color: #0BE3AC;
-    dashes-background-color: #00ff00;
     color: #00ff00;
     dashes: 5, 5;
 }
