@@ -2572,7 +2572,6 @@ way[highway=living_street][junction=roundabout] {
     z-index: 3;
     width: 4;
     casing-color: #FB2B11;
-    dashes-background-color: #00ff00;
     color: #00ff00;
     dashes: 15,15;
 }
