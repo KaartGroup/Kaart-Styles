@@ -1140,23 +1140,89 @@ area[aeroway=apron]:closed { z-index: 4; color: #cc66cc; width: 1; fill-color: #
 /* Conditional Restrictions */
 /****************************/
 
-way[highway]["highway:conditional"][setting("conditional")]::tagged,
-way[highway]["maxspeed:conditional"][setting("conditional")]::tagged,
-way[highway]["motor_vehicle:conditional"][setting("conditional")]::tagged,
-way[highway]["motorcycle:conditional"][setting("conditional")]::tagged,
-way[highway]["maxweight:conditional"][setting("conditional")]::tagged,
-way[highway]["maxweightrating:conditional"][setting("conditional")]::tagged,
-way[highway]["hgv:conditional"][setting("conditional")]::tagged,
-way[highway]["maxlength:conditional"][setting("conditional")]::tagged,
-way[highway]["oneway:conditional"][setting("conditional")]::tagged,
-way[highway]["fee:conditional"][setting("conditional")]::tagged,
+way[highway]["highway:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("highway:conditional = ", tag("highway:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["maxspeed:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("maxspeed:conditional = ", tag("maxspeed:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["motor_vehicle:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("motor_vehicle:conditional = ", tag("motor_vehicle:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["motorcycle:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("motorcycle:conditional = ", tag("motorcycle:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["maxweight:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("maxweight:conditional = ", tag("maxweight:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["maxweightrating:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("maxweightrating:conditional = ", tag("maxweightrating:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["hgv:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("hgv:conditional = ", tag("hgv:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["maxlength:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("maxlength:conditional = ", tag("maxlength:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["oneway:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("oneway:conditional = ", tag("oneway:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
+way[highway]["fee:conditional"][setting("conditional")]::tagged{
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("fee:conditional = ", tag("fee:conditional"));
+  text-offset: -20;
+  font-size: 15;
+}
 way[highway]["maxstay:conditional"][setting("conditional")]::tagged {
-width: +8;
-color: conditional#FDBB47;
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("maxstay:conditional = ", tag("maxstay:conditional"));
+  text-offset: -20;
+  font-size: 15;
 }
 relation[type=restriction]["restriction:conditional"] > way[highway][setting("conditional")]::tagged {
-width: +8;
-color: conditional#FDBB47;
+  casing-color: conditional#FDBB47;
+  casing-width: 8;
+  text: concat("restriction:conditional = (check relation for value)");
+  text-offset: -20;
+  font-size: 15;
 }
 
 /************/
