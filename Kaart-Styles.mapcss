@@ -4819,26 +4819,20 @@ way[highway=motorway_link][!oneway] {
 }
 
 /*Misspelled highway&construction values*/
-way[highway][highway!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|cycleway|bridleway|construction)$/] {
+way[highway][highway!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|steps|cycleway|bridleway|construction)$/] {
     text: tr("Incorrect value");
     text-color: yellow;
     font-size: 25;
     font-weight: bold;
 }
 
-way[construction][construction!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|cycleway|bridleway)$/] {
+way[construction][construction!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|steps|cycleway|bridleway)$/] {
     text: tr("Incorrect value");
     text-color: yellow;
     font-size: 25;
     font-weight: bold;
 }
-way[highway=proposed][construction!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|cycleway|bridleway)$/] {
-    text: tr("Incorrect value");
-    text-color: yellow;
-    font-size: 25;
-    font-weight: bold;
-}
-way[highway=proposed][proposed!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|cycleway|bridleway)$/] {
+way[highway=proposed][construction!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|steps|cycleway|bridleway)$/] {
     text: tr("Incorrect value");
     text-color: yellow;
     font-size: 25;
