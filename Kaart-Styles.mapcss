@@ -599,8 +599,8 @@ way[highway=road]                                   { z-index: 5; color: gray; w
 /* Road areas */
 
 way[highway=pedestrian]!:closed { z-index: 5; color: #7FFF00; width: 3.5; dashes: 5, 5; casing-color: #555555; casing-width: 1; casing-dashes: 2,4; linecap: round; casing-linecap: round;}
-
-area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee; dashes: 3,3; fill-opacity: 0.2; }
+area[highway=pedestrian]:closed  { color: #7FFF00; width: 1; fill-color: #555555; dashes: 3,3; fill-opacity: 0.2; }
+way[parent_tag("type")="multipolygon"][parent_tag("highway")="pedestrian"] {color: #7FFF00; width: 3; fill-color: #555555; dashes: 3, 3; fill-opacity: 0.2; casing-color: #555555; casing-width: .2; casing-dashes: 2, 2;}
 
 
 /* Paths */
@@ -608,6 +608,7 @@ area[highway=pedestrian]:closed  { color: #aa3311; width: 1; fill-color: #ddddee
 way[highway=steps]     { z-index: 5; color: #aa3311; width: 3; dashes: 3, 3; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
 area[area:highway=steps] {color: #aa3311; width: 3; fill-color: #ddddee; dashes: 3, 3; fill-opacity: 0.2; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
 way[parent_tag("type")="multipolygon"][parent_tag("area:highway")="steps"] {color: #aa3311; width: 3; fill-color: #ddddee; dashes: 3, 3; fill-opacity: 0.2; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
+
 way[highway=footway]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
 
 way[highway=footway][bicycle=yes]::bike   { z-index: 4; color: #aa3311 ; width: 1; dashes: 6, 3;  casing-color: purple; casing-width: .3; casing-dashes: 6, 3; linecap: round; casing-linecap: round; }
