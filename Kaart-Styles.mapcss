@@ -610,7 +610,7 @@ area[area:highway=steps] {color: #aa3311; width: 3; fill-color: #ddddee; dashes:
 way[parent_tag("type")="multipolygon"][parent_tag("area:highway")="steps"] {color: #aa3311; width: 3; fill-color: #ddddee; dashes: 3, 3; fill-opacity: 0.2; casing-color: #FFFFFF; casing-width: .2; casing-dashes: 2, 2;}
 
 way[highway=footway]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #FFFFFF; casing-width: .5; casing-dashes: 5, 3; linecap: round; casing-linecap: round;  prop_path : 1;}
-
+way[highway=footway][footway=crossing]   { z-index: 5; color: #7FFF00 ; width: 1.7; dashes: 5, 3;  casing-color: #00abff; casing-width: 1; casing-dashes: 5, 3; linecap: round; casing-linecap: round; }
 way[highway=footway][bicycle=yes]::bike   { z-index: 4; color: #aa3311 ; width: 1; dashes: 6, 3;  casing-color: purple; casing-width: .3; casing-dashes: 6, 3; linecap: round; casing-linecap: round; }
 
 way[highway=bridleway] { z-index:9; color: #996644; width: 2; dashes: 4, 2, 2, 2; prop_path : 1;}
@@ -620,6 +620,7 @@ way[highway=track]     { z-index: 5; color: #996644; width: 3; dashes: 4, 2; pro
 way[highway=path]      { z-index: 5; color: brown; width: 2; dashes: 2, 2; prop_path : 1;}
 
 way[highway=cycleway]  { z-index: 5; color: #b100ff; width: 2; dashes: 4, 2; prop_path : 1;}
+way[highway=cycleway][cycleway=crossing]  { z-index: 5; color: #b100ff; width: 2; dashes: 4, 2; casing-color: #00abff; casing-width: 2; casing-dashes: 0, 6, 2; }
 
 way[is_prop_set("prop_path")]  { z-index: 5; text: auto; text-color: black; text-position: line; text-offset: 7; font-size: 12; }
 
