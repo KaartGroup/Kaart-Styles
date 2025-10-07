@@ -2023,6 +2023,11 @@ node[traffic_sign][boat?!][!is_prop_set(icon-image)] {
     icon-image: "presets/misc/no_icon.svg";
     set icon_z17;
 }
+node[traffic_sign=stop]{
+    icon-image: "presets/vehicle/restriction/stop.svg";
+    set icon_z17;
+    text: auto;
+} 
 node[noexit=yes] {
     icon-image: "presets/vehicle/restriction/dead_end.svg";
     set icon_z17;
