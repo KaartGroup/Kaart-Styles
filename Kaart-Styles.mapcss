@@ -557,6 +557,7 @@ way[highway=tertiary_link]   { dashes-background-color: #408ccc; }
 
 way[highway=unclassified]                           { z-index: 5; color: #96795d; width: 5; casing-width: 1; casing-color: #000000; }
 way[highway=unclassified][motorcar=no]   { z-index: 6; color: #96795d; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=unclassified][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=residential]                            { z-index: 5; color: #ffffff; width: 5; casing-color: #000000; casing-width: 1; }
 way[highway=residential][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
@@ -564,51 +565,68 @@ way[highway=residential][motorcar=no]   { z-index: 6; color: #ffffff; width: 3; 
 
 way[highway=living_street]                          { z-index: 5; dashes: 9,9; dashes-background-color: gray; width: 5; color: #E8E8E8; casing-color: #000000; casing-width: 1; }
 way[highway=living_street][motorcar=no]   { z-index: 6; width: 3; color: #E8E8E8; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=living_street][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service]                                { z-index: 5; color: #39ff14; width: 3; casing-color: #000000; casing-width: 1; }
 way[highway=service][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service][service=parking_aisle]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: #FF087F; }
 way[highway=service][service=parking_aisle][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][service=parking_aisle][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service][service=drive-through]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: blue; }
 way[highway=service][service=drive-through][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][service=drive-through][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service][service=driveway]         { z-index: 5; color: #39ff14; width: 2; casing-color: #000000; casing-width: 1; dashes: 12,12; dashes-background-color: purple; }
 way[highway=service][service=driveway][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][service=driveway][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service][service=alley]                 { z-index: 5; color: #80D2DE; width: 3; dashes: 20,12; dashes-background-color: #D40E0D; casing-color: #000000; casing-width: 1; }
 way[highway=service][service=alley][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][service=alley][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=service][service=emergency_access]                 { z-index: 5; color: #D4FF33; width: 3; dashes: 12,12; dashes-background-color: red; casing-color: #000000; casing-width: 1; }
 way[highway=service][service=emergency_access][motorcar=no]   { z-index: 6; color: #39ff14; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=service][service=emergency_access][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: black; }
 
 way[highway=motorway]           { z-index: 8; color: #CF2081; width: 7; casing-color: #000000; casing-width: 1; }
 way[highway=motorway][motorcar=no]   { z-index: 6; color: #CF2081; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=motorway][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 way[highway=motorway_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #CF2081; }
 way[highway=motorway_link][motorcar=no]   { z-index: 6; color: #FFFFFF; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=motorway_link][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=trunk]           { z-index: 8; color: #DD2F22; width: 7; casing-color: #000000; casing-width: 1; }
 way[highway=trunk][motorcar=no]   { z-index: 6; color: #DD2F22; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=trunk][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 way[highway=trunk_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #DD2F22; }
 way[highway=trunk_link][motorcar=no]   { z-index: 6; color: #FFFFFF; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=trunk_link][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=primary]           { z-index: 8; color: #FFA500; width: 7; casing-color: #000000; casing-width: 1; }
 way[highway=primary][motorcar=no]   { z-index: 6; color: #FFA500; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=primary][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 way[highway=primary_link]      { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFA500; }
 way[highway=primary_link][motorcar=no]   { z-index: 6; color: #FFFFFF; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=primary_link][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=secondary]       { z-index: 7; color: #FFFF00; width: 7; casing-color: #000000; casing-width: 1; }
 way[highway=secondary][motorcar=no]   { z-index: 6; color: #FFFF00; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=secondary][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 way[highway=secondary_link]  { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #FFFF00; }
 way[highway=secondary_link][motorcar=no]   { z-index: 6; color: #FFFFFF; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=secondary_link][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=tertiary]         { z-index: 6; color: #408ccc; width: 5; casing-color: #000000; casing-width: 1; }
 way[highway=tertiary][motorcar=no]   { z-index: 6; color: #408ccc; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=tertiary][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 way[highway=tertiary_link]    { z-index: 7; width: 6; color: #FFFFFF; casing-color: #000000; casing-width: 1; dashes: 9,9; dashes-background-color: #408ccc; }
 way[highway=tertiary_link][motorcar=no]   { z-index: 6; color: #FFFFFF; width: 3; casing-dashes: 21,12; casing-dashes-background-color: teal; casing-width: 3; }
+way[highway=tertiary_link][motor_vehicle=no][motorcycle=yes]   { z-index: 6; color: #ffffff; width: 3; casing-dashes: 21,12; casing-dashes-background-color: blue; casing-width: 3; text: tr("Motorcycle Only"); }
 
 way[highway=road]                                   { z-index: 5; color: gray; width: 3.5; casing-color: #000000; casing-width: 1; text: tr("Highway = Road"); font-weight: bold; text-halo-color: black; }
 
