@@ -4845,7 +4845,7 @@ way[highway=motorway_link][!oneway] {
 }
 
 /*Misspelled highway&construction values*/
-way[highway][highway!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|steps|cycleway|bridleway|construction)$/] {
+way[highway][highway!~/^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service|track|pedestrian|footway|path|steps|cycleway|bridleway|construction|bus_guideway|escape|raceway|busway|corridor|via_ferrata|elevator|emergency_bay|ladder|platform|rest_area|services|proposed)$/] {
     text: tr("Incorrect value");
     text-color: yellow;
     font-size: 25;
