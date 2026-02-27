@@ -4538,7 +4538,7 @@ node[public_transport=platform][ferry=yes] {
 
 way["highway"=~/^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street)$/][!name][setting("check_name")] {
   casing-color: red;
-  casing-width: 3;
+  casing-width: 1.5;
   text: tr("");
   text-offset: -40;
   font-size: 15;
