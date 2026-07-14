@@ -3327,7 +3327,7 @@ way[highway=primary_link][ref],
 way[highway=secondary_link][ref],
 way[highway=tertiary_link][ref] {
     
-    text: tr("Ref on link");
+    text: tr("Verify ref on link");
     text-color: red;
     font-size: 20;
     font-weight: bold;
