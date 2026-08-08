@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  validate_mapcss_job:
+    runs-on: ubuntu-latest
+    name: Validate mapcss files
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate MapCSS files
+        id: josm-validate
+        uses: KaartGroup/JOSMValidateAction@HEAD
+        with:
+          files-to-validate: 'Kaart_QC_Quandary.mapcss'
